@@ -1,11 +1,16 @@
 # gtCNV
+<<<<<<< HEAD
 
 Speedy copy number estimation through statistical learning techniques
 
+=======
+gtCNV: fast copy number prediction using statistical learning
+>>>>>>> 011c188aaa6fbb86e5765a16170a7e9248e6ffc1
 gtCNV can run samples in parallel indicated by the -c or --cpu flag following an integer of the number of processes for fork (CPUs available)
 
 requires python 2.7 and following python libraries: pysam, pybedtools, pandas, numpy, scikit-learn
 
+<<<<<<< HEAD
 ## Quick Start 
 For a quick example read the HOWTO in the 'tutorial' directory 
 
@@ -16,12 +21,25 @@ For a quick example read the HOWTO in the 'tutorial' directory
             We are working on adding options for different genome builds 
      
             In practice, gtCNV has trouble genotyping CNVs <1kb in size 
+=======
+## Quick Start
+For a quick example read the HOWTO in the 'tutorial' directory
+
+         ############################# WARNING ############################
+
+         gtCNV currently only supports short-read libraries aligned to hg19
+
+            We are working on adding options for different genome builds
+
+            In practice, gtCNV has trouble genotyping CNVs <1kb in size
+>>>>>>> 011c188aaa6fbb86e5765a16170a7e9248e6ffc1
 
                   We will resolve this issue in future versions
 
 ## Inputs
 
 gtCNV requires the following:
+<<<<<<< HEAD
 	1. list of BAM files with full path
 	2. BED file of CNV positions. Tab delimited. Formated as chr    start    end    type
 		CNV type must contain "DEL" or "DUP" to label losses and gains respectively 
@@ -31,10 +49,22 @@ gtCNV requires the following:
 To view options and help
 	
 	$ gtCNV --help 
+=======
+        1. list of BAM files with full path
+        2. BED file of CNV positions. Tab delimited. Formated as chr    start    end    type
+                CNV type must contain "DEL" or "DUP" to label losses and gains respectively
+
+## Useage
+
+To view options and help
+
+        $ gtCNV --help
+>>>>>>> 011c188aaa6fbb86e5765a16170a7e9248e6ffc1
 
 gtCNV is a two step process. You MUST run preprocessing before genotyping step
 
 1. Preprocessing:
+<<<<<<< HEAD
 	Estimate coverage, insert size, and read length distriubtions. 
 
 	$ gtCNV --preprocess -b bam.list [ --cpu INT, --out preprocessing.out, --seed INT ] 
@@ -48,10 +78,25 @@ gtCNV is a two step process. You MUST run preprocessing before genotyping step
 ## History
 
 gtCNV version 0.1 
+=======
+        Estimate coverage, insert size, and read length distriubtions.
+
+        $ gtCNV --preprocess -b bam.list [ --cpu INT, --out preprocessing.out, --seed INT ]
+
+2. Genotyping:
+        Copy number prediction with support vector machines
+
+        $ gtCNV --genotype -b bam.list -i cnvs.bed --pre gtCNV_preprocessing_out/preprocessing.out [ --cpu INT, --out genotypes.out 
+        
+## History
+
+gtCNV version 0.1
+>>>>>>> 011c188aaa6fbb86e5765a16170a7e9248e6ffc1
 
 ## Credits
 
 Author: 
+<<<<<<< HEAD
 	Danny Antaki
 	
 	dantaki@ucsd.edu
@@ -62,6 +107,20 @@ Acknowlegements:
 	Jonathan Sebat
 	
 	Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
+=======
+
+        Danny Antaki
+        
+        dantaki@ucsd.edu
+
+Acknowlegements:
+        
+        William Brandler
+        
+        Jonathan Sebat
+        
+        Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
+>>>>>>> 011c188aaa6fbb86e5765a16170a7e9248e6ffc1
 
 ## License
 
