@@ -23,9 +23,12 @@ For a quick example read the HOWTO in the 'tutorial' directory
 ## Inputs
 
 gtCNV requires the following:
-	1. list of BAM files with full path
-	2. BED file of CNV positions. Tab delimited. Formated as chr    start    end    type
-		CNV type must contain "DEL" or "DUP" to label losses and gains respectively 
+	
+        1. list of BAM files with full path
+	
+
+        2. BED file of CNV positions. Tab delimited. Formated as chr    start    end    type
+                CNV type must contain "DEL" or "DUP" to label losses and gains respectively 
 	
 ## Useage
 
@@ -36,7 +39,7 @@ To view options and help
 gtCNV is a two step process. You MUST run preprocessing before genotyping step
 
 1. Preprocessing:
-        Estimate coverage, insert size, and read length distriubtions. 
+       	Estimate coverage, insert size, and read length distriubtions. 
 
         $ gtCNV --preprocess -b bam.list [ --cpu INT, --out preprocessing.out, --seed INT ] 
 
