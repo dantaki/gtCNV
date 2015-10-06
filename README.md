@@ -53,11 +53,13 @@ gtCNV version 0.1
 ## Credits
 
 Author: 
+        
         Danny Antaki
 	
         dantaki@ucsd.edu
 
 Acknowlegements:
+        
         William Brandler
 	
         Jonathan Sebat
