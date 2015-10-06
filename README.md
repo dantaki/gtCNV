@@ -49,11 +49,14 @@ gtCNV version 0.1
 ## Credits
 
 Author: Danny Antaki
+        
         dantaki@ucsd.edu
 
 Acknowlegements:
         William Brandler
+        
         Jonathan Sebat
+        
         Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
 
 ## License
