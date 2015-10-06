@@ -2,7 +2,7 @@
 
 Speedy copy number estimation through machine learning
 
-        gtCNV can run samples in parallel indicated by the -c or --cpu flag following an integer of the number of processes for fork (CPUs available)
+gtCNV can run samples in parallel indicated by the -c or --cpu flag following an integer of the number of processes for fork (CPUs available)
 
 requires python 2.7 and following python libraries: pysam, pybedtools, pandas, numpy, scikit-learn
 
