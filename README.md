@@ -1,6 +1,12 @@
 # gtCNV
 
-Speedy copy number estimation through machine learning
+Speedy copy number estimation of copy number variants through machine learning
+
+gtCNV integrates coverage, discordant paired-ends, and split reads in genotype prediction. 
+
+For a performance benchmark of gtCNV on 27 high coverage whole genomes (1000 Genomes Project) please refer to this poster presented at ASHG (2015)
+        https://www.dropbox.com/s/dfgdynf969xt0el/ashg_poster_gtCNV_update.pdf
+        
 
 gtCNV can run samples in parallel indicated by the -c or --cpu flag following an integer of the number of processes for fork (CPUs available)
 
