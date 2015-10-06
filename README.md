@@ -12,7 +12,7 @@ gtCNV was trained on 27 high coverage genomes with validated genotypes from the 
 
 Training sets are included under 'resources'; the CNV callset can be found here: ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/integrated_sv_map/ALL.wgs.integrated_sv_map_v2.20130502.svs.genotypes.vcf.gz
 
-gtCNV can run samples in parallel indicated by the -c or --cpu flag following an integer of the number of processes for fork (CPUs available)
+Paralleization sample-wise is possible with the optional -c flag following an integer of the number of available CPUs
 
 requires python 2.7 and following python libraries: pysam, pybedtools, pandas, numpy, scikit-learn
 
