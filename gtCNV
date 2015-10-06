@@ -1,0 +1,88 @@
+#!/usr/bin/env python
+import src.preprocess as preprocess
+import src.genotype as genotype
+import argparse
+from argparse import RawTextHelpFormatter
+import sys
+from multiprocessing import Pool
+import os
+if __name__ == '__main__':
+	splash ='        __________________   ____    __\n_______ __  /__  ____/__  | / /_ |  / /\n__  __ `/  __/  /    __   |/ /__ | / / \n_  /_/ // /_ / /___  _  /|  / __ |/ /  \n_\__, / \__/ \____/  /_/ |_/  _____/   \n/____/\nVersion 0.1\n\n\n'
+        parser = argparse.ArgumentParser(description=splash,formatter_class=RawTextHelpFormatter)
+        parser.add_argument('--preprocess', help='preprocessing flag. RUN THIS FIRST', required=False,action='store_true')
+        parser.add_argument('--genotype', help='genotyping flag', required=False,action='store_true')
+	parser.add_argument('-b','--bam', help='list of bam files with full path',required=True)
+	parser.add_argument('-i','--bed', help='BEDfile of CNVs. Tab delimited. CHROM    START    END    TYPE',type=str)
+        parser.add_argument('-p','--pre', help='gtCNV preprocessing output. DEFAULT=gtCNV_preprocessing_out/gtCNV_preprocessing.out',type=str,required=False,default="gtCNV_preprocessing_out/gtCNV_preprocessing.out")
+        parser.add_argument('-c','--cpu', help='parallelize sample wise. 1 per cpu. DEFAULT=1',required=False,default=1,type=int)
+        parser.add_argument('-s','--seed', help='preprocessing: integer seed for genomic suffling',required=False,default=42,type=int)
+        parser.add_argument('-o','--out', help='outfile path',required=False,default="gtCNV_preprocessing.out",type=str)
+        args = parser.parse_args()
+        bam = args.bam
+        bed = args.bed
+	prefh = args.pre
+	cores = args.cpu
+        ofh = args.out
+        seed = args.seed
+	preflag = args.preprocess
+	gtflag = args.genotype
+        if preflag == True and gtflag == True: 
+		print "ERROR cannot perform preprocessing and genotyping in same step"
+		sys.exit()
+	if preflag == False and gtflag == False: 
+		print "ERROR please define either preprocessing or genotyping"
+		sys.exit()
+	if preflag == True:
+		outdir = 'gtCNV_preprocessing_out/'
+        	bamfiles = preprocess.bamList(bam)
+        	bed = preprocess.randomChr(seed)
+        	if not os.path.exists(outdir):
+                	os.makedirs(outdir)
+        	ofh = outdir + ofh
+        	head = ("bam","chr","cov","read_length_median","insert_size_median","insert_size_MAD","chr_bp_parsed")
+		outfh = open(ofh,'w')
+		outfh.write('\t'.join(head))
+        	outfh.write('\n')
+		outfh.close()	
+		if cores > 1 :
+                	pool = Pool(processes=cores)
+                	for bamfh in bamfiles:
+                	        pool.apply_async(preprocess.gtCNV, args=(bamfh,bed,ofh) )
+                	pool.close()
+                	pool.join()
+		else:
+                	for bamfh in bamfiles:
+                        	preprocess.gtCNV(bamfh,bed,ofh)	
+	if gtflag == True:
+		if bed == None: 
+			print "ERROR genotyping requires a BEDfile"
+                	sys.exit()
+		if ofh == "gtCNV_preprocessing.out": ofh = "gtCNV_genotypes.out"
+		outdir = 'gtCNV_genotype_out/'
+        	ofh = outdir+ofh
+        	if not os.path.exists(outdir):
+                	os.makedirs(outdir)
+        	bamfiles = genotype.bamList(bam)
+        	pre = genotype.preprocess(prefh)
+        	cnv=[]
+        	master_cnv={}
+        	cnv = genotype.bedcnv(bed)
+        	(cnv,master_cnv) = genotype.annotatecnv(cnv)
+        	(cnv_dpesr,dpesr_window) = genotype.expandcnv(cnv)
+        	cnvbed = genotype.bedconvert(cnv)
+        	mask_cov = genotype.maskBed(cnvbed)
+        	cnvbed = genotype.bedconvert(cnv_dpesr)
+        	mask_dpesr = genotype.maskBed(cnvbed)
+        	hash_cov = genotype.hash_bed(mask_cov)
+        	hash_dpesr = genotype.hash_bed(mask_dpesr)
+        	union_cnv = genotype.hash_union(hash_cov,hash_dpesr)
+        	union_cnv = genotype.sortBed(union_cnv,master_cnv)
+        	if cores > 1 :
+                	pool = Pool(processes=cores)
+                	for bamfh in bamfiles:
+                	        pool.apply_async(genotype.gtCNV, args=(bamfh,union_cnv,hash_cov,hash_dpesr,dpesr_window,master_cnv,ofh,pre) )
+                	pool.close()
+                	pool.join()
+        	else:
+                	for bamfh in bamfiles:
+                        	genotype.gtCNV(bamfh,union_cnv,hash_cov,hash_dpesr,dpesr_window,master_cnv,ofh,pre)
