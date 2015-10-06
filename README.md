@@ -42,7 +42,7 @@ gtCNV is a two step process. You MUST run preprocessing before genotyping step
 
         $ gtCNV --genotype -b bam.list -i cnvs.bed --pre gtCNV_preprocessing_out/preprocessing.out [ --cpu INT, --out genotypes.out 
         
-        ## History
+## History
 
 gtCNV version 0.1
 
