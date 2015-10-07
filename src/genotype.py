@@ -1,5 +1,6 @@
 import os
 import svm as gtSVM
+import preprocess as gtPre
 import argparse
 from argparse import RawTextHelpFormatter
 import sys
@@ -105,14 +106,14 @@ def sortBed (union,master):
 		(c,s,e,cl,i) = r
 		ordered.append(int(i))
 	return ordered
-def read_count(cov_list,size,bamfh,bam):
+def read_count(cov_list,size,bamfh,bam,chrFlag):
 	read_count=0
 	bp_spanned=0
         read_mapped = {}
 	sizeFlag=False
 	for pos in cov_list:
 		(c,s,e) = pos
-		c = c.replace("chr","")
+		if chrFlag == False : c = c.replace("chr","")
 		region = str(c+":"+s+"-"+e)
 		bp_spanned += int(e)-int(s)+1
 		#if size < 1000:
@@ -134,7 +135,7 @@ def read_count(cov_list,size,bamfh,bam):
 	else:
 		read_count = len(read_mapped)
 	return (float(read_count),bp_spanned)
-def dpesr_count(dpesr_list,ci,dpesr_window_pos,bamfh):
+def dpesr_count(dpesr_list,ci,dpesr_window_pos,bamfh,chrFlag):
 	(s1,e1,s2,e2) = dpesr_window_pos
 	discordant_count=0
 	split_count=0
@@ -142,7 +143,7 @@ def dpesr_count(dpesr_list,ci,dpesr_window_pos,bamfh):
 	split_reads={}
 	for pos in dpesr_list:
 		(c,s,e,cl) = pos
-		c = c.replace("chr","")
+		if chrFlag == False : c = c.replace("chr","")
 		region = str(c+":"+s+"-"+e)
 		for read in bamfh.fetch(region=region,until_eof=True):
 			if read.is_qcfail == True or read.is_duplicate == True or read.mapping_quality < 20 or read.is_reverse == read.mate_is_reverse: continue
@@ -190,6 +191,7 @@ def normalize_coverage( (read_count,span),size,chr_cov, read_length):
 		return ((read_count/span)*read_length)/chr_cov
 def gtCNV (bamfh,union_cnv,hash_cov,hash_dpesr,dpesr_window,master_cnv,out,pre):
 	bam = pysam.AlignmentFile(bamfh,"rb")
+	chrFlag = gtPre.bamHead(bam)
 	(chr_cov,insert_size,mad,read_length,gender) = pre
 	fhs = bamfh.split("/")
 	id = fhs[-1].replace(".bam","")
@@ -215,8 +217,8 @@ def gtCNV (bamfh,union_cnv,hash_cov,hash_dpesr,dpesr_window,master_cnv,out,pre):
 		cov_list = mergePos(cov_list)
 		dpesr_list = hash_dpesr[i]
 		dpesr_window_pos = dpesr_window[i]	
-		cov  = normalize_coverage(read_count(cov_list,size,bamfh,bam),size,chr_cov[str(bamfh)+str(c)],read_length[bamfh])
-		(dpe,sr) = dpesr_count(dpesr_list,ci,dpesr_window_pos,bam)	
+		cov  = normalize_coverage(read_count(cov_list,size,bamfh,bam,chrFlag),size,chr_cov[str(bamfh)+str(c)],read_length[bamfh])
+		(dpe,sr) = dpesr_count(dpesr_list,ci,dpesr_window_pos,bam,chrFlag)	
 		out = (c,str(s),str(e),str(size),cl,id,str(cov),str(dpe),str(sr))
 		if autosome == True and cl.find('DEL') != -1: autodel.append(out)
 		if autosome == True and cl.find('DUP') != -1: autodup.append(out)

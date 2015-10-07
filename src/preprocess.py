@@ -21,14 +21,20 @@ def randomChr (seed):
 	maskbed = pybedtools.BedTool("resources/flags_segDup_unmappable.bed")
 	masked = bed_master.subtract(maskbed)
 	return masked.sort()
-def gtCNV_stats(bed,bam,bamfh):
+def bamHead(bam):
+        chrFlag=False
+        bamhead = bam.header['SQ']
+        for i in  bamhead:
+                if str(i['SN']).find("chr") != -1: chrFlag=True
+        return chrFlag
+def gtCNV_stats(bed,bam,chrFlag):
 	read_stats = {}
 	chr_size=0
 	bed = bed.merge()
 	rc={}
 	for i in bed:
 		(c,s,e) = i
-		c = c.replace("chr","")
+		if chrFlag == False: c = c.replace("chr","")
 		region = str(c+":"+s+"-"+e)
 		chr_size += (int(e)-int(s)+1)
 		for read in bam.fetch(region=region):
@@ -47,6 +53,7 @@ def MAD (a,c=0.6745):
 	return m
 def gtCNV (bamfh,bed,out):
 	bam = pysam.AlignmentFile(bamfh,"rb")
+	chrFlag = bamHead(bam)
 	fhs = bamfh.split("/")
 	id = fhs[-1].replace(".bam","")
 	ofh = open(out,'a')
@@ -57,7 +64,7 @@ def gtCNV (bamfh,bed,out):
 	genome_size=0
 	for chr in ( 'chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8','chr9','chr10','chr11','chr12','chr13','chr14','chr15','chr16','chr17','chr18','chr19','chr20','chr21','chr22','chrX','chrY'):
 		chr_bed = bed.filter(lambda x: x.chrom==chr)
-		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bam,bamfh)
+		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bami,chrFlag)
 		read_count = len(chr_stats)
 		read_length = []
 		insert_size = []
