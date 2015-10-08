@@ -64,7 +64,7 @@ def gtCNV (bamfh,bed,out):
 	genome_size=0
 	for chr in ( 'chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8','chr9','chr10','chr11','chr12','chr13','chr14','chr15','chr16','chr17','chr18','chr19','chr20','chr21','chr22','chrX','chrY'):
 		chr_bed = bed.filter(lambda x: x.chrom==chr)
-		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bami,chrFlag)
+		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bam,chrFlag)
 		read_count = len(chr_stats)
 		read_length = []
 		insert_size = []
