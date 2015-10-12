@@ -4,9 +4,9 @@ Speedy copy number estimation of copy number variants through machine learning
 
 gtCNV integrates coverage, discordant paired-ends, and split reads in genotype prediction. 
 
-For a performance benchmark of gtCNV on 27 high coverage whole genomes (1000 Genomes Project) please refer to this poster presented at ASHG (2015)
-        
-https://www.dropbox.com/s/dfgdynf969xt0el/ashg_poster_gtCNV_update.pdf
+For a performance benchmark of gtCNV on 27 high coverage whole genomes (1000 Genomes Project) please refer to this poster presented at ASHG and WCPG (2015)
+
+http://www.dropbox.com/s/09abkh9jsihpe0l/wcpg_antaki_poster.pdf
 
 gtCNV was trained on 27 high coverage genomes with validated genotypes from the phase 3 intgrated structural variation release (doi:10.1038/nature15394;PMID:     26432246). 
 
