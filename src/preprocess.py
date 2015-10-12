@@ -96,7 +96,7 @@ if __name__ == '__main__':
 	parser.add_argument('-b','--bam', help='list of bam files with full path',required=True)
 	parser.add_argument('-c','--cpu', help='parallelize sample wise. 1 per cpu. DEFAULT=1',required=False,default=1,type=int)
 	parser.add_argument('-o','--out', help='outfile path',required=False,default="gtCNV_preprocessing.out",type=str)
-	parser.add_argument('-s','--seed', help='integer seed for genomic suffling',required=False,default=42,type=int)
+	parser.add_argument('-s','--seed', help='integer seed for genomic shuffling',required=False,default=42,type=int)
 
 	args = parser.parse_args()
 	bam = args.bam
