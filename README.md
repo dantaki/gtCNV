@@ -31,7 +31,9 @@ NA12878 | /home/usr/bam/NA12878_BWAMEM.bam | F
 HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
 
 ---
+
 **BAM files must be BWA-MEM aligned**
+
 ---
 
 #### BED file < -b > 
@@ -46,7 +48,9 @@ chr2 | 5000 | 5300 | DEL_ALU
 chr3 | 1000 | 2000 | DUP_mCNV
 
 ---
+
 **CNV type must contain either 'DEL' or 'DUP'**
+
 ---
 
 ## Options
