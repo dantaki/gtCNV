@@ -1,40 +1,52 @@
 gtCNV
 =====
-Genotyping Copy Nuber Variation with Machine Learning
+Genotyping Copy Nuber Variation with Machine Learning. A resource for human whole genome next-generation sequencing libraries. 
 
-## Installation
+## Getting Started
 
 clone the repository from github and run :grinning:
 
-gtCNV implements these python libraries
+``` 
+$ git clone git@github.com:dantaki/gtCNV.git
+```
+### Prerequisites 
+
+gtCNV requires **python 2.7**
+
+gtCNV has been tested on Linux and MacOS with (bioconda)[https://bioconda.github.io/]
+
+Required python libraries
 
 * numpy
 * pandas
 * pybedtools
 * pysam 
-    * version 0.8.4
 * scikit-learn
 
-## Usage
+### Installation
 
-gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
+No installation required. Ensure prerequisites are met and run :grinning:
 
-## Inputs
+```
+$ python gtCNV -i sample_info.in -b CNV.bed
+
+```
+### Inputs
 
 #### Sample information < -i >
 
-Must be tab-delimited
+##### Must be tab-delimited
 
 ID | BAM PATH | Gender [M/F]
 --- | --- | --- 
 NA12878 | /home/usr/bam/NA12878_BWAMEM.bam | F
 HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
 
-:heavy_exclamation_mark: **BAM files must be BWA-MEM aligned** :heavy_exclamation_mark:
+##### :heavy_exclamation_mark: **BAM files must be BWA-MEM aligned** :heavy_exclamation_mark:
 
 #### BED file < -b > 
 
-Must be tab-delimited
+##### Must be tab-delimited
 
 CHROM | START | END | TYPE [DEL/DUP]
 --- | --- | --- | --- 
@@ -43,7 +55,7 @@ chr2 | 3500 | 4500 | DUP
 chr2 | 5000 | 5300 | DEL_ALU
 chr3 | 1000 | 2000 | DUP_mCNV
 
-:heavy_exclamation_mark: **CNV type must contain either 'DEL' or 'DUP'** :heavy_exclamation_mark:
+#####:heavy_exclamation_mark: **CNV type must contain either 'DEL' or 'DUP'** :heavy_exclamation_mark:
 
 ## Options
 
@@ -57,6 +69,11 @@ Flag | Description
 -o | VCF output 
 --pre | Preprocessing output directory. Skips preprocessing if completed
 --feats | Feature output directory. Skips feature extraction if completed
+
+## Useage 
+
+gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
+
 
 ## Credits
 
@@ -78,6 +95,7 @@ Flag | Description
 * Jonathan Sebat
     * Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
 
+## More information
 
 gtCNV was trained on 27 high coverage genomes with validated genotypes from the phase 3 intgrated structural variation release (doi:10.1038/nature15394;PMID:     26432246). 
 ## License
