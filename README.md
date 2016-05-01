@@ -13,7 +13,7 @@ $ git clone git@github.com:dantaki/gtCNV.git
 ```
 ### Prerequisites 
 
-gtCNV requires **python 2.7**i :snake:
+gtCNV requires **python 2.7** :snake:
 
 gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github.io/)
 
