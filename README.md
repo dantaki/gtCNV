@@ -1,6 +1,6 @@
-gtCNV /play ohyeah
+gtCNV
 =====
-Genotyping Copy Nuber Variation by Machine Learning
+Genotyping Copy Nuber Variation by Machine Learning /play ohyeah
 
 ## Installation
 
