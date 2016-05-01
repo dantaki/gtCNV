@@ -68,7 +68,8 @@ Flag | Description
 
 ## History
 
-[gtCNV version 0.1 used in Brander et al. *AJHG* 2016 ([DOI](http://dx.doi.org/10.1016/j.ajhg.2016.02.018) PMID:    27018473) ](https://github.com/dantaki/gtCNV/tree/Version-0.1)
+[gtCNV version 0.1](https://github.com/dantaki/gtCNV/tree/Version-0.1) used in Brander et al. *AJHG* 2016 ([DOI](http://dx.doi.org/10.1016/j.ajhg.2016.02.018) PMID:    27018473)
+
 ## Credits
 
 #### Acknowlegements:
