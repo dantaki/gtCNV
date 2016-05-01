@@ -1,6 +1,67 @@
-# gtCNV
+gtCNV
+=====
+Genotyping Copy Nuber Variation by Machine Learning
 
-Speedy copy number estimation of copy number variants through machine learning
+## Installation
+
+clone the repository from github and run :grinning:
+
+gtCNV implements these python libraries
+
+* numpy
+* pandas
+* pybedtools
+* pysam <version 0.8.4>
+* scikit-learn
+
+## Usage
+
+gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV will return an annotated VCF with predicted copy number states.
+
+## Inputs
+
+#### Sample information < -i >
+
+Must be tab-delimited
+
+ID | BAM PATH | Gender [M/F]
+--- | --- | --- 
+NA12878 | /home/usr/bam/NA12878_BWAMEM.bam | F
+HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
+
+**BAM files must be BWA-MEM aligned**
+
+#### BED file 
+
+Must be tab-delimited
+
+CHROM | START | END | TYPE [DEL/DUP]
+--- | --- | --- | --- 
+chr1 | 1000 | 2000 | DEL 
+chr2 | 3500 | 4500 | DUP
+chr2 | 5000 | 5300 | DEL_ALU
+chr3 | 1000 | 2000 | DUP_mCNV
+
+## Options
+
+Flag | Description
+--- | ------------
+-i | Sample information input
+-b | BED file of CNVs
+-c | Number of samples to run in parallel. Limited by available CPUs
+-g | Reference Genome Build [ hg19, hg38 ]. Default is hg19
+-s | random seed for genomic shuffling. Used in preprocessing
+-o | VCF output 
+--pre | Preprocessing output directory. If preprocessing has already been completed
+--feats | Feature output directory. If feature extraction has already been completed
+
+## Credits
+
+####Author:
+
+* Danny Antaki
+    * dantaki@ucsd.edu
+* William Brandler
 
 gtCNV integrates coverage, discordant paired-ends, and split reads in genotype prediction. 
 
