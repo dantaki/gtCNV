@@ -1,6 +1,8 @@
 gtCNV
 =====
-Genotyping Copy Nuber Variation with Machine Learning. A resource for human whole genome next-generation sequencing libraries. 
+Genotyping Copy Nuber Variation with Machine Learning. 
+
+*A resource for human whole genome next-generation sequencing libraries.* 
 
 ## Getting Started
 
@@ -11,11 +13,11 @@ $ git clone git@github.com:dantaki/gtCNV.git
 ```
 ### Prerequisites 
 
-gtCNV requires **python 2.7**
+gtCNV requires **python 2.7**i :snake:
 
-gtCNV has been tested on Linux and MacOS with (bioconda)[https://bioconda.github.io/]
+gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github.io/)
 
-Required python libraries
+**Required python libraries**
 
 * numpy
 * pandas
@@ -28,12 +30,11 @@ Required python libraries
 No installation required. Ensure prerequisites are met and run :grinning:
 
 ```
-$ python gtCNV -i sample_info.in -b CNV.bed
-
+$ python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g hg19 --pre gtCNV_preprocessing/ ]
 ```
 ### Inputs
 
-#### Sample information < -i >
+#### 1. Sample information < -i >
 
 ##### Must be tab-delimited
 
@@ -44,7 +45,8 @@ HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
 
 ##### :heavy_exclamation_mark: **BAM files must be BWA-MEM aligned** :heavy_exclamation_mark:
 
-#### BED file < -b > 
+
+#### 2. BED file < -b > 
 
 ##### Must be tab-delimited
 
@@ -58,6 +60,12 @@ chr3 | 1000 | 2000 | DUP_mCNV
 #####:heavy_exclamation_mark: **CNV type must contain either 'DEL' or 'DUP'** :heavy_exclamation_mark:
 
 ## Options
+
+Display options
+
+```
+$ python gtCNV --help
+```
 
 Flag | Description
 --- | ------------
