@@ -11,12 +11,13 @@ gtCNV implements these python libraries
 * numpy
 * pandas
 * pybedtools
-* pysam <version 0.8.4>
+* pysam 
+    * version 0.8.4
 * scikit-learn
 
 ## Usage
 
-gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV will return an annotated VCF with predicted copy number states.
+gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
 
 ## Inputs
 
@@ -31,7 +32,7 @@ HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
 
 **BAM files must be BWA-MEM aligned**
 
-#### BED file 
+#### BED file < -b > 
 
 Must be tab-delimited
 
@@ -41,6 +42,8 @@ chr1 | 1000 | 2000 | DEL
 chr2 | 3500 | 4500 | DUP
 chr2 | 5000 | 5300 | DEL_ALU
 chr3 | 1000 | 2000 | DUP_mCNV
+
+**CNV type must contain either 'DEL' or 'DUP'**
 
 ## Options
 
@@ -52,8 +55,8 @@ Flag | Description
 -g | Reference Genome Build [ hg19, hg38 ]. Default is hg19
 -s | random seed for genomic shuffling. Used in preprocessing
 -o | VCF output 
---pre | Preprocessing output directory. If preprocessing has already been completed
---feats | Feature output directory. If feature extraction has already been completed
+--pre | Preprocessing output directory. Skips preprocessing if completed
+--feats | Feature output directory. Skips feature extraction if completed
 
 ## Credits
 
@@ -63,82 +66,19 @@ Flag | Description
     * dantaki@ucsd.edu
 * William Brandler
 
-gtCNV integrates coverage, discordant paired-ends, and split reads in genotype prediction. 
-
-For a performance benchmark of gtCNV on 27 high coverage whole genomes (1000 Genomes Project) please refer to this poster presented at ASHG and WCPG (2015)
-
-http://www.dropbox.com/s/09abkh9jsihpe0l/wcpg_antaki_poster.pdf
-
-gtCNV was trained on 27 high coverage genomes with validated genotypes from the phase 3 intgrated structural variation release (doi:10.1038/nature15394;PMID:     26432246). 
-
-Training sets are included under 'resources'; the CNV callset can be found here: ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/integrated_sv_map/ALL.wgs.integrated_sv_map_v2.20130502.svs.genotypes.vcf.gz
-
-Parallelization sample-wise is possible with the optional -c flag following an integer of the number of available CPUs
-
-requires python 2.7 and following python libraries: pysam, pybedtools, pandas, numpy, scikit-learn
-
-## Quick Start
-For a quick example read the HOWTO in the 'tutorial' directory
-
-         ############################# WARNING ############################
-
-         gtCNV currently only supports short-read libraries aligned to hg19
-
-            We are working on adding options for different genome builds
-
-            In practice, gtCNV has trouble genotyping CNVs <1kb in size
-
-                  We will resolve this issue in future versions
-
-## Inputs
-
-gtCNV requires the following:
-	
-        1. list of BAM files with full path
-	
-
-        2. BED file of CNV positions. Tab delimited. Formated as chr    start    end    type
-                CNV type must contain "DEL" or "DUP" to label losses and gains respectively 
-	
-## Useage
-
-To view options and help
-
-        $ gtCNV --help
-
-gtCNV is a two step process. You MUST run preprocessing before genotyping step
-
-1. Preprocessing:
-       	Estimate coverage, insert size, and read length distriubtions. 
-
-        $ gtCNV --preprocess -b bam.list [ --cpu INT, --out preprocessing.out, --seed INT ] 
-
-2. Genotyping: 
-        Copy number prediction with support vector machines
-	
-        $ gtCNV --genotype -b bam.list -i cnvs.bed --pre gtCNV_preprocessing_out/preprocessing.out [ --cpu INT, --out genotypes.out ] 
-
-
 ## History
 
-gtCNV version 0.1 
-
+[gtCNV version 0.1 used in Brander et al. *AJHG* 2016 ([DOI](http://dx.doi.org/10.1016/j.ajhg.2016.02.018) PMID:    27018473)](https://github.com/dantaki/gtCNV/tree/Version-0.1)
 ## Credits
 
-Author: 
-        
-        Danny Antaki
-	
-        dantaki@ucsd.edu
+#### Acknowlegements:
 
-Acknowlegements:
-        
-        William Brandler
-	
-        Jonathan Sebat
-	
-        Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
+* Prateek Tandon 
+* Jonathan Sebat
+    * Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
 
+
+gtCNV was trained on 27 high coverage genomes with validated genotypes from the phase 3 intgrated structural variation release (doi:10.1038/nature15394;PMID:     26432246). 
 ## License
 
 gtCNV
