@@ -114,7 +114,7 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
    * A copy of the raw training is located here ` gtCNV/resources/training_sets/gtCNV_raw_training-sets.zip`
 
 * gtCNV performs a preprocessing step before genotyping; preprocessing output is located in ` gtCNV/gtCNV_preprocessing/` directory. 
-   * You may wish to run gtCNV on new postions using the same samples. 
+   * You may wish to run gtCNV on new positions using the same samples. 
    * Pass the preprocessing directory in the command to skip this step 
       * `python gtCNV -i sample_info.in -b new_cnv.bed --pre gtCNV_preprocessing/`
 
