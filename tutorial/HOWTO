@@ -1,14 +1,6 @@
-#This quick tutorial is purely an example. The downsampled BAM file of NA12878 chr22 does not contain adequate coverage for accurate CNV genotyping
+#THIS TUTORIAL IS AN EXAMPLE. THE BAM FILE HAS BEEN DOWN SAMPLED FOR STORAGE REQUIREMENTS
 
-## PREPROCESSING 
-##you MUST run this step first
+#GENOTYPES REPORTED IN THIS TUTORIAL MAY NOT BE ACCURATE
 
-$ gtCNV --preprocess -b tutorial/bam.list -o tutorial_preprocessing.out
-
-# output is located in 'gtCNV_preprocessing_out' directory
-
-## GENOTYPING 
-
-$ gtCNV --genotype -b tutorial/bam.list -i tutorial/1kg_p3_integratedSV_cnv_chr22.bed --pre gtCNV_preprocessing_out/tutorial_preprocessing.out -o tutorial_cnv.out
-
-# output is located in 'gtCNV_genotyping_out' directory. If the file exists, gtCNV will append to the file.
+## COMMAND
+$ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
