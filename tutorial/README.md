@@ -8,5 +8,5 @@ This tutorial is an example. The BAM file has been down sampled for storage requ
 ## Getting started
 ```
 cd gtCNV/
-$ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
+python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
 ```
