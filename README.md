@@ -1,5 +1,13 @@
 gtCNV
 =====
+        __________________   ____    __
+_______ __  /__  ____/__  | / /_ |  / /
+__  __ `/  __/  /    __   |/ /__ | / /
+_  /_/ // /_ / /___  _  /|  / __ |/ /
+_\__, / \__/ \____/  /_/ |_/  _____/
+/____/
+Version 1.0
+
 Genotyping Copy Nuber Variation with Machine Learning. 
 
 *A resource for whole genome next-generation sequencing libraries.* 
