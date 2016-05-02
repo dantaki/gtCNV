@@ -39,7 +39,7 @@ gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github
 * scikit-learn
 
 
-   pybedtools requires bedtools. Version [2.25.0](https://github.com/arq5x/bedtools2/releases) or later is supported for gtCNV.
+:wrench: pybedtools requires bedtools. **Version [2.25.0](https://github.com/arq5x/bedtools2/releases) or later is supported for gtCNV.**
 
 ### Installation
 
