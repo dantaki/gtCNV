@@ -8,21 +8,21 @@ Genotyping Copy Nuber Variation with Machine Learning.
 
 Download from github
 ``` 
-$ git clone git@github.com:dantaki/gtCNV.git
+git clone git@github.com:dantaki/gtCNV.git
 ```
 Download resource files. Available compressed files include .tar.gz and .zip 
 
 :floppy_disk: .tar.gz
 ```
-$ cd gtCNV/
-$ wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
-$ tar zxvf gtCNV_v1.0_resources.tar.gz
+cd gtCNV/
+wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
+tar zxvf gtCNV_v1.0_resources.tar.gz
 ```
 :floppy_disk: .zip
 ```
-$ cd gtCNV/ 
-$ wget https://www.dropbox.com/s/k6r3c8rynur2hjo/gtCNV_v1.0_resources.zip
-$ unzip gtCNV_v1.0_resources.zip
+cd gtCNV/ 
+wget https://www.dropbox.com/s/k6r3c8rynur2hjo/gtCNV_v1.0_resources.zip
+unzip gtCNV_v1.0_resources.zip
 ```
 ### Prerequisites 
 
