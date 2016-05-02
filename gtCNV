@@ -32,7 +32,7 @@ if __name__ == '__main__':
 	parser.add_argument('-c','--cpu', help='Parallelize sample-wise. 1 per cpu',required=False,default=1,type=int)
         parser.add_argument('-g',  help='Reference genome build [ hg19, hg38 ]',required=False,default='hg19',type=str)
         parser.add_argument('-s','--seed', help='Preprocessing: integer seed for genome shuffling',required=False,default=42,type=int)
-	parser.add_argument('-o','--out', help='outfile path',required=False,default="gtCNV_genotypes.txt",type=str)
+	parser.add_argument('-o','--out', help='outfile path',required=False,default="gtCNV_genotypes.vcf",type=str)
         parser.add_argument('--pre', help='Preprocessing output directory',required=False,default=None)
 	parser.add_argument('--feats', help='Feature output directory',required=False,default=None)
 	args = parser.parse_args()
