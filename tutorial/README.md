@@ -1,6 +1,12 @@
-#THIS TUTORIAL IS AN EXAMPLE. THE BAM FILE HAS BEEN DOWN SAMPLED FOR STORAGE REQUIREMENTS
+gtCNV Tutorial
+==============
 
-#GENOTYPES REPORTED IN THIS TUTORIAL MAY NOT BE ACCURATE
+This tutorial is an example. The BAM file has been down sampled for storage requirements. 
 
-## COMMAND
+*Do not expect the resulting genotypes to be accurate*
+
+## Getting started
+```
+cd gtCNV/
 $ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
+```
