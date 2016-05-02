@@ -54,19 +54,20 @@ python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g h
 
 #### 1. Sample information < -i >
 
-##### Must be tab-delimited
+##### Must be tab-delimited. No headers
+
+##### :heavy_exclamation_mark: **BAM files must be BWA-MEM aligned** :heavy_exclamation_mark:
 
 ID | BAM PATH | Gender [M/F]
 --- | --- | --- 
 NA12878 | /home/usr/bam/NA12878_BWAMEM.bam | F
 HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
 
-##### :heavy_exclamation_mark: **BAM files must be BWA-MEM aligned** :heavy_exclamation_mark:
-
-
 #### 2. BED file < -b > 
 
-##### Must be tab-delimited
+##### Must be tab-delimited. No headers
+
+#####:heavy_exclamation_mark: **CNV type must contain either 'DEL' or 'DUP'** :heavy_exclamation_mark:
 
 CHROM | START | END | TYPE [DEL/DUP]
 --- | --- | --- | --- 
@@ -74,8 +75,6 @@ chr1 | 1000 | 2000 | DEL
 chr2 | 3500 | 4500 | DUP
 chr2 | 5000 | 5300 | DEL_ALU
 chr3 | 1000 | 2000 | DUP_mCNV
-
-#####:heavy_exclamation_mark: **CNV type must contain either 'DEL' or 'DUP'** :heavy_exclamation_mark:
 
 ## Options
 
