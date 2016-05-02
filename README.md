@@ -10,7 +10,7 @@ Download from github
 ``` 
 $ git clone git@github.com:dantaki/gtCNV.git
 ```
-Download resource files. Availble compressed files include .tar.gz and .zip 
+Download resource files. Available compressed files include .tar.gz and .zip 
 
 :floppy_disk: .tar.gz
 ```
