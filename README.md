@@ -122,7 +122,7 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
    * BAM files must be BWA-MEM aligned to annotate split-reads. 
    * Raw features are located in the ` gtCNV/gtCNV_genotypes/` directory. 
 
-* CNVs with high coverages (normalized coverage >5 /estimated autosome copy number > 10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
+* CNVs with high coverages (normalized coverage >5 /estimated autosome copy number >10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
 
 * Output is in VCF format. Positions are annotated based on their overlap to genes, repeats, and 1000 Genomes phase 3 CNV
 
