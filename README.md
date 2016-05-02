@@ -6,10 +6,22 @@ Genotyping Copy Nuber Variation with Machine Learning.
 
 ## Getting Started
 
-clone the repository from github and run :grinning:
-
+Download from github
 ``` 
 $ git clone git@github.com:dantaki/gtCNV.git
+```
+Download resource files. Availble compressed files include .tar.gz and .zip 
+* .tar.gz
+```
+$ cd gtCNV/
+$ wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
+$ tar zxvf gtCNV_v1.0_resources.tar.gz
+```
+* .zip
+```
+$ cd gtCNV/ 
+$ wget https://www.dropbox.com/s/k6r3c8rynur2hjo/gtCNV_v1.0_resources.zip
+$ unzip gtCNV_v1.0_resources.zip
 ```
 ### Prerequisites 
 
@@ -27,7 +39,7 @@ gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github
 
 ### Installation
 
-No installation required. Ensure prerequisites are met and run :grinning:
+No installation required. Ensure resource files are downloaded and prerequisites are met and run :grinning:
 
 ```
 $ python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g hg19 --pre gtCNV_preprocessing/ ]
