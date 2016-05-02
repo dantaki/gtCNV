@@ -124,7 +124,20 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
 
 * CNVs with high coverages (normalized coverage >5 /estimated autosome copy number >10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
 
-* Output is in VCF format. Positions are annotated based on their overlap to genes, repeats, and 1000 Genomes phase 3 CNV
+* Output is in VCF format. 
+   * Median Phred-adjusted non-reference likelihoods are reported in the QUAL column
+   * Positions are annotated based on their overlap to genes, repeats, and 1000 Genomes phase 3 CNV
+
+* Suggested filters in the VCF were determined using [svtoolkit intensity rank sum annotator](http://gatkforums.broadinstitute.org/gatk/discussion/2715/documentation-for-intensityranksum-annotator)
+   * deletions: PASS at >= 12 median non-reference likelihood 
+      * FDR ~ 1% at 5% allele frequency
+   * duplications: PASS at >= 10 median non-reference likelihood
+      * FDR ~ 3% at 5% allele frequency
+
+* **NOTE:** non-allelic homologous recombination derived duplications are problematic for gtCNV
+   * We recommend a more conservative median non-reference cutoff
+      * NAHR duplications: PASS at >= 6 median non-reference likelihood
+   * gtCNV Version 2.0 will address this issue. 
 
 ## Credits
 
@@ -161,3 +174,7 @@ gtCNV
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Contact
+------
+dantaki@ucsd.edu 
