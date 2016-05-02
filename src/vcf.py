@@ -147,7 +147,7 @@ def geneOverlap(cnv,genos,gen):
                                         genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
 	return genes	
-def annotate(genos,gen,REF,NON,GQ,OFH):
+def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 	genes={}
 	cyto={}
 	mei={}
@@ -156,7 +156,7 @@ def annotate(genos,gen,REF,NON,GQ,OFH):
 	AF={}
 	GT={}
 	refcnt={}
-	FLAGS=['unmapable','STR','segDup','abparts','centromere']
+	males = [k for k in sex if sex[k] == 'M']
 	IID = list(set([x[5] for x in genos]))
 	IID.sort(key=str.lower)
 	cnv=Bed(list(set([(x[0],x[1],x[2]) for x in genos]))).sort()
@@ -167,9 +167,7 @@ def annotate(genos,gen,REF,NON,GQ,OFH):
 	genes=geneOverlap(cnv,genos,gen)
 	for x in genos:
 		k = (x[0],x[1],x[2],x[4])
-		if GQ.get((x[0],x[1],x[2],x[4],x[5]))==None:
-			GT[(k,x[5])]='0/0' 
-		else:
+		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:
 			lik=format(float(x[-2]),'.2f')
 			if '1' not in x[9]: 
 				if refcnt.get(k)==None: refcnt[k]=1
@@ -182,6 +180,14 @@ def annotate(genos,gen,REF,NON,GQ,OFH):
 				lik=format(float(x[-1]),'.2f')
 			v = ':'.join((x[9],format(float(x[7]),'.2f'),format(float(x[8]),'.2f'),format(float(x[6]),'.2f'),lik,GQ[(x[0],x[1],x[2],x[4],x[5])]))	
 			GT[(k,x[5])]=v
+	for x in genos:
+		k = (x[0],x[1],x[2],x[4])
+		for iid in IID:
+			if GT.get((k,iid))==None:
+				if x[0] == 'chrY' and iid not in males: GT[(k,iid)]='.'
+				elif x[0] == 'chrY' and iid in males: GT[(k,iid)]='0' 
+				elif x[0] == 'chrX' and iid in males and hemi.get(k) != None: GT[(k,iid)]='0'
+				else: GT[(k,iid)]='0/0'
 	VCF=[]
 	CNV_ID=1
 	for (c,s,e,cl) in Bed(list(set([(x[0],x[1],x[2],x[4]) for x in genos]))).sort():
