@@ -109,7 +109,7 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
 
 * gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
 
-* The training set included 27 high coverage genomes for deletions and 2,503 low coverage genomes for duplications from the [1000 Genomes Project](http://www.1000genomes.org/).Validated genotypes were obtained from the [phase 3 integrated structural variation call set](ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase3/integrated_sv_map/ALL.wgs.integrated_sv_map_v2.20130502.svs.genotypes.vcf.gz).([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246). 
+* The training set included 27 high coverage genomes for deletions and 2,503 low coverage genomes for duplications from the [1000 Genomes Project](http://www.1000genomes.org/).Validated genotypes were obtained from the [phase 3 integrated structural variation call set](ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase3/integrated_sv_map/ALL.wgs.integrated_sv_map_v2.20130502.svs.genotypes.vcf.gz)([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246). 
 
    * A copy of the raw training is located here ` gtCNV/resources/training_sets/gtCNV_raw_training-sets.zip`
 
