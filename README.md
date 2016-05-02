@@ -124,7 +124,7 @@ gtCNV is designed for human whole genome next-generation sequencing libraries. G
 
 ## Credits
 
-#### Acknowlegements:
+#### Acknowledgements: 
 
 * Prateek Tandon 
 * Jonathan Sebat
