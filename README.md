@@ -91,7 +91,7 @@ Flag | Description
 -b | BED file of CNVs
 -c | Number of samples to run in parallel. Limited by available CPUs
 -g | Reference Genome Build [ hg19, hg38 ]. Default is hg19
--s | random seed for genomic shuffling. Used in preprocessing
+-s | random seed for genome shuffling. Used in preprocessing
 -o | VCF output 
 --pre | Preprocessing output directory. Skips preprocessing if completed
 --feats | Feature output directory. Skips feature extraction if completed
