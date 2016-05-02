@@ -70,7 +70,7 @@ Author:
 	
         dantaki@ucsd.edu
 
-Acknowlegements:
+Acknowledgements:
         
         William Brandler
 	
