@@ -11,13 +11,13 @@ Download from github
 $ git clone git@github.com:dantaki/gtCNV.git
 ```
 Download resource files. Availble compressed files include .tar.gz and .zip 
-* .tar.gz
+:floppy_disk: .tar.gz
 ```
 $ cd gtCNV/
 $ wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
 $ tar zxvf gtCNV_v1.0_resources.tar.gz
 ```
-* .zip
+:floppy_disk: .zip
 ```
 $ cd gtCNV/ 
 $ wget https://www.dropbox.com/s/k6r3c8rynur2hjo/gtCNV_v1.0_resources.zip
