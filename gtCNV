@@ -134,6 +134,6 @@ if __name__ == '__main__':
 	for iid in feats_files:
 		with open(feats_files[iid]) as f:
 			for l in f: feats.append(tuple(l.rstrip('\n').split('\t')))
-	genos,REF,NON,GQ = genotype(feats,gender_dict,gen)
-	annotate(genos,gen,REF,NON,GQ,ofh)
+	genos,REF,NON,GQ,HEMI = genotype(feats,gender_dict,gen)
+	annotate(genos,gen,REF,NON,GQ,ofh,gender_dict,HEMI)
 	print '-------- GENOTYPING COMPLETE --------\n    time elapsed: '+str(timedelta(seconds=int(time())-init_time))+'\n-------------------------------------\n'
