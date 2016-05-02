@@ -2,7 +2,7 @@ gtCNV
 =====
 Genotyping Copy Nuber Variation with Machine Learning. 
 
-*A resource for human whole genome next-generation sequencing libraries.* 
+*A resource for whole genome next-generation sequencing libraries.* 
 
 ## Getting Started
 
@@ -34,13 +34,15 @@ gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github
 
 * numpy
 * pandas
-* pybedtools
-* pysam 
+* pybedtools 
+* pysam **0.9.0** 
 * scikit-learn
+
+**pybedtools requires bedtools. Version [2.25.0](https://github.com/arq5x/bedtools2/releases) or later is required for gtCNV.**
 
 ### Installation
 
-No installation required. Ensure resource files are downloaded and prerequisites are met and run :grinning:
+Check resource files are downloaded and prerequisites are met. Now run! :grinning:
 
 ```
 $ python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g hg19 --pre gtCNV_preprocessing/ ]
@@ -90,6 +92,10 @@ Flag | Description
 -o | VCF output 
 --pre | Preprocessing output directory. Skips preprocessing if completed
 --feats | Feature output directory. Skips feature extraction if completed
+
+## Tutorial
+
+Refer to README.md in tutorial/ directory for help
 
 ## Usage 
 
