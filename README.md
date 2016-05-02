@@ -100,6 +100,12 @@ Flag | Description
 
 Refer to README.md in tutorial/ directory for help
 
+```
+#After downloading and decompressing the resource files
+cd gtCNV/
+python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
+```
+
 ## Usage 
 
 gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
