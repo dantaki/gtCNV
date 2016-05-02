@@ -34,10 +34,17 @@ def depth_of_coverage(cnv_list,bamfh,chrFlag,read_length):
         for (c,s,e) in cnv_list:
                 if chrFlag == False: c = c.replace('chr','')
                 region= str(c+':'+s+'-'+e)
-                depth_result = pysam.depth( "-Q" "40", "-r", region, "-l", str(read_length-10), bamfh)
-                for x in depth_result:
-                        r = x.rstrip('\n').split('\t')
-                        pos_doc[int(r[1])]=int(r[2])
+                depth_result = pysam.depth("-a", "-Q" "40", "-r", region, "-l", str(read_length-10), bamfh)
+		str_flag=0
+		if type(depth_result) == str: 
+			depth_result = depth_result.split('\n')
+			str_flag=1
+		for x in depth_result:
+			r = x.rstrip('\n').split('\t')
+                        if str_flag == 1:
+				if len(r)!=3: continue
+				pos_doc[int(r[1])]=int(r[2])
+			else: pos_doc[int(r[1])]=int(r[2])
         if len(pos_doc) !=0:
                 temp=[]
                 for x in pos_doc: temp.append(float(pos_doc[x]))
