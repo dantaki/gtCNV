@@ -43,10 +43,12 @@ gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github
 
 ### Installation
 
-Check resource files are downloaded and prerequisites are met. Now run! :grinning:
+Download resource files and the correct versions of bedtools and pysam. 
+
+Now run! :grinning:
 
 ```
-$ python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g hg19 --pre gtCNV_preprocessing/ ]
+python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g hg19 --pre gtCNV_preprocessing/ ]
 ```
 ### Inputs
 
@@ -80,7 +82,7 @@ chr3 | 1000 | 2000 | DUP_mCNV
 Display options
 
 ```
-$ python gtCNV --help
+python gtCNV --help
 ```
 
 Flag | Description
