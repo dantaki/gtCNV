@@ -107,7 +107,21 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
 
 ## Usage 
 
-gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
+* gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
+
+* The training set included 27 high coverage genomes for deletions and 2503 low coverage genomes for duplications from the [1000 Genomes Project](http://www.1000genomes.org/). Validated genotypes were obtained from the [phase 3 intgrated structural variation call set](ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase3/integrated_sv_map/ALL.wgs.integrated_sv_map_v2.20130502.svs.genotypes.vcf.gz)([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246). 
+
+   * A copy of the raw training is located here ` gtCNV/resources/training_sets/gtCNV_raw_training-sets.zip`
+
+* gtCNV performs a preprocessing step before genotyping; preprocessing output is located in ` gtCNV/gtCNV_preprocessing/` directory. 
+   * You may wish to run gtCNV on new postions using the same samples. 
+   * Pass the preprocessing directory in the command to skip this step `python gtCNV -i sample_info.in -b cnv.bed --pre gtCNV_preprocessing/`
+
+* Features for genotyping include coverage, discordant paired-ends, and split reads. 
+   * BAM files must be BWA-MEM aligned to annotate split-reads. 
+   * Raw features are located in the ` gtCNV/gtCNV_genotypes/` directory. 
+
+* CNVs with high coverages (normalized coverage >5 /estimated autosome copy number > 10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
 
 
 ## Credits
@@ -130,9 +144,6 @@ gtCNV is designed for human whole genome next-generation sequencing libraries. G
 * Jonathan Sebat
     * Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
 
-## More information
-
-gtCNV was trained on 27 high coverage genomes with validated genotypes from the phase 3 intgrated structural variation release (doi:10.1038/nature15394;PMID:     26432246). 
 ## License
 
 gtCNV
