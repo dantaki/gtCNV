@@ -68,7 +68,7 @@ def gtCNV_preprocess (iid,bamfh,bed,out):
 			read_length.append(rl)
 			insert_size.append(isz)
 		if read_count == 0: 
-			ofh.write('\t'.join(iid,chr,'0','0','0','0',str(chr_size))+'\n')
+			ofh.write('\t'.join(map(str,(iid,chr,'0','0','0','0',chr_size)))+'\n') 
 		else : 
 			norm = (float(read_count)/float(chr_size))*np.median(read_length)
 			out = ( iid,chr,str(norm),
