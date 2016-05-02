@@ -90,7 +90,7 @@ Flag | Description
 --pre | Preprocessing output directory. Skips preprocessing if completed
 --feats | Feature output directory. Skips feature extraction if completed
 
-## Useage 
+## Usage 
 
 gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
 
