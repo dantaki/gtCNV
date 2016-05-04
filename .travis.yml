@@ -23,3 +23,5 @@ install:
   - conda config --add channels r
   - conda config --add channels bioconda
   - conda install numpy scipy pandas scikit-learn pybedtools pysam 
+script:
+  - python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o test.vcf
