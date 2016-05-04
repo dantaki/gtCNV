@@ -4,7 +4,6 @@ python:
 before_install:
   - wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
   - tar zxvf gtCNV_v1.0_resources.tar.gz
-  - mv resources/ $TRAVIS_BUILD_DIR/
     # Install bedtools
   - git clone https://github.com/arq5x/bedtools2.git
   - cd bedtools2
