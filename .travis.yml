@@ -1,4 +1,4 @@
 language: python
 python:
   - "2.7"
-install: "pip install pysam pybedtools scikit-learn numpy pandas"
+install: "pip install pysam pybedtools scikit-learn numpy pandas scipy"
