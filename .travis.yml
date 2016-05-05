@@ -27,3 +27,5 @@ install:
 script:
   - cd gtCNV
   - python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o test.vcf
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
