@@ -4,6 +4,7 @@ python:
 before_install:
   - wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
   - tar zxvf gtCNV_v1.0_resources.tar.gz
+  - pwd
     # Install bedtools
   - git clone https://github.com/arq5x/bedtools2.git
   - cd bedtools2
@@ -25,5 +26,7 @@ install:
   - conda install numpy scipy pandas scikit-learn pybedtools pysam 
 script:
   - pwd
-  - ls $HOME/gtCNV
-  - python $HOME/gtCNV/test.py -i $HOME/gtCNV/tutorial/tutorial.in -b $HOME/gtCNV/tutorial/tutorial.bed -o test.vcf
+  - ls 
+  - cd gtCNV
+  - ls
+  - python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o test.vcf
