@@ -2,7 +2,7 @@ gtCNV
 =====
 [![Build Status](https://travis-ci.org/dantaki/gtCNV.svg?branch=master)](https://travis-ci.org/dantaki/gtCNV)
 
-Genotyping Copy Nuber Variation with Machine Learning. 
+Genotype Copy Number Variation with Machine Learning. 
 
 *A resource for whole genome next-generation sequencing libraries.* 
 
