@@ -101,8 +101,8 @@ if __name__ == '__main__':
 				gtofh = bam_id+'_gtCNV_features.txt'
 				feats_files[bam_id]=os.getcwd()+'/gtCNV_genotypes/'+gtofh
 				pool.apply_async(extract_feats, args=(bam_id,bam_dict[bam_id],bed,prefh,gender_dict[bam_id],gtofh,gen) )
-                		pool.close()
-                		pool.join()
+                	pool.close()
+                	pool.join()
 		else:
 			for bam_id in bam_dict:
 				if preprocess_files.get(bam_id) == None:
