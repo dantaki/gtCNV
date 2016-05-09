@@ -4,7 +4,7 @@ def is_discordant(read,windows,ci,matepos):
         ((s1,e1),(s2,e2)) = windows
         if abs(read.tlen) >= ci:
                 """insert size is greater than 5MAD from median"""
-                if (int(s1) <= read.pos+1 <= int(e1) and int(s2) <= int(matepos)+1 <= int(e2)) or (int(s2) <= read.pos+1 <= int(e2) and int(s1) <= int(matepos)+1 <= int(e1)): 
+                if (int(s1) <= read.pos+1 <= int(e1) and int(s2) <= int(matepos)+1 <= int(e2)) or (int(s2) <= read.pos+1 <= int(e2) and int(s1) <= int(matepos)+1 <= int(e1)):
 			return True
                 else:
                         return False
@@ -18,7 +18,7 @@ def is_split(read,windows,c):
                         return False
                 else:
                         second_align[1] = int(second_align[1])
-                        if ( ((int(s1) <= read.pos+1 <= int(e1)) and (int(s2) <= second_align[1] <= int(e2))) 
+                        if ( ((int(s1) <= read.pos+1 <= int(e1)) and (int(s2) <= second_align[1] <= int(e2)))
 			     or ((int(s2) <= read.pos+1 <= int(e2)) and (int(s1) <= second_align[1] <= int(e1)))):
                                 """secondary alignment must be near the opposite breakpoint of the primary alignment"""
                                 return True
@@ -30,7 +30,7 @@ def discordant_split_cnv(flank_list,bam,size,ci,windows,chrFlag):
         split_count=0
         concordant_count=0
         if flank_list==None: return (0,0,0)
-	else: 
+	else:
 		for (c,s,e) in flank_list:
                 	if chrFlag == False : c = c.replace("chr","")
                 	region = str(c+":"+s+"-"+e)

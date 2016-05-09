@@ -53,5 +53,5 @@ def filter_calls(cnv,gen):
 		master_cnv[annot_dict[int(i)]]=(cnv_span,flank_span,windows)
 		master_cnv_list.append(annot_dict[int(i)])
 	final_sorted=[]
-	for i in pbed.BedTool(master_cnv_list).sort(): final_sorted.append((i[0],i[1],i[2],i[3])) 
-	return final_sorted,master_cnv		
+	for i in pbed.BedTool(master_cnv_list).sort(): final_sorted.append((i[0],i[1],i[2],i[3]))
+	return final_sorted,master_cnv
