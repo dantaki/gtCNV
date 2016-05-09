@@ -1,6 +1,6 @@
 gtCNV
 =====
-[![Build Status](https://travis-ci.org/dantaki/gtCNV.svg?branch=master)](https://travis-ci.org/dantaki/gtCNV)
+[![Build Status](https://travis-ci.org/dantaki/gtCNV.svg?branch=master)](https://travis-ci.org/dantaki/gtCNV) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/49efbe9c0d144c7ba77ee8e77b74f0d8)](https://www.codacy.com/app/dantaki/gtCNV?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dantaki/gtCNV&amp;utm_campaign=Badge_Grade)
 
 Genotype Copy Number Variation with Machine Learning. 
 
