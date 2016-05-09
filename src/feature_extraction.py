@@ -34,7 +34,6 @@ def extract_feats(iid,bamfh,bedfh,prefh,gender,out,gen):
 	pre = Prepro(prefh)
 	insert_size = pre.insert_size[iid]
 	insert_mad = pre.insert_mad[iid]
-	read_length = pre.read_len[iid]
 	outdir = os.getcwd()+'/gtCNV_genotypes/'
 	if not os.path.exists(outdir): os.makedirs(outdir)
 	ofh = open(outdir+out,'w')

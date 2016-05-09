@@ -13,7 +13,6 @@ def filter_calls(cnv,gen):
         """add unique annotation to each CNV"""
         tag = 1
         annot_cnv=[]
-        flank_pos={}
         start_flank=[]
         end_flank=[]
         for r in cnv:

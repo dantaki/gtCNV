@@ -22,7 +22,6 @@ def gtCNV_stats(bed,bam,chrFlag):
 	read_stats = {}
 	chr_size=0
 	bed = bed.merge()
-	rc={}
 	for i in bed:
 		(c,s,e) = i
 		if chrFlag == False: c = c.replace("chr","")
