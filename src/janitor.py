@@ -10,7 +10,7 @@ def check_in(fh):
 		with open(fh) as f:
 			for l in f:
 				r = l.rstrip('\n').split('\t')
-				if len(r) != 3: 
+				if len(r) != 3:
 					print 'ERROR '+fh+' must be tab delimited\nFormat:\nIID    BAM file path   Gender[ M | F ]'
 					sys.exit()
 				else:
@@ -23,14 +23,14 @@ def check_in(fh):
 						sys.exit()
 def check_bed(fh):
 	chroms = [ 'chr1','chr2','chr3','chr4','chr5','chr6',
-                   'chr7','chr8','chr9','chr10','chr11','chr12',
-                   'chr13','chr14','chr15','chr16','chr17','chr18',
-                   'chr19','chr20','chr21','chr22','chrX','chrY'
-                 ]
+		   'chr7','chr8','chr9','chr10','chr11','chr12',
+		   'chr13','chr14','chr15','chr16','chr17','chr18',
+		   'chr19','chr20','chr21','chr22','chrX','chrY'
+		 ]
 	if not os.path.isfile(fh):
 		print 'ERROR '+fh+' not found'
 		sys.exit()
-	else: 
+	else:
 		with open(fh) as f:
 			for l in f:
 				r = l.rstrip('\n').split('\t')
@@ -38,7 +38,7 @@ def check_bed(fh):
 				s=r[1]
 				e=r[2]
 				cl=r[3]
-				if c not in chroms: 
+				if c not in chroms:
 					print 'ERROR '+c+' not accepted chromosome format\nAccepted chromosomes:\n'
 					print [k for k in chroms]
 					sys.exit()

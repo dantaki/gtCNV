@@ -1,5 +1,4 @@
 #!/usr/env python
-import pysam
 def is_discordant(read,windows,ci,matepos):
         """returns True if read is discordant"""
         ((s1,e1),(s2,e2)) = windows

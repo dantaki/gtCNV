@@ -1,152 +1,151 @@
 #!/usr/env python
 from pybedtools import BedTool as Bed
-from numpy import median
 import datetime
 def cytobandOverlap(cnv,gen):
 	cyto={}
 	for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect('resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):
 		if cyto.get((c,s,e))==None: cyto[(c,s,e)]=c2.replace('chr','')+band
-               	else: cyto[(c,s,e)]=cyto[(c,s,e)]+'|'+c2.replace('chr','')+band
+	       	else: cyto[(c,s,e)]=cyto[(c,s,e)]+'|'+c2.replace('chr','')+band
 	return cyto
 def flagsOverlap(cnv,gen):
 	flags={}
 	for x  in cnv.intersect('resources/annotation_files/{}_flags.bed'.format(gen),wao=True):
-                if(int(x[-1])==0): continue
-                (c,s,e,c2,s2,e2,flag,ovr) = x
-                if flags.get((c,s,e,flag))==None: flags[(c,s,e,flag)]=int(ovr)
-                else: flags[(c,s,e,flag)]+=int(ovr)
+		if(int(x[-1])==0): continue
+		(c,s,e,c2,s2,e2,flag,ovr) = x
+		if flags.get((c,s,e,flag))==None: flags[(c,s,e,flag)]=int(ovr)
+		else: flags[(c,s,e,flag)]+=int(ovr)
 	for (c,s,e,f) in flags: flags[(c,s,e,f)]= float(flags[(c,s,e,f)])/(int(e)-int(s)+1.0)
 	return flags
 def meiOverlap(cnv,gen):
 	mei={}
 	maxovr={}
-        for x in cnv.intersect('resources/annotation_files/{}_MEI.bed'.format(gen), f=0.8, F=0.8, wao=True,):
-                if int(x[-1])==0: continue
-                elif maxovr.get((x[0],x[1],x[2]))==None:
-                        maxovr[(x[0],x[1],x[2])]=int(x[-1])
-                        mei[(x[0],x[1],x[2])]=x[-2]
-                elif maxovr.get((x[0],x[1],x[2])) != None and int(x[-1]) > maxovr[(x[0],x[1],x[2])]:
-                        maxovr[(x[0],x[1],x[2])]=int(x[-1])
-                        mei[(x[0],x[1],x[2])]=x[-2]
-                else: continue
+	for x in cnv.intersect('resources/annotation_files/{}_MEI.bed'.format(gen), f=0.8, F=0.8, wao=True,):
+		if int(x[-1])==0: continue
+		elif maxovr.get((x[0],x[1],x[2]))==None:
+			maxovr[(x[0],x[1],x[2])]=int(x[-1])
+			mei[(x[0],x[1],x[2])]=x[-2]
+		elif maxovr.get((x[0],x[1],x[2])) != None and int(x[-1]) > maxovr[(x[0],x[1],x[2])]:
+			maxovr[(x[0],x[1],x[2])]=int(x[-1])
+			mei[(x[0],x[1],x[2])]=x[-2]
+		else: continue
 	return mei
 def thouGenOverlap(genos,gen):
 	thouGen={}
 	dels = Bed([(x[0],x[1],x[2],x[4]) for x in genos if 'DEL' in x[4]]).sort()
-        dups = Bed([(x[0],x[1],x[2],x[4]) for x in genos if 'DUP' in x[4]]).sort()
+	dups = Bed([(x[0],x[1],x[2],x[4]) for x in genos if 'DUP' in x[4]]).sort()
 	for x in dels.intersect('resources/annotation_files/{}_1000Genomes_DEL.bed'.format(gen), f=0.5, F=0.5, wao=True):
-                if int(x[-1])==0: continue
-                else: thouGen[(x[0],x[1],x[2],x[3])]=(x[-2],format(float(x[-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
+		if int(x[-1])==0: continue
+		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[-2],format(float(x[-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
 	for x in dups.intersect('resources/annotation_files/{}_1000Genomes_DUP.bed'.format(gen), f=0.5, F=0.5, wao=True):
-                if int(x[-1])==0: continue
-                else: thouGen[(x[0],x[1],x[2],x[3])]=(x[-2],format(float(x[-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
+		if int(x[-1])==0: continue
+		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[-2],format(float(x[-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
 	return thouGen
 def geneOverlap(cnv,genos,gen):
 	genes={}
 	starts=Bed([(x[0],x[1],x[1]) for x in genos]).sort()
-        ends=Bed([(x[0],x[2],x[2]) for x in genos]).sort()
-        GENEFH='resources/annotation_files/{}_genes.bed'.format(gen)
-        for (c,s,e,c2,s2,e2,gene) in starts.intersect(GENEFH,wa=True,wb=True):
+	ends=Bed([(x[0],x[2],x[2]) for x in genos]).sort()
+	GENEFH='resources/annotation_files/{}_genes.bed'.format(gen)
+	for (c,s,e,c2,s2,e2,gene) in starts.intersect(GENEFH,wa=True,wb=True):
 		x = gene.split(',')
-                gene = ','.join(map(str,(x[0],x[2],x[3])))
-                if genes.get((c,s))==None: genes[(c,s)]=gene
-                elif gene not in genes[(c,s)]: genes[(c,s)] = genes[(c,s)]+'|'+gene
-                else: continue
-        for (c,s,e,c2,s2,e2,gene) in ends.intersect(GENEFH,wa=True,wb=True):
-                x = gene.split(',')
-                gene = ','.join(map(str,(x[0],x[2],x[3])))
-                if genes.get((c,e))==None: genes[(c,e)]=gene
-                elif gene not in genes[(c,e)]: genes[(c,e)] = genes[(c,e)]+'|'+gene
-                else: continue
-        geneTEMP={}
-        for (c,s,e,c2,s2,e2,gene) in cnv.intersect(GENEFH, wa=True,wb=True):
-                if geneTEMP.get((c,s,e))==None: geneTEMP[(c,s,e)]=[gene]
-                elif gene not in geneTEMP[(c,s,e)]: geneTEMP[(c,s,e)].append(gene)
-                else: continue
-        for x in geneTEMP:
+		gene = ','.join(map(str,(x[0],x[2],x[3])))
+		if genes.get((c,s))==None: genes[(c,s)]=gene
+		elif gene not in genes[(c,s)]: genes[(c,s)] = genes[(c,s)]+'|'+gene
+		else: continue
+	for (c,s,e,c2,s2,e2,gene) in ends.intersect(GENEFH,wa=True,wb=True):
+		x = gene.split(',')
+		gene = ','.join(map(str,(x[0],x[2],x[3])))
+		if genes.get((c,e))==None: genes[(c,e)]=gene
+		elif gene not in genes[(c,e)]: genes[(c,e)] = genes[(c,e)]+'|'+gene
+		else: continue
+	geneTEMP={}
+	for (c,s,e,c2,s2,e2,gene) in cnv.intersect(GENEFH, wa=True,wb=True):
+		if geneTEMP.get((c,s,e))==None: geneTEMP[(c,s,e)]=[gene]
+		elif gene not in geneTEMP[(c,s,e)]: geneTEMP[(c,s,e)].append(gene)
+		else: continue
+	for x in geneTEMP:
 		ori={}
-                exons={}
-                introns={}
+		exons={}
+		introns={}
 		trx={}
-                genlist=[]
-                for y in geneTEMP[x]:
-                        gene = y.split(',')
-                        ori[gene[0]]=gene[1]
+		genlist=[]
+		for y in geneTEMP[x]:
+			gene = y.split(',')
+			ori[gene[0]]=gene[1]
 			if 'exon' in y:
-                                trx[gene[0]]=gene[2]
-                                exonTotal = int(gene[-1].split('/').pop())
-                                exonNum = int(gene[-1].split('/').pop(0).replace('exon_',''))
-                                exons[(gene[0],'TOTAL')]=exonTotal
-                                if exons.get(gene[0])==None:
-                                        exons[gene[0]]=1
-                                        exons[(gene[0],exonNum)]=1
-                                elif exons.get((gene[0],exonNum)) == None:
-                                        exons[gene[0]]+=1
-                                        exons[(gene[0],exonNum)]=1
-                                else: continue
-                        elif 'UTR3' in y:
-                                trx[gene[0]]=gene[2]
-                                exons[(gene[0],'UTR3')]=1
-                        elif 'UTR5' in y:
-                                trx[gene[0]]=gene[2]
-                                exons[(gene[0],'UTR5')]=1
-                        elif 'intron' in y:
 				trx[gene[0]]=gene[2]
-                                intronTotal = int(gene[-1].split('/').pop())
-                                intronNum = int(gene[-1].split('/').pop(0).replace('intron_',''))
-                                introns[(gene[0],'TOTAL')]=intronTotal
-                                if introns.get(gene[0])==None:
-                                        introns[gene[0]]=1
-                                        introns[(gene[0],intronNum)]=1
-                                elif introns.get((gene[0],intronNum)) == None:
-                                        introns[gene[0]]+=1
-                                        introns[(gene[0],intronNum)]=1
-                                else: continue
+				exonTotal = int(gene[-1].split('/').pop())
+				exonNum = int(gene[-1].split('/').pop(0).replace('exon_',''))
+				exons[(gene[0],'TOTAL')]=exonTotal
+				if exons.get(gene[0])==None:
+					exons[gene[0]]=1
+					exons[(gene[0],exonNum)]=1
+				elif exons.get((gene[0],exonNum)) == None:
+					exons[gene[0]]+=1
+					exons[(gene[0],exonNum)]=1
+				else: continue
+			elif 'UTR3' in y:
+				trx[gene[0]]=gene[2]
+				exons[(gene[0],'UTR3')]=1
+			elif 'UTR5' in y:
+				trx[gene[0]]=gene[2]
+				exons[(gene[0],'UTR5')]=1
+			elif 'intron' in y:
+				trx[gene[0]]=gene[2]
+				intronTotal = int(gene[-1].split('/').pop())
+				intronNum = int(gene[-1].split('/').pop(0).replace('intron_',''))
+				introns[(gene[0],'TOTAL')]=intronTotal
+				if introns.get(gene[0])==None:
+					introns[gene[0]]=1
+					introns[(gene[0],intronNum)]=1
+				elif introns.get((gene[0],intronNum)) == None:
+					introns[gene[0]]+=1
+					introns[(gene[0],intronNum)]=1
+				else: continue
 			elif 'stream' in y:
 				trx[gene[0]]=gene[2]
-                                exons[(gene[0],gene[3])]=1
+				exons[(gene[0],gene[3])]=1
 			else: continue
-                for y in trx:
-			if ori.get(y) == None: continue 
-                        orient=ori[y]
+		for y in trx:
+			if ori.get(y) == None: continue
+			orient=ori[y]
 			exoncnt=0
-                        exontot=0
+			exontot=0
 			if exons.get(y) != None: exoncnt=exons[y]
-                        if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]
-                        if orient == '+':
-                        	if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
+			if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]
+			if orient == '+':
+				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
-                                	genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
-                        	if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
-                        	if exons.get(y) == None or exoncnt != exontot:
-                                	introncnt=0
-                                	introntot=0
-                                	if introns.get(y) != None: introncnt=introns[y]
-                                	if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
-                                	if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
-				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
-                                	genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
-                        	if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
-					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
-			else: 
-				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
-                                        genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
-				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
-                                        genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
+					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
 				if exons.get(y) == None or exoncnt != exontot:
-                                        introncnt=0
-                                        introntot=0
-                                        if introns.get(y) != None: introncnt=introns[y]
-                                        if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
-                                        if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
+					introncnt=0
+					introntot=0
+					if introns.get(y) != None: introncnt=introns[y]
+					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
+					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
+				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
+					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
+				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
+					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
+			else:
+				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
+					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
+				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
+					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
+				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
+				if exons.get(y) == None or exoncnt != exontot:
+					introncnt=0
+					introntot=0
+					if introns.get(y) != None: introncnt=introns[y]
+					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
+					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
-                                        genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
+					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
-                                        genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
+					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
-	return genes	
+	return genes
 def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 	genes={}
 	cyto={}
@@ -169,7 +168,7 @@ def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 		k = (x[0],x[1],x[2],x[4])
 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:
 			lik=format(float(x[-2]),'.2f')
-			if '1' not in x[9]: 
+			if '1' not in x[9]:
 				if refcnt.get(k)==None: refcnt[k]=1
 				else: refcnt[k]+=1
 			if '1' in x[9]:
@@ -178,14 +177,14 @@ def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 					else: AF[k]+=1
 					AF[(k,x[5])]=1
 				lik=format(float(x[-1]),'.2f')
-			v = ':'.join((x[9],format(float(x[7]),'.2f'),format(float(x[8]),'.2f'),format(float(x[6]),'.2f'),lik,GQ[(x[0],x[1],x[2],x[4],x[5])]))	
+			v = ':'.join((x[9],format(float(x[7]),'.2f'),format(float(x[8]),'.2f'),format(float(x[6]),'.2f'),lik,GQ[(x[0],x[1],x[2],x[4],x[5])]))
 			GT[(k,x[5])]=v
 	for x in genos:
 		k = (x[0],x[1],x[2],x[4])
 		for iid in IID:
 			if GT.get((k,iid))==None:
 				if x[0] == 'chrY' and iid not in males: GT[(k,iid)]='.'
-				elif x[0] == 'chrY' and iid in males: GT[(k,iid)]='0' 
+				elif x[0] == 'chrY' and iid in males: GT[(k,iid)]='0'
 				elif x[0] == 'chrX' and iid in males and hemi.get(k) != None: GT[(k,iid)]='0'
 				else: GT[(k,iid)]='0/0'
 	VCF=[]
@@ -222,7 +221,7 @@ def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 		if flags.get((c,s,e,'segDup'))!=None: SEGD=format(flags[(c,s,e,'segDup')],'.2f')
 		if flags.get((c,s,e,'STR'))!=None: STR=format(flags[(c,s,e,'STR')],'.2f')
 		if flags.get((c,s,e,'unmapable'))!=None: UNMAP=format(flags[(c,s,e,'unmapable')],'.2f')
-		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)] 
+		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]
 		if genes.get((c,s))!=None: BP1=genes[(c,s)]
 		if genes.get((c,e))!=None: BP2=genes[(c,e)]
 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]
@@ -241,7 +240,7 @@ def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 		INFO = 'SVTYPE={};END={};SVLEN={};STRANDS={};AF={};CYTOBAND={};1000G_ID={};1000G_OVERLAP={};DESCRIPTION={};BP1={};BP2={};GENES={};ABPARTS={};CENTROMERE={};SEGDUP={};STR={};UNMAPABLE={};MEDREFGL={}'.format(TYPE,e,SZ,STRANDS,ALLELE,CYTOB,THOUGEN_ID,THOUGEN_OVR,DESX,BP1,BP2,GENE,ABPTS,CENTMER,SEGD,STR,UNMAP,MEDREF)
 		for x in IID:
 			if GT.get(((c,s,e,cl),x))!=None: GTS.append(GT[((c,s,e,cl),x)])
-		out= '\t'.join(map(str,(c.replace('chr',''),s,CNV_ID,'.','<'+TYPE+'>',QUAL,PASS,INFO,'GT:PE:SR:CN:SQ:GL','\t'.join(GTS)))) 
+		out= '\t'.join(map(str,(c.replace('chr',''),s,CNV_ID,'.','<'+TYPE+'>',QUAL,PASS,INFO,'GT:PE:SR:CN:SQ:GL','\t'.join(GTS))))
 		VCF.append(out)
 		CNV_ID+=1
 	date=[]

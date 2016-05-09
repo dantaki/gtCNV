@@ -1,5 +1,4 @@
 import pybedtools as pbed
-import numpy as np
 class Bed:
 	"""formats CNV input file as BED"""
 	def __init__(self,fh):
@@ -15,14 +14,14 @@ class Bed:
 def annot_toList(cnv):
 	cnv_list = []
 	cnv.sort()
-	for i in cnv: 
+	for i in cnv:
 		(c,s,e,cl,tag) = i
 		cnv_list.append((c,s,e,cl,tag))
 	return cnv_list
 def bedsort_list(cnv):
 	bed=pbed.BedTool(cnv).sort()
 	cnv=[]
-	for i in bed: 
+	for i in bed:
 		(c,s,e,cl) = i
 		cnv.append((c,s,e,cl))
 	return cnv
@@ -30,14 +29,14 @@ def isPAR(cnv,gen):
 	if len(pbed.BedTool(cnv,from_string=True).intersect(pbed.BedTool('resources/par_'+gen+'.bed'),f=0.5)) > 0: return True
 	else: return False
 def returnPAR(cnv,gen):
-        out=[]
-        results = pbed.BedTool(cnv).intersect(pbed.BedTool('resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)
-        if len(results) > 0:
-                for (c,s,e,cl,sz,iid,covr,dpe,sr) in results: out.append((c,s,e,cl,sz,iid,covr,dpe,sr))
-        return out
+	out=[]
+	results = pbed.BedTool(cnv).intersect(pbed.BedTool('resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)
+	if len(results) > 0:
+		for (c,s,e,cl,sz,iid,covr,dpe,sr) in results: out.append((c,s,e,cl,sz,iid,covr,dpe,sr))
+	return out
 def removePAR(cnv,gen):
-        out=[]
-        results= pbed.BedTool(cnv).subtract(pbed.BedTool('resources/par_'+gen+'.bed'),f=0.5,A=True)
-        if len(results) > 0:
-                for (c,s,e,cl,sz,iid,covr,dpe,sr) in results.sort(): out.append((c,s,e,cl,sz,iid,covr,dpe,sr))
-        return out
+	out=[]
+	results= pbed.BedTool(cnv).subtract(pbed.BedTool('resources/par_'+gen+'.bed'),f=0.5,A=True)
+	if len(results) > 0:
+		for (c,s,e,cl,sz,iid,covr,dpe,sr) in results.sort(): out.append((c,s,e,cl,sz,iid,covr,dpe,sr))
+	return out
