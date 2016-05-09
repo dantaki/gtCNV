@@ -55,8 +55,8 @@ def gtCNV_preprocess (iid,bamfh,bed,out):
 		   'chr13','chr14','chr15','chr16','chr17','chr18',
 		   'chr19','chr20','chr21','chr22','chrX','chrY'
 		 ]
-	for chr in chroms:
-		chr_bed = bed.filter(lambda x: x.chrom==chr)
+	for chromo in chroms:
+		chr_bed = bed.filter(lambda x: x.chrom==chromo)
 		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bam,chrFlag)
 		read_count = len(chr_stats)
 		read_length = []
@@ -66,10 +66,10 @@ def gtCNV_preprocess (iid,bamfh,bed,out):
 			read_length.append(rl)
 			insert_size.append(isz)
 		if read_count == 0:
-			ofh.write('\t'.join(map(str,(iid,chr,'0','0','0','0',chr_size)))+'\n')
+			ofh.write('\t'.join(map(str,(iid,chromo,'0','0','0','0',chr_size)))+'\n')
 		else :
 			norm = (float(read_count)/float(chr_size))*np.median(read_length)
-			out = ( iid,chr,str(norm),
+			out = ( iid,chromo,str(norm),
 				str(np.median(read_length)),
 				str(np.median(insert_size)),
 				str(MAD(insert_size)),
