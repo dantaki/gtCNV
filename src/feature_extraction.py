@@ -6,7 +6,7 @@ from discordant_split_cnv import discordant_split_cnv
 from preprocess import bamHead
 import pysam
 import bed
-class Prepro:
+class Prepro(object):
 	"""preprocessing results"""
 	def __init__(self,pre):
 		chr_cov = {}
