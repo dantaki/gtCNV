@@ -10,7 +10,7 @@ Genotype Copy Number Variation with Machine Learning.
 
 Download from github
 ``` 
-git clone git@github.com:dantaki/gtCNV.git
+git clone --recursive git@github.com:dantaki/gtCNV.git
 ```
 Download resource files. Available compressed files include .tar.gz and .zip 
 
