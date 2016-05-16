@@ -268,7 +268,7 @@ def annotate(genos,gen,REF,NON,GQ,OFH,sex,hemi):
 			'##FOTMAT=<ID=SR,Number=1,Type=Float,Description="Ratio of Split reads to Concordant Paired-Ends">',
 			'##FORMAT=<ID=CN,Number=1,Type=Float,Description="Copy Number">',
 			'##FORMAT=<ID=SQ,Number=1,Type=Float,Description="Phred-scaled genotype likelihood">',
-			'##FORMAT=<ID=GL,Number=2|3,Type=Float,Description="Phred-scaled genotype likelihood; homozygous alt, heterogygous alt, homozygous ref">',
+			'##FORMAT=<ID=GL,Number=2|3,Type=Float,Description="Phred-scaled genotype likelihood; homozygous alt, heterozygous, homozygous ref. For male sex chromosomes: alt, ref">',
 			'##ALT=<ID=DUP,Description="Duplication, if 80% reciprocal overlap with transposable element then TE class, family, and name given separated by colons">',
 			'##ALT=<ID=DEL,Description="Deletion, if 80% reciprocal overlap with transposable element then TE class, family, and name given separated by colons">'
 		]
