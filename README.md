@@ -58,7 +58,7 @@ python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g h
 
 ##### Must be tab-delimited. No headers
 
-##### :heavy_exclamation_mark: **BAM files must contain SA tag `<SA:Z:22,31241380,+,64M186S,53,2;>`** :heavy_exclamation_mark:
+######:heavy_exclamation_mark: **BAM files must contain SA tag `<SA:Z:22,31241380,+,64M186S,53,2;>`** :heavy_exclamation_mark:
 
 ID | BAM PATH | Gender [M/F]
 --- | --- | --- 
