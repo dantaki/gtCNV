@@ -3,7 +3,7 @@ from src.preprocess import  preprocess
 from src.feature_extraction import extract_feats
 from src.genotype import genotype
 import src.janitor as janitor
-from src.vcf import annotate
+from src.vcf_annotate import annotate
 import argparse
 from argparse import RawTextHelpFormatter
 import sys
