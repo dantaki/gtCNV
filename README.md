@@ -113,7 +113,7 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
 
 * The training set included 27 high coverage genomes for deletions and 2,503 low coverage genomes for duplications from the [1000 Genomes Project](http://www.1000genomes.org/).Validated genotypes were obtained from the phase 3 integrated structural variation call set ([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246).
 
-   * A copy of the raw training is located here ` gtCNV/resources/training_sets/gtCNV_raw_training-sets.zip`
+   * Training sets found here: ` gtCNV/resources/training_sets/gtCNV_raw_training-sets.zip`
 
 * gtCNV performs a preprocessing step before genotyping; preprocessing output is located in ` gtCNV/gtCNV_preprocessing/`
    * You may wish to run gtCNV on new positions using the same samples. 
@@ -124,7 +124,7 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
    * BAM files must be BWA-MEM aligned to annotate split-reads. 
    * Raw features are located in ` gtCNV/gtCNV_genotypes/` 
 
-* CNVs with high coverages (normalized coverage >5 /estimated autosome copy number >10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
+* CNVs with outlier coverage features (normalized coverage >5 /estimated autosome copy number >10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
 
 * Output is in VCF format. 
    * Median Phred-adjusted non-reference likelihoods are reported in the QUAL column
