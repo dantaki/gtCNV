@@ -34,14 +34,14 @@ gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github
 
 **Required python libraries**
 
-* numpy
-* pandas
-* pybedtools 
-* pysam 0.9.0 
-* scikit-learn
+* [numpy](https://github.com/numpy/numpy)
+* [pandas](https://github.com/pydata/pandas)
+* [pybedtools](https://pythonhosted.org/pybedtools/)
+* [pysam 0.9.0](https://github.com/pysam-developers/pysam) 
+* [scikit-learn](http://scikit-learn.org/stable/)
 
 
-:wrench: pybedtools requires bedtools. **gtCNV supports bedtools version [2.25.0](https://github.com/arq5x/bedtools2/releases) or later**
+:wrench: pybedtools requires bedtools. **gtCNV supports bedtools version [2.25.0](https://github.com/arq5x/bedtools2/releases) or later** :wrench:
 
 ### Installation
 
@@ -76,7 +76,7 @@ CHROM | START | END | TYPE [DEL/DUP]
 chr1 | 1000 | 2000 | DEL 
 chr2 | 3500 | 4500 | DUP
 chr2 | 5000 | 5300 | DEL_ALU
-chr3 | 1000 | 2000 | DUP_mCNV
+chr3 | 1000 | 2000 | CNV_DUP
 
 ## Options
 
@@ -91,18 +91,18 @@ Flag | Description
 -i | Sample information input
 -b | BED file of CNVs
 -c | Number of samples to run in parallel. Limited by available CPUs
--g | Reference Genome Build [ hg19, hg38 ]. Default is hg19
--s | Random seed for genome shuffling. Used in preprocessing
--o | VCF output 
+-g | Reference Genome [ hg19, hg38 ]. Default: hg19
+-s | Random seed for genome shuffling during preprocessing
+-o | VCF output file name 
 --pre | Preprocessing output directory. Skips preprocessing if completed
 --feats | Feature output directory. Skips feature extraction if completed
 
 ## Tutorial
 
-Refer to README.md in tutorial/ directory for help
+Refer to README.md in `tutorial/` for help
 
 ```
-#After downloading and decompressing the resource files
+# after downloading and decompressing the resource files
 cd gtCNV/
 python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
 ```
