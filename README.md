@@ -84,7 +84,7 @@ HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
    * Positions are annotated based on their overlap to genes, RepeatMasker, segmental duplications, 1000 Genomes phase 3 CNV, and more
 * Filters were determined according to validated *de novo* mutations. Hence they may be strict
    * FILTER column is PASS if 90% of the genotyped samples pass sample-wise filters
-   * The `FT` format field is a sample filter.**1 indicates PASS**
+   * The `FT` format field is a sample filter. **1 indicates PASS**
 * CNVs with outlier coverage features (estimated autosome copy number >10) cannot be genotyped.
 
 ---
