@@ -2,9 +2,7 @@ gtCNV
 =====
 Genotype Copy Number Variation with Machine Learning.
 
-*A resource for whole genome short-read sequencing libraries.*
-
-[![Download gtCNV](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/gtcnv/files/latest/download)
+*A resource for whole genome short-read sequencing libraries.* [![Download gtCNV](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/gtcnv/files/latest/download)
 
 ## Getting Started
 #### 1: Download Source Code :floppy_disk:
