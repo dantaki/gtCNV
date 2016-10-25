@@ -82,7 +82,7 @@ HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
 * Output is in VCF format
    * Median Phred-adjusted ALT likelihoods are reported in the QUAL column
    * Annotation for variants include genes, 1000 Genomes CNV,segmental duplications, RepeatMasker, and more
-* Filters are set according to validated [*de novo* mutations](http://dx.doi.org/10.1016/j.ajhg.2016.02.018). Hence, they may be strict
+* Filters are set according to [validated *de novo* mutations](http://dx.doi.org/10.1016/j.ajhg.2016.02.018). Hence, they may be strict
    * `FT` format field is a sample filter. **1 indicates PASS**
    * `FILTER` column is PASS if at least 90% of the population passed sample-wise filters
 * CNVs with outlier coverage features with an estimated autosome copy number >10 cannot be genotyped.
