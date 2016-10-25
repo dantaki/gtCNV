@@ -111,14 +111,18 @@ HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
 
 * Danny Antaki
     * dantaki@ucsd.edu
-
-## History
-[gtCNV version 0.1](https://github.com/dantaki/gtCNV/tree/Version-0.1) used in Brander et al. *AJHG* 2016 ([DOI](http://dx.doi.org/10.1016/j.ajhg.2016.02.018) PMID:    27018473)
-
+    
 #### Acknowledgements:
 * William Brandler
 * Jonathan Sebat
     * Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
+
+-------    
+
+### History
+[gtCNV version 0.1](https://github.com/dantaki/gtCNV/tree/Version-0.1) used in Brander et al. *AJHG* 2016 ([DOI](http://dx.doi.org/10.1016/j.ajhg.2016.02.018) PMID:    27018473)
+
+------
 
 ### License
 MIT License
