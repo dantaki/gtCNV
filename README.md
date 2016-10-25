@@ -2,8 +2,6 @@ gtCNV
 =====
 Genotype Copy Number Variation with Machine Learning.
 
-*A resource for whole genome short-read sequencing libraries.*
-
 ## Getting Started
 #### 1: Download Source Code :floppy_disk:
 ```
@@ -73,7 +71,7 @@ HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
   * Must have END=
 
 ## Usage
-* gtCNV is designed for human whole genome short-read sequencing libraries. Given CNV positions, gtCNV returns a VCF with predicted copy number genotypes.
+* gtCNV is designed for paired-end, short-read whole genomes. Given CNV positions, gtCNV returns a VCF with predicted copy number genotypes.
 * Whole genome alignments from the [1000 Genomes Project](http://www.1000genomes.org/) were used for training. Validated genotypes were obtained from the phase 3 integrated structural variation call set ([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246).
 * Features for genotyping include coverage, discordant paired-ends, split-reads, and heterozygous allelic depth ratio.
    * BAM files must have supplementary alignment tags (SA).
