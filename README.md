@@ -1,145 +1,108 @@
 gtCNV
 =====
-[![Build Status](https://travis-ci.org/dantaki/gtCNV.svg?branch=master)](https://travis-ci.org/dantaki/gtCNV) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/49efbe9c0d144c7ba77ee8e77b74f0d8)](https://www.codacy.com/app/dantaki/gtCNV?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dantaki/gtCNV&amp;utm_campaign=Badge_Grade)
+Genotype Copy Number Variation with Machine Learning.
 
-Genotype Copy Number Variation with Machine Learning. 
-
-*A resource for whole genome next-generation sequencing libraries.* 
-
+*A resource for whole genome short-read sequencing libraries.*
 ## Getting Started
-
-Download from github
-``` 
-git clone --recursive git@github.com:dantaki/gtCNV.git
+#### 1: Download Source Code :floppy_disk:
 ```
-Download resource files. Available compressed files include .tar.gz and .zip 
-
-:floppy_disk: .tar.gz
+wget http://downloads.sourceforge.net/project/gtcnv/gtcnv-2.3.zip # gtcnv-2.3.tar.gz also available
+unzip gtcnv-v2.3.zip
 ```
-cd gtCNV/
-wget https://www.dropbox.com/s/holuoc1v35ecmuo/gtCNV_v1.0_resources.tar.gz
-tar zxvf gtCNV_v1.0_resources.tar.gz
+#### 2: Configure Environment
+Run `configure.pl` to define install location and paths to FASTA assemblies
 ```
-:floppy_disk: .zip
+cd gtcnv-v2.3/
+perl configure.pl # follow the instructions
 ```
-cd gtCNV/ 
-wget https://www.dropbox.com/s/k6r3c8rynur2hjo/gtCNV_v1.0_resources.zip
-unzip gtCNV_v1.0_resources.zip
+#### 3: Compile from Source
 ```
-### Prerequisites 
-
-gtCNV requires **python 2.7** :snake:
-
-gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github.io/)
-
-**Required python libraries**
-
-* [numpy](https://github.com/numpy/numpy)
-* [pandas](https://github.com/pydata/pandas)
-* [pybedtools](https://pythonhosted.org/pybedtools/)
-* [pysam 0.9.0](https://github.com/pysam-developers/pysam) 
-* [scikit-learn](http://scikit-learn.org/stable/)
-
-
-:wrench: pybedtools requires bedtools. **gtCNV supports bedtools version [2.25.0](https://github.com/arq5x/bedtools2/releases) or later** :wrench:
-
-### Installation
-
-Download resource files and the correct versions of bedtools and pysam. 
-
-Now run! :grinning:
-
+python setup.py install # ignore numpy warnings
 ```
-python gtCNV -i sample_info.in -b CNV.bed [ OPTIONAL -o gtCNV_genotypes.vcf -g hg19 --pre gtCNV_preprocessing/ ]
-```
-### Inputs
-
-#### 1. Sample information < -i >
-
-##### Must be tab-delimited. No headers
-
-######:heavy_exclamation_mark: **BAM files must contain SA tag `<SA:Z:22,31241380,+,64M186S,53,2;>`** :heavy_exclamation_mark:
-
-ID | BAM PATH | Gender [M/F]
---- | --- | --- 
-NA12878 | /home/usr/bam/NA12878_BWAMEM.bam | F
-HG00096 | /home/usr/bam/HG00096_BWAMEM.bam | M
-
-#### 2. BED file < -b > 
-
-##### Must be tab-delimited. No headers
-
-######:heavy_exclamation_mark: **CNV type must contain either 'DEL' or 'DUP'** :heavy_exclamation_mark:
-
-CHROM | START | END | TYPE [DEL/DUP]
---- | --- | --- | --- 
-chr1 | 1000 | 2000 | DEL 
-chr2 | 3500 | 4500 | DUP
-chr2 | 5000 | 5300 | DEL_ALU
-chr3 | 1000 | 2000 | CNV_DUP
-
 ## Options
-
-Display options
-
-```
-python gtCNV --help
-```
+`gtCNV --help`
 
 Flag | Description
---- | ------------
--i | Sample information input
--b | BED file of CNVs
--c | Number of samples to run in parallel. Limited by available CPUs
--g | Reference Genome [ hg19, hg38 ]. Default: hg19
--s | Random seed for genome shuffling during preprocessing
--o | VCF output file name 
---pre | Preprocessing output directory. Skips preprocessing if completed
---feats | Feature output directory. Skips feature extraction if completed
-
-## Tutorial
-
-Refer to README.md in `tutorial/` for help
-
+--- | -------------
+-i \| -in | Sample information input
+-r \| -cnv | CNVs to genotype. BED or VCF
+-c \| -cpu | Number of samples to run in parallel. Limited by available CPUs
+-g \| -genome | Reference Genome Build [ hg19, hg38 ]. Default: hg19
+-pcrfree | GC content normalization for PCR-free libraries
+-s \| -seed | Random seed for genome shuffling. Used in preprocessing
+-o \| -out | output
+-pre | Preprocessing output directory. *Skips preprocessing*
+-feats | Feature output directory. *Skips feature extraction*
+#### Example
 ```
-# after downloading and decompressing the resource files
-cd gtCNV/
-python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genotypes.vcf
+# genotype cnv
+gtCNV -i CEU.in -r cnv.vcf -g hg38 -o CEU_cnv_genotypes.vcf
+
+# genotype cnv2 skipping preprocessing
+gtCNV -i CEU.in -r cnv2.vcf -g hg38 -o CEU_cnv2_genotypes.vcf -pre gtCNV_preprocessing/
+
+# produce a VCF of one individual skipping feature extraction
+head -n 1 CEU.in >sub.in
+gtCNV -i sub.in -r cnv.vcf -g hg38 -o sub_CEU_cnv_genotypes.vcf -pre gtCNV_preprocessing/ -feats gtCNV_features/
+
+# output is in gtCNV_genotypes/
+ls gtCNV_gentypes/*
+    CEU_cnv_genotypes.txt # Tab-delimited genotypes
+    CEU_cnv_genotypes.vcf # VCF formatted genotypes
+    ...
 ```
+*Output VCF comes with gene annotations and other useful statistics*
+## Inputs
+#### Sample information < -i >
+Tab-delimited file containing sample information. Gender can also be encoded as 1 for M and 2 for F
 
-## Usage 
+ID | BAM PATH |  VCF PATH | Gender [M/F]
+--- | --- | --- | ---
+NA12878 | /bam/NA12878_BWAMEM.bam | /vcf/NA12878_GATK_HC.vcf | F
+HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
+#### CNVs to genotype < -r >
+* BED format
+  * Tab-delimited: first four columns
+    * Chromosome
+    * Start
+    * End
+    * Type: DEL | DUP
+* VCF format
+  * SVTYPE= DEL | DUP
+  * Must have END=
 
-* gtCNV is designed for human whole genome next-generation sequencing libraries. Given a list of CNV positions, gtCNV returns an annotated VCF with predicted copy number states.
-
-* The training set included 27 high coverage genomes for deletions and 2,503 low coverage genomes for duplications from the [1000 Genomes Project](http://www.1000genomes.org/).Validated genotypes were obtained from the phase 3 integrated structural variation call set ([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246).
-
-   * Training sets found here: ` gtCNV/resources/training_sets/gtCNV_raw_training-sets.zip`
-
-* gtCNV performs a preprocessing step before genotyping; preprocessing output is located in ` gtCNV/gtCNV_preprocessing/`
-   * You may wish to run gtCNV on new positions using the same samples. 
-   * Pass the preprocessing directory in the command to skip this step 
-      * `python gtCNV -i sample_info.in -b new_cnv.bed --pre gtCNV_preprocessing/`
-
-* Features for genotyping include coverage, discordant paired-ends, and split reads. 
-   * BAM files must be BWA-MEM aligned to annotate split-reads. 
-   * Raw features are located in ` gtCNV/gtCNV_genotypes/` 
-
-* CNVs with outlier coverage features (normalized coverage >5 /estimated autosome copy number >10) are omitted. Such loci genotype poorly and interfere with the SVM model. 
-
-* Output is in VCF format. 
+## Usage
+* gtCNV is designed for human whole genome short-read sequencing libraries. Given CNV positions, gtCNV returns a VCF with predicted copy number genotypes.
+* Whole genome alignments from the [1000 Genomes Project](http://www.1000genomes.org/) were used for training. Validated genotypes were obtained from the phase 3 integrated structural variation call set ([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246).
+* Features for genotyping include coverage, discordant paired-ends, split-reads, and heterozygous allelic depth ratio.
+   * BAM files must have supplementary alignment tags (SA).
+   * SNV VCF must contain Allelic Depth. gtCNV can accomodate [GATK Haplotype Caller](https://software.broadinstitute.org/gatk/gatkdocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php) and [FreeBayes](https://github.com/ekg/freebayes) VCFs.`
+* gtCNV operates with a bi-allelic model with a copy number range of 0-4
+* Output is in VCF format.
    * Median Phred-adjusted non-reference likelihoods are reported in the QUAL column
-   * Positions are annotated based on their overlap to genes, repeats, and 1000 Genomes phase 3 CNV
+   * Positions are annotated based on their overlap to genes, RepeatMasker, segmental duplications, 1000 Genomes phase 3 CNV, and more
+* Filters were determined according to validated *de novo* mutations. Hence they may be strict
+   * FILTER column is PASS if 90% of the genotyped samples pass sample-wise filters
+   * The `FT` format field is a sample filter.**1 indicates PASS**
+* CNVs with outlier coverage features (estimated autosome copy number >10) cannot be genotyped.
 
-* Suggested filters in the VCF were determined using [svtoolkit intensity rank sum annotator](http://gatkforums.broadinstitute.org/gatk/discussion/2715/documentation-for-intensityranksum-annotator)
-   * deletions: PASS at >= 12 median non-reference likelihood 
-      * FDR ~ 1% at 5% allele frequency
-   * duplications: PASS at >= 10 median non-reference likelihood
-      * FDR ~ 3% at 5% allele frequency
+---
 
-* **NOTE:** non-allelic homologous recombination derived duplications are problematic for gtCNV
-   * We recommend a more conservative median non-reference cutoff
-      * NAHR duplications: PASS at >= 6 median non-reference likelihood
-   * gtCNV Version 2.0 will address this issue. 
+### Requirements:
+* [python 2.7](https://www.python.org/)
+  * [cython](https://github.com/cython/cython)
+  * [numpy](http://www.numpy.org/)
+  * [pandas](http://pandas.pydata.org/)
+  * [pybedtools](https://daler.github.io/pybedtools/)
+  * [pysam 0.9+](https://github.com/pysam-developers/pysam)
+
+* [bedtools 2.25.0](https://github.com/arq5x/bedtools2/releases) or later
+
+*gtCNV requires python 2.7*
+
+*gtCNV has been tested on Linux and MacOS with [bioconda](https://bioconda.github.io/)*
+
+---
 
 ## Credits
 
@@ -147,36 +110,37 @@ python gtCNV -i tutorial/tutorial.in -b tutorial/tutorial.bed -o tutorial_genoty
 
 * Danny Antaki
     * dantaki@ucsd.edu
-* William Brandler
 
 ## History
-
 [gtCNV version 0.1](https://github.com/dantaki/gtCNV/tree/Version-0.1) used in Brander et al. *AJHG* 2016 ([DOI](http://dx.doi.org/10.1016/j.ajhg.2016.02.018) PMID:    27018473)
 
-#### Acknowledgements: 
-
-* Prateek Tandon 
+#### Acknowledgements:
+* William Brandler
 * Jonathan Sebat
     * Sebat Lab http://sebatlab.ucsd.edu/index.php/software-data
 
-## License
+### License
+MIT License
 
-gtCNV
-    Copyright (C) 2015  Danny Antaki
+Copyright (c) 2016 Danny Antaki
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-Contact
-------
-dantaki@ucsd.edu 
+##### Contact
+dantaki@ucsd.edu
