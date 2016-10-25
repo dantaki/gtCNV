@@ -62,7 +62,7 @@ HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
 #### CNVs to genotype < -r >
 * BED format
 
- ...Tab-delimited: first four columns...
+  Tab-delimited: first four columns  
   1. Chromosome
   2. Start
   3. End
