@@ -266,8 +266,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__gtcnv__core
-#define __PYX_HAVE_API__gtcnv__core
+#define __PYX_HAVE__src__core
+#define __PYX_HAVE_API__src__core
 #include "string.h"
 #include "stdio.h"
 #include "stdlib.h"
@@ -510,7 +510,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "gtcnv/core.pyx",
+  "src/core.pyx",
   "__init__.pxd",
   "type.pxd",
 };
@@ -727,10 +727,10 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
 
 /*--- Type declarations ---*/
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls;
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr;
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr;
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess;
+struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls;
+struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr;
+struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr;
+struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess;
 
 /* "../../../anaconda/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":764
  * ctypedef npy_longdouble longdouble_t
@@ -767,70 +767,70 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  * cdef inline object PyArray_MultiIterNew1(a):
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
-struct __pyx_opt_args_5gtcnv_4core_MAD;
+struct __pyx_opt_args_3src_4core_MAD;
 
-/* "gtcnv/core.pyx":252
+/* "src/core.pyx":252
  * 		N+=int(x[9])
  * 	return ((G+C)*100)/(A+C+G+T+N)
  * cdef MAD(a, double c=0.6745): return np.around(np.median(np.fabs(a-np.median(a))/c),decimals=3)             # <<<<<<<<<<<<<<
  * cdef normalize_chr_cov(double read_count, double chr_size, read_length): return np.around( (read_count/chr_size)*np.median(read_length),decimals=2)
  * cdef normalize_coverage(double read_count, double span, double chr_cov, double read_length): return (((read_count/span)*read_length)/chr_cov)
  */
-struct __pyx_opt_args_5gtcnv_4core_MAD {
+struct __pyx_opt_args_3src_4core_MAD {
   int __pyx_n;
   double c;
 };
 
-/* "gtcnv/core.pyx":174
+/* "src/core.pyx":174
  * 		cnv_list.append((c,s,e,cl,tag))
  * 	return cnv_list
  * cdef filter_calls(cnv,gen):             # <<<<<<<<<<<<<<
  * 	cdef unsigned int tag
  * 	"""add unique annotation to each CNV"""
  */
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls {
+struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls {
   PyObject_HEAD
   PyObject *__pyx_v_end_flank500bp;
   PyObject *__pyx_v_start_flank500bp;
 };
 
 
-/* "gtcnv/core.pyx":192
+/* "src/core.pyx":192
  * 	start_flank500bp=pbed.BedTool(start_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	start_flank_dict=dict((i[4],(i[1],i[2])) for i in start_flank500bp)             # <<<<<<<<<<<<<<
  * 	end_flank_dict=dict((i[4],(i[1],i[2])) for i in end_flank500bp)
  * 	"""mask regions to segmental duplications and unmappable regions"""
  */
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr {
+struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr {
   PyObject_HEAD
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *__pyx_outer_scope;
+  struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *__pyx_outer_scope;
   PyObject *__pyx_v_i;
 };
 
 
-/* "gtcnv/core.pyx":193
+/* "src/core.pyx":193
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	start_flank_dict=dict((i[4],(i[1],i[2])) for i in start_flank500bp)
  * 	end_flank_dict=dict((i[4],(i[1],i[2])) for i in end_flank500bp)             # <<<<<<<<<<<<<<
  * 	"""mask regions to segmental duplications and unmappable regions"""
  * 	masked_cnv=annot_toList(pbed.BedTool(annot_cnv).subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  */
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr {
+struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr {
   PyObject_HEAD
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *__pyx_outer_scope;
+  struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *__pyx_outer_scope;
   PyObject *__pyx_v_i;
 };
 
 
-/* "gtcnv/core.pyx":390
+/* "src/core.pyx":390
  * 			read_stats[str(read.qname)+str(read.is_read1)] = ((read.qlen,abs(read.isize)))
  * 	return read_stats,chr_size
  * cdef gtCNV_preprocess (iid,bamfh,vcffh,bed,out,gen):             # <<<<<<<<<<<<<<
  * 	cdef double read_count
  * 	cdef double genome_snp_cov
  */
-struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess {
+struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess {
   PyObject_HEAD
   PyObject *__pyx_v_chromo;
 };
@@ -1462,9 +1462,6 @@ static PyObject* __pyx_print_kwargs = 0;
 #endif
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_short(short value);
-
-/* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 /* CIntToPy.proto */
@@ -1582,17 +1579,11 @@ static CYTHON_INLINE unsigned int __Pyx_PyInt_As_unsigned_int(PyObject *);
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
 
-/* PrintOne.proto */
-static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
-
-/* CIntFromPy.proto */
-static CYTHON_INLINE short __Pyx_PyInt_As_short(PyObject *);
-
 /* CIntFromPy.proto */
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
-/* CIntFromPy.proto */
-static CYTHON_INLINE unsigned short __Pyx_PyInt_As_unsigned_short(PyObject *);
+/* PrintOne.proto */
+static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
 
 /* SwapException.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
@@ -1694,59 +1685,59 @@ static PyTypeObject *__pyx_ptype_5numpy_ndarray = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, char *, char *, int *); /*proto*/
 
-/* Module declarations from 'gtcnv.core' */
-static PyTypeObject *__pyx_ptype_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls = 0;
-static PyTypeObject *__pyx_ptype_5gtcnv_4core___pyx_scope_struct_1_genexpr = 0;
-static PyTypeObject *__pyx_ptype_5gtcnv_4core___pyx_scope_struct_2_genexpr = 0;
-static PyTypeObject *__pyx_ptype_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess = 0;
-static PyObject *__pyx_f_5gtcnv_4core_warnFH(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_MAD(PyObject *, struct __pyx_opt_args_5gtcnv_4core_MAD *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_normalize_chr_cov(double, double, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_normalize_coverage(double, double, double, double); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *, PyObject *, PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *, PyObject *, PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *, PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_prepPE(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *, PyObject *); /*proto*/
-static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *, PyObject *); /*proto*/
-#define __Pyx_MODULE_NAME "gtcnv.core"
-int __pyx_module_is_main_gtcnv__core = 0;
+/* Module declarations from 'src.core' */
+static PyTypeObject *__pyx_ptype_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls = 0;
+static PyTypeObject *__pyx_ptype_3src_4core___pyx_scope_struct_1_genexpr = 0;
+static PyTypeObject *__pyx_ptype_3src_4core___pyx_scope_struct_2_genexpr = 0;
+static PyTypeObject *__pyx_ptype_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess = 0;
+static PyObject *__pyx_f_3src_4core_warnFH(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_checkCall(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_get_chroma(void); /*proto*/
+static PyObject *__pyx_f_3src_4core_fasta_config(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_FASTA_head(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_append_list2dict(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_annot_toList(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_filter_calls(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_gc_norm(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_gc_cnv(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_GC(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_MAD(PyObject *, struct __pyx_opt_args_3src_4core_MAD *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_3src_4core_normalize_chr_cov(double, double, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_normalize_coverage(double, double, double, double); /*proto*/
+static PyObject *__pyx_f_3src_4core_count_reads(PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_depth_of_coverage(PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_is_discordant(PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_is_split(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_discordant_split_cnv(PyObject *, PyObject *, PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_bamHead(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_randomChr(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_gtCNV_stats(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_gtCNV_preprocess(PyObject *, PyObject *, PyObject *, PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_returnPAR(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_removePAR(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_del_autosome_tab(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_del_sexchr_tab(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_dup_autosome_tab(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_dup_sexchr_tab(PyObject *, PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_merge3d(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_prepHET(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_prepPE(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_prep3d(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_prep4d(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_autosome_del_svm(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_sexchr_del_svm(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_autosome_dup_svm(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_sexchr_dup_svm(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_recipOver(PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_cytobandOverlap(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_flagsOverlap(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_meiOverlap(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_thouGenOverlap(PyObject *, PyObject *); /*proto*/
+static PyObject *__pyx_f_3src_4core_geneOverlap(PyObject *, PyObject *); /*proto*/
+#define __Pyx_MODULE_NAME "src.core"
+int __pyx_module_is_main_src__core = 0;
 
-/* Implementation of 'gtcnv.core' */
+/* Implementation of 'src.core' */
 static PyObject *__pyx_builtin_ImportError;
 static PyObject *__pyx_builtin_object;
 static PyObject *__pyx_builtin_open;
@@ -2145,6 +2136,7 @@ static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_read_len[] = "read_len";
 static const char __pyx_k_readline[] = "readline";
 static const char __pyx_k_realpath[] = "realpath";
+static const char __pyx_k_src_core[] = "src.core";
 static const char __pyx_k_subtract[] = "subtract";
 static const char __pyx_k_DEL_gt1KB[] = "DEL_gt1KB";
 static const char __pyx_k_DEL_lt1KB[] = "DEL_lt1KB";
@@ -2188,7 +2180,6 @@ static const char __pyx_k_centromere[] = "centromere";
 static const char __pyx_k_concordant[] = "concordant";
 static const char __pyx_k_discordant[] = "discordant";
 static const char __pyx_k_flank_span[] = "flank_span";
-static const char __pyx_k_gtcnv_core[] = "gtcnv.core";
 static const char __pyx_k_insert_mad[] = "insert_mad";
 static const char __pyx_k_intergenic[] = "intergenic";
 static const char __pyx_k_is_reverse[] = "is_reverse";
@@ -2326,7 +2317,7 @@ static const char __pyx_k_INFO_ID_SVTYPE_Number_1_Type_St[] = "##INFO=<ID=SVTYPE
 static const char __pyx_k_INFO_ID_UNMAPABLE_Number_1_Type[] = "##INFO=<ID=UNMAPABLE,Number=1,Type=Float,Description=\"Overlap with regions unmapable using 100bp reads with respect to the hg19 assembly, in the range (0,1)\">";
 static const char __pyx_k_WARNING_not_accepted_chromosome[] = "WARNING: {} not accepted chromosome format!\nAccepted chromosomes:\n{}";
 static const char __pyx_k_WARNING_not_formatted_correctly[] = "WARNING: {} not formatted correctly! Please refer to the documentation at www.github.com/dantaki/gtCNV\n";
-static const char __pyx_k_home_dantakli_gtCNV_dist_versio[] = "/home/dantakli/gtCNV_dist/versions/v2.3/gtcnv/core.pyx";
+static const char __pyx_k_home_dantakli_gtCNV_dist_versio[] = "/home/dantakli/gtCNV_dist/versions/v2.3/src/core.pyx";
 static const char __pyx_k_resources_annotation_files__100[] = "/resources/annotation_files/{}_1000Genomes_DEL.bed";
 static const char __pyx_k_resources_annotation_files__cyt[] = "/resources/annotation_files/{}_cytoband.bed";
 static const char __pyx_k_resources_annotation_files__fla[] = "/resources/annotation_files/{}_flags.bed.gz";
@@ -2712,7 +2703,6 @@ static PyObject *__pyx_n_s_gtVCF;
 static PyObject *__pyx_n_s_gtVCF___init;
 static PyObject *__pyx_n_s_gtVCF_extract_SNP_features;
 static PyObject *__pyx_n_s_gtVCF_preprocessVCF;
-static PyObject *__pyx_n_s_gtcnv_core;
 static PyObject *__pyx_n_s_head;
 static PyObject *__pyx_n_s_header;
 static PyObject *__pyx_n_s_hemi;
@@ -2905,6 +2895,7 @@ static PyObject *__pyx_n_s_sorted_cnv;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_split_ratio;
 static PyObject *__pyx_n_s_sr;
+static PyObject *__pyx_n_s_src_core;
 static PyObject *__pyx_n_s_ss;
 static PyObject *__pyx_n_s_start;
 static PyObject *__pyx_n_s_startswith;
@@ -2945,31 +2936,31 @@ static PyObject *__pyx_n_s_write;
 static PyObject *__pyx_n_s_x;
 static PyObject *__pyx_n_s_xrange;
 static PyObject *__pyx_n_s_zip;
-static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_init_time, PyObject *__pyx_v_s); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_genexpr(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_3genexpr(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_3src_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh); /* proto */
+static PyObject *__pyx_pf_3src_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh); /* proto */
+static PyObject *__pyx_pf_3src_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_3src_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh); /* proto */
+static PyObject *__pyx_pf_3src_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen); /* proto */
+static PyObject *__pyx_pf_3src_4core_10reportTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_init_time, PyObject *__pyx_v_s); /* proto */
+static PyObject *__pyx_pf_3src_4core_12filter_calls_genexpr(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_3src_4core_12filter_calls_3genexpr(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_y); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_x); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_FH, PyObject *__pyx_v_iid, PyObject *__pyx_v_mask); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_sorted_cnv, PyObject *__pyx_v_master_cnv, PyObject *__pyx_v_snp_cov); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_ofh, PyObject *__pyx_v_gen, PyObject *__pyx_v_seed); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pre); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_cnv, PyObject *__pyx_v_prefh, CYTHON_UNUSED PyObject *__pyx_v_gender, PyObject *__pyx_v_out, PyObject *__pyx_v_gen, PyObject *__pyx_v_pcrfree); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x, PyObject *__pyx_v_lik, PyObject *__pyx_v_f); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_feats, PyObject *__pyx_v_sex, PyObject *__pyx_v_gen, PyObject *__pyx_v_out); /* proto */
-static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_raw, PyObject *__pyx_v_genos, PyObject *__pyx_v_gen, PyObject *__pyx_v_REF, PyObject *__pyx_v_NON, PyObject *__pyx_v_GQ, PyObject *__pyx_v_OFH, PyObject *__pyx_v_sex, PyObject *__pyx_v_hemi, PyObject *__pyx_v_filt); /* proto */
+static PyObject *__pyx_pf_3src_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_FH, PyObject *__pyx_v_iid, PyObject *__pyx_v_mask); /* proto */
+static PyObject *__pyx_pf_3src_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3src_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_sorted_cnv, PyObject *__pyx_v_master_cnv, PyObject *__pyx_v_snp_cov); /* proto */
+static PyObject *__pyx_pf_3src_4core_12preprocess(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_ofh, PyObject *__pyx_v_gen, PyObject *__pyx_v_seed); /* proto */
+static PyObject *__pyx_pf_3src_4core_6Prepro___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pre); /* proto */
+static PyObject *__pyx_pf_3src_4core_14extract_feats(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_cnv, PyObject *__pyx_v_prefh, CYTHON_UNUSED PyObject *__pyx_v_gender, PyObject *__pyx_v_out, PyObject *__pyx_v_gen, PyObject *__pyx_v_pcrfree); /* proto */
+static PyObject *__pyx_pf_3src_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x, PyObject *__pyx_v_lik, PyObject *__pyx_v_f); /* proto */
+static PyObject *__pyx_pf_3src_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_feats, PyObject *__pyx_v_sex, PyObject *__pyx_v_gen, PyObject *__pyx_v_out); /* proto */
+static PyObject *__pyx_pf_3src_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_raw, PyObject *__pyx_v_genos, PyObject *__pyx_v_gen, PyObject *__pyx_v_REF, PyObject *__pyx_v_NON, PyObject *__pyx_v_GQ, PyObject *__pyx_v_OFH, PyObject *__pyx_v_sex, PyObject *__pyx_v_hemi, PyObject *__pyx_v_filt); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct_2_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static __Pyx_CachedCFunction __pyx_umethod_PyList_Type_pop = {0, &__pyx_n_s_pop, 0, 0, 0};
 static PyObject *__pyx_float_0_5;
 static PyObject *__pyx_float_0_8;
@@ -3151,7 +3142,7 @@ static PyObject *__pyx_codeobj__166;
 static PyObject *__pyx_codeobj__168;
 static PyObject *__pyx_codeobj__170;
 
-/* "gtcnv/core.pyx":19
+/* "src/core.pyx":19
  * except ImportError: import pickle
  * np.import_array()
  * def errFH(fh):             # <<<<<<<<<<<<<<
@@ -3160,20 +3151,20 @@ static PyObject *__pyx_codeobj__170;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_1errFH(PyObject *__pyx_self, PyObject *__pyx_v_fh); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_1errFH = {"errFH", (PyCFunction)__pyx_pw_5gtcnv_4core_1errFH, METH_O, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_1errFH(PyObject *__pyx_self, PyObject *__pyx_v_fh) {
+static PyObject *__pyx_pw_3src_4core_1errFH(PyObject *__pyx_self, PyObject *__pyx_v_fh); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_1errFH = {"errFH", (PyCFunction)__pyx_pw_3src_4core_1errFH, METH_O, 0};
+static PyObject *__pyx_pw_3src_4core_1errFH(PyObject *__pyx_self, PyObject *__pyx_v_fh) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("errFH (wrapper)", 0);
-  __pyx_r = __pyx_pf_5gtcnv_4core_errFH(__pyx_self, ((PyObject *)__pyx_v_fh));
+  __pyx_r = __pyx_pf_3src_4core_errFH(__pyx_self, ((PyObject *)__pyx_v_fh));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh) {
+static PyObject *__pyx_pf_3src_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3184,7 +3175,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self,
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("errFH", 0);
 
-  /* "gtcnv/core.pyx":20
+  /* "src/core.pyx":20
  * np.import_array()
  * def errFH(fh):
  * 	sys.stderr.write('ERROR {} NOT FOUND\n'.format(fh))             # <<<<<<<<<<<<<<
@@ -3254,7 +3245,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self,
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":21
+  /* "src/core.pyx":21
  * def errFH(fh):
  * 	sys.stderr.write('ERROR {} NOT FOUND\n'.format(fh))
  * 	sys.exit(1)             # <<<<<<<<<<<<<<
@@ -3271,7 +3262,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self,
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":19
+  /* "src/core.pyx":19
  * except ImportError: import pickle
  * np.import_array()
  * def errFH(fh):             # <<<<<<<<<<<<<<
@@ -3289,7 +3280,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self,
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.errFH", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.errFH", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3297,7 +3288,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":22
+/* "src/core.pyx":22
  * 	sys.stderr.write('ERROR {} NOT FOUND\n'.format(fh))
  * 	sys.exit(1)
  * cdef warnFH(fh): sys.stderr.write('WARNING {} NOT FOUND\n'.format(fh))             # <<<<<<<<<<<<<<
@@ -3305,7 +3296,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_errFH(CYTHON_UNUSED PyObject *__pyx_self,
  * 	cdef bint c
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_warnFH(PyObject *__pyx_v_fh) {
+static PyObject *__pyx_f_3src_4core_warnFH(PyObject *__pyx_v_fh) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3388,7 +3379,7 @@ static PyObject *__pyx_f_5gtcnv_4core_warnFH(PyObject *__pyx_v_fh) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.warnFH", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.warnFH", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3396,7 +3387,7 @@ static PyObject *__pyx_f_5gtcnv_4core_warnFH(PyObject *__pyx_v_fh) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":23
+/* "src/core.pyx":23
  * 	sys.exit(1)
  * cdef warnFH(fh): sys.stderr.write('WARNING {} NOT FOUND\n'.format(fh))
  * cdef checkCall(cl):             # <<<<<<<<<<<<<<
@@ -3404,7 +3395,7 @@ static PyObject *__pyx_f_5gtcnv_4core_warnFH(PyObject *__pyx_v_fh) {
  * 	c=0
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
+static PyObject *__pyx_f_3src_4core_checkCall(PyObject *__pyx_v_cl) {
   int __pyx_v_c;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -3414,7 +3405,7 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("checkCall", 0);
 
-  /* "gtcnv/core.pyx":25
+  /* "src/core.pyx":25
  * cdef checkCall(cl):
  * 	cdef bint c
  * 	c=0             # <<<<<<<<<<<<<<
@@ -3423,7 +3414,7 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
  */
   __pyx_v_c = 0;
 
-  /* "gtcnv/core.pyx":26
+  /* "src/core.pyx":26
  * 	cdef bint c
  * 	c=0
  * 	if 'DEL' in cl or 'DUP' in cl: c=1             # <<<<<<<<<<<<<<
@@ -3445,7 +3436,7 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
     __pyx_v_c = 1;
   }
 
-  /* "gtcnv/core.pyx":27
+  /* "src/core.pyx":27
  * 	c=0
  * 	if 'DEL' in cl or 'DUP' in cl: c=1
  * 	return c             # <<<<<<<<<<<<<<
@@ -3459,7 +3450,7 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":23
+  /* "src/core.pyx":23
  * 	sys.exit(1)
  * cdef warnFH(fh): sys.stderr.write('WARNING {} NOT FOUND\n'.format(fh))
  * cdef checkCall(cl):             # <<<<<<<<<<<<<<
@@ -3470,7 +3461,7 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("gtcnv.core.checkCall", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.checkCall", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3478,7 +3469,7 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":28
+/* "src/core.pyx":28
  * 	if 'DEL' in cl or 'DUP' in cl: c=1
  * 	return c
  * def Bed(fh):             # <<<<<<<<<<<<<<
@@ -3487,20 +3478,20 @@ static PyObject *__pyx_f_5gtcnv_4core_checkCall(PyObject *__pyx_v_cl) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_3Bed(PyObject *__pyx_self, PyObject *__pyx_v_fh); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_3Bed = {"Bed", (PyCFunction)__pyx_pw_5gtcnv_4core_3Bed, METH_O, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_3Bed(PyObject *__pyx_self, PyObject *__pyx_v_fh) {
+static PyObject *__pyx_pw_3src_4core_3Bed(PyObject *__pyx_self, PyObject *__pyx_v_fh); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_3Bed = {"Bed", (PyCFunction)__pyx_pw_3src_4core_3Bed, METH_O, 0};
+static PyObject *__pyx_pw_3src_4core_3Bed(PyObject *__pyx_self, PyObject *__pyx_v_fh) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("Bed (wrapper)", 0);
-  __pyx_r = __pyx_pf_5gtcnv_4core_2Bed(__pyx_self, ((PyObject *)__pyx_v_fh));
+  __pyx_r = __pyx_pf_3src_4core_2Bed(__pyx_self, ((PyObject *)__pyx_v_fh));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh) {
+static PyObject *__pyx_pf_3src_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh) {
   unsigned int __pyx_v_s;
   unsigned int __pyx_v_e;
   int __pyx_v_v;
@@ -3541,7 +3532,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   PyObject *(*__pyx_t_21)(PyObject *);
   __Pyx_RefNannySetupContext("Bed", 0);
 
-  /* "gtcnv/core.pyx":32
+  /* "src/core.pyx":32
  * 	cdef unsigned int e
  * 	cdef bint v
  * 	v=0             # <<<<<<<<<<<<<<
@@ -3550,7 +3541,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_v = 0;
 
-  /* "gtcnv/core.pyx":33
+  /* "src/core.pyx":33
  * 	cdef bint v
  * 	v=0
  * 	c=''             # <<<<<<<<<<<<<<
@@ -3560,7 +3551,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __Pyx_INCREF(__pyx_kp_s__2);
   __pyx_v_c = __pyx_kp_s__2;
 
-  /* "gtcnv/core.pyx":34
+  /* "src/core.pyx":34
  * 	v=0
  * 	c=''
  * 	cl=''             # <<<<<<<<<<<<<<
@@ -3570,7 +3561,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __Pyx_INCREF(__pyx_kp_s__2);
   __pyx_v_cl = __pyx_kp_s__2;
 
-  /* "gtcnv/core.pyx":35
+  /* "src/core.pyx":35
  * 	c=''
  * 	cl=''
  * 	cnv=[]             # <<<<<<<<<<<<<<
@@ -3582,7 +3573,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_v_cnv = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":36
+  /* "src/core.pyx":36
  * 	cl=''
  * 	cnv=[]
  * 	if not os.path.isfile(fh): errFH(fh)             # <<<<<<<<<<<<<<
@@ -3656,7 +3647,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "gtcnv/core.pyx":37
+  /* "src/core.pyx":37
  * 	cnv=[]
  * 	if not os.path.isfile(fh): errFH(fh)
  * 	header=open(fh).readline().rstrip()             # <<<<<<<<<<<<<<
@@ -3716,7 +3707,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_v_header = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":38
+  /* "src/core.pyx":38
  * 	if not os.path.isfile(fh): errFH(fh)
  * 	header=open(fh).readline().rstrip()
  * 	if 'VCF' in header: v=1             # <<<<<<<<<<<<<<
@@ -3729,7 +3720,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __pyx_v_v = 1;
   }
 
-  /* "gtcnv/core.pyx":39
+  /* "src/core.pyx":39
  * 	header=open(fh).readline().rstrip()
  * 	if 'VCF' in header: v=1
  * 	if v==True:             # <<<<<<<<<<<<<<
@@ -3739,7 +3730,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_5 = ((__pyx_v_v == 1) != 0);
   if (__pyx_t_5) {
 
-    /* "gtcnv/core.pyx":40
+    /* "src/core.pyx":40
  * 	if 'VCF' in header: v=1
  * 	if v==True:
  * 		with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -3792,7 +3783,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
             __pyx_v_f = __pyx_t_2;
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":41
+            /* "src/core.pyx":41
  * 	if v==True:
  * 		with open(fh) as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -3841,7 +3832,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":42
+              /* "src/core.pyx":42
  * 		with open(fh) as f:
  * 			for l in f:
  * 				if l.startswith('#'): continue             # <<<<<<<<<<<<<<
@@ -3859,7 +3850,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 goto __pyx_L18_continue;
               }
 
-              /* "gtcnv/core.pyx":43
+              /* "src/core.pyx":43
  * 			for l in f:
  * 				if l.startswith('#'): continue
  * 				s=0             # <<<<<<<<<<<<<<
@@ -3868,7 +3859,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_s = 0;
 
-              /* "gtcnv/core.pyx":44
+              /* "src/core.pyx":44
  * 				if l.startswith('#'): continue
  * 				s=0
  * 				e=0             # <<<<<<<<<<<<<<
@@ -3877,7 +3868,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_e = 0;
 
-              /* "gtcnv/core.pyx":45
+              /* "src/core.pyx":45
  * 				s=0
  * 				e=0
  * 				r= l.rstrip().split('\t')             # <<<<<<<<<<<<<<
@@ -3913,7 +3904,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_1);
               __pyx_t_1 = 0;
 
-              /* "gtcnv/core.pyx":46
+              /* "src/core.pyx":46
  * 				e=0
  * 				r= l.rstrip().split('\t')
  * 				c=str(r[0])             # <<<<<<<<<<<<<<
@@ -3933,7 +3924,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_DECREF_SET(__pyx_v_c, __pyx_t_1);
               __pyx_t_1 = 0;
 
-              /* "gtcnv/core.pyx":47
+              /* "src/core.pyx":47
  * 				r= l.rstrip().split('\t')
  * 				c=str(r[0])
  * 				if not c.startswith('chr'): c='chr'+c             # <<<<<<<<<<<<<<
@@ -3955,7 +3946,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 __pyx_t_3 = 0;
               }
 
-              /* "gtcnv/core.pyx":48
+              /* "src/core.pyx":48
  * 				c=str(r[0])
  * 				if not c.startswith('chr'): c='chr'+c
  * 				s=int(r[1])             # <<<<<<<<<<<<<<
@@ -3971,7 +3962,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __pyx_v_s = __pyx_t_13;
 
-              /* "gtcnv/core.pyx":49
+              /* "src/core.pyx":49
  * 				if not c.startswith('chr'): c='chr'+c
  * 				s=int(r[1])
  * 				for i in r[7].split(';'):             # <<<<<<<<<<<<<<
@@ -4029,7 +4020,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
                 __pyx_t_1 = 0;
 
-                /* "gtcnv/core.pyx":50
+                /* "src/core.pyx":50
  * 				s=int(r[1])
  * 				for i in r[7].split(';'):
  * 					if 'SVTYPE=' in i: cl=i.replace('SVTYPE=','')             # <<<<<<<<<<<<<<
@@ -4048,7 +4039,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                   __pyx_t_4 = 0;
                 }
 
-                /* "gtcnv/core.pyx":51
+                /* "src/core.pyx":51
  * 				for i in r[7].split(';'):
  * 					if 'SVTYPE=' in i: cl=i.replace('SVTYPE=','')
  * 					if 'END=' in i and 'CI' not in i and i.startswith('END='): e=int(i.replace('END=',''))             # <<<<<<<<<<<<<<
@@ -4092,7 +4083,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                   __pyx_v_e = __pyx_t_13;
                 }
 
-                /* "gtcnv/core.pyx":49
+                /* "src/core.pyx":49
  * 				if not c.startswith('chr'): c='chr'+c
  * 				s=int(r[1])
  * 				for i in r[7].split(';'):             # <<<<<<<<<<<<<<
@@ -4102,7 +4093,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               }
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":52
+              /* "src/core.pyx":52
  * 					if 'SVTYPE=' in i: cl=i.replace('SVTYPE=','')
  * 					if 'END=' in i and 'CI' not in i and i.startswith('END='): e=int(i.replace('END=',''))
  * 				if s<=0 or s>=e or e<=0: continue             # <<<<<<<<<<<<<<
@@ -4128,14 +4119,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 goto __pyx_L18_continue;
               }
 
-              /* "gtcnv/core.pyx":53
+              /* "src/core.pyx":53
  * 					if 'END=' in i and 'CI' not in i and i.startswith('END='): e=int(i.replace('END=',''))
  * 				if s<=0 or s>=e or e<=0: continue
  * 				if checkCall(cl)==True:cnv.append((c,s,e,cl))             # <<<<<<<<<<<<<<
  * 	else:
  * 		with open(fh) as f:
  */
-              __pyx_t_3 = __pyx_f_5gtcnv_4core_checkCall(__pyx_v_cl); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L10_error)
+              __pyx_t_3 = __pyx_f_3src_4core_checkCall(__pyx_v_cl); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L10_error)
               __Pyx_GOTREF(__pyx_t_3);
               __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L10_error)
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -4164,7 +4155,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               }
 
-              /* "gtcnv/core.pyx":41
+              /* "src/core.pyx":41
  * 	if v==True:
  * 		with open(fh) as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -4175,7 +4166,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":40
+            /* "src/core.pyx":40
  * 	if 'VCF' in header: v=1
  * 	if v==True:
  * 		with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -4194,7 +4185,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("gtcnv.core.Bed", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("src.core.Bed", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_4, &__pyx_t_3) < 0) __PYX_ERR(0, 40, __pyx_L12_except_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_GOTREF(__pyx_t_4);
@@ -4259,7 +4250,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
       __pyx_L37:;
     }
 
-    /* "gtcnv/core.pyx":39
+    /* "src/core.pyx":39
  * 	header=open(fh).readline().rstrip()
  * 	if 'VCF' in header: v=1
  * 	if v==True:             # <<<<<<<<<<<<<<
@@ -4269,7 +4260,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     goto __pyx_L5;
   }
 
-  /* "gtcnv/core.pyx":55
+  /* "src/core.pyx":55
  * 				if checkCall(cl)==True:cnv.append((c,s,e,cl))
  * 	else:
  * 		with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -4323,7 +4314,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
             __pyx_v_f = __pyx_t_2;
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":56
+            /* "src/core.pyx":56
  * 	else:
  * 		with open(fh) as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -4372,7 +4363,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_4);
               __pyx_t_4 = 0;
 
-              /* "gtcnv/core.pyx":57
+              /* "src/core.pyx":57
  * 		with open(fh) as f:
  * 			for l in f:
  * 				if l.startswith('#'): continue             # <<<<<<<<<<<<<<
@@ -4390,7 +4381,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 goto __pyx_L50_continue;
               }
 
-              /* "gtcnv/core.pyx":58
+              /* "src/core.pyx":58
  * 			for l in f:
  * 				if l.startswith('#'): continue
  * 				s=0             # <<<<<<<<<<<<<<
@@ -4399,7 +4390,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_s = 0;
 
-              /* "gtcnv/core.pyx":59
+              /* "src/core.pyx":59
  * 				if l.startswith('#'): continue
  * 				s=0
  * 				e=0             # <<<<<<<<<<<<<<
@@ -4408,7 +4399,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_e = 0;
 
-              /* "gtcnv/core.pyx":60
+              /* "src/core.pyx":60
  * 				s=0
  * 				e=0
  * 				r=l.rstrip().split('\t')             # <<<<<<<<<<<<<<
@@ -4444,7 +4435,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":61
+              /* "src/core.pyx":61
  * 				e=0
  * 				r=l.rstrip().split('\t')
  * 				c=str(r[0])             # <<<<<<<<<<<<<<
@@ -4464,7 +4455,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_DECREF_SET(__pyx_v_c, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":62
+              /* "src/core.pyx":62
  * 				r=l.rstrip().split('\t')
  * 				c=str(r[0])
  * 				s=int(r[1])             # <<<<<<<<<<<<<<
@@ -4480,7 +4471,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __pyx_v_s = __pyx_t_13;
 
-              /* "gtcnv/core.pyx":63
+              /* "src/core.pyx":63
  * 				c=str(r[0])
  * 				s=int(r[1])
  * 				e=int(r[2])             # <<<<<<<<<<<<<<
@@ -4496,7 +4487,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               __pyx_v_e = __pyx_t_13;
 
-              /* "gtcnv/core.pyx":64
+              /* "src/core.pyx":64
  * 				s=int(r[1])
  * 				e=int(r[2])
  * 				if s<=0 or s>=e or e<=0: continue             # <<<<<<<<<<<<<<
@@ -4522,7 +4513,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 goto __pyx_L50_continue;
               }
 
-              /* "gtcnv/core.pyx":65
+              /* "src/core.pyx":65
  * 				e=int(r[2])
  * 				if s<=0 or s>=e or e<=0: continue
  * 				cl=r[3]             # <<<<<<<<<<<<<<
@@ -4534,7 +4525,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
               __Pyx_DECREF_SET(__pyx_v_cl, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":66
+              /* "src/core.pyx":66
  * 				if s<=0 or s>=e or e<=0: continue
  * 				cl=r[3]
  * 				if not c.startswith('chr'): c='chr'+c             # <<<<<<<<<<<<<<
@@ -4556,14 +4547,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 __pyx_t_4 = 0;
               }
 
-              /* "gtcnv/core.pyx":67
+              /* "src/core.pyx":67
  * 				cl=r[3]
  * 				if not c.startswith('chr'): c='chr'+c
  * 				if checkCall(cl)==True: cnv.append((c,s,e,cl))             # <<<<<<<<<<<<<<
  * 	scnv=[]
  * 	for x in pbed.BedTool(cnv).sort():
  */
-              __pyx_t_4 = __pyx_f_5gtcnv_4core_checkCall(__pyx_v_cl); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L42_error)
+              __pyx_t_4 = __pyx_f_3src_4core_checkCall(__pyx_v_cl); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L42_error)
               __Pyx_GOTREF(__pyx_t_4);
               __pyx_t_3 = PyObject_RichCompare(__pyx_t_4, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L42_error)
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -4592,7 +4583,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               }
 
-              /* "gtcnv/core.pyx":56
+              /* "src/core.pyx":56
  * 	else:
  * 		with open(fh) as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -4603,7 +4594,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":55
+            /* "src/core.pyx":55
  * 				if checkCall(cl)==True:cnv.append((c,s,e,cl))
  * 	else:
  * 		with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -4622,7 +4613,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("gtcnv.core.Bed", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("src.core.Bed", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 55, __pyx_L44_except_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_GOTREF(__pyx_t_1);
@@ -4689,7 +4680,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __pyx_L5:;
 
-  /* "gtcnv/core.pyx":68
+  /* "src/core.pyx":68
  * 				if not c.startswith('chr'): c='chr'+c
  * 				if checkCall(cl)==True: cnv.append((c,s,e,cl))
  * 	scnv=[]             # <<<<<<<<<<<<<<
@@ -4701,7 +4692,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_v_scnv = ((PyObject*)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":69
+  /* "src/core.pyx":69
  * 				if checkCall(cl)==True: cnv.append((c,s,e,cl))
  * 	scnv=[]
  * 	for x in pbed.BedTool(cnv).sort():             # <<<<<<<<<<<<<<
@@ -4802,7 +4793,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":70
+    /* "src/core.pyx":70
  * 	scnv=[]
  * 	for x in pbed.BedTool(cnv).sort():
  * 		(c,ss,ee,cl) = x             # <<<<<<<<<<<<<<
@@ -4879,7 +4870,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_DECREF_SET(__pyx_v_cl, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":71
+    /* "src/core.pyx":71
  * 	for x in pbed.BedTool(cnv).sort():
  * 		(c,ss,ee,cl) = x
  * 		s=int(ss)             # <<<<<<<<<<<<<<
@@ -4892,7 +4883,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_s = __pyx_t_13;
 
-    /* "gtcnv/core.pyx":72
+    /* "src/core.pyx":72
  * 		(c,ss,ee,cl) = x
  * 		s=int(ss)
  * 		e=int(ee)             # <<<<<<<<<<<<<<
@@ -4905,7 +4896,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_e = __pyx_t_13;
 
-    /* "gtcnv/core.pyx":73
+    /* "src/core.pyx":73
  * 		s=int(ss)
  * 		e=int(ee)
  * 		scnv.append((c,s,e,cl))             # <<<<<<<<<<<<<<
@@ -4933,7 +4924,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
     __pyx_t_17 = __Pyx_PyList_Append(__pyx_v_scnv, __pyx_t_1); if (unlikely(__pyx_t_17 == -1)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":69
+    /* "src/core.pyx":69
  * 				if checkCall(cl)==True: cnv.append((c,s,e,cl))
  * 	scnv=[]
  * 	for x in pbed.BedTool(cnv).sort():             # <<<<<<<<<<<<<<
@@ -4943,7 +4934,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":74
+  /* "src/core.pyx":74
  * 		e=int(ee)
  * 		scnv.append((c,s,e,cl))
  * 	return scnv             # <<<<<<<<<<<<<<
@@ -4955,7 +4946,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_r = __pyx_v_scnv;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":28
+  /* "src/core.pyx":28
  * 	if 'DEL' in cl or 'DUP' in cl: c=1
  * 	return c
  * def Bed(fh):             # <<<<<<<<<<<<<<
@@ -4971,7 +4962,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_19);
   __Pyx_XDECREF(__pyx_t_20);
-  __Pyx_AddTraceback("gtcnv.core.Bed", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.Bed", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_c);
@@ -4991,7 +4982,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":75
+/* "src/core.pyx":75
  * 		scnv.append((c,s,e,cl))
  * 	return scnv
  * def get_path():             # <<<<<<<<<<<<<<
@@ -5000,20 +4991,20 @@ static PyObject *__pyx_pf_5gtcnv_4core_2Bed(CYTHON_UNUSED PyObject *__pyx_self, 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_5get_path(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_5get_path = {"get_path", (PyCFunction)__pyx_pw_5gtcnv_4core_5get_path, METH_NOARGS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_5get_path(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_3src_4core_5get_path(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_5get_path = {"get_path", (PyCFunction)__pyx_pw_3src_4core_5get_path, METH_NOARGS, 0};
+static PyObject *__pyx_pw_3src_4core_5get_path(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_path (wrapper)", 0);
-  __pyx_r = __pyx_pf_5gtcnv_4core_4get_path(__pyx_self);
+  __pyx_r = __pyx_pf_3src_4core_4get_path(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_3src_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_v_root = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -5033,7 +5024,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
   PyObject *__pyx_t_14 = NULL;
   __Pyx_RefNannySetupContext("get_path", 0);
 
-  /* "gtcnv/core.pyx":76
+  /* "src/core.pyx":76
  * 	return scnv
  * def get_path():
  * 	try:             # <<<<<<<<<<<<<<
@@ -5049,7 +5040,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "gtcnv/core.pyx":77
+      /* "src/core.pyx":77
  * def get_path():
  * 	try:
  * 		root = __file__             # <<<<<<<<<<<<<<
@@ -5061,7 +5052,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
       __pyx_v_root = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":78
+      /* "src/core.pyx":78
  * 	try:
  * 		root = __file__
  * 		if os.path.islink(root): root = os.path.realpath(root)             # <<<<<<<<<<<<<<
@@ -5141,7 +5132,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
         __pyx_t_4 = 0;
       }
 
-      /* "gtcnv/core.pyx":79
+      /* "src/core.pyx":79
  * 		root = __file__
  * 		if os.path.islink(root): root = os.path.realpath(root)
  * 		return os.path.dirname(os.path.abspath(root))             # <<<<<<<<<<<<<<
@@ -5220,7 +5211,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
       __pyx_t_4 = 0;
       goto __pyx_L7_try_return;
 
-      /* "gtcnv/core.pyx":76
+      /* "src/core.pyx":76
  * 	return scnv
  * def get_path():
  * 	try:             # <<<<<<<<<<<<<<
@@ -5237,7 +5228,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":80
+    /* "src/core.pyx":80
  * 		if os.path.islink(root): root = os.path.realpath(root)
  * 		return os.path.dirname(os.path.abspath(root))
  * 	except:             # <<<<<<<<<<<<<<
@@ -5245,13 +5236,13 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
  * 		sys.exit(1)
  */
     /*except:*/ {
-      __Pyx_AddTraceback("gtcnv.core.get_path", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("src.core.get_path", __pyx_clineno, __pyx_lineno, __pyx_filename);
       if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_5, &__pyx_t_10) < 0) __PYX_ERR(0, 80, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GOTREF(__pyx_t_10);
 
-      /* "gtcnv/core.pyx":81
+      /* "src/core.pyx":81
  * 		return os.path.dirname(os.path.abspath(root))
  * 	except:
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))             # <<<<<<<<<<<<<<
@@ -5324,7 +5315,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "gtcnv/core.pyx":82
+      /* "src/core.pyx":82
  * 	except:
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))
  * 		sys.exit(1)             # <<<<<<<<<<<<<<
@@ -5347,7 +5338,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
     }
     __pyx_L5_except_error:;
 
-    /* "gtcnv/core.pyx":76
+    /* "src/core.pyx":76
  * 	return scnv
  * def get_path():
  * 	try:             # <<<<<<<<<<<<<<
@@ -5375,7 +5366,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
     __Pyx_ExceptionReset(__pyx_t_1, __pyx_t_2, __pyx_t_3);
   }
 
-  /* "gtcnv/core.pyx":75
+  /* "src/core.pyx":75
  * 		scnv.append((c,s,e,cl))
  * 	return scnv
  * def get_path():             # <<<<<<<<<<<<<<
@@ -5397,7 +5388,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("gtcnv.core.get_path", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.get_path", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_root);
@@ -5406,7 +5397,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":83
+/* "src/core.pyx":83
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))
  * 		sys.exit(1)
  * def check_in(fh):             # <<<<<<<<<<<<<<
@@ -5415,20 +5406,20 @@ static PyObject *__pyx_pf_5gtcnv_4core_4get_path(CYTHON_UNUSED PyObject *__pyx_s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_7check_in(PyObject *__pyx_self, PyObject *__pyx_v_fh); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_7check_in = {"check_in", (PyCFunction)__pyx_pw_5gtcnv_4core_7check_in, METH_O, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_7check_in(PyObject *__pyx_self, PyObject *__pyx_v_fh) {
+static PyObject *__pyx_pw_3src_4core_7check_in(PyObject *__pyx_self, PyObject *__pyx_v_fh); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_7check_in = {"check_in", (PyCFunction)__pyx_pw_3src_4core_7check_in, METH_O, 0};
+static PyObject *__pyx_pw_3src_4core_7check_in(PyObject *__pyx_self, PyObject *__pyx_v_fh) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("check_in (wrapper)", 0);
-  __pyx_r = __pyx_pf_5gtcnv_4core_6check_in(__pyx_self, ((PyObject *)__pyx_v_fh));
+  __pyx_r = __pyx_pf_3src_4core_6check_in(__pyx_self, ((PyObject *)__pyx_v_fh));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh) {
+static PyObject *__pyx_pf_3src_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fh) {
   int __pyx_v_skip;
   PyObject *__pyx_v_bams = NULL;
   PyObject *__pyx_v_vcfs = NULL;
@@ -5462,7 +5453,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   PyObject *__pyx_t_17 = NULL;
   __Pyx_RefNannySetupContext("check_in", 0);
 
-  /* "gtcnv/core.pyx":85
+  /* "src/core.pyx":85
  * def check_in(fh):
  * 	cdef bint skip
  * 	bams={}             # <<<<<<<<<<<<<<
@@ -5474,7 +5465,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_v_bams = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":86
+  /* "src/core.pyx":86
  * 	cdef bint skip
  * 	bams={}
  * 	vcfs={}             # <<<<<<<<<<<<<<
@@ -5486,7 +5477,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_v_vcfs = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":87
+  /* "src/core.pyx":87
  * 	bams={}
  * 	vcfs={}
  * 	gender={}             # <<<<<<<<<<<<<<
@@ -5498,7 +5489,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_v_gender = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":88
+  /* "src/core.pyx":88
  * 	vcfs={}
  * 	gender={}
  * 	if not os.path.isfile(fh): errFH(fh)             # <<<<<<<<<<<<<<
@@ -5572,7 +5563,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "gtcnv/core.pyx":89
+  /* "src/core.pyx":89
  * 	gender={}
  * 	if not os.path.isfile(fh): errFH(fh)
  * 	genders = ['M','F']             # <<<<<<<<<<<<<<
@@ -5590,7 +5581,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_v_genders = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":90
+  /* "src/core.pyx":90
  * 	if not os.path.isfile(fh): errFH(fh)
  * 	genders = ['M','F']
  * 	with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -5643,7 +5634,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
           __pyx_v_f = __pyx_t_3;
           __pyx_t_3 = 0;
 
-          /* "gtcnv/core.pyx":91
+          /* "src/core.pyx":91
  * 	genders = ['M','F']
  * 	with open(fh) as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -5692,7 +5683,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":92
+            /* "src/core.pyx":92
  * 	with open(fh) as f:
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -5713,7 +5704,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
             __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "gtcnv/core.pyx":93
+            /* "src/core.pyx":93
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')
  * 			if len(r) != 4:             # <<<<<<<<<<<<<<
@@ -5724,7 +5715,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
             __pyx_t_6 = ((__pyx_t_13 != 4) != 0);
             if (__pyx_t_6) {
 
-              /* "gtcnv/core.pyx":94
+              /* "src/core.pyx":94
  * 			r = l.rstrip('\n').split('\t')
  * 			if len(r) != 4:
  * 				print 'WARNING: {} not formatted correctly! Please refer to the documentation at www.github.com/dantaki/gtCNV\n'.format(l)             # <<<<<<<<<<<<<<
@@ -5761,7 +5752,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
               if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 94, __pyx_L8_error)
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "gtcnv/core.pyx":93
+              /* "src/core.pyx":93
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')
  * 			if len(r) != 4:             # <<<<<<<<<<<<<<
@@ -5771,7 +5762,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
               goto __pyx_L18;
             }
 
-            /* "gtcnv/core.pyx":96
+            /* "src/core.pyx":96
  * 				print 'WARNING: {} not formatted correctly! Please refer to the documentation at www.github.com/dantaki/gtCNV\n'.format(l)
  * 			else:
  * 				(iid,bamfh,vcffh,sx) = r             # <<<<<<<<<<<<<<
@@ -5849,7 +5840,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
               __Pyx_XDECREF_SET(__pyx_v_sx, __pyx_t_4);
               __pyx_t_4 = 0;
 
-              /* "gtcnv/core.pyx":97
+              /* "src/core.pyx":97
  * 			else:
  * 				(iid,bamfh,vcffh,sx) = r
  * 				skip=0             # <<<<<<<<<<<<<<
@@ -5858,7 +5849,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
               __pyx_v_skip = 0;
 
-              /* "gtcnv/core.pyx":98
+              /* "src/core.pyx":98
  * 				(iid,bamfh,vcffh,sx) = r
  * 				skip=0
  * 				if not os.path.isfile(bamfh):             # <<<<<<<<<<<<<<
@@ -5903,7 +5894,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
               __pyx_t_5 = ((!__pyx_t_6) != 0);
               if (__pyx_t_5) {
 
-                /* "gtcnv/core.pyx":99
+                /* "src/core.pyx":99
  * 				skip=0
  * 				if not os.path.isfile(bamfh):
  * 					skip=1             # <<<<<<<<<<<<<<
@@ -5912,18 +5903,18 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
                 __pyx_v_skip = 1;
 
-                /* "gtcnv/core.pyx":100
+                /* "src/core.pyx":100
  * 				if not os.path.isfile(bamfh):
  * 					skip=1
  * 					warnFH(bamfh)             # <<<<<<<<<<<<<<
  * 				if not os.path.isfile(vcffh):
  * 					skip=1
  */
-                __pyx_t_4 = __pyx_f_5gtcnv_4core_warnFH(__pyx_v_bamfh); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L8_error)
+                __pyx_t_4 = __pyx_f_3src_4core_warnFH(__pyx_v_bamfh); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L8_error)
                 __Pyx_GOTREF(__pyx_t_4);
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-                /* "gtcnv/core.pyx":98
+                /* "src/core.pyx":98
  * 				(iid,bamfh,vcffh,sx) = r
  * 				skip=0
  * 				if not os.path.isfile(bamfh):             # <<<<<<<<<<<<<<
@@ -5932,7 +5923,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
               }
 
-              /* "gtcnv/core.pyx":101
+              /* "src/core.pyx":101
  * 					skip=1
  * 					warnFH(bamfh)
  * 				if not os.path.isfile(vcffh):             # <<<<<<<<<<<<<<
@@ -5977,7 +5968,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
               __pyx_t_6 = ((!__pyx_t_5) != 0);
               if (__pyx_t_6) {
 
-                /* "gtcnv/core.pyx":102
+                /* "src/core.pyx":102
  * 					warnFH(bamfh)
  * 				if not os.path.isfile(vcffh):
  * 					skip=1             # <<<<<<<<<<<<<<
@@ -5986,18 +5977,18 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
                 __pyx_v_skip = 1;
 
-                /* "gtcnv/core.pyx":103
+                /* "src/core.pyx":103
  * 				if not os.path.isfile(vcffh):
  * 					skip=1
  * 					warnFH(vcffh)             # <<<<<<<<<<<<<<
  * 				if sx == '1': sx = 'M'
  * 				if sx == '2': sx = 'F'
  */
-                __pyx_t_4 = __pyx_f_5gtcnv_4core_warnFH(__pyx_v_vcffh); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L8_error)
+                __pyx_t_4 = __pyx_f_3src_4core_warnFH(__pyx_v_vcffh); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L8_error)
                 __Pyx_GOTREF(__pyx_t_4);
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-                /* "gtcnv/core.pyx":101
+                /* "src/core.pyx":101
  * 					skip=1
  * 					warnFH(bamfh)
  * 				if not os.path.isfile(vcffh):             # <<<<<<<<<<<<<<
@@ -6006,7 +5997,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
               }
 
-              /* "gtcnv/core.pyx":104
+              /* "src/core.pyx":104
  * 					skip=1
  * 					warnFH(vcffh)
  * 				if sx == '1': sx = 'M'             # <<<<<<<<<<<<<<
@@ -6019,7 +6010,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
                 __Pyx_DECREF_SET(__pyx_v_sx, __pyx_n_s_M);
               }
 
-              /* "gtcnv/core.pyx":105
+              /* "src/core.pyx":105
  * 					warnFH(vcffh)
  * 				if sx == '1': sx = 'M'
  * 				if sx == '2': sx = 'F'             # <<<<<<<<<<<<<<
@@ -6032,7 +6023,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
                 __Pyx_DECREF_SET(__pyx_v_sx, __pyx_n_s_F);
               }
 
-              /* "gtcnv/core.pyx":106
+              /* "src/core.pyx":106
  * 				if sx == '1': sx = 'M'
  * 				if sx == '2': sx = 'F'
  * 				if sx not in genders:             # <<<<<<<<<<<<<<
@@ -6043,7 +6034,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
               __pyx_t_5 = (__pyx_t_6 != 0);
               if (__pyx_t_5) {
 
-                /* "gtcnv/core.pyx":107
+                /* "src/core.pyx":107
  * 				if sx == '2': sx = 'F'
  * 				if sx not in genders:
  * 					print 'WARNING: {} not an accepted gender. Accepted genders: 1|M 2|F>\n'             # <<<<<<<<<<<<<<
@@ -6052,7 +6043,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
                 if (__Pyx_PrintOne(0, __pyx_kp_s_WARNING_not_an_accepted_gender_A) < 0) __PYX_ERR(0, 107, __pyx_L8_error)
 
-                /* "gtcnv/core.pyx":108
+                /* "src/core.pyx":108
  * 				if sx not in genders:
  * 					print 'WARNING: {} not an accepted gender. Accepted genders: 1|M 2|F>\n'
  * 					skip=1             # <<<<<<<<<<<<<<
@@ -6061,7 +6052,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
                 __pyx_v_skip = 1;
 
-                /* "gtcnv/core.pyx":106
+                /* "src/core.pyx":106
  * 				if sx == '1': sx = 'M'
  * 				if sx == '2': sx = 'F'
  * 				if sx not in genders:             # <<<<<<<<<<<<<<
@@ -6070,7 +6061,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
               }
 
-              /* "gtcnv/core.pyx":109
+              /* "src/core.pyx":109
  * 					print 'WARNING: {} not an accepted gender. Accepted genders: 1|M 2|F>\n'
  * 					skip=1
  * 				if skip==True: continue             # <<<<<<<<<<<<<<
@@ -6082,7 +6073,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
                 goto __pyx_L16_continue;
               }
 
-              /* "gtcnv/core.pyx":110
+              /* "src/core.pyx":110
  * 					skip=1
  * 				if skip==True: continue
  * 				bams[iid]=bamfh             # <<<<<<<<<<<<<<
@@ -6091,7 +6082,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
               if (unlikely(PyDict_SetItem(__pyx_v_bams, __pyx_v_iid, __pyx_v_bamfh) < 0)) __PYX_ERR(0, 110, __pyx_L8_error)
 
-              /* "gtcnv/core.pyx":111
+              /* "src/core.pyx":111
  * 				if skip==True: continue
  * 				bams[iid]=bamfh
  * 				vcfs[iid]=vcffh             # <<<<<<<<<<<<<<
@@ -6100,7 +6091,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  */
               if (unlikely(PyDict_SetItem(__pyx_v_vcfs, __pyx_v_iid, __pyx_v_vcffh) < 0)) __PYX_ERR(0, 111, __pyx_L8_error)
 
-              /* "gtcnv/core.pyx":112
+              /* "src/core.pyx":112
  * 				bams[iid]=bamfh
  * 				vcfs[iid]=vcffh
  * 				gender[iid]=sx             # <<<<<<<<<<<<<<
@@ -6111,7 +6102,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
             }
             __pyx_L18:;
 
-            /* "gtcnv/core.pyx":91
+            /* "src/core.pyx":91
  * 	genders = ['M','F']
  * 	with open(fh) as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -6122,7 +6113,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "gtcnv/core.pyx":90
+          /* "src/core.pyx":90
  * 	if not os.path.isfile(fh): errFH(fh)
  * 	genders = ['M','F']
  * 	with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -6143,7 +6134,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.check_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.check_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_4, &__pyx_t_14) < 0) __PYX_ERR(0, 90, __pyx_L10_except_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_GOTREF(__pyx_t_4);
@@ -6208,7 +6199,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
     __pyx_L30:;
   }
 
-  /* "gtcnv/core.pyx":113
+  /* "src/core.pyx":113
  * 				vcfs[iid]=vcffh
  * 				gender[iid]=sx
  * 	return bams,vcfs,gender             # <<<<<<<<<<<<<<
@@ -6231,7 +6222,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_t_14 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":83
+  /* "src/core.pyx":83
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))
  * 		sys.exit(1)
  * def check_in(fh):             # <<<<<<<<<<<<<<
@@ -6247,7 +6238,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_14);
   __Pyx_XDECREF(__pyx_t_15);
-  __Pyx_AddTraceback("gtcnv.core.check_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.check_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bams);
@@ -6266,7 +6257,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":114
+/* "src/core.pyx":114
  * 				gender[iid]=sx
  * 	return bams,vcfs,gender
  * cdef get_chroma():             # <<<<<<<<<<<<<<
@@ -6274,7 +6265,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6check_in(CYTHON_UNUSED PyObject *__pyx_s
  * 	for x in range(1,23): chroms.append('chr'+str(x))
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
+static PyObject *__pyx_f_3src_4core_get_chroma(void) {
   PyObject *__pyx_v_chroms = NULL;
   long __pyx_v_x;
   PyObject *__pyx_r = NULL;
@@ -6285,7 +6276,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
   int __pyx_t_4;
   __Pyx_RefNannySetupContext("get_chroma", 0);
 
-  /* "gtcnv/core.pyx":115
+  /* "src/core.pyx":115
  * 	return bams,vcfs,gender
  * cdef get_chroma():
  * 	chroms=[]             # <<<<<<<<<<<<<<
@@ -6297,7 +6288,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
   __pyx_v_chroms = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":116
+  /* "src/core.pyx":116
  * cdef get_chroma():
  * 	chroms=[]
  * 	for x in range(1,23): chroms.append('chr'+str(x))             # <<<<<<<<<<<<<<
@@ -6323,7 +6314,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
 
-  /* "gtcnv/core.pyx":117
+  /* "src/core.pyx":117
  * 	chroms=[]
  * 	for x in range(1,23): chroms.append('chr'+str(x))
  * 	chroms.append('chrX')             # <<<<<<<<<<<<<<
@@ -6332,7 +6323,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
  */
   __pyx_t_4 = __Pyx_PyList_Append(__pyx_v_chroms, __pyx_n_s_chrX); if (unlikely(__pyx_t_4 == -1)) __PYX_ERR(0, 117, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":118
+  /* "src/core.pyx":118
  * 	for x in range(1,23): chroms.append('chr'+str(x))
  * 	chroms.append('chrX')
  * 	chroms.append('chrY')             # <<<<<<<<<<<<<<
@@ -6341,7 +6332,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
  */
   __pyx_t_4 = __Pyx_PyList_Append(__pyx_v_chroms, __pyx_n_s_chrY); if (unlikely(__pyx_t_4 == -1)) __PYX_ERR(0, 118, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":119
+  /* "src/core.pyx":119
  * 	chroms.append('chrX')
  * 	chroms.append('chrY')
  * 	return chroms             # <<<<<<<<<<<<<<
@@ -6353,7 +6344,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
   __pyx_r = __pyx_v_chroms;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":114
+  /* "src/core.pyx":114
  * 				gender[iid]=sx
  * 	return bams,vcfs,gender
  * cdef get_chroma():             # <<<<<<<<<<<<<<
@@ -6365,7 +6356,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("gtcnv.core.get_chroma", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.get_chroma", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_chroms);
@@ -6374,7 +6365,7 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":120
+/* "src/core.pyx":120
  * 	chroms.append('chrY')
  * 	return chroms
  * def check_cnv(cnv,gen):             # <<<<<<<<<<<<<<
@@ -6383,9 +6374,9 @@ static PyObject *__pyx_f_5gtcnv_4core_get_chroma(void) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_9check_cnv(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_9check_cnv = {"check_cnv", (PyCFunction)__pyx_pw_5gtcnv_4core_9check_cnv, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_9check_cnv(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_9check_cnv(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_9check_cnv = {"check_cnv", (PyCFunction)__pyx_pw_3src_4core_9check_cnv, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_9check_cnv(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_cnv = 0;
   PyObject *__pyx_v_gen = 0;
   PyObject *__pyx_r = 0;
@@ -6430,18 +6421,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_9check_cnv(PyObject *__pyx_self, PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("check_cnv", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 120, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.check_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.check_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_8check_cnv(__pyx_self, __pyx_v_cnv, __pyx_v_gen);
+  __pyx_r = __pyx_pf_3src_4core_8check_cnv(__pyx_self, __pyx_v_cnv, __pyx_v_gen);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_pf_3src_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
   unsigned int __pyx_v_s;
   PyObject *__pyx_v_sz = NULL;
   PyObject *__pyx_v_f = NULL;
@@ -6477,7 +6468,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   Py_ssize_t __pyx_t_20;
   __Pyx_RefNannySetupContext("check_cnv", 0);
 
-  /* "gtcnv/core.pyx":122
+  /* "src/core.pyx":122
  * def check_cnv(cnv,gen):
  * 	cdef unsigned int s
  * 	sz={}             # <<<<<<<<<<<<<<
@@ -6489,7 +6480,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_sz = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":123
+  /* "src/core.pyx":123
  * 	cdef unsigned int s
  * 	sz={}
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:             # <<<<<<<<<<<<<<
@@ -6593,7 +6584,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
           __pyx_v_f = __pyx_t_1;
           __pyx_t_1 = 0;
 
-          /* "gtcnv/core.pyx":124
+          /* "src/core.pyx":124
  * 	sz={}
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -6642,7 +6633,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_3);
             __pyx_t_3 = 0;
 
-            /* "gtcnv/core.pyx":125
+            /* "src/core.pyx":125
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -6663,7 +6654,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
             __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":126
+            /* "src/core.pyx":126
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')
  * 			s=int(r[1])             # <<<<<<<<<<<<<<
@@ -6679,7 +6670,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __pyx_v_s = __pyx_t_12;
 
-            /* "gtcnv/core.pyx":127
+            /* "src/core.pyx":127
  * 			r = l.rstrip('\n').split('\t')
  * 			s=int(r[1])
  * 			sz[r[0]]=s             # <<<<<<<<<<<<<<
@@ -6694,7 +6685,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "gtcnv/core.pyx":124
+            /* "src/core.pyx":124
  * 	sz={}
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -6704,7 +6695,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
           }
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-          /* "gtcnv/core.pyx":123
+          /* "src/core.pyx":123
  * 	cdef unsigned int s
  * 	sz={}
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:             # <<<<<<<<<<<<<<
@@ -6724,7 +6715,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.check_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.check_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_3, &__pyx_t_2) < 0) __PYX_ERR(0, 123, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_GOTREF(__pyx_t_3);
@@ -6789,19 +6780,19 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
     __pyx_L20:;
   }
 
-  /* "gtcnv/core.pyx":128
+  /* "src/core.pyx":128
  * 			s=int(r[1])
  * 			sz[r[0]]=s
  * 	chroms=get_chroma()             # <<<<<<<<<<<<<<
  * 	raw=[]
  * 	ok=[]
  */
-  __pyx_t_2 = __pyx_f_5gtcnv_4core_get_chroma(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_3src_4core_get_chroma(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_chroms = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":129
+  /* "src/core.pyx":129
  * 			sz[r[0]]=s
  * 	chroms=get_chroma()
  * 	raw=[]             # <<<<<<<<<<<<<<
@@ -6813,7 +6804,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_raw = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":130
+  /* "src/core.pyx":130
  * 	chroms=get_chroma()
  * 	raw=[]
  * 	ok=[]             # <<<<<<<<<<<<<<
@@ -6825,7 +6816,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_ok = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":131
+  /* "src/core.pyx":131
  * 	raw=[]
  * 	ok=[]
  * 	for (c,s,e,cl) in cnv:             # <<<<<<<<<<<<<<
@@ -6944,7 +6935,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_cl, __pyx_t_16);
     __pyx_t_16 = 0;
 
-    /* "gtcnv/core.pyx":132
+    /* "src/core.pyx":132
  * 	ok=[]
  * 	for (c,s,e,cl) in cnv:
  * 		raw.append((c,s,e,cl))             # <<<<<<<<<<<<<<
@@ -6970,7 +6961,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
     __pyx_t_19 = __Pyx_PyList_Append(__pyx_v_raw, __pyx_t_16); if (unlikely(__pyx_t_19 == -1)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-    /* "gtcnv/core.pyx":133
+    /* "src/core.pyx":133
  * 	for (c,s,e,cl) in cnv:
  * 		raw.append((c,s,e,cl))
  * 		if c not in chroms: print 'WARNING: {} not accepted chromosome format!\nAccepted chromosomes:\n{}'.format(c,'\n'.join(chroms))             # <<<<<<<<<<<<<<
@@ -7016,7 +7007,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
       goto __pyx_L25;
     }
 
-    /* "gtcnv/core.pyx":135
+    /* "src/core.pyx":135
  * 		if c not in chroms: print 'WARNING: {} not accepted chromosome format!\nAccepted chromosomes:\n{}'.format(c,'\n'.join(chroms))
  * 		else:
  * 			if e > sz[c]: print 'WARNING: {}:{}-{} {} has position greater than {} length!'.format(c,s,e,cl,c)             # <<<<<<<<<<<<<<
@@ -7076,7 +7067,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L26;
       }
 
-      /* "gtcnv/core.pyx":136
+      /* "src/core.pyx":136
  * 		else:
  * 			if e > sz[c]: print 'WARNING: {}:{}-{} {} has position greater than {} length!'.format(c,s,e,cl,c)
  * 			else: ok.append((c,s,e,cl))             # <<<<<<<<<<<<<<
@@ -7107,7 +7098,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
     }
     __pyx_L25:;
 
-    /* "gtcnv/core.pyx":131
+    /* "src/core.pyx":131
  * 	raw=[]
  * 	ok=[]
  * 	for (c,s,e,cl) in cnv:             # <<<<<<<<<<<<<<
@@ -7117,7 +7108,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":137
+  /* "src/core.pyx":137
  * 			if e > sz[c]: print 'WARNING: {}:{}-{} {} has position greater than {} length!'.format(c,s,e,cl,c)
  * 			else: ok.append((c,s,e,cl))
  * 	return raw,ok             # <<<<<<<<<<<<<<
@@ -7137,7 +7128,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":120
+  /* "src/core.pyx":120
  * 	chroms.append('chrY')
  * 	return chroms
  * def check_cnv(cnv,gen):             # <<<<<<<<<<<<<<
@@ -7154,7 +7145,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_17);
-  __Pyx_AddTraceback("gtcnv.core.check_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.check_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_sz);
@@ -7172,7 +7163,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":138
+/* "src/core.pyx":138
  * 			else: ok.append((c,s,e,cl))
  * 	return raw,ok
  * def reportTime(init_time,s):             # <<<<<<<<<<<<<<
@@ -7181,9 +7172,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_8check_cnv(CYTHON_UNUSED PyObject *__pyx_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_11reportTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_11reportTime = {"reportTime", (PyCFunction)__pyx_pw_5gtcnv_4core_11reportTime, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_11reportTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_11reportTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_11reportTime = {"reportTime", (PyCFunction)__pyx_pw_3src_4core_11reportTime, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_11reportTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_init_time = 0;
   PyObject *__pyx_v_s = 0;
   PyObject *__pyx_r = 0;
@@ -7228,18 +7219,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_11reportTime(PyObject *__pyx_self, PyObje
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("reportTime", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 138, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.reportTime", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.reportTime", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_10reportTime(__pyx_self, __pyx_v_init_time, __pyx_v_s);
+  __pyx_r = __pyx_pf_3src_4core_10reportTime(__pyx_self, __pyx_v_init_time, __pyx_v_s);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_init_time, PyObject *__pyx_v_s) {
+static PyObject *__pyx_pf_3src_4core_10reportTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_init_time, PyObject *__pyx_v_s) {
   PyObject *__pyx_v_f = NULL;
   CYTHON_UNUSED Py_ssize_t __pyx_v_x;
   PyObject *__pyx_r = NULL;
@@ -7258,7 +7249,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannySetupContext("reportTime", 0);
   __Pyx_INCREF(__pyx_v_s);
 
-  /* "gtcnv/core.pyx":139
+  /* "src/core.pyx":139
  * 	return raw,ok
  * def reportTime(init_time,s):
  * 	f=[]             # <<<<<<<<<<<<<<
@@ -7270,7 +7261,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
   __pyx_v_f = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":140
+  /* "src/core.pyx":140
  * def reportTime(init_time,s):
  * 	f=[]
  * 	s = ' '+s+' <time elapsed: {}>'.format(timedelta(seconds=int(time())-init_time))             # <<<<<<<<<<<<<<
@@ -7350,7 +7341,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
   __Pyx_DECREF_SET(__pyx_v_s, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":141
+  /* "src/core.pyx":141
  * 	f=[]
  * 	s = ' '+s+' <time elapsed: {}>'.format(timedelta(seconds=int(time())-init_time))
  * 	for x in range(len(s)+2): f.append('-')             # <<<<<<<<<<<<<<
@@ -7364,7 +7355,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
     __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_f, __pyx_kp_s__27); if (unlikely(__pyx_t_11 == -1)) __PYX_ERR(0, 141, __pyx_L1_error)
   }
 
-  /* "gtcnv/core.pyx":142
+  /* "src/core.pyx":142
  * 	s = ' '+s+' <time elapsed: {}>'.format(timedelta(seconds=int(time())-init_time))
  * 	for x in range(len(s)+2): f.append('-')
  * 	print ''.join(f)+'\n'+s+'\n'+''.join(f)             # <<<<<<<<<<<<<<
@@ -7391,7 +7382,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
   if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":138
+  /* "src/core.pyx":138
  * 			else: ok.append((c,s,e,cl))
  * 	return raw,ok
  * def reportTime(init_time,s):             # <<<<<<<<<<<<<<
@@ -7411,7 +7402,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("gtcnv.core.reportTime", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.reportTime", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_f);
@@ -7421,7 +7412,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":143
+/* "src/core.pyx":143
  * 	for x in range(len(s)+2): f.append('-')
  * 	print ''.join(f)+'\n'+s+'\n'+''.join(f)
  * cdef fasta_config(gen):             # <<<<<<<<<<<<<<
@@ -7429,7 +7420,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_10reportTime(CYTHON_UNUSED PyObject *__py
  * 	if not os.path.isfile(cfg):
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_fasta_config(PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_cfg = NULL;
   PyObject *__pyx_v_conf = NULL;
   PyObject *__pyx_r = NULL;
@@ -7445,7 +7436,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   Py_ssize_t __pyx_t_9;
   __Pyx_RefNannySetupContext("fasta_config", 0);
 
-  /* "gtcnv/core.pyx":144
+  /* "src/core.pyx":144
  * 	print ''.join(f)+'\n'+s+'\n'+''.join(f)
  * cdef fasta_config(gen):
  * 	cfg = get_path()+'/config/gtcnv.ini'             # <<<<<<<<<<<<<<
@@ -7478,7 +7469,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   __pyx_v_cfg = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":145
+  /* "src/core.pyx":145
  * cdef fasta_config(gen):
  * 	cfg = get_path()+'/config/gtcnv.ini'
  * 	if not os.path.isfile(cfg):             # <<<<<<<<<<<<<<
@@ -7523,7 +7514,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   __pyx_t_6 = ((!__pyx_t_5) != 0);
   if (__pyx_t_6) {
 
-    /* "gtcnv/core.pyx":146
+    /* "src/core.pyx":146
  * 	cfg = get_path()+'/config/gtcnv.ini'
  * 	if not os.path.isfile(cfg):
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(cfg))             # <<<<<<<<<<<<<<
@@ -7593,7 +7584,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":147
+    /* "src/core.pyx":147
  * 	if not os.path.isfile(cfg):
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(cfg))
  * 		sys.exit(1)             # <<<<<<<<<<<<<<
@@ -7610,7 +7601,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":145
+    /* "src/core.pyx":145
  * cdef fasta_config(gen):
  * 	cfg = get_path()+'/config/gtcnv.ini'
  * 	if not os.path.isfile(cfg):             # <<<<<<<<<<<<<<
@@ -7619,7 +7610,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
  */
   }
 
-  /* "gtcnv/core.pyx":148
+  /* "src/core.pyx":148
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(cfg))
  * 		sys.exit(1)
  * 	conf = ConfigParser()             # <<<<<<<<<<<<<<
@@ -7649,7 +7640,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   __pyx_v_conf = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":149
+  /* "src/core.pyx":149
  * 		sys.exit(1)
  * 	conf = ConfigParser()
  * 	conf.read(cfg)             # <<<<<<<<<<<<<<
@@ -7685,7 +7676,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":150
+  /* "src/core.pyx":150
  * 	conf = ConfigParser()
  * 	conf.read(cfg)
  * 	return conf.get('FASTA_PATHS',gen)             # <<<<<<<<<<<<<<
@@ -7726,7 +7717,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":143
+  /* "src/core.pyx":143
  * 	for x in range(len(s)+2): f.append('-')
  * 	print ''.join(f)+'\n'+s+'\n'+''.join(f)
  * cdef fasta_config(gen):             # <<<<<<<<<<<<<<
@@ -7742,7 +7733,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("gtcnv.core.fasta_config", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.fasta_config", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cfg);
@@ -7752,7 +7743,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":151
+/* "src/core.pyx":151
  * 	conf.read(cfg)
  * 	return conf.get('FASTA_PATHS',gen)
  * cdef FASTA_head(fh):             # <<<<<<<<<<<<<<
@@ -7760,7 +7751,7 @@ static PyObject *__pyx_f_5gtcnv_4core_fasta_config(PyObject *__pyx_v_gen) {
  * 	with open (fh,'r') as f:
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
+static PyObject *__pyx_f_3src_4core_FASTA_head(PyObject *__pyx_v_fh) {
   int __pyx_v_chr_flag;
   PyObject *__pyx_v_f = NULL;
   PyObject *__pyx_v_l = NULL;
@@ -7781,7 +7772,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
   PyObject *__pyx_t_13 = NULL;
   __Pyx_RefNannySetupContext("FASTA_head", 0);
 
-  /* "gtcnv/core.pyx":152
+  /* "src/core.pyx":152
  * 	return conf.get('FASTA_PATHS',gen)
  * cdef FASTA_head(fh):
  * 	chr_flag=False             # <<<<<<<<<<<<<<
@@ -7790,7 +7781,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
  */
   __pyx_v_chr_flag = 0;
 
-  /* "gtcnv/core.pyx":153
+  /* "src/core.pyx":153
  * cdef FASTA_head(fh):
  * 	chr_flag=False
  * 	with open (fh,'r') as f:             # <<<<<<<<<<<<<<
@@ -7846,7 +7837,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
           __pyx_v_f = __pyx_t_4;
           __pyx_t_4 = 0;
 
-          /* "gtcnv/core.pyx":154
+          /* "src/core.pyx":154
  * 	chr_flag=False
  * 	with open (fh,'r') as f:
  * 		l = f.next()             # <<<<<<<<<<<<<<
@@ -7876,7 +7867,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
           __pyx_v_l = __pyx_t_4;
           __pyx_t_4 = 0;
 
-          /* "gtcnv/core.pyx":155
+          /* "src/core.pyx":155
  * 	with open (fh,'r') as f:
  * 		l = f.next()
  * 		if '>' not in l:             # <<<<<<<<<<<<<<
@@ -7887,7 +7878,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
           __pyx_t_10 = (__pyx_t_9 != 0);
           if (__pyx_t_10) {
 
-            /* "gtcnv/core.pyx":156
+            /* "src/core.pyx":156
  * 		l = f.next()
  * 		if '>' not in l:
  * 			sys.stderr.write('ERROR {} MUST CONTAIN ">CHROM" in the first line\n'.format(fh))             # <<<<<<<<<<<<<<
@@ -7957,7 +7948,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-            /* "gtcnv/core.pyx":157
+            /* "src/core.pyx":157
  * 		if '>' not in l:
  * 			sys.stderr.write('ERROR {} MUST CONTAIN ">CHROM" in the first line\n'.format(fh))
  * 			sys.exit(1)             # <<<<<<<<<<<<<<
@@ -7974,7 +7965,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-            /* "gtcnv/core.pyx":155
+            /* "src/core.pyx":155
  * 	with open (fh,'r') as f:
  * 		l = f.next()
  * 		if '>' not in l:             # <<<<<<<<<<<<<<
@@ -7983,7 +7974,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
  */
           }
 
-          /* "gtcnv/core.pyx":158
+          /* "src/core.pyx":158
  * 			sys.stderr.write('ERROR {} MUST CONTAIN ">CHROM" in the first line\n'.format(fh))
  * 			sys.exit(1)
  * 		if '>chr' in l: chr_flag=True             # <<<<<<<<<<<<<<
@@ -7996,7 +7987,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
             __pyx_v_chr_flag = 1;
           }
 
-          /* "gtcnv/core.pyx":153
+          /* "src/core.pyx":153
  * cdef FASTA_head(fh):
  * 	chr_flag=False
  * 	with open (fh,'r') as f:             # <<<<<<<<<<<<<<
@@ -8017,7 +8008,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.FASTA_head", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.FASTA_head", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_2, &__pyx_t_12) < 0) __PYX_ERR(0, 153, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_GOTREF(__pyx_t_2);
@@ -8082,7 +8073,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
     __pyx_L20:;
   }
 
-  /* "gtcnv/core.pyx":159
+  /* "src/core.pyx":159
  * 			sys.exit(1)
  * 		if '>chr' in l: chr_flag=True
  * 	return chr_flag             # <<<<<<<<<<<<<<
@@ -8096,7 +8087,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
   __pyx_t_12 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":151
+  /* "src/core.pyx":151
  * 	conf.read(cfg)
  * 	return conf.get('FASTA_PATHS',gen)
  * cdef FASTA_head(fh):             # <<<<<<<<<<<<<<
@@ -8112,7 +8103,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("gtcnv.core.FASTA_head", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.FASTA_head", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_f);
@@ -8122,7 +8113,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":160
+/* "src/core.pyx":160
  * 		if '>chr' in l: chr_flag=True
  * 	return chr_flag
  * cdef append_list2dict(a):             # <<<<<<<<<<<<<<
@@ -8130,7 +8121,7 @@ static PyObject *__pyx_f_5gtcnv_4core_FASTA_head(PyObject *__pyx_v_fh) {
  * 	for i in a:
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
+static PyObject *__pyx_f_3src_4core_append_list2dict(PyObject *__pyx_v_a) {
   PyObject *__pyx_v_d = NULL;
   PyObject *__pyx_v_i = NULL;
   PyObject *__pyx_v_c = NULL;
@@ -8154,7 +8145,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
   int __pyx_t_12;
   __Pyx_RefNannySetupContext("append_list2dict", 0);
 
-  /* "gtcnv/core.pyx":161
+  /* "src/core.pyx":161
  * 	return chr_flag
  * cdef append_list2dict(a):
  * 	d={}             # <<<<<<<<<<<<<<
@@ -8166,7 +8157,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
   __pyx_v_d = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":162
+  /* "src/core.pyx":162
  * cdef append_list2dict(a):
  * 	d={}
  * 	for i in a:             # <<<<<<<<<<<<<<
@@ -8215,7 +8206,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":163
+    /* "src/core.pyx":163
  * 	d={}
  * 	for i in a:
  * 		(c,s,e,cl,tag) = i             # <<<<<<<<<<<<<<
@@ -8297,7 +8288,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
     __Pyx_XDECREF_SET(__pyx_v_tag, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "gtcnv/core.pyx":164
+    /* "src/core.pyx":164
  * 	for i in a:
  * 		(c,s,e,cl,tag) = i
  * 		if d.get(tag) == None: d[tag]=[(c,s,e)]             # <<<<<<<<<<<<<<
@@ -8332,7 +8323,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
       goto __pyx_L7;
     }
 
-    /* "gtcnv/core.pyx":165
+    /* "src/core.pyx":165
  * 		(c,s,e,cl,tag) = i
  * 		if d.get(tag) == None: d[tag]=[(c,s,e)]
  * 		else: d[tag].append((c,s,e))             # <<<<<<<<<<<<<<
@@ -8359,7 +8350,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
     }
     __pyx_L7:;
 
-    /* "gtcnv/core.pyx":162
+    /* "src/core.pyx":162
  * cdef append_list2dict(a):
  * 	d={}
  * 	for i in a:             # <<<<<<<<<<<<<<
@@ -8369,7 +8360,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":166
+  /* "src/core.pyx":166
  * 		if d.get(tag) == None: d[tag]=[(c,s,e)]
  * 		else: d[tag].append((c,s,e))
  * 	return d             # <<<<<<<<<<<<<<
@@ -8381,7 +8372,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
   __pyx_r = __pyx_v_d;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":160
+  /* "src/core.pyx":160
  * 		if '>chr' in l: chr_flag=True
  * 	return chr_flag
  * cdef append_list2dict(a):             # <<<<<<<<<<<<<<
@@ -8398,7 +8389,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.append_list2dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.append_list2dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_d);
@@ -8413,7 +8404,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":167
+/* "src/core.pyx":167
  * 		else: d[tag].append((c,s,e))
  * 	return d
  * cdef annot_toList(cnv):             # <<<<<<<<<<<<<<
@@ -8421,7 +8412,7 @@ static PyObject *__pyx_f_5gtcnv_4core_append_list2dict(PyObject *__pyx_v_a) {
  * 	cnv.sort()
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
+static PyObject *__pyx_f_3src_4core_annot_toList(PyObject *__pyx_v_cnv) {
   PyObject *__pyx_v_cnv_list = NULL;
   PyObject *__pyx_v_i = NULL;
   PyObject *__pyx_v_c = NULL;
@@ -8444,7 +8435,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("annot_toList", 0);
 
-  /* "gtcnv/core.pyx":168
+  /* "src/core.pyx":168
  * 	return d
  * cdef annot_toList(cnv):
  * 	cnv_list = []             # <<<<<<<<<<<<<<
@@ -8456,7 +8447,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   __pyx_v_cnv_list = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":169
+  /* "src/core.pyx":169
  * cdef annot_toList(cnv):
  * 	cnv_list = []
  * 	cnv.sort()             # <<<<<<<<<<<<<<
@@ -8485,7 +8476,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":170
+  /* "src/core.pyx":170
  * 	cnv_list = []
  * 	cnv.sort()
  * 	for i in cnv:             # <<<<<<<<<<<<<<
@@ -8534,7 +8525,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":171
+    /* "src/core.pyx":171
  * 	cnv.sort()
  * 	for i in cnv:
  * 		(c,s,e,cl,tag) = i             # <<<<<<<<<<<<<<
@@ -8616,7 +8607,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
     __Pyx_XDECREF_SET(__pyx_v_tag, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "gtcnv/core.pyx":172
+    /* "src/core.pyx":172
  * 	for i in cnv:
  * 		(c,s,e,cl,tag) = i
  * 		cnv_list.append((c,s,e,cl,tag))             # <<<<<<<<<<<<<<
@@ -8643,7 +8634,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
     __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_cnv_list, __pyx_t_8); if (unlikely(__pyx_t_11 == -1)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "gtcnv/core.pyx":170
+    /* "src/core.pyx":170
  * 	cnv_list = []
  * 	cnv.sort()
  * 	for i in cnv:             # <<<<<<<<<<<<<<
@@ -8653,7 +8644,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":173
+  /* "src/core.pyx":173
  * 		(c,s,e,cl,tag) = i
  * 		cnv_list.append((c,s,e,cl,tag))
  * 	return cnv_list             # <<<<<<<<<<<<<<
@@ -8665,7 +8656,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   __pyx_r = __pyx_v_cnv_list;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":167
+  /* "src/core.pyx":167
  * 		else: d[tag].append((c,s,e))
  * 	return d
  * cdef annot_toList(cnv):             # <<<<<<<<<<<<<<
@@ -8682,7 +8673,7 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.annot_toList", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.annot_toList", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cnv_list);
@@ -8696,9 +8687,9 @@ static PyObject *__pyx_f_5gtcnv_4core_annot_toList(PyObject *__pyx_v_cnv) {
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_2generator(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_3src_4core_12filter_calls_2generator(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value); /* proto */
 
-/* "gtcnv/core.pyx":192
+/* "src/core.pyx":192
  * 	start_flank500bp=pbed.BedTool(start_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	start_flank_dict=dict((i[4],(i[1],i[2])) for i in start_flank500bp)             # <<<<<<<<<<<<<<
@@ -8706,22 +8697,22 @@ static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_2generator(__pyx_Coroutine
  * 	"""mask regions to segmental duplications and unmappable regions"""
  */
 
-static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_genexpr(PyObject *__pyx_self) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
+static PyObject *__pyx_pf_3src_4core_12filter_calls_genexpr(PyObject *__pyx_self) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("genexpr", 0);
-  __pyx_cur_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *)__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_1_genexpr(__pyx_ptype_5gtcnv_4core___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *)__pyx_tp_new_3src_4core___pyx_scope_struct_1_genexpr(__pyx_ptype_3src_4core___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
     __Pyx_RefNannyFinishContext();
     return NULL;
   }
   __Pyx_GOTREF(__pyx_cur_scope);
-  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *) __pyx_self;
+  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *) __pyx_self;
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_5gtcnv_4core_12filter_calls_2generator, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_filter_calls_locals_genexpr); if (unlikely(!gen)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_3src_4core_12filter_calls_2generator, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_filter_calls_locals_genexpr); if (unlikely(!gen)) __PYX_ERR(0, 192, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -8729,7 +8720,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_genexpr(PyObject *__pyx_se
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("gtcnv.core.filter_calls.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.filter_calls.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -8737,9 +8728,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_genexpr(PyObject *__pyx_se
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_2generator(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_3src_4core_12filter_calls_2generator(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value) /* generator body */
 {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
+  struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
@@ -8841,9 +8832,9 @@ static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_2generator(__pyx_Coroutine
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_5generator1(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_3src_4core_12filter_calls_5generator1(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value); /* proto */
 
-/* "gtcnv/core.pyx":193
+/* "src/core.pyx":193
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	start_flank_dict=dict((i[4],(i[1],i[2])) for i in start_flank500bp)
  * 	end_flank_dict=dict((i[4],(i[1],i[2])) for i in end_flank500bp)             # <<<<<<<<<<<<<<
@@ -8851,22 +8842,22 @@ static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_5generator1(__pyx_Coroutin
  * 	masked_cnv=annot_toList(pbed.BedTool(annot_cnv).subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  */
 
-static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_3genexpr(PyObject *__pyx_self) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *__pyx_cur_scope;
+static PyObject *__pyx_pf_3src_4core_12filter_calls_3genexpr(PyObject *__pyx_self) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("genexpr", 0);
-  __pyx_cur_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *)__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_2_genexpr(__pyx_ptype_5gtcnv_4core___pyx_scope_struct_2_genexpr, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *)__pyx_tp_new_3src_4core___pyx_scope_struct_2_genexpr(__pyx_ptype_3src_4core___pyx_scope_struct_2_genexpr, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
     __Pyx_RefNannyFinishContext();
     return NULL;
   }
   __Pyx_GOTREF(__pyx_cur_scope);
-  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *) __pyx_self;
+  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *) __pyx_self;
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_5gtcnv_4core_12filter_calls_5generator1, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_filter_calls_locals_genexpr); if (unlikely(!gen)) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_3src_4core_12filter_calls_5generator1, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_filter_calls_locals_genexpr); if (unlikely(!gen)) __PYX_ERR(0, 193, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -8874,7 +8865,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_3genexpr(PyObject *__pyx_s
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("gtcnv.core.filter_calls.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.filter_calls.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -8882,9 +8873,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_12filter_calls_3genexpr(PyObject *__pyx_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_5generator1(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_3src_4core_12filter_calls_5generator1(__pyx_CoroutineObject *__pyx_generator, PyObject *__pyx_sent_value) /* generator body */
 {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *__pyx_cur_scope = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *)__pyx_generator->closure);
+  struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *__pyx_cur_scope = ((struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
@@ -8987,7 +8978,7 @@ static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_5generator1(__pyx_Coroutin
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":174
+/* "src/core.pyx":174
  * 		cnv_list.append((c,s,e,cl,tag))
  * 	return cnv_list
  * cdef filter_calls(cnv,gen):             # <<<<<<<<<<<<<<
@@ -8995,8 +8986,8 @@ static PyObject *__pyx_gb_5gtcnv_4core_12filter_calls_5generator1(__pyx_Coroutin
  * 	"""add unique annotation to each CNV"""
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *__pyx_cur_scope;
+static PyObject *__pyx_f_3src_4core_filter_calls(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *__pyx_cur_scope;
   unsigned int __pyx_v_tag;
   PyObject *__pyx_v_annot_cnv = NULL;
   PyObject *__pyx_v_cnv_dict = NULL;
@@ -9038,14 +9029,14 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   int __pyx_t_12;
   int __pyx_t_13;
   __Pyx_RefNannySetupContext("filter_calls", 0);
-  __pyx_cur_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)__pyx_tp_new_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls(__pyx_ptype_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)__pyx_tp_new_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls(__pyx_ptype_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
     __Pyx_RefNannyFinishContext();
     return 0;
   }
   __Pyx_GOTREF(__pyx_cur_scope);
 
-  /* "gtcnv/core.pyx":177
+  /* "src/core.pyx":177
  * 	cdef unsigned int tag
  * 	"""add unique annotation to each CNV"""
  * 	tag = 1             # <<<<<<<<<<<<<<
@@ -9054,7 +9045,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
  */
   __pyx_v_tag = 1;
 
-  /* "gtcnv/core.pyx":178
+  /* "src/core.pyx":178
  * 	"""add unique annotation to each CNV"""
  * 	tag = 1
  * 	annot_cnv=[]             # <<<<<<<<<<<<<<
@@ -9066,7 +9057,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_annot_cnv = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":179
+  /* "src/core.pyx":179
  * 	tag = 1
  * 	annot_cnv=[]
  * 	cnv_dict={}             # <<<<<<<<<<<<<<
@@ -9078,7 +9069,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_cnv_dict = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":180
+  /* "src/core.pyx":180
  * 	annot_cnv=[]
  * 	cnv_dict={}
  * 	start_flank=[]             # <<<<<<<<<<<<<<
@@ -9090,7 +9081,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_start_flank = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":181
+  /* "src/core.pyx":181
  * 	cnv_dict={}
  * 	start_flank=[]
  * 	end_flank=[]             # <<<<<<<<<<<<<<
@@ -9102,7 +9093,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_end_flank = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":182
+  /* "src/core.pyx":182
  * 	start_flank=[]
  * 	end_flank=[]
  * 	for r in cnv:             # <<<<<<<<<<<<<<
@@ -9151,7 +9142,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":183
+    /* "src/core.pyx":183
  * 	end_flank=[]
  * 	for r in cnv:
  * 		cnv_dict[tag]=r             # <<<<<<<<<<<<<<
@@ -9163,7 +9154,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     if (unlikely(PyDict_SetItem(__pyx_v_cnv_dict, __pyx_t_4, __pyx_v_r) < 0)) __PYX_ERR(0, 183, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":184
+    /* "src/core.pyx":184
  * 	for r in cnv:
  * 		cnv_dict[tag]=r
  * 		(c,s,e,cl) = r             # <<<<<<<<<<<<<<
@@ -9240,7 +9231,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_XDECREF_SET(__pyx_v_cl, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":185
+    /* "src/core.pyx":185
  * 		cnv_dict[tag]=r
  * 		(c,s,e,cl) = r
  * 		annot_cnv.append((c,s,e,cl,tag))             # <<<<<<<<<<<<<<
@@ -9269,7 +9260,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_annot_cnv, __pyx_t_6); if (unlikely(__pyx_t_10 == -1)) __PYX_ERR(0, 185, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":186
+    /* "src/core.pyx":186
  * 		(c,s,e,cl) = r
  * 		annot_cnv.append((c,s,e,cl,tag))
  * 		start_flank.append((c,s,s,cl,tag))             # <<<<<<<<<<<<<<
@@ -9298,7 +9289,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_start_flank, __pyx_t_7); if (unlikely(__pyx_t_10 == -1)) __PYX_ERR(0, 186, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":187
+    /* "src/core.pyx":187
  * 		annot_cnv.append((c,s,e,cl,tag))
  * 		start_flank.append((c,s,s,cl,tag))
  * 		end_flank.append((c,e,e,cl,tag))             # <<<<<<<<<<<<<<
@@ -9327,7 +9318,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_end_flank, __pyx_t_6); if (unlikely(__pyx_t_10 == -1)) __PYX_ERR(0, 187, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":188
+    /* "src/core.pyx":188
  * 		start_flank.append((c,s,s,cl,tag))
  * 		end_flank.append((c,e,e,cl,tag))
  * 		tag+=1             # <<<<<<<<<<<<<<
@@ -9336,7 +9327,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
  */
     __pyx_v_tag = (__pyx_v_tag + 1);
 
-    /* "gtcnv/core.pyx":182
+    /* "src/core.pyx":182
  * 	start_flank=[]
  * 	end_flank=[]
  * 	for r in cnv:             # <<<<<<<<<<<<<<
@@ -9346,7 +9337,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":190
+  /* "src/core.pyx":190
  * 		tag+=1
  * 	"""add 500bp to each start and end position"""
  * 	start_flank500bp=pbed.BedTool(start_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')             # <<<<<<<<<<<<<<
@@ -9428,7 +9419,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_cur_scope->__pyx_v_start_flank500bp = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":191
+  /* "src/core.pyx":191
  * 	"""add 500bp to each start and end position"""
  * 	start_flank500bp=pbed.BedTool(start_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')             # <<<<<<<<<<<<<<
@@ -9510,14 +9501,14 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_cur_scope->__pyx_v_end_flank500bp = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":192
+  /* "src/core.pyx":192
  * 	start_flank500bp=pbed.BedTool(start_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	start_flank_dict=dict((i[4],(i[1],i[2])) for i in start_flank500bp)             # <<<<<<<<<<<<<<
  * 	end_flank_dict=dict((i[4],(i[1],i[2])) for i in end_flank500bp)
  * 	"""mask regions to segmental duplications and unmappable regions"""
  */
-  __pyx_t_1 = __pyx_pf_5gtcnv_4core_12filter_calls_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_t_1 = __pyx_pf_3src_4core_12filter_calls_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = __Pyx_Generator_Next(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -9525,14 +9516,14 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_start_flank_dict = ((PyObject*)__pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":193
+  /* "src/core.pyx":193
  * 	end_flank500bp=pbed.BedTool(end_flank).slop(b=500,g=get_path()+'/resources/'+gen+'.bedtools.genome')
  * 	start_flank_dict=dict((i[4],(i[1],i[2])) for i in start_flank500bp)
  * 	end_flank_dict=dict((i[4],(i[1],i[2])) for i in end_flank500bp)             # <<<<<<<<<<<<<<
  * 	"""mask regions to segmental duplications and unmappable regions"""
  * 	masked_cnv=annot_toList(pbed.BedTool(annot_cnv).subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  */
-  __pyx_t_6 = __pyx_pf_5gtcnv_4core_12filter_calls_3genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_6 = __pyx_pf_3src_4core_12filter_calls_3genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_1 = __Pyx_Generator_Next(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -9540,7 +9531,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_end_flank_dict = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":195
+  /* "src/core.pyx":195
  * 	end_flank_dict=dict((i[4],(i[1],i[2])) for i in end_flank500bp)
  * 	"""mask regions to segmental duplications and unmappable regions"""
  * 	masked_cnv=annot_toList(pbed.BedTool(annot_cnv).subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))             # <<<<<<<<<<<<<<
@@ -9666,13 +9657,13 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_annot_toList(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_annot_toList(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_masked_cnv = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":196
+  /* "src/core.pyx":196
  * 	"""mask regions to segmental duplications and unmappable regions"""
  * 	masked_cnv=annot_toList(pbed.BedTool(annot_cnv).subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  * 	masked_start_flank=annot_toList(start_flank500bp.subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))             # <<<<<<<<<<<<<<
@@ -9767,13 +9758,13 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_annot_toList(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_annot_toList(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_masked_start_flank = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":197
+  /* "src/core.pyx":197
  * 	masked_cnv=annot_toList(pbed.BedTool(annot_cnv).subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  * 	masked_start_flank=annot_toList(start_flank500bp.subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  * 	masked_end_flank=annot_toList(end_flank500bp.subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))             # <<<<<<<<<<<<<<
@@ -9868,13 +9859,13 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_annot_toList(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_annot_toList(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_masked_end_flank = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":199
+  /* "src/core.pyx":199
  * 	masked_end_flank=annot_toList(end_flank500bp.subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  * 	"""take the union of the two masked call sets"""
  * 	if len(masked_cnv) == 0:             # <<<<<<<<<<<<<<
@@ -9885,7 +9876,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_t_12 = ((__pyx_t_2 == 0) != 0);
   if (__pyx_t_12) {
 
-    /* "gtcnv/core.pyx":200
+    /* "src/core.pyx":200
  * 	"""take the union of the two masked call sets"""
  * 	if len(masked_cnv) == 0:
  * 		sys.stderr.write('ERROR: CNVs completed masked by excluded regions\n')             # <<<<<<<<<<<<<<
@@ -9905,7 +9896,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":201
+    /* "src/core.pyx":201
  * 	if len(masked_cnv) == 0:
  * 		sys.stderr.write('ERROR: CNVs completed masked by excluded regions\n')
  * 		sys.exit(1)             # <<<<<<<<<<<<<<
@@ -9922,7 +9913,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":199
+    /* "src/core.pyx":199
  * 	masked_end_flank=annot_toList(end_flank500bp.subtract(pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')))
  * 	"""take the union of the two masked call sets"""
  * 	if len(masked_cnv) == 0:             # <<<<<<<<<<<<<<
@@ -9931,7 +9922,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
  */
   }
 
-  /* "gtcnv/core.pyx":202
+  /* "src/core.pyx":202
  * 		sys.stderr.write('ERROR: CNVs completed masked by excluded regions\n')
  * 		sys.exit(1)
  * 	cnv_tag = list(zip(*masked_cnv)[4])             # <<<<<<<<<<<<<<
@@ -9952,7 +9943,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_cnv_tag = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":203
+  /* "src/core.pyx":203
  * 		sys.exit(1)
  * 	cnv_tag = list(zip(*masked_cnv)[4])
  * 	passed_tag = list(set(cnv_tag))             # <<<<<<<<<<<<<<
@@ -9967,43 +9958,43 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_passed_tag = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":204
+  /* "src/core.pyx":204
  * 	cnv_tag = list(zip(*masked_cnv)[4])
  * 	passed_tag = list(set(cnv_tag))
  * 	masked_cnv_dict=append_list2dict(masked_cnv)             # <<<<<<<<<<<<<<
  * 	masked_start_flank_dict=append_list2dict(masked_start_flank)
  * 	masked_end_flank_dict=append_list2dict(masked_end_flank)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_append_list2dict(__pyx_v_masked_cnv); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_append_list2dict(__pyx_v_masked_cnv); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_masked_cnv_dict = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":205
+  /* "src/core.pyx":205
  * 	passed_tag = list(set(cnv_tag))
  * 	masked_cnv_dict=append_list2dict(masked_cnv)
  * 	masked_start_flank_dict=append_list2dict(masked_start_flank)             # <<<<<<<<<<<<<<
  * 	masked_end_flank_dict=append_list2dict(masked_end_flank)
  * 	master_cnv={}
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_append_list2dict(__pyx_v_masked_start_flank); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_append_list2dict(__pyx_v_masked_start_flank); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_masked_start_flank_dict = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":206
+  /* "src/core.pyx":206
  * 	masked_cnv_dict=append_list2dict(masked_cnv)
  * 	masked_start_flank_dict=append_list2dict(masked_start_flank)
  * 	masked_end_flank_dict=append_list2dict(masked_end_flank)             # <<<<<<<<<<<<<<
  * 	master_cnv={}
  * 	for i in passed_tag:
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_append_list2dict(__pyx_v_masked_end_flank); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_append_list2dict(__pyx_v_masked_end_flank); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_masked_end_flank_dict = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":207
+  /* "src/core.pyx":207
  * 	masked_start_flank_dict=append_list2dict(masked_start_flank)
  * 	masked_end_flank_dict=append_list2dict(masked_end_flank)
  * 	master_cnv={}             # <<<<<<<<<<<<<<
@@ -10015,7 +10006,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_master_cnv = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":208
+  /* "src/core.pyx":208
  * 	masked_end_flank_dict=append_list2dict(masked_end_flank)
  * 	master_cnv={}
  * 	for i in passed_tag:             # <<<<<<<<<<<<<<
@@ -10034,7 +10025,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":209
+    /* "src/core.pyx":209
  * 	master_cnv={}
  * 	for i in passed_tag:
  * 		windows = (start_flank_dict[i],end_flank_dict[i])             # <<<<<<<<<<<<<<
@@ -10064,7 +10055,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_XDECREF_SET(__pyx_v_windows, ((PyObject*)__pyx_t_4));
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":210
+    /* "src/core.pyx":210
  * 	for i in passed_tag:
  * 		windows = (start_flank_dict[i],end_flank_dict[i])
  * 		cnv_span = masked_cnv_dict[i]             # <<<<<<<<<<<<<<
@@ -10076,7 +10067,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_XDECREF_SET(__pyx_v_cnv_span, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":211
+    /* "src/core.pyx":211
  * 		windows = (start_flank_dict[i],end_flank_dict[i])
  * 		cnv_span = masked_cnv_dict[i]
  * 		flank_span=None             # <<<<<<<<<<<<<<
@@ -10086,7 +10077,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_INCREF(Py_None);
     __Pyx_XDECREF_SET(__pyx_v_flank_span, Py_None);
 
-    /* "gtcnv/core.pyx":212
+    /* "src/core.pyx":212
  * 		cnv_span = masked_cnv_dict[i]
  * 		flank_span=None
  * 		if masked_start_flank_dict.get(i) != None and masked_end_flank_dict.get(i) != None:             # <<<<<<<<<<<<<<
@@ -10164,7 +10155,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __pyx_L11_bool_binop_done:;
     if (__pyx_t_12) {
 
-      /* "gtcnv/core.pyx":213
+      /* "src/core.pyx":213
  * 		flank_span=None
  * 		if masked_start_flank_dict.get(i) != None and masked_end_flank_dict.get(i) != None:
  * 			flank_span = masked_start_flank_dict[i] + masked_end_flank_dict[i]             # <<<<<<<<<<<<<<
@@ -10182,7 +10173,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
       __Pyx_DECREF_SET(__pyx_v_flank_span, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":212
+      /* "src/core.pyx":212
  * 		cnv_span = masked_cnv_dict[i]
  * 		flank_span=None
  * 		if masked_start_flank_dict.get(i) != None and masked_end_flank_dict.get(i) != None:             # <<<<<<<<<<<<<<
@@ -10191,7 +10182,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
  */
     }
 
-    /* "gtcnv/core.pyx":214
+    /* "src/core.pyx":214
  * 		if masked_start_flank_dict.get(i) != None and masked_end_flank_dict.get(i) != None:
  * 			flank_span = masked_start_flank_dict[i] + masked_end_flank_dict[i]
  * 		master_cnv[cnv_dict[int(i)]]=(cnv_span,flank_span,windows)             # <<<<<<<<<<<<<<
@@ -10218,7 +10209,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":208
+    /* "src/core.pyx":208
  * 	masked_end_flank_dict=append_list2dict(masked_end_flank)
  * 	master_cnv={}
  * 	for i in passed_tag:             # <<<<<<<<<<<<<<
@@ -10228,7 +10219,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":215
+  /* "src/core.pyx":215
  * 			flank_span = masked_start_flank_dict[i] + masked_end_flank_dict[i]
  * 		master_cnv[cnv_dict[int(i)]]=(cnv_span,flank_span,windows)
  * 	return master_cnv             # <<<<<<<<<<<<<<
@@ -10240,7 +10231,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __pyx_r = __pyx_v_master_cnv;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":174
+  /* "src/core.pyx":174
  * 		cnv_list.append((c,s,e,cl,tag))
  * 	return cnv_list
  * cdef filter_calls(cnv,gen):             # <<<<<<<<<<<<<<
@@ -10257,7 +10248,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_11);
-  __Pyx_AddTraceback("gtcnv.core.filter_calls", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.filter_calls", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_annot_cnv);
@@ -10290,7 +10281,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":216
+/* "src/core.pyx":216
  * 		master_cnv[cnv_dict[int(i)]]=(cnv_span,flank_span,windows)
  * 	return master_cnv
  * cdef gc_norm(pcrfree):             # <<<<<<<<<<<<<<
@@ -10298,7 +10289,7 @@ static PyObject *__pyx_f_5gtcnv_4core_filter_calls(PyObject *__pyx_v_cnv, PyObje
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
+static PyObject *__pyx_f_3src_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
   PyObject *__pyx_v_pcr_dict = NULL;
   PyObject *__pyx_v_f = NULL;
   PyObject *__pyx_v_l = NULL;
@@ -10326,7 +10317,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
   PyObject *__pyx_t_16 = NULL;
   __Pyx_RefNannySetupContext("gc_norm", 0);
 
-  /* "gtcnv/core.pyx":217
+  /* "src/core.pyx":217
  * 	return master_cnv
  * cdef gc_norm(pcrfree):
  * 	pcr_dict={}             # <<<<<<<<<<<<<<
@@ -10338,7 +10329,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
   __pyx_v_pcr_dict = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":218
+  /* "src/core.pyx":218
  * cdef gc_norm(pcrfree):
  * 	pcr_dict={}
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:             # <<<<<<<<<<<<<<
@@ -10417,7 +10408,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
           __pyx_v_f = __pyx_t_3;
           __pyx_t_3 = 0;
 
-          /* "gtcnv/core.pyx":219
+          /* "src/core.pyx":219
  * 	pcr_dict={}
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -10466,7 +10457,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":220
+            /* "src/core.pyx":220
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:
  * 		for l in f:
  * 			(tag,GC,norm) = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -10548,7 +10539,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
             __Pyx_XDECREF_SET(__pyx_v_norm, __pyx_t_11);
             __pyx_t_11 = 0;
 
-            /* "gtcnv/core.pyx":221
+            /* "src/core.pyx":221
  * 		for l in f:
  * 			(tag,GC,norm) = l.rstrip('\n').split('\t')
  * 			key = 'DOC'             # <<<<<<<<<<<<<<
@@ -10558,7 +10549,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
             __Pyx_INCREF(__pyx_n_s_DOC);
             __Pyx_XDECREF_SET(__pyx_v_key, __pyx_n_s_DOC);
 
-            /* "gtcnv/core.pyx":222
+            /* "src/core.pyx":222
  * 			(tag,GC,norm) = l.rstrip('\n').split('\t')
  * 			key = 'DOC'
  * 			if 'READCOUNT' in tag: key ='RC'             # <<<<<<<<<<<<<<
@@ -10572,7 +10563,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
               __Pyx_DECREF_SET(__pyx_v_key, __pyx_n_s_RC);
             }
 
-            /* "gtcnv/core.pyx":223
+            /* "src/core.pyx":223
  * 			key = 'DOC'
  * 			if 'READCOUNT' in tag: key ='RC'
  * 			if pcrfree == True:             # <<<<<<<<<<<<<<
@@ -10584,7 +10575,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             if (__pyx_t_15) {
 
-              /* "gtcnv/core.pyx":224
+              /* "src/core.pyx":224
  * 			if 'READCOUNT' in tag: key ='RC'
  * 			if pcrfree == True:
  * 				if 'PCRFREE' in tag: pcr_dict[(key,int(GC))]=float(norm)             # <<<<<<<<<<<<<<
@@ -10611,7 +10602,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               }
 
-              /* "gtcnv/core.pyx":223
+              /* "src/core.pyx":223
  * 			key = 'DOC'
  * 			if 'READCOUNT' in tag: key ='RC'
  * 			if pcrfree == True:             # <<<<<<<<<<<<<<
@@ -10621,7 +10612,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
               goto __pyx_L20;
             }
 
-            /* "gtcnv/core.pyx":226
+            /* "src/core.pyx":226
  * 				if 'PCRFREE' in tag: pcr_dict[(key,int(GC))]=float(norm)
  * 			else:
  * 				if 'PCRFREE' not in tag: pcr_dict[(key,int(GC))]=float(norm)             # <<<<<<<<<<<<<<
@@ -10651,7 +10642,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
             }
             __pyx_L20:;
 
-            /* "gtcnv/core.pyx":219
+            /* "src/core.pyx":219
  * 	pcr_dict={}
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -10661,7 +10652,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "gtcnv/core.pyx":218
+          /* "src/core.pyx":218
  * cdef gc_norm(pcrfree):
  * 	pcr_dict={}
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:             # <<<<<<<<<<<<<<
@@ -10682,7 +10673,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.gc_norm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.gc_norm", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_1, &__pyx_t_11) < 0) __PYX_ERR(0, 218, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_GOTREF(__pyx_t_1);
@@ -10747,7 +10738,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
     __pyx_L26:;
   }
 
-  /* "gtcnv/core.pyx":227
+  /* "src/core.pyx":227
  * 			else:
  * 				if 'PCRFREE' not in tag: pcr_dict[(key,int(GC))]=float(norm)
  * 	return pcr_dict             # <<<<<<<<<<<<<<
@@ -10759,7 +10750,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
   __pyx_r = __pyx_v_pcr_dict;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":216
+  /* "src/core.pyx":216
  * 		master_cnv[cnv_dict[int(i)]]=(cnv_span,flank_span,windows)
  * 	return master_cnv
  * cdef gc_norm(pcrfree):             # <<<<<<<<<<<<<<
@@ -10775,7 +10766,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("gtcnv.core.gc_norm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gc_norm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_pcr_dict);
@@ -10790,7 +10781,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":235
+/* "src/core.pyx":235
  * 		if master_cnv.get(call)==None: continue
  * 		cnvs = master_cnv[call][0]
  * 		if chrFlag == False: cnvs = [tuple(map(lambda y: str.replace(y,'chr',''),x)) for x in cnvs]             # <<<<<<<<<<<<<<
@@ -10799,9 +10790,9 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_norm(PyObject *__pyx_v_pcrfree) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_6gc_cnv_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_y); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_6gc_cnv_lambda2 = {"lambda2", (PyCFunction)__pyx_pw_5gtcnv_4core_6gc_cnv_lambda2, METH_O, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_6gc_cnv_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_y) {
+static PyObject *__pyx_pw_3src_4core_6gc_cnv_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_y); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_6gc_cnv_lambda2 = {"lambda2", (PyCFunction)__pyx_pw_3src_4core_6gc_cnv_lambda2, METH_O, 0};
+static PyObject *__pyx_pw_3src_4core_6gc_cnv_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_y) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("lambda2 (wrapper)", 0);
@@ -10864,7 +10855,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("gtcnv.core.gc_cnv.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gc_cnv.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10872,7 +10863,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":228
+/* "src/core.pyx":228
  * 				if 'PCRFREE' not in tag: pcr_dict[(key,int(GC))]=float(norm)
  * 	return pcr_dict
  * cdef gc_cnv(cnv,master_cnv,gen):             # <<<<<<<<<<<<<<
@@ -10880,7 +10871,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
  * 	FASTA = fasta_config(gen)
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__pyx_v_master_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__pyx_v_master_cnv, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_cnv_gc = NULL;
   PyObject *__pyx_v_FASTA = NULL;
   PyObject *__pyx_v_chrFlag = NULL;
@@ -10903,7 +10894,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
   double __pyx_t_11;
   __Pyx_RefNannySetupContext("gc_cnv", 0);
 
-  /* "gtcnv/core.pyx":229
+  /* "src/core.pyx":229
  * 	return pcr_dict
  * cdef gc_cnv(cnv,master_cnv,gen):
  * 	cnv_gc={}             # <<<<<<<<<<<<<<
@@ -10915,31 +10906,31 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
   __pyx_v_cnv_gc = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":230
+  /* "src/core.pyx":230
  * cdef gc_cnv(cnv,master_cnv,gen):
  * 	cnv_gc={}
  * 	FASTA = fasta_config(gen)             # <<<<<<<<<<<<<<
  * 	chrFlag = FASTA_head(FASTA)
  * 	for call in cnv:
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_fasta_config(__pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_fasta_config(__pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_FASTA = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":231
+  /* "src/core.pyx":231
  * 	cnv_gc={}
  * 	FASTA = fasta_config(gen)
  * 	chrFlag = FASTA_head(FASTA)             # <<<<<<<<<<<<<<
  * 	for call in cnv:
  * 		if master_cnv.get(call)==None: continue
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_FASTA_head(__pyx_v_FASTA); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_FASTA_head(__pyx_v_FASTA); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_chrFlag = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":232
+  /* "src/core.pyx":232
  * 	FASTA = fasta_config(gen)
  * 	chrFlag = FASTA_head(FASTA)
  * 	for call in cnv:             # <<<<<<<<<<<<<<
@@ -10988,7 +10979,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
     __Pyx_XDECREF_SET(__pyx_v_call, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":233
+    /* "src/core.pyx":233
  * 	chrFlag = FASTA_head(FASTA)
  * 	for call in cnv:
  * 		if master_cnv.get(call)==None: continue             # <<<<<<<<<<<<<<
@@ -11030,7 +11021,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
       goto __pyx_L3_continue;
     }
 
-    /* "gtcnv/core.pyx":234
+    /* "src/core.pyx":234
  * 	for call in cnv:
  * 		if master_cnv.get(call)==None: continue
  * 		cnvs = master_cnv[call][0]             # <<<<<<<<<<<<<<
@@ -11045,7 +11036,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
     __Pyx_XDECREF_SET(__pyx_v_cnvs, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":235
+    /* "src/core.pyx":235
  * 		if master_cnv.get(call)==None: continue
  * 		cnvs = master_cnv[call][0]
  * 		if chrFlag == False: cnvs = [tuple(map(lambda y: str.replace(y,'chr',''),x)) for x in cnvs]             # <<<<<<<<<<<<<<
@@ -11099,7 +11090,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
         }
         __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_7);
         __pyx_t_7 = 0;
-        __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_5gtcnv_4core_6gc_cnv_lambda2, 0, __pyx_n_s_gc_cnv_locals_lambda, NULL, __pyx_n_s_gtcnv_core, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 235, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_4core_6gc_cnv_lambda2, 0, __pyx_n_s_gc_cnv_locals_lambda, NULL, __pyx_n_s_src_core, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 235, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
@@ -11123,7 +11114,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
       __pyx_t_4 = 0;
     }
 
-    /* "gtcnv/core.pyx":236
+    /* "src/core.pyx":236
  * 		cnvs = master_cnv[call][0]
  * 		if chrFlag == False: cnvs = [tuple(map(lambda y: str.replace(y,'chr',''),x)) for x in cnvs]
  * 		GC_content = int(5 * round(float(GC(pbed.BedTool(cnvs).nucleotide_content(fi=FASTA)))/5))             # <<<<<<<<<<<<<<
@@ -11170,7 +11161,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __pyx_f_5gtcnv_4core_GC(__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 236, __pyx_L1_error)
+    __pyx_t_4 = __pyx_f_3src_4core_GC(__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_11 = __Pyx_PyObject_AsDouble(__pyx_t_4); if (unlikely(__pyx_t_11 == ((double)-1) && PyErr_Occurred())) __PYX_ERR(0, 236, __pyx_L1_error)
@@ -11194,7 +11185,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
     __Pyx_XDECREF_SET(__pyx_v_GC_content, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":237
+    /* "src/core.pyx":237
  * 		if chrFlag == False: cnvs = [tuple(map(lambda y: str.replace(y,'chr',''),x)) for x in cnvs]
  * 		GC_content = int(5 * round(float(GC(pbed.BedTool(cnvs).nucleotide_content(fi=FASTA)))/5))
  * 		cnv_gc[call]=GC_content             # <<<<<<<<<<<<<<
@@ -11203,7 +11194,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
  */
     if (unlikely(PyDict_SetItem(__pyx_v_cnv_gc, __pyx_v_call, __pyx_v_GC_content) < 0)) __PYX_ERR(0, 237, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":232
+    /* "src/core.pyx":232
  * 	FASTA = fasta_config(gen)
  * 	chrFlag = FASTA_head(FASTA)
  * 	for call in cnv:             # <<<<<<<<<<<<<<
@@ -11214,7 +11205,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":238
+  /* "src/core.pyx":238
  * 		GC_content = int(5 * round(float(GC(pbed.BedTool(cnvs).nucleotide_content(fi=FASTA)))/5))
  * 		cnv_gc[call]=GC_content
  * 	return cnv_gc             # <<<<<<<<<<<<<<
@@ -11226,7 +11217,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
   __pyx_r = __pyx_v_cnv_gc;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":228
+  /* "src/core.pyx":228
  * 				if 'PCRFREE' not in tag: pcr_dict[(key,int(GC))]=float(norm)
  * 	return pcr_dict
  * cdef gc_cnv(cnv,master_cnv,gen):             # <<<<<<<<<<<<<<
@@ -11241,7 +11232,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("gtcnv.core.gc_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gc_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cnv_gc);
@@ -11256,7 +11247,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":239
+/* "src/core.pyx":239
  * 		cnv_gc[call]=GC_content
  * 	return cnv_gc
  * cdef GC(nuc):             # <<<<<<<<<<<<<<
@@ -11264,7 +11255,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gc_cnv(PyObject *__pyx_v_cnv, PyObject *__
  * 	cdef int C=0
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
+static PyObject *__pyx_f_3src_4core_GC(PyObject *__pyx_v_nuc) {
   int __pyx_v_A;
   int __pyx_v_C;
   int __pyx_v_G;
@@ -11282,7 +11273,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
   int __pyx_t_7;
   __Pyx_RefNannySetupContext("GC", 0);
 
-  /* "gtcnv/core.pyx":240
+  /* "src/core.pyx":240
  * 	return cnv_gc
  * cdef GC(nuc):
  * 	cdef int A=0             # <<<<<<<<<<<<<<
@@ -11291,7 +11282,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
  */
   __pyx_v_A = 0;
 
-  /* "gtcnv/core.pyx":241
+  /* "src/core.pyx":241
  * cdef GC(nuc):
  * 	cdef int A=0
  * 	cdef int C=0             # <<<<<<<<<<<<<<
@@ -11300,7 +11291,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
  */
   __pyx_v_C = 0;
 
-  /* "gtcnv/core.pyx":242
+  /* "src/core.pyx":242
  * 	cdef int A=0
  * 	cdef int C=0
  * 	cdef int G=0             # <<<<<<<<<<<<<<
@@ -11309,7 +11300,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
  */
   __pyx_v_G = 0;
 
-  /* "gtcnv/core.pyx":243
+  /* "src/core.pyx":243
  * 	cdef int C=0
  * 	cdef int G=0
  * 	cdef int T=0             # <<<<<<<<<<<<<<
@@ -11318,7 +11309,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
  */
   __pyx_v_T = 0;
 
-  /* "gtcnv/core.pyx":244
+  /* "src/core.pyx":244
  * 	cdef int G=0
  * 	cdef int T=0
  * 	cdef int N=0             # <<<<<<<<<<<<<<
@@ -11327,7 +11318,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
  */
   __pyx_v_N = 0;
 
-  /* "gtcnv/core.pyx":245
+  /* "src/core.pyx":245
  * 	cdef int T=0
  * 	cdef int N=0
  * 	for x in nuc:             # <<<<<<<<<<<<<<
@@ -11376,7 +11367,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":246
+    /* "src/core.pyx":246
  * 	cdef int N=0
  * 	for x in nuc:
  * 		A+=int(x[5])             # <<<<<<<<<<<<<<
@@ -11398,7 +11389,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_A = __pyx_t_7;
 
-    /* "gtcnv/core.pyx":247
+    /* "src/core.pyx":247
  * 	for x in nuc:
  * 		A+=int(x[5])
  * 		C+=int(x[6])             # <<<<<<<<<<<<<<
@@ -11420,7 +11411,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_C = __pyx_t_7;
 
-    /* "gtcnv/core.pyx":248
+    /* "src/core.pyx":248
  * 		A+=int(x[5])
  * 		C+=int(x[6])
  * 		G+=int(x[7])             # <<<<<<<<<<<<<<
@@ -11442,7 +11433,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_v_G = __pyx_t_7;
 
-    /* "gtcnv/core.pyx":249
+    /* "src/core.pyx":249
  * 		C+=int(x[6])
  * 		G+=int(x[7])
  * 		T+=int(x[8])             # <<<<<<<<<<<<<<
@@ -11464,7 +11455,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_T = __pyx_t_7;
 
-    /* "gtcnv/core.pyx":250
+    /* "src/core.pyx":250
  * 		G+=int(x[7])
  * 		T+=int(x[8])
  * 		N+=int(x[9])             # <<<<<<<<<<<<<<
@@ -11486,7 +11477,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_N = __pyx_t_7;
 
-    /* "gtcnv/core.pyx":245
+    /* "src/core.pyx":245
  * 	cdef int T=0
  * 	cdef int N=0
  * 	for x in nuc:             # <<<<<<<<<<<<<<
@@ -11496,7 +11487,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":251
+  /* "src/core.pyx":251
  * 		T+=int(x[8])
  * 		N+=int(x[9])
  * 	return ((G+C)*100)/(A+C+G+T+N)             # <<<<<<<<<<<<<<
@@ -11510,7 +11501,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":239
+  /* "src/core.pyx":239
  * 		cnv_gc[call]=GC_content
  * 	return cnv_gc
  * cdef GC(nuc):             # <<<<<<<<<<<<<<
@@ -11524,7 +11515,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.GC", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.GC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_x);
@@ -11533,7 +11524,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":252
+/* "src/core.pyx":252
  * 		N+=int(x[9])
  * 	return ((G+C)*100)/(A+C+G+T+N)
  * cdef MAD(a, double c=0.6745): return np.around(np.median(np.fabs(a-np.median(a))/c),decimals=3)             # <<<<<<<<<<<<<<
@@ -11541,7 +11532,7 @@ static PyObject *__pyx_f_5gtcnv_4core_GC(PyObject *__pyx_v_nuc) {
  * cdef normalize_coverage(double read_count, double span, double chr_cov, double read_length): return (((read_count/span)*read_length)/chr_cov)
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_MAD(PyObject *__pyx_v_a, struct __pyx_opt_args_5gtcnv_4core_MAD *__pyx_optional_args) {
+static PyObject *__pyx_f_3src_4core_MAD(PyObject *__pyx_v_a, struct __pyx_opt_args_3src_4core_MAD *__pyx_optional_args) {
   double __pyx_v_c = ((double)0.6745);
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -11695,7 +11686,7 @@ static PyObject *__pyx_f_5gtcnv_4core_MAD(PyObject *__pyx_v_a, struct __pyx_opt_
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.MAD", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.MAD", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11703,7 +11694,7 @@ static PyObject *__pyx_f_5gtcnv_4core_MAD(PyObject *__pyx_v_a, struct __pyx_opt_
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":253
+/* "src/core.pyx":253
  * 	return ((G+C)*100)/(A+C+G+T+N)
  * cdef MAD(a, double c=0.6745): return np.around(np.median(np.fabs(a-np.median(a))/c),decimals=3)
  * cdef normalize_chr_cov(double read_count, double chr_size, read_length): return np.around( (read_count/chr_size)*np.median(read_length),decimals=2)             # <<<<<<<<<<<<<<
@@ -11711,7 +11702,7 @@ static PyObject *__pyx_f_5gtcnv_4core_MAD(PyObject *__pyx_v_a, struct __pyx_opt_
  * cdef count_reads(cnv_list,bam,ci,chrFlag):
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_normalize_chr_cov(double __pyx_v_read_count, double __pyx_v_chr_size, PyObject *__pyx_v_read_length) {
+static PyObject *__pyx_f_3src_4core_normalize_chr_cov(double __pyx_v_read_count, double __pyx_v_chr_size, PyObject *__pyx_v_read_length) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -11788,7 +11779,7 @@ static PyObject *__pyx_f_5gtcnv_4core_normalize_chr_cov(double __pyx_v_read_coun
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.normalize_chr_cov", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.normalize_chr_cov", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11796,7 +11787,7 @@ static PyObject *__pyx_f_5gtcnv_4core_normalize_chr_cov(double __pyx_v_read_coun
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":254
+/* "src/core.pyx":254
  * cdef MAD(a, double c=0.6745): return np.around(np.median(np.fabs(a-np.median(a))/c),decimals=3)
  * cdef normalize_chr_cov(double read_count, double chr_size, read_length): return np.around( (read_count/chr_size)*np.median(read_length),decimals=2)
  * cdef normalize_coverage(double read_count, double span, double chr_cov, double read_length): return (((read_count/span)*read_length)/chr_cov)             # <<<<<<<<<<<<<<
@@ -11804,7 +11795,7 @@ static PyObject *__pyx_f_5gtcnv_4core_normalize_chr_cov(double __pyx_v_read_coun
  * 	"""count reads within CNV span for coverage estimation"""
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_normalize_coverage(double __pyx_v_read_count, double __pyx_v_span, double __pyx_v_chr_cov, double __pyx_v_read_length) {
+static PyObject *__pyx_f_3src_4core_normalize_coverage(double __pyx_v_read_count, double __pyx_v_span, double __pyx_v_chr_cov, double __pyx_v_read_length) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -11819,7 +11810,7 @@ static PyObject *__pyx_f_5gtcnv_4core_normalize_coverage(double __pyx_v_read_cou
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("gtcnv.core.normalize_coverage", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.normalize_coverage", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11827,7 +11818,7 @@ static PyObject *__pyx_f_5gtcnv_4core_normalize_coverage(double __pyx_v_read_cou
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":255
+/* "src/core.pyx":255
  * cdef normalize_chr_cov(double read_count, double chr_size, read_length): return np.around( (read_count/chr_size)*np.median(read_length),decimals=2)
  * cdef normalize_coverage(double read_count, double span, double chr_cov, double read_length): return (((read_count/span)*read_length)/chr_cov)
  * cdef count_reads(cnv_list,bam,ci,chrFlag):             # <<<<<<<<<<<<<<
@@ -11835,7 +11826,7 @@ static PyObject *__pyx_f_5gtcnv_4core_normalize_coverage(double __pyx_v_read_cou
  * 	cdef unsigned int read_count
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, PyObject *__pyx_v_bam, PyObject *__pyx_v_ci, PyObject *__pyx_v_chrFlag) {
+static PyObject *__pyx_f_3src_4core_count_reads(PyObject *__pyx_v_cnv_list, PyObject *__pyx_v_bam, PyObject *__pyx_v_ci, PyObject *__pyx_v_chrFlag) {
   unsigned int __pyx_v_read_count;
   unsigned int __pyx_v_bp_span;
   PyObject *__pyx_v_c = NULL;
@@ -11861,7 +11852,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
   int __pyx_t_14;
   __Pyx_RefNannySetupContext("count_reads", 0);
 
-  /* "gtcnv/core.pyx":259
+  /* "src/core.pyx":259
  * 	cdef unsigned int read_count
  * 	cdef unsigned int bp_span
  * 	read_count=0             # <<<<<<<<<<<<<<
@@ -11870,7 +11861,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  */
   __pyx_v_read_count = 0;
 
-  /* "gtcnv/core.pyx":260
+  /* "src/core.pyx":260
  * 	cdef unsigned int bp_span
  * 	read_count=0
  * 	bp_span=0             # <<<<<<<<<<<<<<
@@ -11879,7 +11870,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  */
   __pyx_v_bp_span = 0;
 
-  /* "gtcnv/core.pyx":261
+  /* "src/core.pyx":261
  * 	read_count=0
  * 	bp_span=0
  * 	for (c,s,e) in cnv_list:             # <<<<<<<<<<<<<<
@@ -11989,7 +11980,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
     __Pyx_XDECREF_SET(__pyx_v_e, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":263
+    /* "src/core.pyx":263
  * 	for (c,s,e) in cnv_list:
  * 		"""if the chromosome format lacks chr"""
  * 		if chrFlag == False: c = c.replace('chr','')             # <<<<<<<<<<<<<<
@@ -12009,7 +12000,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
       __pyx_t_7 = 0;
     }
 
-    /* "gtcnv/core.pyx":264
+    /* "src/core.pyx":264
  * 		"""if the chromosome format lacks chr"""
  * 		if chrFlag == False: c = c.replace('chr','')
  * 		region= str(c+':'+s+'-'+e)             # <<<<<<<<<<<<<<
@@ -12038,7 +12029,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
     __Pyx_XDECREF_SET(__pyx_v_region, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":265
+    /* "src/core.pyx":265
  * 		if chrFlag == False: c = c.replace('chr','')
  * 		region= str(c+':'+s+'-'+e)
  * 		bp_span+=int(e)-int(s)+1             # <<<<<<<<<<<<<<
@@ -12066,7 +12057,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_bp_span = __pyx_t_11;
 
-    /* "gtcnv/core.pyx":267
+    /* "src/core.pyx":267
  * 		bp_span+=int(e)-int(s)+1
  * 		"""count each read within the span"""
  * 		for read in bam.fetch(region=region):             # <<<<<<<<<<<<<<
@@ -12125,7 +12116,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
       __Pyx_XDECREF_SET(__pyx_v_read, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":270
+      /* "src/core.pyx":270
  * 			"""skip noninformative reads
  * 			-- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 			if (read.is_reverse == read.mate_is_reverse             # <<<<<<<<<<<<<<
@@ -12147,7 +12138,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":271
+      /* "src/core.pyx":271
  * 			-- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 			if (read.is_reverse == read.mate_is_reverse
  * 			   or read.is_proper_pair == False             # <<<<<<<<<<<<<<
@@ -12166,7 +12157,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":272
+      /* "src/core.pyx":272
  * 			if (read.is_reverse == read.mate_is_reverse
  * 			   or read.is_proper_pair == False
  * 			   or read.is_qcfail == True             # <<<<<<<<<<<<<<
@@ -12185,7 +12176,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":273
+      /* "src/core.pyx":273
  * 			   or read.is_proper_pair == False
  * 			   or read.is_qcfail == True
  * 			   or read.mapping_quality < 10             # <<<<<<<<<<<<<<
@@ -12204,7 +12195,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":274
+      /* "src/core.pyx":274
  * 			   or read.is_qcfail == True
  * 			   or read.mapping_quality < 10
  * 			   or read.is_secondary             # <<<<<<<<<<<<<<
@@ -12221,7 +12212,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":275
+      /* "src/core.pyx":275
  * 			   or read.mapping_quality < 10
  * 			   or read.is_secondary
  * 			   or read.is_unmapped             # <<<<<<<<<<<<<<
@@ -12238,7 +12229,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":276
+      /* "src/core.pyx":276
  * 			   or read.is_secondary
  * 			   or read.is_unmapped
  * 			   or read.mate_is_unmapped             # <<<<<<<<<<<<<<
@@ -12255,7 +12246,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":277
+      /* "src/core.pyx":277
  * 			   or read.is_unmapped
  * 			   or read.mate_is_unmapped
  * 			   or read.is_duplicate             # <<<<<<<<<<<<<<
@@ -12272,7 +12263,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":278
+      /* "src/core.pyx":278
  * 			   or read.mate_is_unmapped
  * 			   or read.is_duplicate
  * 			   or abs(read.tlen) >= ci             # <<<<<<<<<<<<<<
@@ -12285,7 +12276,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":279
+      /* "src/core.pyx":279
  * 			   or read.is_duplicate
  * 			   or abs(read.tlen) >= ci
  * 			   or read.tid != read.rnext):             # <<<<<<<<<<<<<<
@@ -12295,7 +12286,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
       __pyx_t_5 = PyObject_RichCompare(__pyx_t_7, __pyx_v_ci, Py_GE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "gtcnv/core.pyx":278
+      /* "src/core.pyx":278
  * 			   or read.mate_is_unmapped
  * 			   or read.is_duplicate
  * 			   or abs(read.tlen) >= ci             # <<<<<<<<<<<<<<
@@ -12310,7 +12301,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
         goto __pyx_L11_bool_binop_done;
       }
 
-      /* "gtcnv/core.pyx":279
+      /* "src/core.pyx":279
  * 			   or read.is_duplicate
  * 			   or abs(read.tlen) >= ci
  * 			   or read.tid != read.rnext):             # <<<<<<<<<<<<<<
@@ -12329,7 +12320,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
       __pyx_t_10 = __pyx_t_14;
       __pyx_L11_bool_binop_done:;
 
-      /* "gtcnv/core.pyx":270
+      /* "src/core.pyx":270
  * 			"""skip noninformative reads
  * 			-- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 			if (read.is_reverse == read.mate_is_reverse             # <<<<<<<<<<<<<<
@@ -12338,7 +12329,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  */
       if (__pyx_t_10) {
 
-        /* "gtcnv/core.pyx":280
+        /* "src/core.pyx":280
  * 			   or abs(read.tlen) >= ci
  * 			   or read.tid != read.rnext):
  * 				continue             # <<<<<<<<<<<<<<
@@ -12347,7 +12338,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  */
         goto __pyx_L8_continue;
 
-        /* "gtcnv/core.pyx":270
+        /* "src/core.pyx":270
  * 			"""skip noninformative reads
  * 			-- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 			if (read.is_reverse == read.mate_is_reverse             # <<<<<<<<<<<<<<
@@ -12356,7 +12347,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  */
       }
 
-      /* "gtcnv/core.pyx":281
+      /* "src/core.pyx":281
  * 			   or read.tid != read.rnext):
  * 				continue
  * 			read_count+=1             # <<<<<<<<<<<<<<
@@ -12365,7 +12356,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  */
       __pyx_v_read_count = (__pyx_v_read_count + 1);
 
-      /* "gtcnv/core.pyx":267
+      /* "src/core.pyx":267
  * 		bp_span+=int(e)-int(s)+1
  * 		"""count each read within the span"""
  * 		for read in bam.fetch(region=region):             # <<<<<<<<<<<<<<
@@ -12376,7 +12367,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":261
+    /* "src/core.pyx":261
  * 	read_count=0
  * 	bp_span=0
  * 	for (c,s,e) in cnv_list:             # <<<<<<<<<<<<<<
@@ -12386,7 +12377,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":282
+  /* "src/core.pyx":282
  * 				continue
  * 			read_count+=1
  * 	return(read_count,bp_span)             # <<<<<<<<<<<<<<
@@ -12410,7 +12401,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":255
+  /* "src/core.pyx":255
  * cdef normalize_chr_cov(double read_count, double chr_size, read_length): return np.around( (read_count/chr_size)*np.median(read_length),decimals=2)
  * cdef normalize_coverage(double read_count, double span, double chr_cov, double read_length): return (((read_count/span)*read_length)/chr_cov)
  * cdef count_reads(cnv_list,bam,ci,chrFlag):             # <<<<<<<<<<<<<<
@@ -12426,7 +12417,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("gtcnv.core.count_reads", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.count_reads", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_c);
@@ -12439,7 +12430,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":283
+/* "src/core.pyx":283
  * 			read_count+=1
  * 	return(read_count,bp_span)
  * cdef depth_of_coverage(cnv_list,bamfh,chrFlag,read_length):             # <<<<<<<<<<<<<<
@@ -12447,7 +12438,7 @@ static PyObject *__pyx_f_5gtcnv_4core_count_reads(PyObject *__pyx_v_cnv_list, Py
  * 	pos_doc={}
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_list, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_chrFlag, PyObject *__pyx_v_read_length) {
+static PyObject *__pyx_f_3src_4core_depth_of_coverage(PyObject *__pyx_v_cnv_list, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_chrFlag, PyObject *__pyx_v_read_length) {
   PyObject *__pyx_v_pos_doc = NULL;
   PyObject *__pyx_v_c = NULL;
   PyObject *__pyx_v_s = NULL;
@@ -12479,7 +12470,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
   int __pyx_t_17;
   __Pyx_RefNannySetupContext("depth_of_coverage", 0);
 
-  /* "gtcnv/core.pyx":285
+  /* "src/core.pyx":285
  * cdef depth_of_coverage(cnv_list,bamfh,chrFlag,read_length):
  * 	"""return median depth of coverage for CNV <= 1kb"""
  * 	pos_doc={}             # <<<<<<<<<<<<<<
@@ -12491,7 +12482,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
   __pyx_v_pos_doc = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":286
+  /* "src/core.pyx":286
  * 	"""return median depth of coverage for CNV <= 1kb"""
  * 	pos_doc={}
  * 	for (c,s,e) in cnv_list:             # <<<<<<<<<<<<<<
@@ -12601,7 +12592,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     __Pyx_XDECREF_SET(__pyx_v_e, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":287
+    /* "src/core.pyx":287
  * 	pos_doc={}
  * 	for (c,s,e) in cnv_list:
  * 		if chrFlag == False: c = c.replace('chr','')             # <<<<<<<<<<<<<<
@@ -12621,7 +12612,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
       __pyx_t_7 = 0;
     }
 
-    /* "gtcnv/core.pyx":288
+    /* "src/core.pyx":288
  * 	for (c,s,e) in cnv_list:
  * 		if chrFlag == False: c = c.replace('chr','')
  * 		region= str(c+':'+s+'-'+e)             # <<<<<<<<<<<<<<
@@ -12650,7 +12641,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     __Pyx_XDECREF_SET(__pyx_v_region, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":289
+    /* "src/core.pyx":289
  * 		if chrFlag == False: c = c.replace('chr','')
  * 		region= str(c+':'+s+'-'+e)
  * 		depth_result = pysam.depth("-a", "-Q" "40", "-r", region, "-l", str(read_length-10), bamfh)             # <<<<<<<<<<<<<<
@@ -12717,7 +12708,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     __Pyx_XDECREF_SET(__pyx_v_depth_result, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":290
+    /* "src/core.pyx":290
  * 		region= str(c+':'+s+'-'+e)
  * 		depth_result = pysam.depth("-a", "-Q" "40", "-r", region, "-l", str(read_length-10), bamfh)
  * 		str_flag=0             # <<<<<<<<<<<<<<
@@ -12726,7 +12717,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
  */
     __pyx_v_str_flag = 0;
 
-    /* "gtcnv/core.pyx":291
+    /* "src/core.pyx":291
  * 		depth_result = pysam.depth("-a", "-Q" "40", "-r", region, "-l", str(read_length-10), bamfh)
  * 		str_flag=0
  * 		if isinstance(depth_result,str):             # <<<<<<<<<<<<<<
@@ -12737,7 +12728,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     __pyx_t_12 = (__pyx_t_10 != 0);
     if (__pyx_t_12) {
 
-      /* "gtcnv/core.pyx":292
+      /* "src/core.pyx":292
  * 		str_flag=0
  * 		if isinstance(depth_result,str):
  * 			depth_result = depth_result.split('\n')             # <<<<<<<<<<<<<<
@@ -12752,7 +12743,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
       __Pyx_DECREF_SET(__pyx_v_depth_result, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "gtcnv/core.pyx":293
+      /* "src/core.pyx":293
  * 		if isinstance(depth_result,str):
  * 			depth_result = depth_result.split('\n')
  * 			str_flag=1             # <<<<<<<<<<<<<<
@@ -12761,7 +12752,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
  */
       __pyx_v_str_flag = 1;
 
-      /* "gtcnv/core.pyx":291
+      /* "src/core.pyx":291
  * 		depth_result = pysam.depth("-a", "-Q" "40", "-r", region, "-l", str(read_length-10), bamfh)
  * 		str_flag=0
  * 		if isinstance(depth_result,str):             # <<<<<<<<<<<<<<
@@ -12770,7 +12761,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
  */
     }
 
-    /* "gtcnv/core.pyx":294
+    /* "src/core.pyx":294
  * 			depth_result = depth_result.split('\n')
  * 			str_flag=1
  * 		for x in depth_result:             # <<<<<<<<<<<<<<
@@ -12819,7 +12810,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":295
+      /* "src/core.pyx":295
  * 			str_flag=1
  * 		for x in depth_result:
  * 			r = x.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -12840,7 +12831,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
       __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "gtcnv/core.pyx":296
+      /* "src/core.pyx":296
  * 		for x in depth_result:
  * 			r = x.rstrip('\n').split('\t')
  * 			if str_flag == 1:             # <<<<<<<<<<<<<<
@@ -12850,7 +12841,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
       __pyx_t_12 = ((__pyx_v_str_flag == 1) != 0);
       if (__pyx_t_12) {
 
-        /* "gtcnv/core.pyx":297
+        /* "src/core.pyx":297
  * 			r = x.rstrip('\n').split('\t')
  * 			if str_flag == 1:
  * 				if len(r)!=3: continue             # <<<<<<<<<<<<<<
@@ -12863,7 +12854,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
           goto __pyx_L9_continue;
         }
 
-        /* "gtcnv/core.pyx":298
+        /* "src/core.pyx":298
  * 			if str_flag == 1:
  * 				if len(r)!=3: continue
  * 				pos_doc[int(r[1])]=int(r[2])             # <<<<<<<<<<<<<<
@@ -12884,7 +12875,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "gtcnv/core.pyx":296
+        /* "src/core.pyx":296
  * 		for x in depth_result:
  * 			r = x.rstrip('\n').split('\t')
  * 			if str_flag == 1:             # <<<<<<<<<<<<<<
@@ -12894,7 +12885,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
         goto __pyx_L11;
       }
 
-      /* "gtcnv/core.pyx":299
+      /* "src/core.pyx":299
  * 				if len(r)!=3: continue
  * 				pos_doc[int(r[1])]=int(r[2])
  * 			else: pos_doc[int(r[1])]=int(r[2])             # <<<<<<<<<<<<<<
@@ -12918,7 +12909,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
       }
       __pyx_L11:;
 
-      /* "gtcnv/core.pyx":294
+      /* "src/core.pyx":294
  * 			depth_result = depth_result.split('\n')
  * 			str_flag=1
  * 		for x in depth_result:             # <<<<<<<<<<<<<<
@@ -12929,7 +12920,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":286
+    /* "src/core.pyx":286
  * 	"""return median depth of coverage for CNV <= 1kb"""
  * 	pos_doc={}
  * 	for (c,s,e) in cnv_list:             # <<<<<<<<<<<<<<
@@ -12939,7 +12930,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":300
+  /* "src/core.pyx":300
  * 				pos_doc[int(r[1])]=int(r[2])
  * 			else: pos_doc[int(r[1])]=int(r[2])
  * 	if len(pos_doc) !=0:             # <<<<<<<<<<<<<<
@@ -12950,7 +12941,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
   __pyx_t_12 = ((__pyx_t_2 != 0) != 0);
   if (__pyx_t_12) {
 
-    /* "gtcnv/core.pyx":301
+    /* "src/core.pyx":301
  * 			else: pos_doc[int(r[1])]=int(r[2])
  * 	if len(pos_doc) !=0:
  * 		temp=[]             # <<<<<<<<<<<<<<
@@ -12962,7 +12953,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     __pyx_v_temp = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":302
+    /* "src/core.pyx":302
  * 	if len(pos_doc) !=0:
  * 		temp=[]
  * 		for x in pos_doc: temp.append(float(pos_doc[x]))             # <<<<<<<<<<<<<<
@@ -12992,7 +12983,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":303
+    /* "src/core.pyx":303
  * 		temp=[]
  * 		for x in pos_doc: temp.append(float(pos_doc[x]))
  * 		return np.median(temp)             # <<<<<<<<<<<<<<
@@ -13034,7 +13025,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "gtcnv/core.pyx":300
+    /* "src/core.pyx":300
  * 				pos_doc[int(r[1])]=int(r[2])
  * 			else: pos_doc[int(r[1])]=int(r[2])
  * 	if len(pos_doc) !=0:             # <<<<<<<<<<<<<<
@@ -13043,7 +13034,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
  */
   }
 
-  /* "gtcnv/core.pyx":304
+  /* "src/core.pyx":304
  * 		for x in pos_doc: temp.append(float(pos_doc[x]))
  * 		return np.median(temp)
  * 	else: return 0             # <<<<<<<<<<<<<<
@@ -13057,7 +13048,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
     goto __pyx_L0;
   }
 
-  /* "gtcnv/core.pyx":283
+  /* "src/core.pyx":283
  * 			read_count+=1
  * 	return(read_count,bp_span)
  * cdef depth_of_coverage(cnv_list,bamfh,chrFlag,read_length):             # <<<<<<<<<<<<<<
@@ -13073,7 +13064,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("gtcnv.core.depth_of_coverage", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.depth_of_coverage", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_pos_doc);
@@ -13090,7 +13081,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":305
+/* "src/core.pyx":305
  * 		return np.median(temp)
  * 	else: return 0
  * cdef is_discordant(read,windows,ci,matepos):             # <<<<<<<<<<<<<<
@@ -13098,7 +13089,7 @@ static PyObject *__pyx_f_5gtcnv_4core_depth_of_coverage(PyObject *__pyx_v_cnv_li
  * 	((s1,e1),(s2,e2)) = windows
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyObject *__pyx_v_windows, PyObject *__pyx_v_ci, PyObject *__pyx_v_matepos) {
+static PyObject *__pyx_f_3src_4core_is_discordant(PyObject *__pyx_v_read, PyObject *__pyx_v_windows, PyObject *__pyx_v_ci, PyObject *__pyx_v_matepos) {
   PyObject *__pyx_v_s1 = NULL;
   PyObject *__pyx_v_e1 = NULL;
   PyObject *__pyx_v_s2 = NULL;
@@ -13115,7 +13106,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("is_discordant", 0);
 
-  /* "gtcnv/core.pyx":307
+  /* "src/core.pyx":307
  * cdef is_discordant(read,windows,ci,matepos):
  * 	"""returns True if read is discordant"""
  * 	((s1,e1),(s2,e2)) = windows             # <<<<<<<<<<<<<<
@@ -13279,7 +13270,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
   __pyx_v_e2 = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":308
+  /* "src/core.pyx":308
  * 	"""returns True if read is discordant"""
  * 	((s1,e1),(s2,e2)) = windows
  * 	if abs(read.tlen) >= ci:             # <<<<<<<<<<<<<<
@@ -13297,7 +13288,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":310
+    /* "src/core.pyx":310
  * 	if abs(read.tlen) >= ci:
  * 		"""insert size is greater than 5MAD from median"""
  * 		if (int(s1) <= read.pos+1 <= int(e1) and int(s2) <= int(matepos)+1 <= int(e2)) or (int(s2) <= read.pos+1 <= int(e2) and int(s1) <= int(matepos)+1 <= int(e1)):             # <<<<<<<<<<<<<<
@@ -13399,7 +13390,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
     __pyx_L11_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "gtcnv/core.pyx":311
+      /* "src/core.pyx":311
  * 		"""insert size is greater than 5MAD from median"""
  * 		if (int(s1) <= read.pos+1 <= int(e1) and int(s2) <= int(matepos)+1 <= int(e2)) or (int(s2) <= read.pos+1 <= int(e2) and int(s1) <= int(matepos)+1 <= int(e1)):
  * 			return True             # <<<<<<<<<<<<<<
@@ -13411,7 +13402,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
       __pyx_r = Py_True;
       goto __pyx_L0;
 
-      /* "gtcnv/core.pyx":310
+      /* "src/core.pyx":310
  * 	if abs(read.tlen) >= ci:
  * 		"""insert size is greater than 5MAD from median"""
  * 		if (int(s1) <= read.pos+1 <= int(e1) and int(s2) <= int(matepos)+1 <= int(e2)) or (int(s2) <= read.pos+1 <= int(e2) and int(s1) <= int(matepos)+1 <= int(e1)):             # <<<<<<<<<<<<<<
@@ -13420,7 +13411,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
  */
     }
 
-    /* "gtcnv/core.pyx":313
+    /* "src/core.pyx":313
  * 			return True
  * 		else:
  * 			return False             # <<<<<<<<<<<<<<
@@ -13434,7 +13425,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
       goto __pyx_L0;
     }
 
-    /* "gtcnv/core.pyx":308
+    /* "src/core.pyx":308
  * 	"""returns True if read is discordant"""
  * 	((s1,e1),(s2,e2)) = windows
  * 	if abs(read.tlen) >= ci:             # <<<<<<<<<<<<<<
@@ -13443,7 +13434,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
  */
   }
 
-  /* "gtcnv/core.pyx":305
+  /* "src/core.pyx":305
  * 		return np.median(temp)
  * 	else: return 0
  * cdef is_discordant(read,windows,ci,matepos):             # <<<<<<<<<<<<<<
@@ -13460,7 +13451,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.is_discordant", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.is_discordant", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_s1);
@@ -13472,7 +13463,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":314
+/* "src/core.pyx":314
  * 		else:
  * 			return False
  * cdef is_split(read,windows,c):             # <<<<<<<<<<<<<<
@@ -13480,7 +13471,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_discordant(PyObject *__pyx_v_read, PyOb
  * 	((s1,e1),(s2,e2)) = windows
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject *__pyx_v_windows, PyObject *__pyx_v_c) {
+static PyObject *__pyx_f_3src_4core_is_split(PyObject *__pyx_v_read, PyObject *__pyx_v_windows, PyObject *__pyx_v_c) {
   PyObject *__pyx_v_s1 = NULL;
   PyObject *__pyx_v_e1 = NULL;
   PyObject *__pyx_v_s2 = NULL;
@@ -13498,7 +13489,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("is_split", 0);
 
-  /* "gtcnv/core.pyx":316
+  /* "src/core.pyx":316
  * cdef is_split(read,windows,c):
  * 	"""returns True if read is split"""
  * 	((s1,e1),(s2,e2)) = windows             # <<<<<<<<<<<<<<
@@ -13662,7 +13653,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
   __pyx_v_e2 = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":317
+  /* "src/core.pyx":317
  * 	"""returns True if read is split"""
  * 	((s1,e1),(s2,e2)) = windows
  * 	if read.is_secondary == True:             # <<<<<<<<<<<<<<
@@ -13677,7 +13668,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":318
+    /* "src/core.pyx":318
  * 	((s1,e1),(s2,e2)) = windows
  * 	if read.is_secondary == True:
  * 		second_align = read.get_tag("SA").split(',')             # <<<<<<<<<<<<<<
@@ -13698,7 +13689,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
     __pyx_v_second_align = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":319
+    /* "src/core.pyx":319
  * 	if read.is_secondary == True:
  * 		second_align = read.get_tag("SA").split(',')
  * 		if second_align[0] != c:             # <<<<<<<<<<<<<<
@@ -13713,7 +13704,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_7) {
 
-      /* "gtcnv/core.pyx":321
+      /* "src/core.pyx":321
  * 		if second_align[0] != c:
  * 			"""return False if maps to other chromosome"""
  * 			return False             # <<<<<<<<<<<<<<
@@ -13725,7 +13716,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
       __pyx_r = Py_False;
       goto __pyx_L0;
 
-      /* "gtcnv/core.pyx":319
+      /* "src/core.pyx":319
  * 	if read.is_secondary == True:
  * 		second_align = read.get_tag("SA").split(',')
  * 		if second_align[0] != c:             # <<<<<<<<<<<<<<
@@ -13734,7 +13725,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
  */
     }
 
-    /* "gtcnv/core.pyx":323
+    /* "src/core.pyx":323
  * 			return False
  * 		else:
  * 			second_align[1] = int(second_align[1])             # <<<<<<<<<<<<<<
@@ -13750,7 +13741,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
       if (unlikely(__Pyx_SetItemInt(__pyx_v_second_align, 1, __pyx_t_2, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 323, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":324
+      /* "src/core.pyx":324
  * 		else:
  * 			second_align[1] = int(second_align[1])
  * 			if ( ((int(s1) <= read.pos+1 <= int(e1)) and (int(s2) <= second_align[1] <= int(e2)))             # <<<<<<<<<<<<<<
@@ -13803,7 +13794,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
       }
       __pyx_L13_next_or:;
 
-      /* "gtcnv/core.pyx":325
+      /* "src/core.pyx":325
  * 			second_align[1] = int(second_align[1])
  * 			if ( ((int(s1) <= read.pos+1 <= int(e1)) and (int(s2) <= second_align[1] <= int(e2)))
  * 			     or ((int(s2) <= read.pos+1 <= int(e2)) and (int(s1) <= second_align[1] <= int(e1)))):             # <<<<<<<<<<<<<<
@@ -13853,7 +13844,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
       __pyx_t_7 = __pyx_t_8;
       __pyx_L12_bool_binop_done:;
 
-      /* "gtcnv/core.pyx":324
+      /* "src/core.pyx":324
  * 		else:
  * 			second_align[1] = int(second_align[1])
  * 			if ( ((int(s1) <= read.pos+1 <= int(e1)) and (int(s2) <= second_align[1] <= int(e2)))             # <<<<<<<<<<<<<<
@@ -13862,7 +13853,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
  */
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":327
+        /* "src/core.pyx":327
  * 			     or ((int(s2) <= read.pos+1 <= int(e2)) and (int(s1) <= second_align[1] <= int(e1)))):
  * 				"""secondary alignment must be near the opposite breakpoint of the primary alignment"""
  * 				return True             # <<<<<<<<<<<<<<
@@ -13874,7 +13865,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
         __pyx_r = Py_True;
         goto __pyx_L0;
 
-        /* "gtcnv/core.pyx":324
+        /* "src/core.pyx":324
  * 		else:
  * 			second_align[1] = int(second_align[1])
  * 			if ( ((int(s1) <= read.pos+1 <= int(e1)) and (int(s2) <= second_align[1] <= int(e2)))             # <<<<<<<<<<<<<<
@@ -13883,7 +13874,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
  */
       }
 
-      /* "gtcnv/core.pyx":329
+      /* "src/core.pyx":329
  * 				return True
  * 			else:
  * 				return False             # <<<<<<<<<<<<<<
@@ -13898,7 +13889,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
       }
     }
 
-    /* "gtcnv/core.pyx":317
+    /* "src/core.pyx":317
  * 	"""returns True if read is split"""
  * 	((s1,e1),(s2,e2)) = windows
  * 	if read.is_secondary == True:             # <<<<<<<<<<<<<<
@@ -13907,7 +13898,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
  */
   }
 
-  /* "gtcnv/core.pyx":314
+  /* "src/core.pyx":314
  * 		else:
  * 			return False
  * cdef is_split(read,windows,c):             # <<<<<<<<<<<<<<
@@ -13924,7 +13915,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.is_split", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.is_split", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_s1);
@@ -13937,7 +13928,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":330
+/* "src/core.pyx":330
  * 			else:
  * 				return False
  * cdef discordant_split_cnv(flank_list,bam,size,ci,windows,chrFlag):             # <<<<<<<<<<<<<<
@@ -13945,7 +13936,7 @@ static PyObject *__pyx_f_5gtcnv_4core_is_split(PyObject *__pyx_v_read, PyObject 
  * 	cdef unsigned int discordant_count
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_flank_list, PyObject *__pyx_v_bam, CYTHON_UNUSED PyObject *__pyx_v_size, PyObject *__pyx_v_ci, PyObject *__pyx_v_windows, PyObject *__pyx_v_chrFlag) {
+static PyObject *__pyx_f_3src_4core_discordant_split_cnv(PyObject *__pyx_v_flank_list, PyObject *__pyx_v_bam, CYTHON_UNUSED PyObject *__pyx_v_size, PyObject *__pyx_v_ci, PyObject *__pyx_v_windows, PyObject *__pyx_v_chrFlag) {
   unsigned int __pyx_v_discordant_count;
   unsigned int __pyx_v_split_count;
   unsigned int __pyx_v_concordant_count;
@@ -13973,7 +13964,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
   int __pyx_t_14;
   __Pyx_RefNannySetupContext("discordant_split_cnv", 0);
 
-  /* "gtcnv/core.pyx":335
+  /* "src/core.pyx":335
  * 	cdef unsigned int split_count
  * 	cdef unsigned int concordant_count
  * 	discordant_count=0             # <<<<<<<<<<<<<<
@@ -13982,7 +13973,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
   __pyx_v_discordant_count = 0;
 
-  /* "gtcnv/core.pyx":336
+  /* "src/core.pyx":336
  * 	cdef unsigned int concordant_count
  * 	discordant_count=0
  * 	split_count=0             # <<<<<<<<<<<<<<
@@ -13991,7 +13982,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
   __pyx_v_split_count = 0;
 
-  /* "gtcnv/core.pyx":337
+  /* "src/core.pyx":337
  * 	discordant_count=0
  * 	split_count=0
  * 	concordant_count=0             # <<<<<<<<<<<<<<
@@ -14000,7 +13991,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
   __pyx_v_concordant_count = 0;
 
-  /* "gtcnv/core.pyx":338
+  /* "src/core.pyx":338
  * 	split_count=0
  * 	concordant_count=0
  * 	if flank_list==None: return (0,0,0)             # <<<<<<<<<<<<<<
@@ -14017,7 +14008,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
     goto __pyx_L0;
   }
 
-  /* "gtcnv/core.pyx":340
+  /* "src/core.pyx":340
  * 	if flank_list==None: return (0,0,0)
  * 	else:
  * 		for (c,s,e) in flank_list:             # <<<<<<<<<<<<<<
@@ -14128,7 +14119,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
       __Pyx_XDECREF_SET(__pyx_v_e, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "gtcnv/core.pyx":341
+      /* "src/core.pyx":341
  * 	else:
  * 		for (c,s,e) in flank_list:
  * 			if chrFlag == False : c = c.replace("chr","")             # <<<<<<<<<<<<<<
@@ -14148,7 +14139,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
         __pyx_t_8 = 0;
       }
 
-      /* "gtcnv/core.pyx":342
+      /* "src/core.pyx":342
  * 		for (c,s,e) in flank_list:
  * 			if chrFlag == False : c = c.replace("chr","")
  * 			region = str(c+":"+s+"-"+e)             # <<<<<<<<<<<<<<
@@ -14177,7 +14168,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
       __Pyx_XDECREF_SET(__pyx_v_region, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":343
+      /* "src/core.pyx":343
  * 			if chrFlag == False : c = c.replace("chr","")
  * 			region = str(c+":"+s+"-"+e)
  * 			for read in bam.fetch(region=region,until_eof=True):             # <<<<<<<<<<<<<<
@@ -14237,7 +14228,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
         __Pyx_XDECREF_SET(__pyx_v_read, __pyx_t_7);
         __pyx_t_7 = 0;
 
-        /* "gtcnv/core.pyx":346
+        /* "src/core.pyx":346
  * 				"""skip noninformative reads
  * 				- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 				if (read.is_qcfail             # <<<<<<<<<<<<<<
@@ -14254,7 +14245,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           goto __pyx_L12_bool_binop_done;
         }
 
-        /* "gtcnv/core.pyx":347
+        /* "src/core.pyx":347
  * 				- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 				if (read.is_qcfail
  * 				    or read.is_unmapped             # <<<<<<<<<<<<<<
@@ -14271,7 +14262,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           goto __pyx_L12_bool_binop_done;
         }
 
-        /* "gtcnv/core.pyx":348
+        /* "src/core.pyx":348
  * 				if (read.is_qcfail
  * 				    or read.is_unmapped
  * 				    or read.mate_is_unmapped             # <<<<<<<<<<<<<<
@@ -14288,7 +14279,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           goto __pyx_L12_bool_binop_done;
         }
 
-        /* "gtcnv/core.pyx":349
+        /* "src/core.pyx":349
  * 				    or read.is_unmapped
  * 				    or read.mate_is_unmapped
  * 				    or read.tid != read.rnext             # <<<<<<<<<<<<<<
@@ -14310,7 +14301,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           goto __pyx_L12_bool_binop_done;
         }
 
-        /* "gtcnv/core.pyx":350
+        /* "src/core.pyx":350
  * 				    or read.mate_is_unmapped
  * 				    or read.tid != read.rnext
  * 				    or read.is_reverse == read.mate_is_reverse             # <<<<<<<<<<<<<<
@@ -14332,7 +14323,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           goto __pyx_L12_bool_binop_done;
         }
 
-        /* "gtcnv/core.pyx":351
+        /* "src/core.pyx":351
  * 				    or read.tid != read.rnext
  * 				    or read.is_reverse == read.mate_is_reverse
  * 				    or read.is_duplicate): continue             # <<<<<<<<<<<<<<
@@ -14346,7 +14337,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
         __pyx_t_2 = __pyx_t_13;
         __pyx_L12_bool_binop_done:;
 
-        /* "gtcnv/core.pyx":346
+        /* "src/core.pyx":346
  * 				"""skip noninformative reads
  * 				- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 				if (read.is_qcfail             # <<<<<<<<<<<<<<
@@ -14355,7 +14346,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
         if (__pyx_t_2) {
 
-          /* "gtcnv/core.pyx":351
+          /* "src/core.pyx":351
  * 				    or read.tid != read.rnext
  * 				    or read.is_reverse == read.mate_is_reverse
  * 				    or read.is_duplicate): continue             # <<<<<<<<<<<<<<
@@ -14364,7 +14355,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
           goto __pyx_L9_continue;
 
-          /* "gtcnv/core.pyx":346
+          /* "src/core.pyx":346
  * 				"""skip noninformative reads
  * 				- courtsey of svtyper - https://github.com/hall-lab/svtyper --"""
  * 				if (read.is_qcfail             # <<<<<<<<<<<<<<
@@ -14373,7 +14364,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
         }
 
-        /* "gtcnv/core.pyx":353
+        /* "src/core.pyx":353
  * 				    or read.is_duplicate): continue
  * 				else:
  * 					mate_pos = read.pnext             # <<<<<<<<<<<<<<
@@ -14386,14 +14377,14 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           __Pyx_XDECREF_SET(__pyx_v_mate_pos, __pyx_t_7);
           __pyx_t_7 = 0;
 
-          /* "gtcnv/core.pyx":354
+          /* "src/core.pyx":354
  * 				else:
  * 					mate_pos = read.pnext
  * 					if is_discordant(read,windows,ci,mate_pos) == True: discordant_count+=1             # <<<<<<<<<<<<<<
  * 					if is_split(read,windows,c)  == True: split_count+=1
  * 					if (read.is_proper_pair
  */
-          __pyx_t_7 = __pyx_f_5gtcnv_4core_is_discordant(__pyx_v_read, __pyx_v_windows, __pyx_v_ci, __pyx_v_mate_pos); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 354, __pyx_L1_error)
+          __pyx_t_7 = __pyx_f_3src_4core_is_discordant(__pyx_v_read, __pyx_v_windows, __pyx_v_ci, __pyx_v_mate_pos); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 354, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           __pyx_t_5 = PyObject_RichCompare(__pyx_t_7, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 354, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -14403,14 +14394,14 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
             __pyx_v_discordant_count = (__pyx_v_discordant_count + 1);
           }
 
-          /* "gtcnv/core.pyx":355
+          /* "src/core.pyx":355
  * 					mate_pos = read.pnext
  * 					if is_discordant(read,windows,ci,mate_pos) == True: discordant_count+=1
  * 					if is_split(read,windows,c)  == True: split_count+=1             # <<<<<<<<<<<<<<
  * 					if (read.is_proper_pair
  * 					    and read.mapping_quality >= 10
  */
-          __pyx_t_5 = __pyx_f_5gtcnv_4core_is_split(__pyx_v_read, __pyx_v_windows, __pyx_v_c); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 355, __pyx_L1_error)
+          __pyx_t_5 = __pyx_f_3src_4core_is_split(__pyx_v_read, __pyx_v_windows, __pyx_v_c); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 355, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_7 = PyObject_RichCompare(__pyx_t_5, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 355, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -14420,7 +14411,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
             __pyx_v_split_count = (__pyx_v_split_count + 1);
           }
 
-          /* "gtcnv/core.pyx":356
+          /* "src/core.pyx":356
  * 					if is_discordant(read,windows,ci,mate_pos) == True: discordant_count+=1
  * 					if is_split(read,windows,c)  == True: split_count+=1
  * 					if (read.is_proper_pair             # <<<<<<<<<<<<<<
@@ -14437,7 +14428,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
             goto __pyx_L21_bool_binop_done;
           }
 
-          /* "gtcnv/core.pyx":357
+          /* "src/core.pyx":357
  * 					if is_split(read,windows,c)  == True: split_count+=1
  * 					if (read.is_proper_pair
  * 					    and read.mapping_quality >= 10             # <<<<<<<<<<<<<<
@@ -14456,7 +14447,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
             goto __pyx_L21_bool_binop_done;
           }
 
-          /* "gtcnv/core.pyx":358
+          /* "src/core.pyx":358
  * 					if (read.is_proper_pair
  * 					    and read.mapping_quality >= 10
  * 					    and not read.is_secondary             # <<<<<<<<<<<<<<
@@ -14474,7 +14465,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
             goto __pyx_L21_bool_binop_done;
           }
 
-          /* "gtcnv/core.pyx":359
+          /* "src/core.pyx":359
  * 					    and read.mapping_quality >= 10
  * 					    and not read.is_secondary
  * 					    and abs(read.tlen) < ci):             # <<<<<<<<<<<<<<
@@ -14493,7 +14484,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           __pyx_t_2 = __pyx_t_14;
           __pyx_L21_bool_binop_done:;
 
-          /* "gtcnv/core.pyx":356
+          /* "src/core.pyx":356
  * 					if is_discordant(read,windows,ci,mate_pos) == True: discordant_count+=1
  * 					if is_split(read,windows,c)  == True: split_count+=1
  * 					if (read.is_proper_pair             # <<<<<<<<<<<<<<
@@ -14502,7 +14493,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
           if (__pyx_t_2) {
 
-            /* "gtcnv/core.pyx":360
+            /* "src/core.pyx":360
  * 					    and not read.is_secondary
  * 					    and abs(read.tlen) < ci):
  * 						concordant_count+=1             # <<<<<<<<<<<<<<
@@ -14511,7 +14502,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  */
             __pyx_v_concordant_count = (__pyx_v_concordant_count + 1);
 
-            /* "gtcnv/core.pyx":356
+            /* "src/core.pyx":356
  * 					if is_discordant(read,windows,ci,mate_pos) == True: discordant_count+=1
  * 					if is_split(read,windows,c)  == True: split_count+=1
  * 					if (read.is_proper_pair             # <<<<<<<<<<<<<<
@@ -14521,7 +14512,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
             goto __pyx_L20;
           }
 
-          /* "gtcnv/core.pyx":361
+          /* "src/core.pyx":361
  * 					    and abs(read.tlen) < ci):
  * 						concordant_count+=1
  * 					else: continue             # <<<<<<<<<<<<<<
@@ -14534,7 +14525,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
           __pyx_L20:;
         }
 
-        /* "gtcnv/core.pyx":343
+        /* "src/core.pyx":343
  * 			if chrFlag == False : c = c.replace("chr","")
  * 			region = str(c+":"+s+"-"+e)
  * 			for read in bam.fetch(region=region,until_eof=True):             # <<<<<<<<<<<<<<
@@ -14545,7 +14536,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "gtcnv/core.pyx":340
+      /* "src/core.pyx":340
  * 	if flank_list==None: return (0,0,0)
  * 	else:
  * 		for (c,s,e) in flank_list:             # <<<<<<<<<<<<<<
@@ -14555,7 +14546,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":363
+    /* "src/core.pyx":363
  * 					else: continue
  * 
  * 		return(discordant_count,split_count,concordant_count)             # <<<<<<<<<<<<<<
@@ -14585,7 +14576,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
     goto __pyx_L0;
   }
 
-  /* "gtcnv/core.pyx":330
+  /* "src/core.pyx":330
  * 			else:
  * 				return False
  * cdef discordant_split_cnv(flank_list,bam,size,ci,windows,chrFlag):             # <<<<<<<<<<<<<<
@@ -14601,7 +14592,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.discordant_split_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.discordant_split_cnv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_c);
@@ -14615,7 +14606,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":364
+/* "src/core.pyx":364
  * 
  * 		return(discordant_count,split_count,concordant_count)
  * cdef bamHead(bam):             # <<<<<<<<<<<<<<
@@ -14623,7 +14614,7 @@ static PyObject *__pyx_f_5gtcnv_4core_discordant_split_cnv(PyObject *__pyx_v_fla
  * 	chrFlag=0
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
+static PyObject *__pyx_f_3src_4core_bamHead(PyObject *__pyx_v_bam) {
   int __pyx_v_chrFlag;
   PyObject *__pyx_v_bamhead = NULL;
   PyObject *__pyx_v_i = NULL;
@@ -14637,7 +14628,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("bamHead", 0);
 
-  /* "gtcnv/core.pyx":366
+  /* "src/core.pyx":366
  * cdef bamHead(bam):
  * 	cdef bint chrFlag
  * 	chrFlag=0             # <<<<<<<<<<<<<<
@@ -14646,7 +14637,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
  */
   __pyx_v_chrFlag = 0;
 
-  /* "gtcnv/core.pyx":367
+  /* "src/core.pyx":367
  * 	cdef bint chrFlag
  * 	chrFlag=0
  * 	bamhead = bam.header['SQ']             # <<<<<<<<<<<<<<
@@ -14661,7 +14652,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
   __pyx_v_bamhead = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":368
+  /* "src/core.pyx":368
  * 	chrFlag=0
  * 	bamhead = bam.header['SQ']
  * 	for i in  bamhead:             # <<<<<<<<<<<<<<
@@ -14710,7 +14701,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":369
+    /* "src/core.pyx":369
  * 	bamhead = bam.header['SQ']
  * 	for i in  bamhead:
  * 		if str(i['SN']).find("chr") != -1: chrFlag=1             # <<<<<<<<<<<<<<
@@ -14741,7 +14732,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
       __pyx_v_chrFlag = 1;
     }
 
-    /* "gtcnv/core.pyx":368
+    /* "src/core.pyx":368
  * 	chrFlag=0
  * 	bamhead = bam.header['SQ']
  * 	for i in  bamhead:             # <<<<<<<<<<<<<<
@@ -14751,7 +14742,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":370
+  /* "src/core.pyx":370
  * 	for i in  bamhead:
  * 		if str(i['SN']).find("chr") != -1: chrFlag=1
  * 	return chrFlag             # <<<<<<<<<<<<<<
@@ -14765,7 +14756,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":364
+  /* "src/core.pyx":364
  * 
  * 		return(discordant_count,split_count,concordant_count)
  * cdef bamHead(bam):             # <<<<<<<<<<<<<<
@@ -14778,7 +14769,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("gtcnv.core.bamHead", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.bamHead", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bamhead);
@@ -14788,7 +14779,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":371
+/* "src/core.pyx":371
  * 		if str(i['SN']).find("chr") != -1: chrFlag=1
  * 	return chrFlag
  * cdef randomChr (seed,gen):             # <<<<<<<<<<<<<<
@@ -14796,7 +14787,7 @@ static PyObject *__pyx_f_5gtcnv_4core_bamHead(PyObject *__pyx_v_bam) {
  * 	bed = pbed.BedTool()
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_randomChr(PyObject *__pyx_v_seed, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_bed_master = NULL;
   PyObject *__pyx_v_bed = NULL;
   PyObject *__pyx_v_chr_ref = NULL;
@@ -14813,7 +14804,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannySetupContext("randomChr", 0);
 
-  /* "gtcnv/core.pyx":372
+  /* "src/core.pyx":372
  * 	return chrFlag
  * cdef randomChr (seed,gen):
  * 	bed_master = pbed.BedTool('chr1 1 2',from_string=True)             # <<<<<<<<<<<<<<
@@ -14835,7 +14826,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   __pyx_v_bed_master = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":373
+  /* "src/core.pyx":373
  * cdef randomChr (seed,gen):
  * 	bed_master = pbed.BedTool('chr1 1 2',from_string=True)
  * 	bed = pbed.BedTool()             # <<<<<<<<<<<<<<
@@ -14868,7 +14859,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   __pyx_v_bed = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":374
+  /* "src/core.pyx":374
  * 	bed_master = pbed.BedTool('chr1 1 2',from_string=True)
  * 	bed = pbed.BedTool()
  * 	for chr_ref in glob(get_path()+'/resources/'+gen+'_chr_lengths/[inserted by cython to avoid comment start]*chr*'):             # <<<<<<<<<<<<<<
@@ -14975,7 +14966,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
     __Pyx_XDECREF_SET(__pyx_v_chr_ref, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":375
+    /* "src/core.pyx":375
  * 	bed = pbed.BedTool()
  * 	for chr_ref in glob(get_path()+'/resources/'+gen+'_chr_lengths/[inserted by cython to avoid comment start]*chr*'):
  * 		bed_master = bed_master.cat(bed.random(l=100000,n=100,seed=seed,g=chr_ref),force_truncate=True,postmerge=False)             # <<<<<<<<<<<<<<
@@ -15013,7 +15004,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
     __Pyx_DECREF_SET(__pyx_v_bed_master, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":374
+    /* "src/core.pyx":374
  * 	bed_master = pbed.BedTool('chr1 1 2',from_string=True)
  * 	bed = pbed.BedTool()
  * 	for chr_ref in glob(get_path()+'/resources/'+gen+'_chr_lengths/[inserted by cython to avoid comment start]*chr*'):             # <<<<<<<<<<<<<<
@@ -15023,7 +15014,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":376
+  /* "src/core.pyx":376
  * 	for chr_ref in glob(get_path()+'/resources/'+gen+'_chr_lengths/[inserted by cython to avoid comment start]*chr*'):
  * 		bed_master = bed_master.cat(bed.random(l=100000,n=100,seed=seed,g=chr_ref),force_truncate=True,postmerge=False)
  * 	maskbed = pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')             # <<<<<<<<<<<<<<
@@ -15093,7 +15084,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   __pyx_v_maskbed = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":377
+  /* "src/core.pyx":377
  * 		bed_master = bed_master.cat(bed.random(l=100000,n=100,seed=seed,g=chr_ref),force_truncate=True,postmerge=False)
  * 	maskbed = pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')
  * 	return bed_master.subtract(maskbed).sort().merge()             # <<<<<<<<<<<<<<
@@ -15174,7 +15165,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":371
+  /* "src/core.pyx":371
  * 		if str(i['SN']).find("chr") != -1: chrFlag=1
  * 	return chrFlag
  * cdef randomChr (seed,gen):             # <<<<<<<<<<<<<<
@@ -15190,7 +15181,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("gtcnv.core.randomChr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.randomChr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bed_master);
@@ -15202,7 +15193,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":378
+/* "src/core.pyx":378
  * 	maskbed = pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')
  * 	return bed_master.subtract(maskbed).sort().merge()
  * cdef gtCNV_stats(bed,bam,chrFlag):             # <<<<<<<<<<<<<<
@@ -15210,7 +15201,7 @@ static PyObject *__pyx_f_5gtcnv_4core_randomChr(PyObject *__pyx_v_seed, PyObject
  * 	read_stats = {}
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObject *__pyx_v_bam, PyObject *__pyx_v_chrFlag) {
+static PyObject *__pyx_f_3src_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObject *__pyx_v_bam, PyObject *__pyx_v_chrFlag) {
   unsigned int __pyx_v_chr_size;
   PyObject *__pyx_v_read_stats = NULL;
   PyObject *__pyx_v_c = NULL;
@@ -15236,7 +15227,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
   int __pyx_t_14;
   __Pyx_RefNannySetupContext("gtCNV_stats", 0);
 
-  /* "gtcnv/core.pyx":380
+  /* "src/core.pyx":380
  * cdef gtCNV_stats(bed,bam,chrFlag):
  * 	cdef unsigned int chr_size
  * 	read_stats = {}             # <<<<<<<<<<<<<<
@@ -15248,7 +15239,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
   __pyx_v_read_stats = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":381
+  /* "src/core.pyx":381
  * 	cdef unsigned int chr_size
  * 	read_stats = {}
  * 	chr_size=0             # <<<<<<<<<<<<<<
@@ -15257,7 +15248,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
  */
   __pyx_v_chr_size = 0;
 
-  /* "gtcnv/core.pyx":382
+  /* "src/core.pyx":382
  * 	read_stats = {}
  * 	chr_size=0
  * 	for (c,s,e) in bed:             # <<<<<<<<<<<<<<
@@ -15367,7 +15358,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_e, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":383
+    /* "src/core.pyx":383
  * 	chr_size=0
  * 	for (c,s,e) in bed:
  * 		if chrFlag == False: c = c.replace("chr","")             # <<<<<<<<<<<<<<
@@ -15387,7 +15378,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
       __pyx_t_7 = 0;
     }
 
-    /* "gtcnv/core.pyx":384
+    /* "src/core.pyx":384
  * 	for (c,s,e) in bed:
  * 		if chrFlag == False: c = c.replace("chr","")
  * 		region = str(c+":"+s+"-"+e)             # <<<<<<<<<<<<<<
@@ -15416,7 +15407,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_region, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":385
+    /* "src/core.pyx":385
  * 		if chrFlag == False: c = c.replace("chr","")
  * 		region = str(c+":"+s+"-"+e)
  * 		chr_size += (int(e)-int(s)+1)             # <<<<<<<<<<<<<<
@@ -15444,7 +15435,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_chr_size = __pyx_t_11;
 
-    /* "gtcnv/core.pyx":386
+    /* "src/core.pyx":386
  * 		region = str(c+":"+s+"-"+e)
  * 		chr_size += (int(e)-int(s)+1)
  * 		for read in bam.fetch(region=region):             # <<<<<<<<<<<<<<
@@ -15503,7 +15494,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
       __Pyx_XDECREF_SET(__pyx_v_read, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":387
+      /* "src/core.pyx":387
  * 		chr_size += (int(e)-int(s)+1)
  * 		for read in bam.fetch(region=region):
  * 			if (read.is_proper_pair == False or read.is_qcfail== True or read.is_duplicate == True or read.mapq < 40 or read_stats.get(str(read.qname)+str(read.is_read1)) != None): continue             # <<<<<<<<<<<<<<
@@ -15591,7 +15582,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
         goto __pyx_L8_continue;
       }
 
-      /* "gtcnv/core.pyx":388
+      /* "src/core.pyx":388
  * 		for read in bam.fetch(region=region):
  * 			if (read.is_proper_pair == False or read.is_qcfail== True or read.is_duplicate == True or read.mapq < 40 or read_stats.get(str(read.qname)+str(read.is_read1)) != None): continue
  * 			read_stats[str(read.qname)+str(read.is_read1)] = ((read.qlen,abs(read.isize)))             # <<<<<<<<<<<<<<
@@ -15641,7 +15632,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":386
+      /* "src/core.pyx":386
  * 		region = str(c+":"+s+"-"+e)
  * 		chr_size += (int(e)-int(s)+1)
  * 		for read in bam.fetch(region=region):             # <<<<<<<<<<<<<<
@@ -15652,7 +15643,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":382
+    /* "src/core.pyx":382
  * 	read_stats = {}
  * 	chr_size=0
  * 	for (c,s,e) in bed:             # <<<<<<<<<<<<<<
@@ -15662,7 +15653,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":389
+  /* "src/core.pyx":389
  * 			if (read.is_proper_pair == False or read.is_qcfail== True or read.is_duplicate == True or read.mapq < 40 or read_stats.get(str(read.qname)+str(read.is_read1)) != None): continue
  * 			read_stats[str(read.qname)+str(read.is_read1)] = ((read.qlen,abs(read.isize)))
  * 	return read_stats,chr_size             # <<<<<<<<<<<<<<
@@ -15684,7 +15675,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":378
+  /* "src/core.pyx":378
  * 	maskbed = pbed.BedTool(get_path()+'/resources/'+gen+'_unmapped.bed.gz')
  * 	return bed_master.subtract(maskbed).sort().merge()
  * cdef gtCNV_stats(bed,bam,chrFlag):             # <<<<<<<<<<<<<<
@@ -15700,7 +15691,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("gtcnv.core.gtCNV_stats", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtCNV_stats", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_read_stats);
@@ -15714,7 +15705,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":409
+/* "src/core.pyx":409
  * 	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()
  * 	for chromo in chroms:
  * 		filt_bed = bed.filter(lambda x: x.chrom==chromo)             # <<<<<<<<<<<<<<
@@ -15723,9 +15714,9 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_stats(PyObject *__pyx_v_bed, PyObjec
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_16gtCNV_preprocess_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_16gtCNV_preprocess_lambda3 = {"lambda3", (PyCFunction)__pyx_pw_5gtcnv_4core_16gtCNV_preprocess_lambda3, METH_O, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_16gtCNV_preprocess_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_x) {
+static PyObject *__pyx_pw_3src_4core_16gtCNV_preprocess_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_16gtCNV_preprocess_lambda3 = {"lambda3", (PyCFunction)__pyx_pw_3src_4core_16gtCNV_preprocess_lambda3, METH_O, 0};
+static PyObject *__pyx_pw_3src_4core_16gtCNV_preprocess_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_x) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("lambda3 (wrapper)", 0);
@@ -15737,14 +15728,14 @@ static PyObject *__pyx_pw_5gtcnv_4core_16gtCNV_preprocess_lambda3(PyObject *__py
 }
 
 static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_x) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *__pyx_cur_scope;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *__pyx_outer_scope;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *__pyx_cur_scope;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("lambda3", 0);
-  __pyx_outer_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __pyx_outer_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_x, __pyx_n_s_chrom); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
@@ -15760,7 +15751,7 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("gtcnv.core.gtCNV_preprocess.lambda3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtCNV_preprocess.lambda3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -15768,7 +15759,7 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":390
+/* "src/core.pyx":390
  * 			read_stats[str(read.qname)+str(read.is_read1)] = ((read.qlen,abs(read.isize)))
  * 	return read_stats,chr_size
  * cdef gtCNV_preprocess (iid,bamfh,vcffh,bed,out,gen):             # <<<<<<<<<<<<<<
@@ -15776,8 +15767,8 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__
  * 	cdef double genome_snp_cov
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_bed, PyObject *__pyx_v_out, PyObject *__pyx_v_gen) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *__pyx_cur_scope;
+static PyObject *__pyx_f_3src_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_bed, PyObject *__pyx_v_out, PyObject *__pyx_v_gen) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *__pyx_cur_scope;
   double __pyx_v_read_count;
   double __pyx_v_genome_snp_cov;
   unsigned int __pyx_v_genome_SNP;
@@ -15826,7 +15817,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   PyObject *__pyx_t_18 = NULL;
   PyObject *__pyx_t_19 = NULL;
   __Pyx_RefNannySetupContext("gtCNV_preprocess", 0);
-  __pyx_cur_scope = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *)__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess(__pyx_ptype_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *)__pyx_tp_new_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess(__pyx_ptype_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
     __Pyx_RefNannyFinishContext();
     return 0;
@@ -15834,7 +15825,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_cur_scope);
   __Pyx_INCREF(__pyx_v_out);
 
-  /* "gtcnv/core.pyx":398
+  /* "src/core.pyx":398
  * 	cdef unsigned int chr_size
  * 	cdef double chr_snp_cov
  * 	bam = pysam.AlignmentFile(bamfh,"rb")             # <<<<<<<<<<<<<<
@@ -15876,19 +15867,19 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_bam = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":399
+  /* "src/core.pyx":399
  * 	cdef double chr_snp_cov
  * 	bam = pysam.AlignmentFile(bamfh,"rb")
  * 	chrFlag = bamHead(bam)             # <<<<<<<<<<<<<<
  * 	ofh = open(out,'a')
  * 	genome_cov=[]
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_bamHead(__pyx_v_bam); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_bamHead(__pyx_v_bam); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_chrFlag = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":400
+  /* "src/core.pyx":400
  * 	bam = pysam.AlignmentFile(bamfh,"rb")
  * 	chrFlag = bamHead(bam)
  * 	ofh = open(out,'a')             # <<<<<<<<<<<<<<
@@ -15909,7 +15900,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_ofh = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":401
+  /* "src/core.pyx":401
  * 	chrFlag = bamHead(bam)
  * 	ofh = open(out,'a')
  * 	genome_cov=[]             # <<<<<<<<<<<<<<
@@ -15921,7 +15912,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_genome_cov = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":402
+  /* "src/core.pyx":402
  * 	ofh = open(out,'a')
  * 	genome_cov=[]
  * 	genome_read_length=[]             # <<<<<<<<<<<<<<
@@ -15933,7 +15924,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_genome_read_length = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":403
+  /* "src/core.pyx":403
  * 	genome_cov=[]
  * 	genome_read_length=[]
  * 	genome_insert_size=[]             # <<<<<<<<<<<<<<
@@ -15945,7 +15936,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_genome_insert_size = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":404
+  /* "src/core.pyx":404
  * 	genome_read_length=[]
  * 	genome_insert_size=[]
  * 	genome_mad=[]             # <<<<<<<<<<<<<<
@@ -15957,7 +15948,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_genome_mad = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":405
+  /* "src/core.pyx":405
  * 	genome_insert_size=[]
  * 	genome_mad=[]
  * 	genome_size=0             # <<<<<<<<<<<<<<
@@ -15966,19 +15957,19 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
   __pyx_v_genome_size = 0;
 
-  /* "gtcnv/core.pyx":406
+  /* "src/core.pyx":406
  * 	genome_mad=[]
  * 	genome_size=0
  * 	chroms=get_chroma()             # <<<<<<<<<<<<<<
  * 	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()
  * 	for chromo in chroms:
  */
-  __pyx_t_3 = __pyx_f_5gtcnv_4core_get_chroma(); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_3src_4core_get_chroma(); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 406, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_chroms = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":407
+  /* "src/core.pyx":407
  * 	genome_size=0
  * 	chroms=get_chroma()
  * 	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()             # <<<<<<<<<<<<<<
@@ -16070,7 +16061,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_v_snp_cov = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":408
+  /* "src/core.pyx":408
  * 	chroms=get_chroma()
  * 	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()
  * 	for chromo in chroms:             # <<<<<<<<<<<<<<
@@ -16121,7 +16112,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __Pyx_GIVEREF(__pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":409
+    /* "src/core.pyx":409
  * 	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()
  * 	for chromo in chroms:
  * 		filt_bed = bed.filter(lambda x: x.chrom==chromo)             # <<<<<<<<<<<<<<
@@ -16130,7 +16121,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_bed, __pyx_n_s_filter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_5gtcnv_4core_16gtCNV_preprocess_lambda3, 0, __pyx_n_s_gtCNV_preprocess_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_gtcnv_core, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 409, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_4core_16gtCNV_preprocess_lambda3, 0, __pyx_n_s_gtCNV_preprocess_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_src_core, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 409, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_6 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
@@ -16161,7 +16152,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __Pyx_XDECREF_SET(__pyx_v_filt_bed, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":410
+    /* "src/core.pyx":410
  * 	for chromo in chroms:
  * 		filt_bed = bed.filter(lambda x: x.chrom==chromo)
  * 		chr_bed=[tuple(x) for x in filt_bed]             # <<<<<<<<<<<<<<
@@ -16220,14 +16211,14 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __Pyx_XDECREF_SET(__pyx_v_chr_bed, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":411
+    /* "src/core.pyx":411
  * 		filt_bed = bed.filter(lambda x: x.chrom==chromo)
  * 		chr_bed=[tuple(x) for x in filt_bed]
  * 		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bam,chrFlag)             # <<<<<<<<<<<<<<
  * 		chr_snp=0
  * 		chr_snp_cov=0
  */
-    __pyx_t_5 = __pyx_f_5gtcnv_4core_gtCNV_stats(__pyx_v_chr_bed, __pyx_v_bam, __pyx_v_chrFlag); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 411, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_3src_4core_gtCNV_stats(__pyx_v_chr_bed, __pyx_v_bam, __pyx_v_chrFlag); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 411, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if ((likely(PyTuple_CheckExact(__pyx_t_5))) || (PyList_CheckExact(__pyx_t_5))) {
       PyObject* sequence = __pyx_t_5;
@@ -16285,7 +16276,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __pyx_t_1 = 0;
     __pyx_v_chr_size = __pyx_t_12;
 
-    /* "gtcnv/core.pyx":412
+    /* "src/core.pyx":412
  * 		chr_bed=[tuple(x) for x in filt_bed]
  * 		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bam,chrFlag)
  * 		chr_snp=0             # <<<<<<<<<<<<<<
@@ -16294,7 +16285,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
     __pyx_v_chr_snp = 0;
 
-    /* "gtcnv/core.pyx":413
+    /* "src/core.pyx":413
  * 		(chr_stats,chr_size) = gtCNV_stats(chr_bed,bam,chrFlag)
  * 		chr_snp=0
  * 		chr_snp_cov=0             # <<<<<<<<<<<<<<
@@ -16303,7 +16294,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
     __pyx_v_chr_snp_cov = 0.0;
 
-    /* "gtcnv/core.pyx":414
+    /* "src/core.pyx":414
  * 		chr_snp=0
  * 		chr_snp_cov=0
  * 		if snp_cov.get(chromo) != None: chr_snp_cov, chr_snp = snp_cov[chromo]             # <<<<<<<<<<<<<<
@@ -16402,7 +16393,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __pyx_v_chr_snp = __pyx_t_12;
     }
 
-    /* "gtcnv/core.pyx":415
+    /* "src/core.pyx":415
  * 		chr_snp_cov=0
  * 		if snp_cov.get(chromo) != None: chr_snp_cov, chr_snp = snp_cov[chromo]
  * 		read_count = len(chr_stats)             # <<<<<<<<<<<<<<
@@ -16412,7 +16403,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __pyx_t_9 = PyObject_Length(__pyx_v_chr_stats); if (unlikely(__pyx_t_9 == -1)) __PYX_ERR(0, 415, __pyx_L1_error)
     __pyx_v_read_count = __pyx_t_9;
 
-    /* "gtcnv/core.pyx":416
+    /* "src/core.pyx":416
  * 		if snp_cov.get(chromo) != None: chr_snp_cov, chr_snp = snp_cov[chromo]
  * 		read_count = len(chr_stats)
  * 		read_length = []             # <<<<<<<<<<<<<<
@@ -16424,7 +16415,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __Pyx_XDECREF_SET(__pyx_v_read_length, ((PyObject*)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":417
+    /* "src/core.pyx":417
  * 		read_count = len(chr_stats)
  * 		read_length = []
  * 		insert_size = []             # <<<<<<<<<<<<<<
@@ -16436,7 +16427,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __Pyx_XDECREF_SET(__pyx_v_insert_size, ((PyObject*)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":418
+    /* "src/core.pyx":418
  * 		read_length = []
  * 		insert_size = []
  * 		for read in chr_stats:             # <<<<<<<<<<<<<<
@@ -16485,7 +16476,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_XDECREF_SET(__pyx_v_read, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "gtcnv/core.pyx":419
+      /* "src/core.pyx":419
  * 		insert_size = []
  * 		for read in chr_stats:
  * 			(rl,isz) = chr_stats[read]             # <<<<<<<<<<<<<<
@@ -16549,7 +16540,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_XDECREF_SET(__pyx_v_isz, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":420
+      /* "src/core.pyx":420
  * 		for read in chr_stats:
  * 			(rl,isz) = chr_stats[read]
  * 			read_length.append(rl)             # <<<<<<<<<<<<<<
@@ -16558,7 +16549,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
       __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_read_length, __pyx_v_rl); if (unlikely(__pyx_t_15 == -1)) __PYX_ERR(0, 420, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":421
+      /* "src/core.pyx":421
  * 			(rl,isz) = chr_stats[read]
  * 			read_length.append(rl)
  * 			insert_size.append(isz)             # <<<<<<<<<<<<<<
@@ -16567,7 +16558,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
       __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_insert_size, __pyx_v_isz); if (unlikely(__pyx_t_15 == -1)) __PYX_ERR(0, 421, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":418
+      /* "src/core.pyx":418
  * 		read_length = []
  * 		insert_size = []
  * 		for read in chr_stats:             # <<<<<<<<<<<<<<
@@ -16577,7 +16568,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":422
+    /* "src/core.pyx":422
  * 			read_length.append(rl)
  * 			insert_size.append(isz)
  * 		if read_count == 0:             # <<<<<<<<<<<<<<
@@ -16587,7 +16578,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __pyx_t_13 = ((__pyx_v_read_count == 0.0) != 0);
     if (__pyx_t_13) {
 
-      /* "gtcnv/core.pyx":423
+      /* "src/core.pyx":423
  * 			insert_size.append(isz)
  * 		if read_count == 0:
  * 			ofh.write('\t'.join(map(str,(iid,chromo,'0','0','0','0',chr_size,chr_snp_cov,chr_snp)))+'\n')             # <<<<<<<<<<<<<<
@@ -16676,7 +16667,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":422
+      /* "src/core.pyx":422
  * 			read_length.append(rl)
  * 			insert_size.append(isz)
  * 		if read_count == 0:             # <<<<<<<<<<<<<<
@@ -16686,7 +16677,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       goto __pyx_L16;
     }
 
-    /* "gtcnv/core.pyx":425
+    /* "src/core.pyx":425
  * 			ofh.write('\t'.join(map(str,(iid,chromo,'0','0','0','0',chr_size,chr_snp_cov,chr_snp)))+'\n')
  * 		else :
  * 			norm = normalize_chr_cov(read_count,chr_size,np.array(read_length))             # <<<<<<<<<<<<<<
@@ -16724,13 +16715,13 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __pyx_f_5gtcnv_4core_normalize_chr_cov(__pyx_v_read_count, __pyx_v_chr_size, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 425, __pyx_L1_error)
+      __pyx_t_5 = __pyx_f_3src_4core_normalize_chr_cov(__pyx_v_read_count, __pyx_v_chr_size, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 425, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_XDECREF_SET(__pyx_v_norm, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":426
+      /* "src/core.pyx":426
  * 		else :
  * 			norm = normalize_chr_cov(read_count,chr_size,np.array(read_length))
  * 			out = ( iid,chromo,str(norm),             # <<<<<<<<<<<<<<
@@ -16746,7 +16737,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":427
+      /* "src/core.pyx":427
  * 			norm = normalize_chr_cov(read_count,chr_size,np.array(read_length))
  * 			out = ( iid,chromo,str(norm),
  * 				str(np.median(read_length)),             # <<<<<<<<<<<<<<
@@ -16792,7 +16783,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "gtcnv/core.pyx":428
+      /* "src/core.pyx":428
  * 			out = ( iid,chromo,str(norm),
  * 				str(np.median(read_length)),
  * 				str(np.median(insert_size)),             # <<<<<<<<<<<<<<
@@ -16838,7 +16829,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-      /* "gtcnv/core.pyx":429
+      /* "src/core.pyx":429
  * 				str(np.median(read_length)),
  * 				str(np.median(insert_size)),
  * 				str(MAD(np.array(insert_size))),             # <<<<<<<<<<<<<<
@@ -16875,7 +16866,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __pyx_f_5gtcnv_4core_MAD(__pyx_t_16, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 429, __pyx_L1_error)
+      __pyx_t_6 = __pyx_f_3src_4core_MAD(__pyx_t_16, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 429, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       __pyx_t_16 = PyTuple_New(1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 429, __pyx_L1_error)
@@ -16887,7 +16878,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-      /* "gtcnv/core.pyx":430
+      /* "src/core.pyx":430
  * 				str(np.median(insert_size)),
  * 				str(MAD(np.array(insert_size))),
  * 				str(chr_size),str(chr_snp_cov),str(chr_snp)             # <<<<<<<<<<<<<<
@@ -16925,7 +16916,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-      /* "gtcnv/core.pyx":426
+      /* "src/core.pyx":426
  * 		else :
  * 			norm = normalize_chr_cov(read_count,chr_size,np.array(read_length))
  * 			out = ( iid,chromo,str(norm),             # <<<<<<<<<<<<<<
@@ -16964,7 +16955,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __Pyx_DECREF_SET(__pyx_v_out, __pyx_t_18);
       __pyx_t_18 = 0;
 
-      /* "gtcnv/core.pyx":432
+      /* "src/core.pyx":432
  * 				str(chr_size),str(chr_snp_cov),str(chr_snp)
  * 			      )
  * 			genome_cov.append(norm)             # <<<<<<<<<<<<<<
@@ -16973,7 +16964,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
       __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_genome_cov, __pyx_v_norm); if (unlikely(__pyx_t_15 == -1)) __PYX_ERR(0, 432, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":433
+      /* "src/core.pyx":433
  * 			      )
  * 			genome_cov.append(norm)
  * 			genome_read_length.append(np.median(read_length))             # <<<<<<<<<<<<<<
@@ -17013,7 +17004,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_genome_read_length, __pyx_t_18); if (unlikely(__pyx_t_15 == -1)) __PYX_ERR(0, 433, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-      /* "gtcnv/core.pyx":434
+      /* "src/core.pyx":434
  * 			genome_cov.append(norm)
  * 			genome_read_length.append(np.median(read_length))
  * 			genome_insert_size.append(np.median(insert_size))             # <<<<<<<<<<<<<<
@@ -17053,7 +17044,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
       __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_genome_insert_size, __pyx_t_18); if (unlikely(__pyx_t_15 == -1)) __PYX_ERR(0, 434, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-      /* "gtcnv/core.pyx":435
+      /* "src/core.pyx":435
  * 			genome_read_length.append(np.median(read_length))
  * 			genome_insert_size.append(np.median(insert_size))
  * 			genome_mad.append(MAD(np.array(insert_size)))             # <<<<<<<<<<<<<<
@@ -17090,13 +17081,13 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __pyx_f_5gtcnv_4core_MAD(__pyx_t_18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
+      __pyx_t_1 = __pyx_f_3src_4core_MAD(__pyx_t_18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
       __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_genome_mad, __pyx_t_1); if (unlikely(__pyx_t_15 == -1)) __PYX_ERR(0, 435, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":436
+      /* "src/core.pyx":436
  * 			genome_insert_size.append(np.median(insert_size))
  * 			genome_mad.append(MAD(np.array(insert_size)))
  * 			genome_size += chr_size             # <<<<<<<<<<<<<<
@@ -17105,7 +17096,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
       __pyx_v_genome_size = (__pyx_v_genome_size + __pyx_v_chr_size);
 
-      /* "gtcnv/core.pyx":437
+      /* "src/core.pyx":437
  * 			genome_mad.append(MAD(np.array(insert_size)))
  * 			genome_size += chr_size
  * 			ofh.write('\t'.join(out)+'\n')             # <<<<<<<<<<<<<<
@@ -17149,7 +17140,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     }
     __pyx_L16:;
 
-    /* "gtcnv/core.pyx":408
+    /* "src/core.pyx":408
  * 	chroms=get_chroma()
  * 	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()
  * 	for chromo in chroms:             # <<<<<<<<<<<<<<
@@ -17159,7 +17150,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":438
+  /* "src/core.pyx":438
  * 			genome_size += chr_size
  * 			ofh.write('\t'.join(out)+'\n')
  * 	genome_snp_cov=0             # <<<<<<<<<<<<<<
@@ -17168,7 +17159,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
   __pyx_v_genome_snp_cov = 0.0;
 
-  /* "gtcnv/core.pyx":439
+  /* "src/core.pyx":439
  * 			ofh.write('\t'.join(out)+'\n')
  * 	genome_snp_cov=0
  * 	genome_SNP=0             # <<<<<<<<<<<<<<
@@ -17177,7 +17168,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
  */
   __pyx_v_genome_SNP = 0;
 
-  /* "gtcnv/core.pyx":440
+  /* "src/core.pyx":440
  * 	genome_snp_cov=0
  * 	genome_SNP=0
  * 	if snp_cov.get('GENOME') != None: genome_snp_cov, genome_SNP = snp_cov['GENOME']             # <<<<<<<<<<<<<<
@@ -17254,7 +17245,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
     __pyx_v_genome_SNP = __pyx_t_12;
   }
 
-  /* "gtcnv/core.pyx":441
+  /* "src/core.pyx":441
  * 	genome_SNP=0
  * 	if snp_cov.get('GENOME') != None: genome_snp_cov, genome_SNP = snp_cov['GENOME']
  * 	ofh.write('\t'.join( (  iid,"GENOME",             # <<<<<<<<<<<<<<
@@ -17264,7 +17255,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_v_ofh, __pyx_n_s_write); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_18);
 
-  /* "gtcnv/core.pyx":442
+  /* "src/core.pyx":442
  * 	if snp_cov.get('GENOME') != None: genome_snp_cov, genome_SNP = snp_cov['GENOME']
  * 	ofh.write('\t'.join( (  iid,"GENOME",
  * 				str(np.median(genome_cov)),             # <<<<<<<<<<<<<<
@@ -17310,7 +17301,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-  /* "gtcnv/core.pyx":443
+  /* "src/core.pyx":443
  * 	ofh.write('\t'.join( (  iid,"GENOME",
  * 				str(np.median(genome_cov)),
  * 				str(np.median(genome_read_length)),             # <<<<<<<<<<<<<<
@@ -17356,7 +17347,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":444
+  /* "src/core.pyx":444
  * 				str(np.median(genome_cov)),
  * 				str(np.median(genome_read_length)),
  * 				str(np.median(genome_insert_size)),             # <<<<<<<<<<<<<<
@@ -17402,7 +17393,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":445
+  /* "src/core.pyx":445
  * 				str(np.median(genome_read_length)),
  * 				str(np.median(genome_insert_size)),
  * 				str(np.median(genome_mad)),             # <<<<<<<<<<<<<<
@@ -17448,7 +17439,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_17);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "gtcnv/core.pyx":446
+  /* "src/core.pyx":446
  * 				str(np.median(genome_insert_size)),
  * 				str(np.median(genome_mad)),
  * 				str(genome_size),             # <<<<<<<<<<<<<<
@@ -17466,7 +17457,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":447
+  /* "src/core.pyx":447
  * 				str(np.median(genome_mad)),
  * 				str(genome_size),
  * 				str(genome_snp_cov),             # <<<<<<<<<<<<<<
@@ -17484,7 +17475,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":448
+  /* "src/core.pyx":448
  * 				str(genome_size),
  * 				str(genome_snp_cov),
  * 				str(genome_SNP)             # <<<<<<<<<<<<<<
@@ -17502,7 +17493,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
-  /* "gtcnv/core.pyx":441
+  /* "src/core.pyx":441
  * 	genome_SNP=0
  * 	if snp_cov.get('GENOME') != None: genome_snp_cov, genome_SNP = snp_cov['GENOME']
  * 	ofh.write('\t'.join( (  iid,"GENOME",             # <<<<<<<<<<<<<<
@@ -17542,7 +17533,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
-  /* "gtcnv/core.pyx":449
+  /* "src/core.pyx":449
  * 				str(genome_snp_cov),
  * 				str(genome_SNP)
  * 			     ))+'\n')             # <<<<<<<<<<<<<<
@@ -17580,7 +17571,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":450
+  /* "src/core.pyx":450
  * 				str(genome_SNP)
  * 			     ))+'\n')
  * 	ofh.close()             # <<<<<<<<<<<<<<
@@ -17609,7 +17600,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":451
+  /* "src/core.pyx":451
  * 			     ))+'\n')
  * 	ofh.close()
  * 	bam.close()             # <<<<<<<<<<<<<<
@@ -17638,7 +17629,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":390
+  /* "src/core.pyx":390
  * 			read_stats[str(read.qname)+str(read.is_read1)] = ((read.qlen,abs(read.isize)))
  * 	return read_stats,chr_size
  * cdef gtCNV_preprocess (iid,bamfh,vcffh,bed,out,gen):             # <<<<<<<<<<<<<<
@@ -17660,7 +17651,7 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   __Pyx_XDECREF(__pyx_t_17);
   __Pyx_XDECREF(__pyx_t_18);
   __Pyx_XDECREF(__pyx_t_19);
-  __Pyx_AddTraceback("gtcnv.core.gtCNV_preprocess", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtCNV_preprocess", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bam);
@@ -17689,18 +17680,18 @@ static PyObject *__pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *__pyx_v_iid, Py
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":453
+/* "src/core.pyx":453
  * 	bam.close()
  * class gtVCF():
  * 	def __init__(self,FH=None,iid=None,mask=None):             # <<<<<<<<<<<<<<
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  * 		cdef double a=0.0
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_5gtVCF_1__init__ = {"__init__", (PyCFunction)__pyx_pw_5gtcnv_4core_5gtVCF_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_5gtVCF_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_5gtVCF_1__init__ = {"__init__", (PyCFunction)__pyx_pw_3src_4core_5gtVCF_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_5gtVCF_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_FH = 0;
   PyObject *__pyx_v_iid = 0;
@@ -17768,26 +17759,26 @@ static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_1__init__(PyObject *__pyx_self, Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 453, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_5gtVCF___init__(__pyx_self, __pyx_v_self, __pyx_v_FH, __pyx_v_iid, __pyx_v_mask);
+  __pyx_r = __pyx_pf_3src_4core_5gtVCF___init__(__pyx_self, __pyx_v_self, __pyx_v_FH, __pyx_v_iid, __pyx_v_mask);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_FH, PyObject *__pyx_v_iid, PyObject *__pyx_v_mask) {
-  unsigned short __pyx_v_depth;
+static PyObject *__pyx_pf_3src_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_FH, PyObject *__pyx_v_iid, PyObject *__pyx_v_mask) {
+  unsigned int __pyx_v_depth;
   double __pyx_v_a;
   double __pyx_v_b;
   double __pyx_v_ratio;
-  short __pyx_v_IND;
-  short __pyx_v_DP_IND;
-  short __pyx_v_GT_IND;
-  short __pyx_v_AD_IND;
+  int __pyx_v_IND;
+  int __pyx_v_DP_IND;
+  int __pyx_v_GT_IND;
+  int __pyx_v_AD_IND;
   int __pyx_v_s;
   PyObject *__pyx_v_snps = NULL;
   PyObject *__pyx_v_hets = NULL;
@@ -17830,102 +17821,101 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   PyObject *__pyx_t_16 = NULL;
   Py_ssize_t __pyx_t_17;
   PyObject *(*__pyx_t_18)(PyObject *);
-  short __pyx_t_19;
+  int __pyx_t_19;
   PyObject *__pyx_t_20 = NULL;
   PyObject *__pyx_t_21 = NULL;
   PyObject *__pyx_t_22 = NULL;
   PyObject *__pyx_t_23 = NULL;
-  int __pyx_t_24;
+  PyObject *__pyx_t_24 = NULL;
   PyObject *__pyx_t_25 = NULL;
   PyObject *__pyx_t_26 = NULL;
-  PyObject *__pyx_t_27 = NULL;
-  unsigned short __pyx_t_28;
-  double __pyx_t_29;
+  unsigned int __pyx_t_27;
+  double __pyx_t_28;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "gtcnv/core.pyx":454
+  /* "src/core.pyx":454
  * class gtVCF():
  * 	def __init__(self,FH=None,iid=None,mask=None):
- * 		cdef unsigned short depth=0             # <<<<<<<<<<<<<<
+ * 		cdef unsigned int depth=0             # <<<<<<<<<<<<<<
  * 		cdef double a=0.0
  * 		cdef double b=0.0
  */
   __pyx_v_depth = 0;
 
-  /* "gtcnv/core.pyx":455
+  /* "src/core.pyx":455
  * 	def __init__(self,FH=None,iid=None,mask=None):
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  * 		cdef double a=0.0             # <<<<<<<<<<<<<<
  * 		cdef double b=0.0
  * 		cdef double ratio=0.0
  */
   __pyx_v_a = 0.0;
 
-  /* "gtcnv/core.pyx":456
- * 		cdef unsigned short depth=0
+  /* "src/core.pyx":456
+ * 		cdef unsigned int depth=0
  * 		cdef double a=0.0
  * 		cdef double b=0.0             # <<<<<<<<<<<<<<
  * 		cdef double ratio=0.0
- * 		cdef short IND=-9
+ * 		cdef int IND=-9
  */
   __pyx_v_b = 0.0;
 
-  /* "gtcnv/core.pyx":457
+  /* "src/core.pyx":457
  * 		cdef double a=0.0
  * 		cdef double b=0.0
  * 		cdef double ratio=0.0             # <<<<<<<<<<<<<<
- * 		cdef short IND=-9
- * 		cdef short DP_IND=-9
+ * 		cdef int IND=-9
+ * 		cdef int DP_IND=-9
  */
   __pyx_v_ratio = 0.0;
 
-  /* "gtcnv/core.pyx":458
+  /* "src/core.pyx":458
  * 		cdef double b=0.0
  * 		cdef double ratio=0.0
- * 		cdef short IND=-9             # <<<<<<<<<<<<<<
- * 		cdef short DP_IND=-9
- * 		cdef short GT_IND=-9
+ * 		cdef int IND=-9             # <<<<<<<<<<<<<<
+ * 		cdef int DP_IND=-9
+ * 		cdef int GT_IND=-9
  */
   __pyx_v_IND = -9;
 
-  /* "gtcnv/core.pyx":459
+  /* "src/core.pyx":459
  * 		cdef double ratio=0.0
- * 		cdef short IND=-9
- * 		cdef short DP_IND=-9             # <<<<<<<<<<<<<<
- * 		cdef short GT_IND=-9
- * 		cdef short AD_IND=-9
+ * 		cdef int IND=-9
+ * 		cdef int DP_IND=-9             # <<<<<<<<<<<<<<
+ * 		cdef int GT_IND=-9
+ * 		cdef int AD_IND=-9
  */
   __pyx_v_DP_IND = -9;
 
-  /* "gtcnv/core.pyx":460
- * 		cdef short IND=-9
- * 		cdef short DP_IND=-9
- * 		cdef short GT_IND=-9             # <<<<<<<<<<<<<<
- * 		cdef short AD_IND=-9
+  /* "src/core.pyx":460
+ * 		cdef int IND=-9
+ * 		cdef int DP_IND=-9
+ * 		cdef int GT_IND=-9             # <<<<<<<<<<<<<<
+ * 		cdef int AD_IND=-9
  * 		cdef int s=0
  */
   __pyx_v_GT_IND = -9;
 
-  /* "gtcnv/core.pyx":461
- * 		cdef short DP_IND=-9
- * 		cdef short GT_IND=-9
- * 		cdef short AD_IND=-9             # <<<<<<<<<<<<<<
+  /* "src/core.pyx":461
+ * 		cdef int DP_IND=-9
+ * 		cdef int GT_IND=-9
+ * 		cdef int AD_IND=-9             # <<<<<<<<<<<<<<
  * 		cdef int s=0
  * 		snps=[]
  */
   __pyx_v_AD_IND = -9;
 
-  /* "gtcnv/core.pyx":462
- * 		cdef short GT_IND=-9
- * 		cdef short AD_IND=-9
+  /* "src/core.pyx":462
+ * 		cdef int GT_IND=-9
+ * 		cdef int AD_IND=-9
  * 		cdef int s=0             # <<<<<<<<<<<<<<
  * 		snps=[]
  * 		hets=[]
  */
   __pyx_v_s = 0;
 
-  /* "gtcnv/core.pyx":463
- * 		cdef short AD_IND=-9
+  /* "src/core.pyx":463
+ * 		cdef int AD_IND=-9
  * 		cdef int s=0
  * 		snps=[]             # <<<<<<<<<<<<<<
  * 		hets=[]
@@ -17936,7 +17926,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __pyx_v_snps = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":464
+  /* "src/core.pyx":464
  * 		cdef int s=0
  * 		snps=[]
  * 		hets=[]             # <<<<<<<<<<<<<<
@@ -17948,7 +17938,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __pyx_v_hets = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":465
+  /* "src/core.pyx":465
  * 		snps=[]
  * 		hets=[]
  * 		SNP={}             # <<<<<<<<<<<<<<
@@ -17960,7 +17950,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __pyx_v_SNP = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":466
+  /* "src/core.pyx":466
  * 		hets=[]
  * 		SNP={}
  * 		HET={}             # <<<<<<<<<<<<<<
@@ -17972,19 +17962,19 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __pyx_v_HET = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":467
+  /* "src/core.pyx":467
  * 		SNP={}
  * 		HET={}
  * 		CHROMS=get_chroma()             # <<<<<<<<<<<<<<
  * 		if not os.path.isfile(FH): errFH(FH)
  * 		lines=[]
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_get_chroma(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_get_chroma(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_CHROMS = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":468
+  /* "src/core.pyx":468
  * 		HET={}
  * 		CHROMS=get_chroma()
  * 		if not os.path.isfile(FH): errFH(FH)             # <<<<<<<<<<<<<<
@@ -18058,7 +18048,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "gtcnv/core.pyx":469
+  /* "src/core.pyx":469
  * 		CHROMS=get_chroma()
  * 		if not os.path.isfile(FH): errFH(FH)
  * 		lines=[]             # <<<<<<<<<<<<<<
@@ -18070,7 +18060,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __pyx_v_lines = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":470
+  /* "src/core.pyx":470
  * 		if not os.path.isfile(FH): errFH(FH)
  * 		lines=[]
  * 		with open(FH,'r') as f:             # <<<<<<<<<<<<<<
@@ -18126,7 +18116,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
           __pyx_v_f = __pyx_t_3;
           __pyx_t_3 = 0;
 
-          /* "gtcnv/core.pyx":471
+          /* "src/core.pyx":471
  * 		lines=[]
  * 		with open(FH,'r') as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -18175,7 +18165,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":472
+            /* "src/core.pyx":472
  * 		with open(FH,'r') as f:
  * 			for l in f:
  * 				if not l.startswith('#'): break             # <<<<<<<<<<<<<<
@@ -18194,7 +18184,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               goto __pyx_L17_break;
             }
 
-            /* "gtcnv/core.pyx":474
+            /* "src/core.pyx":474
  * 				if not l.startswith('#'): break
  * 				else:
  * 					lines.append(l.rstrip('\n'))             # <<<<<<<<<<<<<<
@@ -18211,7 +18201,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             }
 
-            /* "gtcnv/core.pyx":471
+            /* "src/core.pyx":471
  * 		lines=[]
  * 		with open(FH,'r') as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -18222,7 +18212,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
           __pyx_L17_break:;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "gtcnv/core.pyx":470
+          /* "src/core.pyx":470
  * 		if not os.path.isfile(FH): errFH(FH)
  * 		lines=[]
  * 		with open(FH,'r') as f:             # <<<<<<<<<<<<<<
@@ -18241,7 +18231,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_1) < 0) __PYX_ERR(0, 470, __pyx_L10_except_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_GOTREF(__pyx_t_2);
@@ -18306,7 +18296,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __pyx_L22:;
   }
 
-  /* "gtcnv/core.pyx":475
+  /* "src/core.pyx":475
  * 				else:
  * 					lines.append(l.rstrip('\n'))
  * 		self.iid=iid             # <<<<<<<<<<<<<<
@@ -18315,7 +18305,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_iid, __pyx_v_iid) < 0) __PYX_ERR(0, 475, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":476
+  /* "src/core.pyx":476
  * 					lines.append(l.rstrip('\n'))
  * 		self.iid=iid
  * 		self.fh=FH             # <<<<<<<<<<<<<<
@@ -18324,7 +18314,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_fh, __pyx_v_FH) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":477
+  /* "src/core.pyx":477
  * 		self.iid=iid
  * 		self.fh=FH
  * 		self.isHC = False             # <<<<<<<<<<<<<<
@@ -18333,7 +18323,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_isHC, Py_False) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":478
+  /* "src/core.pyx":478
  * 		self.fh=FH
  * 		self.isHC = False
  * 		self.isFB = False             # <<<<<<<<<<<<<<
@@ -18342,7 +18332,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_isFB, Py_False) < 0) __PYX_ERR(0, 478, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":479
+  /* "src/core.pyx":479
  * 		self.isHC = False
  * 		self.isFB = False
  * 		if [x for x in lines if 'HaplotypeCaller' in x]: self.isHC=True             # <<<<<<<<<<<<<<
@@ -18375,7 +18365,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_isHC, Py_True) < 0) __PYX_ERR(0, 479, __pyx_L1_error)
   }
 
-  /* "gtcnv/core.pyx":480
+  /* "src/core.pyx":480
  * 		self.isFB = False
  * 		if [x for x in lines if 'HaplotypeCaller' in x]: self.isHC=True
  * 		if [x for x in lines if 'freeBayes' in x]: self.isFB=True             # <<<<<<<<<<<<<<
@@ -18408,7 +18398,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_isFB, Py_True) < 0) __PYX_ERR(0, 480, __pyx_L1_error)
   }
 
-  /* "gtcnv/core.pyx":481
+  /* "src/core.pyx":481
  * 		if [x for x in lines if 'HaplotypeCaller' in x]: self.isHC=True
  * 		if [x for x in lines if 'freeBayes' in x]: self.isFB=True
  * 		if self.isHC == self.isFB:             # <<<<<<<<<<<<<<
@@ -18426,7 +18416,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_6) {
 
-    /* "gtcnv/core.pyx":482
+    /* "src/core.pyx":482
  * 		if [x for x in lines if 'freeBayes' in x]: self.isFB=True
  * 		if self.isHC == self.isFB:
  * 			sys.stderr.write('ERROR: {} IS AMBIGUOUS. VCF HEADER MUST CONTAIN EITHER <HaplotypeCaller> or <freeBayes>\n'.format(FH))             # <<<<<<<<<<<<<<
@@ -18496,7 +18486,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":483
+    /* "src/core.pyx":483
  * 		if self.isHC == self.isFB:
  * 			sys.stderr.write('ERROR: {} IS AMBIGUOUS. VCF HEADER MUST CONTAIN EITHER <HaplotypeCaller> or <freeBayes>\n'.format(FH))
  * 			sys.exit(1)             # <<<<<<<<<<<<<<
@@ -18513,7 +18503,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":481
+    /* "src/core.pyx":481
  * 		if [x for x in lines if 'HaplotypeCaller' in x]: self.isHC=True
  * 		if [x for x in lines if 'freeBayes' in x]: self.isFB=True
  * 		if self.isHC == self.isFB:             # <<<<<<<<<<<<<<
@@ -18522,7 +18512,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   }
 
-  /* "gtcnv/core.pyx":484
+  /* "src/core.pyx":484
  * 			sys.stderr.write('ERROR: {} IS AMBIGUOUS. VCF HEADER MUST CONTAIN EITHER <HaplotypeCaller> or <freeBayes>\n'.format(FH))
  * 			sys.exit(1)
  * 		self.formatTag=None             # <<<<<<<<<<<<<<
@@ -18531,7 +18521,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_formatTag, Py_None) < 0) __PYX_ERR(0, 484, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":485
+  /* "src/core.pyx":485
  * 			sys.exit(1)
  * 		self.formatTag=None
  * 		if self.isFB == True: self.formatTag = 'DPR'             # <<<<<<<<<<<<<<
@@ -18548,7 +18538,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_formatTag, __pyx_n_s_DPR) < 0) __PYX_ERR(0, 485, __pyx_L1_error)
   }
 
-  /* "gtcnv/core.pyx":486
+  /* "src/core.pyx":486
  * 		self.formatTag=None
  * 		if self.isFB == True: self.formatTag = 'DPR'
  * 		if self.isHC == True: self.formatTag = 'AD'             # <<<<<<<<<<<<<<
@@ -18565,7 +18555,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_formatTag, __pyx_n_s_AD) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
   }
 
-  /* "gtcnv/core.pyx":487
+  /* "src/core.pyx":487
  * 		if self.isFB == True: self.formatTag = 'DPR'
  * 		if self.isHC == True: self.formatTag = 'AD'
  * 		with open(FH) as f:             # <<<<<<<<<<<<<<
@@ -18618,7 +18608,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
           __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_16);
           __pyx_t_16 = 0;
 
-          /* "gtcnv/core.pyx":488
+          /* "src/core.pyx":488
  * 		if self.isHC == True: self.formatTag = 'AD'
  * 		with open(FH) as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -18667,7 +18657,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":489
+            /* "src/core.pyx":489
  * 		with open(FH) as f:
  * 			for l in f:
  * 				if l.startswith('##'): continue             # <<<<<<<<<<<<<<
@@ -18685,7 +18675,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               goto __pyx_L46_continue;
             }
 
-            /* "gtcnv/core.pyx":490
+            /* "src/core.pyx":490
  * 			for l in f:
  * 				if l.startswith('##'): continue
  * 				elif l.startswith('#CHROM'):             # <<<<<<<<<<<<<<
@@ -18701,7 +18691,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             if (__pyx_t_6) {
 
-              /* "gtcnv/core.pyx":491
+              /* "src/core.pyx":491
  * 				if l.startswith('##'): continue
  * 				elif l.startswith('#CHROM'):
  * 					r=l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -18722,7 +18712,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":492
+              /* "src/core.pyx":492
  * 				elif l.startswith('#CHROM'):
  * 					r=l.rstrip('\n').split('\t')
  * 					for x in xrange(len(r)):             # <<<<<<<<<<<<<<
@@ -18783,7 +18773,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_3);
                 __pyx_t_3 = 0;
 
-                /* "gtcnv/core.pyx":493
+                /* "src/core.pyx":493
  * 					r=l.rstrip('\n').split('\t')
  * 					for x in xrange(len(r)):
  * 						if r[x] in iid: IND=x             # <<<<<<<<<<<<<<
@@ -18796,11 +18786,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                 __pyx_t_5 = (__pyx_t_6 != 0);
                 if (__pyx_t_5) {
-                  __pyx_t_19 = __Pyx_PyInt_As_short(__pyx_v_x); if (unlikely((__pyx_t_19 == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 493, __pyx_L38_error)
+                  __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_v_x); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 493, __pyx_L38_error)
                   __pyx_v_IND = __pyx_t_19;
                 }
 
-                /* "gtcnv/core.pyx":492
+                /* "src/core.pyx":492
  * 				elif l.startswith('#CHROM'):
  * 					r=l.rstrip('\n').split('\t')
  * 					for x in xrange(len(r)):             # <<<<<<<<<<<<<<
@@ -18810,7 +18800,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "gtcnv/core.pyx":494
+              /* "src/core.pyx":494
  * 					for x in xrange(len(r)):
  * 						if r[x] in iid: IND=x
  * 					if IND == -9:             # <<<<<<<<<<<<<<
@@ -18820,7 +18810,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __pyx_t_5 = ((__pyx_v_IND == -9L) != 0);
               if (__pyx_t_5) {
 
-                /* "gtcnv/core.pyx":495
+                /* "src/core.pyx":495
  * 						if r[x] in iid: IND=x
  * 					if IND == -9:
  * 						sys.stderr.write('ERROR {} NOT FOUND IN VCF HEADER: {}\n'.format(iid,l.rstrip('\n')))             # <<<<<<<<<<<<<<
@@ -18897,7 +18887,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-                /* "gtcnv/core.pyx":496
+                /* "src/core.pyx":496
  * 					if IND == -9:
  * 						sys.stderr.write('ERROR {} NOT FOUND IN VCF HEADER: {}\n'.format(iid,l.rstrip('\n')))
  * 						sys.exit(1)             # <<<<<<<<<<<<<<
@@ -18914,7 +18904,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-                /* "gtcnv/core.pyx":494
+                /* "src/core.pyx":494
  * 					for x in xrange(len(r)):
  * 						if r[x] in iid: IND=x
  * 					if IND == -9:             # <<<<<<<<<<<<<<
@@ -18923,7 +18913,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
               }
 
-              /* "gtcnv/core.pyx":490
+              /* "src/core.pyx":490
  * 			for l in f:
  * 				if l.startswith('##'): continue
  * 				elif l.startswith('#CHROM'):             # <<<<<<<<<<<<<<
@@ -18933,7 +18923,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               goto __pyx_L48;
             }
 
-            /* "gtcnv/core.pyx":498
+            /* "src/core.pyx":498
  * 						sys.exit(1)
  * 				else:
  * 					r=l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -18955,7 +18945,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "gtcnv/core.pyx":499
+              /* "src/core.pyx":499
  * 				else:
  * 					r=l.rstrip('\n').split('\t')
  * 					try: r[IND]             # <<<<<<<<<<<<<<
@@ -18970,7 +18960,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XGOTREF(__pyx_t_22);
                 __Pyx_XGOTREF(__pyx_t_23);
                 /*try:*/ {
-                  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_r, __pyx_v_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L53_error)
+                  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_r, __pyx_v_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L53_error)
                   __Pyx_GOTREF(__pyx_t_3);
                   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                 }
@@ -18988,22 +18978,22 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
                 __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-                /* "gtcnv/core.pyx":500
+                /* "src/core.pyx":500
  * 					r=l.rstrip('\n').split('\t')
  * 					try: r[IND]
  * 					except IndexError:             # <<<<<<<<<<<<<<
  * 						sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format(l.rstrip('\n')))
  * 						continue
  */
-                __pyx_t_24 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_IndexError);
-                if (__pyx_t_24) {
-                  __Pyx_AddTraceback("gtcnv.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+                __pyx_t_19 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_IndexError);
+                if (__pyx_t_19) {
+                  __Pyx_AddTraceback("src.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
                   if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_21) < 0) __PYX_ERR(0, 500, __pyx_L55_except_error)
                   __Pyx_GOTREF(__pyx_t_3);
                   __Pyx_GOTREF(__pyx_t_2);
                   __Pyx_GOTREF(__pyx_t_21);
 
-                  /* "gtcnv/core.pyx":501
+                  /* "src/core.pyx":501
  * 					try: r[IND]
  * 					except IndexError:
  * 						sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format(l.rstrip('\n')))             # <<<<<<<<<<<<<<
@@ -19020,35 +19010,35 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
                   __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_ERROR_MALFORMED_skipping, __pyx_n_s_format); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 501, __pyx_L55_except_error)
                   __Pyx_GOTREF(__pyx_t_15);
-                  __pyx_t_25 = __Pyx_PyObject_GetAttrStr(__pyx_v_l, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                  __pyx_t_24 = __Pyx_PyObject_GetAttrStr(__pyx_v_l, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                  __Pyx_GOTREF(__pyx_t_24);
+                  __pyx_t_25 = __Pyx_PyObject_Call(__pyx_t_24, __pyx_tuple__65, NULL); if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 501, __pyx_L55_except_error)
                   __Pyx_GOTREF(__pyx_t_25);
-                  __pyx_t_26 = __Pyx_PyObject_Call(__pyx_t_25, __pyx_tuple__65, NULL); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 501, __pyx_L55_except_error)
-                  __Pyx_GOTREF(__pyx_t_26);
-                  __Pyx_DECREF(__pyx_t_25); __pyx_t_25 = 0;
-                  __pyx_t_25 = NULL;
+                  __Pyx_DECREF(__pyx_t_24); __pyx_t_24 = 0;
+                  __pyx_t_24 = NULL;
                   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_15))) {
-                    __pyx_t_25 = PyMethod_GET_SELF(__pyx_t_15);
-                    if (likely(__pyx_t_25)) {
+                    __pyx_t_24 = PyMethod_GET_SELF(__pyx_t_15);
+                    if (likely(__pyx_t_24)) {
                       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_15);
-                      __Pyx_INCREF(__pyx_t_25);
+                      __Pyx_INCREF(__pyx_t_24);
                       __Pyx_INCREF(function);
                       __Pyx_DECREF_SET(__pyx_t_15, function);
                     }
                   }
-                  if (!__pyx_t_25) {
-                    __pyx_t_20 = __Pyx_PyObject_CallOneArg(__pyx_t_15, __pyx_t_26); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 501, __pyx_L55_except_error)
-                    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
+                  if (!__pyx_t_24) {
+                    __pyx_t_20 = __Pyx_PyObject_CallOneArg(__pyx_t_15, __pyx_t_25); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                    __Pyx_DECREF(__pyx_t_25); __pyx_t_25 = 0;
                     __Pyx_GOTREF(__pyx_t_20);
                   } else {
-                    __pyx_t_27 = PyTuple_New(1+1); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 501, __pyx_L55_except_error)
-                    __Pyx_GOTREF(__pyx_t_27);
-                    __Pyx_GIVEREF(__pyx_t_25); PyTuple_SET_ITEM(__pyx_t_27, 0, __pyx_t_25); __pyx_t_25 = NULL;
-                    __Pyx_GIVEREF(__pyx_t_26);
-                    PyTuple_SET_ITEM(__pyx_t_27, 0+1, __pyx_t_26);
-                    __pyx_t_26 = 0;
-                    __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_15, __pyx_t_27, NULL); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                    __pyx_t_26 = PyTuple_New(1+1); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                    __Pyx_GOTREF(__pyx_t_26);
+                    __Pyx_GIVEREF(__pyx_t_24); PyTuple_SET_ITEM(__pyx_t_26, 0, __pyx_t_24); __pyx_t_24 = NULL;
+                    __Pyx_GIVEREF(__pyx_t_25);
+                    PyTuple_SET_ITEM(__pyx_t_26, 0+1, __pyx_t_25);
+                    __pyx_t_25 = 0;
+                    __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_15, __pyx_t_26, NULL); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 501, __pyx_L55_except_error)
                     __Pyx_GOTREF(__pyx_t_20);
-                    __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+                    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
                   }
                   __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
                   __pyx_t_15 = NULL;
@@ -19066,20 +19056,20 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                     __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
                     __Pyx_GOTREF(__pyx_t_1);
                   } else {
-                    __pyx_t_27 = PyTuple_New(1+1); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 501, __pyx_L55_except_error)
-                    __Pyx_GOTREF(__pyx_t_27);
-                    __Pyx_GIVEREF(__pyx_t_15); PyTuple_SET_ITEM(__pyx_t_27, 0, __pyx_t_15); __pyx_t_15 = NULL;
+                    __pyx_t_26 = PyTuple_New(1+1); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                    __Pyx_GOTREF(__pyx_t_26);
+                    __Pyx_GIVEREF(__pyx_t_15); PyTuple_SET_ITEM(__pyx_t_26, 0, __pyx_t_15); __pyx_t_15 = NULL;
                     __Pyx_GIVEREF(__pyx_t_20);
-                    PyTuple_SET_ITEM(__pyx_t_27, 0+1, __pyx_t_20);
+                    PyTuple_SET_ITEM(__pyx_t_26, 0+1, __pyx_t_20);
                     __pyx_t_20 = 0;
-                    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L55_except_error)
+                    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L55_except_error)
                     __Pyx_GOTREF(__pyx_t_1);
-                    __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+                    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
                   }
                   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
                   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                  /* "gtcnv/core.pyx":502
+                  /* "src/core.pyx":502
  * 					except IndexError:
  * 						sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format(l.rstrip('\n')))
  * 						continue             # <<<<<<<<<<<<<<
@@ -19096,7 +19086,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L55_except_error;
                 __pyx_L55_except_error:;
 
-                /* "gtcnv/core.pyx":499
+                /* "src/core.pyx":499
  * 				else:
  * 					r=l.rstrip('\n').split('\t')
  * 					try: r[IND]             # <<<<<<<<<<<<<<
@@ -19119,7 +19109,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_L60_try_end:;
               }
 
-              /* "gtcnv/core.pyx":503
+              /* "src/core.pyx":503
  * 						sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format(l.rstrip('\n')))
  * 						continue
  * 					if len(r) < IND: continue             # <<<<<<<<<<<<<<
@@ -19132,7 +19122,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L46_continue;
               }
 
-              /* "gtcnv/core.pyx":504
+              /* "src/core.pyx":504
  * 						continue
  * 					if len(r) < IND: continue
  * 					c = r[0]             # <<<<<<<<<<<<<<
@@ -19144,7 +19134,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_21);
               __pyx_t_21 = 0;
 
-              /* "gtcnv/core.pyx":505
+              /* "src/core.pyx":505
  * 					if len(r) < IND: continue
  * 					c = r[0]
  * 					s = int(r[1])             # <<<<<<<<<<<<<<
@@ -19156,11 +19146,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_t_21); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 505, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-              __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 505, __pyx_L38_error)
+              __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 505, __pyx_L38_error)
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_v_s = __pyx_t_24;
+              __pyx_v_s = __pyx_t_19;
 
-              /* "gtcnv/core.pyx":506
+              /* "src/core.pyx":506
  * 					c = r[0]
  * 					s = int(r[1])
  * 					if 'chr' not in c: c='chr'+str(c)             # <<<<<<<<<<<<<<
@@ -19185,7 +19175,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_t_2 = 0;
               }
 
-              /* "gtcnv/core.pyx":507
+              /* "src/core.pyx":507
  * 					s = int(r[1])
  * 					if 'chr' not in c: c='chr'+str(c)
  * 					c = c.replace('chr23','chrX').replace('chr24','chrY')             # <<<<<<<<<<<<<<
@@ -19206,7 +19196,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_DECREF_SET(__pyx_v_c, __pyx_t_21);
               __pyx_t_21 = 0;
 
-              /* "gtcnv/core.pyx":508
+              /* "src/core.pyx":508
  * 					if 'chr' not in c: c='chr'+str(c)
  * 					c = c.replace('chr23','chrX').replace('chr24','chrY')
  * 					if c not in CHROMS: continue             # <<<<<<<<<<<<<<
@@ -19219,7 +19209,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L46_continue;
               }
 
-              /* "gtcnv/core.pyx":509
+              /* "src/core.pyx":509
  * 					c = c.replace('chr23','chrX').replace('chr24','chrY')
  * 					if c not in CHROMS: continue
  * 					FORMAT = r[8].split(':')             # <<<<<<<<<<<<<<
@@ -19237,7 +19227,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_XDECREF_SET(__pyx_v_FORMAT, __pyx_t_21);
               __pyx_t_21 = 0;
 
-              /* "gtcnv/core.pyx":510
+              /* "src/core.pyx":510
  * 					if c not in CHROMS: continue
  * 					FORMAT = r[8].split(':')
  * 					DP_IND=GT_IND=AD_IND=-9             # <<<<<<<<<<<<<<
@@ -19248,7 +19238,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __pyx_v_GT_IND = -9;
               __pyx_v_AD_IND = -9;
 
-              /* "gtcnv/core.pyx":511
+              /* "src/core.pyx":511
  * 					FORMAT = r[8].split(':')
  * 					DP_IND=GT_IND=AD_IND=-9
  * 					for x in xrange(len(FORMAT)):             # <<<<<<<<<<<<<<
@@ -19309,7 +19299,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_21);
                 __pyx_t_21 = 0;
 
-                /* "gtcnv/core.pyx":512
+                /* "src/core.pyx":512
  * 					DP_IND=GT_IND=AD_IND=-9
  * 					for x in xrange(len(FORMAT)):
  * 						if FORMAT[x] == 'DP': DP_IND=x             # <<<<<<<<<<<<<<
@@ -19321,11 +19311,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_21, __pyx_n_s_DP, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 512, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
                 if (__pyx_t_5) {
-                  __pyx_t_19 = __Pyx_PyInt_As_short(__pyx_v_x); if (unlikely((__pyx_t_19 == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 512, __pyx_L38_error)
+                  __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_v_x); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 512, __pyx_L38_error)
                   __pyx_v_DP_IND = __pyx_t_19;
                 }
 
-                /* "gtcnv/core.pyx":513
+                /* "src/core.pyx":513
  * 					for x in xrange(len(FORMAT)):
  * 						if FORMAT[x] == 'DP': DP_IND=x
  * 						if FORMAT[x] == 'GT': GT_IND=x             # <<<<<<<<<<<<<<
@@ -19337,11 +19327,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_21, __pyx_n_s_GT, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 513, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
                 if (__pyx_t_5) {
-                  __pyx_t_19 = __Pyx_PyInt_As_short(__pyx_v_x); if (unlikely((__pyx_t_19 == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 513, __pyx_L38_error)
+                  __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_v_x); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 513, __pyx_L38_error)
                   __pyx_v_GT_IND = __pyx_t_19;
                 }
 
-                /* "gtcnv/core.pyx":514
+                /* "src/core.pyx":514
  * 						if FORMAT[x] == 'DP': DP_IND=x
  * 						if FORMAT[x] == 'GT': GT_IND=x
  * 						if FORMAT[x] == self.formatTag: AD_IND=x             # <<<<<<<<<<<<<<
@@ -19358,11 +19348,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 514, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
                 if (__pyx_t_5) {
-                  __pyx_t_19 = __Pyx_PyInt_As_short(__pyx_v_x); if (unlikely((__pyx_t_19 == (short)-1) && PyErr_Occurred())) __PYX_ERR(0, 514, __pyx_L38_error)
+                  __pyx_t_19 = __Pyx_PyInt_As_int(__pyx_v_x); if (unlikely((__pyx_t_19 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 514, __pyx_L38_error)
                   __pyx_v_AD_IND = __pyx_t_19;
                 }
 
-                /* "gtcnv/core.pyx":511
+                /* "src/core.pyx":511
  * 					FORMAT = r[8].split(':')
  * 					DP_IND=GT_IND=AD_IND=-9
  * 					for x in xrange(len(FORMAT)):             # <<<<<<<<<<<<<<
@@ -19372,7 +19362,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "gtcnv/core.pyx":515
+              /* "src/core.pyx":515
  * 						if FORMAT[x] == 'GT': GT_IND=x
  * 						if FORMAT[x] == self.formatTag: AD_IND=x
  * 					if DP_IND == -9 or GT_IND == -9: continue             # <<<<<<<<<<<<<<
@@ -19392,14 +19382,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L46_continue;
               }
 
-              /* "gtcnv/core.pyx":516
+              /* "src/core.pyx":516
  * 						if FORMAT[x] == self.formatTag: AD_IND=x
  * 					if DP_IND == -9 or GT_IND == -9: continue
  * 					sample_info = r[IND].split(':')             # <<<<<<<<<<<<<<
  * 					killer=False
  * 					for x in xrange(9,len(r)):
  */
-              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_r, __pyx_v_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 516, __pyx_L38_error)
+              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_r, __pyx_v_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 516, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_2);
               __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 516, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
@@ -19410,7 +19400,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_XDECREF_SET(__pyx_v_sample_info, __pyx_t_2);
               __pyx_t_2 = 0;
 
-              /* "gtcnv/core.pyx":517
+              /* "src/core.pyx":517
  * 					if DP_IND == -9 or GT_IND == -9: continue
  * 					sample_info = r[IND].split(':')
  * 					killer=False             # <<<<<<<<<<<<<<
@@ -19419,7 +19409,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
               __pyx_v_killer = 0;
 
-              /* "gtcnv/core.pyx":518
+              /* "src/core.pyx":518
  * 					sample_info = r[IND].split(':')
  * 					killer=False
  * 					for x in xrange(9,len(r)):             # <<<<<<<<<<<<<<
@@ -19483,7 +19473,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_2);
                 __pyx_t_2 = 0;
 
-                /* "gtcnv/core.pyx":519
+                /* "src/core.pyx":519
  * 					killer=False
  * 					for x in xrange(9,len(r)):
  * 						temp_info = r[x].split(':')             # <<<<<<<<<<<<<<
@@ -19501,14 +19491,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XDECREF_SET(__pyx_v_temp_info, __pyx_t_2);
                 __pyx_t_2 = 0;
 
-                /* "gtcnv/core.pyx":520
+                /* "src/core.pyx":520
  * 					for x in xrange(9,len(r)):
  * 						temp_info = r[x].split(':')
  * 						if temp_info[GT_IND] == './.' or temp_info[GT_IND] == '.' or temp_info[GT_IND] == '.|.':killer=True             # <<<<<<<<<<<<<<
  * 					if killer == True: continue
  * 					if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': continue
  */
-                __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_temp_info, __pyx_v_GT_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L38_error)
+                __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_temp_info, __pyx_v_GT_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L38_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s__71, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 520, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -19517,7 +19507,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   __pyx_t_5 = __pyx_t_6;
                   goto __pyx_L77_bool_binop_done;
                 }
-                __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_temp_info, __pyx_v_GT_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L38_error)
+                __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_temp_info, __pyx_v_GT_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L38_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s__72, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 520, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -19526,7 +19516,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   __pyx_t_5 = __pyx_t_6;
                   goto __pyx_L77_bool_binop_done;
                 }
-                __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_temp_info, __pyx_v_GT_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L38_error)
+                __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_temp_info, __pyx_v_GT_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L38_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s__73, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 520, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -19536,7 +19526,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   __pyx_v_killer = 1;
                 }
 
-                /* "gtcnv/core.pyx":518
+                /* "src/core.pyx":518
  * 					sample_info = r[IND].split(':')
  * 					killer=False
  * 					for x in xrange(9,len(r)):             # <<<<<<<<<<<<<<
@@ -19546,7 +19536,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               }
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "gtcnv/core.pyx":521
+              /* "src/core.pyx":521
  * 						temp_info = r[x].split(':')
  * 						if temp_info[GT_IND] == './.' or temp_info[GT_IND] == '.' or temp_info[GT_IND] == '.|.':killer=True
  * 					if killer == True: continue             # <<<<<<<<<<<<<<
@@ -19558,14 +19548,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L46_continue;
               }
 
-              /* "gtcnv/core.pyx":522
+              /* "src/core.pyx":522
  * 						if temp_info[GT_IND] == './.' or temp_info[GT_IND] == '.' or temp_info[GT_IND] == '.|.':killer=True
  * 					if killer == True: continue
  * 					if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': continue             # <<<<<<<<<<<<<<
  * 					depth=int(sample_info[DP_IND])
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
  */
-              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_DP_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 522, __pyx_L38_error)
+              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_DP_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 522, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s__72, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 522, __pyx_L38_error)
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19574,7 +19564,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_t_5 = __pyx_t_6;
                 goto __pyx_L82_bool_binop_done;
               }
-              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_AD_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 522, __pyx_L38_error)
+              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_AD_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 522, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s__72, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 522, __pyx_L38_error)
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19584,30 +19574,30 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L46_continue;
               }
 
-              /* "gtcnv/core.pyx":523
+              /* "src/core.pyx":523
  * 					if killer == True: continue
  * 					if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': continue
  * 					depth=int(sample_info[DP_IND])             # <<<<<<<<<<<<<<
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
  * 					gt = [int(x) for x in sample_info[GT_IND].split('/')]
  */
-              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_DP_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 523, __pyx_L38_error)
+              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_DP_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 523, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 523, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __pyx_t_28 = __Pyx_PyInt_As_unsigned_short(__pyx_t_2); if (unlikely((__pyx_t_28 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 523, __pyx_L38_error)
+              __pyx_t_27 = __Pyx_PyInt_As_unsigned_int(__pyx_t_2); if (unlikely((__pyx_t_27 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 523, __pyx_L38_error)
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_v_depth = __pyx_t_28;
+              __pyx_v_depth = __pyx_t_27;
 
-              /* "gtcnv/core.pyx":524
+              /* "src/core.pyx":524
  * 					if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': continue
  * 					depth=int(sample_info[DP_IND])
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')             # <<<<<<<<<<<<<<
  * 					gt = [int(x) for x in sample_info[GT_IND].split('/')]
  * 					snps.append((c,s,s,depth))
  */
-              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_GT_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 524, __pyx_L38_error)
+              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_GT_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 524, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_2);
               __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_replace); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 524, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
@@ -19615,10 +19605,10 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__76, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 524, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              if (unlikely(__Pyx_SetItemInt(__pyx_v_sample_info, __pyx_v_GT_IND, __pyx_t_2, short, 1, __Pyx_PyInt_From_short, 0, 0, 0) < 0)) __PYX_ERR(0, 524, __pyx_L38_error)
+              if (unlikely(__Pyx_SetItemInt(__pyx_v_sample_info, __pyx_v_GT_IND, __pyx_t_2, int, 1, __Pyx_PyInt_From_int, 0, 0, 0) < 0)) __PYX_ERR(0, 524, __pyx_L38_error)
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "gtcnv/core.pyx":525
+              /* "src/core.pyx":525
  * 					depth=int(sample_info[DP_IND])
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
  * 					gt = [int(x) for x in sample_info[GT_IND].split('/')]             # <<<<<<<<<<<<<<
@@ -19627,7 +19617,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
               __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_GT_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 525, __pyx_L38_error)
+              __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_GT_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 525, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 525, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_3);
@@ -19686,7 +19676,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_XDECREF_SET(__pyx_v_gt, ((PyObject*)__pyx_t_2));
               __pyx_t_2 = 0;
 
-              /* "gtcnv/core.pyx":526
+              /* "src/core.pyx":526
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
  * 					gt = [int(x) for x in sample_info[GT_IND].split('/')]
  * 					snps.append((c,s,s,depth))             # <<<<<<<<<<<<<<
@@ -19697,7 +19687,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_GOTREF(__pyx_t_2);
               __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_s); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 526, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_3);
-              __pyx_t_1 = __Pyx_PyInt_From_unsigned_short(__pyx_v_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 526, __pyx_L38_error)
+              __pyx_t_1 = __Pyx_PyInt_From_unsigned_int(__pyx_v_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 526, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_21 = PyTuple_New(4); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 526, __pyx_L38_error)
               __Pyx_GOTREF(__pyx_t_21);
@@ -19716,7 +19706,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_snps, __pyx_t_21); if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 526, __pyx_L38_error)
               __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-              /* "gtcnv/core.pyx":527
+              /* "src/core.pyx":527
  * 					gt = [int(x) for x in sample_info[GT_IND].split('/')]
  * 					snps.append((c,s,s,depth))
  * 					if len(gt) != 2: continue             # <<<<<<<<<<<<<<
@@ -19729,7 +19719,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 goto __pyx_L46_continue;
               }
 
-              /* "gtcnv/core.pyx":528
+              /* "src/core.pyx":528
  * 					snps.append((c,s,s,depth))
  * 					if len(gt) != 2: continue
  * 					if gt[0] != gt[1]:             # <<<<<<<<<<<<<<
@@ -19741,7 +19731,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
               __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
               if (__pyx_t_5) {
 
-                /* "gtcnv/core.pyx":529
+                /* "src/core.pyx":529
  * 					if len(gt) != 2: continue
  * 					if gt[0] != gt[1]:
  * 						if AD_IND == -9: continue             # <<<<<<<<<<<<<<
@@ -19753,7 +19743,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   goto __pyx_L46_continue;
                 }
 
-                /* "gtcnv/core.pyx":530
+                /* "src/core.pyx":530
  * 					if gt[0] != gt[1]:
  * 						if AD_IND == -9: continue
  * 						allelic_depth = [float(x) for x in sample_info[AD_IND].split(',')]             # <<<<<<<<<<<<<<
@@ -19762,7 +19752,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
                 __pyx_t_21 = PyList_New(0); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 530, __pyx_L38_error)
                 __Pyx_GOTREF(__pyx_t_21);
-                __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_AD_IND, short, 1, __Pyx_PyInt_From_short, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 530, __pyx_L38_error)
+                __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_sample_info, __pyx_v_AD_IND, int, 1, __Pyx_PyInt_From_int, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 530, __pyx_L38_error)
                 __Pyx_GOTREF(__pyx_t_1);
                 __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 530, __pyx_L38_error)
                 __Pyx_GOTREF(__pyx_t_3);
@@ -19821,27 +19811,27 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __Pyx_XDECREF_SET(__pyx_v_allelic_depth, ((PyObject*)__pyx_t_21));
                 __pyx_t_21 = 0;
 
-                /* "gtcnv/core.pyx":531
+                /* "src/core.pyx":531
  * 						if AD_IND == -9: continue
  * 						allelic_depth = [float(x) for x in sample_info[AD_IND].split(',')]
  * 						a = allelic_depth[0]             # <<<<<<<<<<<<<<
  * 						b = allelic_depth[1]
  * 						if a == 0.0 or b == 0.0: continue
  */
-                __pyx_t_29 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_allelic_depth, 0)); if (unlikely((__pyx_t_29 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 531, __pyx_L38_error)
-                __pyx_v_a = __pyx_t_29;
+                __pyx_t_28 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_allelic_depth, 0)); if (unlikely((__pyx_t_28 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 531, __pyx_L38_error)
+                __pyx_v_a = __pyx_t_28;
 
-                /* "gtcnv/core.pyx":532
+                /* "src/core.pyx":532
  * 						allelic_depth = [float(x) for x in sample_info[AD_IND].split(',')]
  * 						a = allelic_depth[0]
  * 						b = allelic_depth[1]             # <<<<<<<<<<<<<<
  * 						if a == 0.0 or b == 0.0: continue
  * 						ratio = b/a
  */
-                __pyx_t_29 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_allelic_depth, 1)); if (unlikely((__pyx_t_29 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 532, __pyx_L38_error)
-                __pyx_v_b = __pyx_t_29;
+                __pyx_t_28 = __pyx_PyFloat_AsDouble(PyList_GET_ITEM(__pyx_v_allelic_depth, 1)); if (unlikely((__pyx_t_28 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 532, __pyx_L38_error)
+                __pyx_v_b = __pyx_t_28;
 
-                /* "gtcnv/core.pyx":533
+                /* "src/core.pyx":533
  * 						a = allelic_depth[0]
  * 						b = allelic_depth[1]
  * 						if a == 0.0 or b == 0.0: continue             # <<<<<<<<<<<<<<
@@ -19861,7 +19851,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   goto __pyx_L46_continue;
                 }
 
-                /* "gtcnv/core.pyx":534
+                /* "src/core.pyx":534
  * 						b = allelic_depth[1]
  * 						if a == 0.0 or b == 0.0: continue
  * 						ratio = b/a             # <<<<<<<<<<<<<<
@@ -19870,7 +19860,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
                 __pyx_v_ratio = (__pyx_v_b / __pyx_v_a);
 
-                /* "gtcnv/core.pyx":535
+                /* "src/core.pyx":535
  * 						if a == 0.0 or b == 0.0: continue
  * 						ratio = b/a
  * 						if b > a: ratio=a/b             # <<<<<<<<<<<<<<
@@ -19882,7 +19872,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                   __pyx_v_ratio = (__pyx_v_a / __pyx_v_b);
                 }
 
-                /* "gtcnv/core.pyx":536
+                /* "src/core.pyx":536
  * 						ratio = b/a
  * 						if b > a: ratio=a/b
  * 						hets.append((c,s,s,ratio))             # <<<<<<<<<<<<<<
@@ -19912,7 +19902,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
                 __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_hets, __pyx_t_2); if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 536, __pyx_L38_error)
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-                /* "gtcnv/core.pyx":528
+                /* "src/core.pyx":528
  * 					snps.append((c,s,s,depth))
  * 					if len(gt) != 2: continue
  * 					if gt[0] != gt[1]:             # <<<<<<<<<<<<<<
@@ -19923,7 +19913,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
             }
             __pyx_L48:;
 
-            /* "gtcnv/core.pyx":488
+            /* "src/core.pyx":488
  * 		if self.isHC == True: self.formatTag = 'AD'
  * 		with open(FH) as f:
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -19934,7 +19924,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
           }
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-          /* "gtcnv/core.pyx":487
+          /* "src/core.pyx":487
  * 		if self.isFB == True: self.formatTag = 'DPR'
  * 		if self.isHC == True: self.formatTag = 'AD'
  * 		with open(FH) as f:             # <<<<<<<<<<<<<<
@@ -19948,11 +19938,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
         goto __pyx_L45_try_end;
         __pyx_L38_error:;
         __Pyx_PyThreadState_assign
+        __Pyx_XDECREF(__pyx_t_24); __pyx_t_24 = 0;
         __Pyx_XDECREF(__pyx_t_25); __pyx_t_25 = 0;
-        __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
         __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
         __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
-        __Pyx_XDECREF(__pyx_t_27); __pyx_t_27 = 0;
+        __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -19960,7 +19950,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_16, &__pyx_t_2, &__pyx_t_1) < 0) __PYX_ERR(0, 487, __pyx_L40_except_error)
           __Pyx_GOTREF(__pyx_t_16);
           __Pyx_GOTREF(__pyx_t_2);
@@ -20025,7 +20015,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __pyx_L98:;
   }
 
-  /* "gtcnv/core.pyx":537
+  /* "src/core.pyx":537
  * 						if b > a: ratio=a/b
  * 						hets.append((c,s,s,ratio))
  * 		LociMask=pbed.BedTool(mask).sort()             # <<<<<<<<<<<<<<
@@ -20086,7 +20076,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __pyx_v_LociMask = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":538
+  /* "src/core.pyx":538
  * 						hets.append((c,s,s,ratio))
  * 		LociMask=pbed.BedTool(mask).sort()
  * 		snps = [tuple(x) for x in pbed.BedTool(snps).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]             # <<<<<<<<<<<<<<
@@ -20114,15 +20104,15 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __pyx_t_21 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_snps); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 538, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
   } else {
-    __pyx_t_27 = PyTuple_New(1+1); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 538, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_27);
-    __Pyx_GIVEREF(__pyx_t_16); PyTuple_SET_ITEM(__pyx_t_27, 0, __pyx_t_16); __pyx_t_16 = NULL;
+    __pyx_t_26 = PyTuple_New(1+1); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 538, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_26);
+    __Pyx_GIVEREF(__pyx_t_16); PyTuple_SET_ITEM(__pyx_t_26, 0, __pyx_t_16); __pyx_t_16 = NULL;
     __Pyx_INCREF(__pyx_v_snps);
     __Pyx_GIVEREF(__pyx_v_snps);
-    PyTuple_SET_ITEM(__pyx_t_27, 0+1, __pyx_v_snps);
-    __pyx_t_21 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_27, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 538, __pyx_L1_error)
+    PyTuple_SET_ITEM(__pyx_t_26, 0+1, __pyx_v_snps);
+    __pyx_t_21 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_26, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 538, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_21, __pyx_n_s_sort); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 538, __pyx_L1_error)
@@ -20159,27 +20149,27 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_wa, Py_True) < 0) __PYX_ERR(0, 538, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_v, Py_True) < 0) __PYX_ERR(0, 538, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_sorted, Py_True) < 0) __PYX_ERR(0, 538, __pyx_L1_error)
-  __pyx_t_27 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, __pyx_t_21); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 538, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_27);
+  __pyx_t_26 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, __pyx_t_21); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 538, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_26);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-  __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_t_27, __pyx_n_s_sort); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 538, __pyx_L1_error)
+  __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_t_26, __pyx_n_s_sort); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 538, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_21);
-  __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
-  __pyx_t_27 = NULL;
+  __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
+  __pyx_t_26 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_21))) {
-    __pyx_t_27 = PyMethod_GET_SELF(__pyx_t_21);
-    if (likely(__pyx_t_27)) {
+    __pyx_t_26 = PyMethod_GET_SELF(__pyx_t_21);
+    if (likely(__pyx_t_26)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_21);
-      __Pyx_INCREF(__pyx_t_27);
+      __Pyx_INCREF(__pyx_t_26);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_21, function);
     }
   }
-  if (__pyx_t_27) {
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_21, __pyx_t_27); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 538, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+  if (__pyx_t_26) {
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_21, __pyx_t_26); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 538, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   } else {
     __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_21); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 538, __pyx_L1_error)
   }
@@ -20236,7 +20226,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF_SET(__pyx_v_snps, ((PyObject*)__pyx_t_1));
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":539
+  /* "src/core.pyx":539
  * 		LociMask=pbed.BedTool(mask).sort()
  * 		snps = [tuple(x) for x in pbed.BedTool(snps).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
  * 		hets = [tuple(x) for x in pbed.BedTool(hets).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]             # <<<<<<<<<<<<<<
@@ -20261,8 +20251,8 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_27 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_hets); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 539, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_27);
+    __pyx_t_26 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_hets); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_26);
   } else {
     __pyx_t_16 = PyTuple_New(1+1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 539, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
@@ -20270,27 +20260,27 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     __Pyx_INCREF(__pyx_v_hets);
     __Pyx_GIVEREF(__pyx_v_hets);
     PyTuple_SET_ITEM(__pyx_t_16, 0+1, __pyx_v_hets);
-    __pyx_t_27 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_16, NULL); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 539, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_27);
+    __pyx_t_26 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_16, NULL); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_26);
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_27, __pyx_n_s_sort); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 539, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_26, __pyx_n_s_sort); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 539, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
-  __pyx_t_27 = NULL;
+  __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
+  __pyx_t_26 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_27 = PyMethod_GET_SELF(__pyx_t_4);
-    if (likely(__pyx_t_27)) {
+    __pyx_t_26 = PyMethod_GET_SELF(__pyx_t_4);
+    if (likely(__pyx_t_26)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_27);
+      __Pyx_INCREF(__pyx_t_26);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
-  if (__pyx_t_27) {
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_27); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 539, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+  if (__pyx_t_26) {
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_26); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   } else {
     __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 539, __pyx_L1_error)
   }
@@ -20304,67 +20294,67 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __Pyx_INCREF(__pyx_v_LociMask);
   __Pyx_GIVEREF(__pyx_v_LociMask);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_LociMask);
-  __pyx_t_27 = PyDict_New(); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 539, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_27);
-  if (PyDict_SetItem(__pyx_t_27, __pyx_n_s_wa, Py_True) < 0) __PYX_ERR(0, 539, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_27, __pyx_n_s_v, Py_True) < 0) __PYX_ERR(0, 539, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_27, __pyx_n_s_sorted, Py_True) < 0) __PYX_ERR(0, 539, __pyx_L1_error)
-  __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, __pyx_t_27); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 539, __pyx_L1_error)
+  __pyx_t_26 = PyDict_New(); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 539, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_26);
+  if (PyDict_SetItem(__pyx_t_26, __pyx_n_s_wa, Py_True) < 0) __PYX_ERR(0, 539, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_n_s_v, Py_True) < 0) __PYX_ERR(0, 539, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_n_s_sorted, Py_True) < 0) __PYX_ERR(0, 539, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, __pyx_t_26); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 539, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
-  __pyx_t_27 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_sort); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 539, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_27);
+  __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
+  __pyx_t_26 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_sort); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 539, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_26);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
   __pyx_t_16 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_27))) {
-    __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_27);
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_26))) {
+    __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_26);
     if (likely(__pyx_t_16)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_27);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_26);
       __Pyx_INCREF(__pyx_t_16);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_27, function);
+      __Pyx_DECREF_SET(__pyx_t_26, function);
     }
   }
   if (__pyx_t_16) {
-    __pyx_t_21 = __Pyx_PyObject_CallOneArg(__pyx_t_27, __pyx_t_16); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_PyObject_CallOneArg(__pyx_t_26, __pyx_t_16); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
   } else {
-    __pyx_t_21 = __Pyx_PyObject_CallNoArg(__pyx_t_27); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_PyObject_CallNoArg(__pyx_t_26); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_21);
-  __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+  __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   if (likely(PyList_CheckExact(__pyx_t_21)) || PyTuple_CheckExact(__pyx_t_21)) {
-    __pyx_t_27 = __pyx_t_21; __Pyx_INCREF(__pyx_t_27); __pyx_t_11 = 0;
+    __pyx_t_26 = __pyx_t_21; __Pyx_INCREF(__pyx_t_26); __pyx_t_11 = 0;
     __pyx_t_12 = NULL;
   } else {
-    __pyx_t_11 = -1; __pyx_t_27 = PyObject_GetIter(__pyx_t_21); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 539, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_27);
-    __pyx_t_12 = Py_TYPE(__pyx_t_27)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __pyx_t_11 = -1; __pyx_t_26 = PyObject_GetIter(__pyx_t_21); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 539, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_26);
+    __pyx_t_12 = Py_TYPE(__pyx_t_26)->tp_iternext; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 539, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
   for (;;) {
     if (likely(!__pyx_t_12)) {
-      if (likely(PyList_CheckExact(__pyx_t_27))) {
-        if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_27)) break;
+      if (likely(PyList_CheckExact(__pyx_t_26))) {
+        if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_26)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_21 = PyList_GET_ITEM(__pyx_t_27, __pyx_t_11); __Pyx_INCREF(__pyx_t_21); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 539, __pyx_L1_error)
+        __pyx_t_21 = PyList_GET_ITEM(__pyx_t_26, __pyx_t_11); __Pyx_INCREF(__pyx_t_21); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 539, __pyx_L1_error)
         #else
-        __pyx_t_21 = PySequence_ITEM(__pyx_t_27, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
+        __pyx_t_21 = PySequence_ITEM(__pyx_t_26, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
         #endif
       } else {
-        if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_27)) break;
+        if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_26)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_21 = PyTuple_GET_ITEM(__pyx_t_27, __pyx_t_11); __Pyx_INCREF(__pyx_t_21); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 539, __pyx_L1_error)
+        __pyx_t_21 = PyTuple_GET_ITEM(__pyx_t_26, __pyx_t_11); __Pyx_INCREF(__pyx_t_21); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 539, __pyx_L1_error)
         #else
-        __pyx_t_21 = PySequence_ITEM(__pyx_t_27, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
+        __pyx_t_21 = PySequence_ITEM(__pyx_t_26, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 539, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
         #endif
       }
     } else {
-      __pyx_t_21 = __pyx_t_12(__pyx_t_27);
+      __pyx_t_21 = __pyx_t_12(__pyx_t_26);
       if (unlikely(!__pyx_t_21)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
@@ -20382,11 +20372,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_21))) __PYX_ERR(0, 539, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
   }
-  __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
+  __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   __Pyx_DECREF_SET(__pyx_v_hets, ((PyObject*)__pyx_t_1));
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":540
+  /* "src/core.pyx":540
  * 		snps = [tuple(x) for x in pbed.BedTool(snps).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
  * 		hets = [tuple(x) for x in pbed.BedTool(hets).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
  * 		for chrom in CHROMS:             # <<<<<<<<<<<<<<
@@ -20406,23 +20396,23 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_27 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_27); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 540, __pyx_L1_error)
+        __pyx_t_26 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_26); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 540, __pyx_L1_error)
         #else
-        __pyx_t_27 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 540, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_27);
+        __pyx_t_26 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 540, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_26);
         #endif
       } else {
         if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_27 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_27); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 540, __pyx_L1_error)
+        __pyx_t_26 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_26); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 540, __pyx_L1_error)
         #else
-        __pyx_t_27 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 540, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_27);
+        __pyx_t_26 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 540, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_26);
         #endif
       }
     } else {
-      __pyx_t_27 = __pyx_t_12(__pyx_t_1);
-      if (unlikely(!__pyx_t_27)) {
+      __pyx_t_26 = __pyx_t_12(__pyx_t_1);
+      if (unlikely(!__pyx_t_26)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -20430,20 +20420,20 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
         }
         break;
       }
-      __Pyx_GOTREF(__pyx_t_27);
+      __Pyx_GOTREF(__pyx_t_26);
     }
-    __Pyx_XDECREF_SET(__pyx_v_chrom, __pyx_t_27);
-    __pyx_t_27 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_chrom, __pyx_t_26);
+    __pyx_t_26 = 0;
 
-    /* "gtcnv/core.pyx":541
+    /* "src/core.pyx":541
  * 		hets = [tuple(x) for x in pbed.BedTool(hets).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
  * 		for chrom in CHROMS:
  * 			snpsub = [(int(x[1]),int(x[3])) for x in snps if x[0]==chrom]             # <<<<<<<<<<<<<<
  * 			hetsub = [(int(x[1]),float(x[3])) for x in hets if x[0]==chrom]
  * 			SNP[chrom]=snpsub
  */
-    __pyx_t_27 = PyList_New(0); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 541, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_27);
+    __pyx_t_26 = PyList_New(0); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 541, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_26);
     __pyx_t_21 = __pyx_v_snps; __Pyx_INCREF(__pyx_t_21); __pyx_t_17 = 0;
     for (;;) {
       if (__pyx_t_17 >= PyList_GET_SIZE(__pyx_t_21)) break;
@@ -20480,23 +20470,23 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
         PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4);
         __pyx_t_16 = 0;
         __pyx_t_4 = 0;
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_27, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 541, __pyx_L1_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_26, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 541, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
     }
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_snpsub, ((PyObject*)__pyx_t_27));
-    __pyx_t_27 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_snpsub, ((PyObject*)__pyx_t_26));
+    __pyx_t_26 = 0;
 
-    /* "gtcnv/core.pyx":542
+    /* "src/core.pyx":542
  * 		for chrom in CHROMS:
  * 			snpsub = [(int(x[1]),int(x[3])) for x in snps if x[0]==chrom]
  * 			hetsub = [(int(x[1]),float(x[3])) for x in hets if x[0]==chrom]             # <<<<<<<<<<<<<<
  * 			SNP[chrom]=snpsub
  * 			HET[chrom]=hetsub
  */
-    __pyx_t_27 = PyList_New(0); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 542, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_27);
+    __pyx_t_26 = PyList_New(0); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 542, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_26);
     __pyx_t_21 = __pyx_v_hets; __Pyx_INCREF(__pyx_t_21); __pyx_t_17 = 0;
     for (;;) {
       if (__pyx_t_17 >= PyList_GET_SIZE(__pyx_t_21)) break;
@@ -20533,15 +20523,15 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
         PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_16);
         __pyx_t_3 = 0;
         __pyx_t_16 = 0;
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_27, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 542, __pyx_L1_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_26, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 542, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
     }
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_hetsub, ((PyObject*)__pyx_t_27));
-    __pyx_t_27 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_hetsub, ((PyObject*)__pyx_t_26));
+    __pyx_t_26 = 0;
 
-    /* "gtcnv/core.pyx":543
+    /* "src/core.pyx":543
  * 			snpsub = [(int(x[1]),int(x[3])) for x in snps if x[0]==chrom]
  * 			hetsub = [(int(x[1]),float(x[3])) for x in hets if x[0]==chrom]
  * 			SNP[chrom]=snpsub             # <<<<<<<<<<<<<<
@@ -20550,7 +20540,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
     if (unlikely(PyDict_SetItem(__pyx_v_SNP, __pyx_v_chrom, __pyx_v_snpsub) < 0)) __PYX_ERR(0, 543, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":544
+    /* "src/core.pyx":544
  * 			hetsub = [(int(x[1]),float(x[3])) for x in hets if x[0]==chrom]
  * 			SNP[chrom]=snpsub
  * 			HET[chrom]=hetsub             # <<<<<<<<<<<<<<
@@ -20559,7 +20549,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
     if (unlikely(PyDict_SetItem(__pyx_v_HET, __pyx_v_chrom, __pyx_v_hetsub) < 0)) __PYX_ERR(0, 544, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":540
+    /* "src/core.pyx":540
  * 		snps = [tuple(x) for x in pbed.BedTool(snps).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
  * 		hets = [tuple(x) for x in pbed.BedTool(hets).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
  * 		for chrom in CHROMS:             # <<<<<<<<<<<<<<
@@ -20569,7 +20559,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":545
+  /* "src/core.pyx":545
  * 			SNP[chrom]=snpsub
  * 			HET[chrom]=hetsub
  * 		self.SNP=SNP             # <<<<<<<<<<<<<<
@@ -20578,7 +20568,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_SNP, __pyx_v_SNP) < 0) __PYX_ERR(0, 545, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":546
+  /* "src/core.pyx":546
  * 			HET[chrom]=hetsub
  * 		self.SNP=SNP
  * 		self.HET=HET             # <<<<<<<<<<<<<<
@@ -20587,11 +20577,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_HET, __pyx_v_HET) < 0) __PYX_ERR(0, 546, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":453
+  /* "src/core.pyx":453
  * 	bam.close()
  * class gtVCF():
  * 	def __init__(self,FH=None,iid=None,mask=None):             # <<<<<<<<<<<<<<
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  * 		cdef double a=0.0
  */
 
@@ -20607,10 +20597,10 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_20);
   __Pyx_XDECREF(__pyx_t_21);
+  __Pyx_XDECREF(__pyx_t_24);
   __Pyx_XDECREF(__pyx_t_25);
   __Pyx_XDECREF(__pyx_t_26);
-  __Pyx_XDECREF(__pyx_t_27);
-  __Pyx_AddTraceback("gtcnv.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtVCF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_snps);
@@ -20638,7 +20628,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":547
+/* "src/core.pyx":547
  * 		self.SNP=SNP
  * 		self.HET=HET
  * 	def preprocessVCF(self):             # <<<<<<<<<<<<<<
@@ -20647,20 +20637,20 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF___init__(CYTHON_UNUSED PyObject *_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_3preprocessVCF(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_5gtVCF_3preprocessVCF = {"preprocessVCF", (PyCFunction)__pyx_pw_5gtcnv_4core_5gtVCF_3preprocessVCF, METH_O, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_3preprocessVCF(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_3src_4core_5gtVCF_3preprocessVCF(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_5gtVCF_3preprocessVCF = {"preprocessVCF", (PyCFunction)__pyx_pw_3src_4core_5gtVCF_3preprocessVCF, METH_O, 0};
+static PyObject *__pyx_pw_3src_4core_5gtVCF_3preprocessVCF(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("preprocessVCF (wrapper)", 0);
-  __pyx_r = __pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3src_4core_5gtVCF_2preprocessVCF(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_3src_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_v_snp_cov = NULL;
   PyObject *__pyx_v_CHROMS = NULL;
   PyObject *__pyx_v_genome = NULL;
@@ -20681,7 +20671,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   PyObject *(*__pyx_t_11)(PyObject *);
   __Pyx_RefNannySetupContext("preprocessVCF", 0);
 
-  /* "gtcnv/core.pyx":548
+  /* "src/core.pyx":548
  * 		self.HET=HET
  * 	def preprocessVCF(self):
  * 		snp_cov={}             # <<<<<<<<<<<<<<
@@ -20693,19 +20683,19 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   __pyx_v_snp_cov = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":549
+  /* "src/core.pyx":549
  * 	def preprocessVCF(self):
  * 		snp_cov={}
  * 		CHROMS = get_chroma()             # <<<<<<<<<<<<<<
  * 		genome=[]
  * 		for chrom in CHROMS:
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_get_chroma(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 549, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_get_chroma(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 549, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_CHROMS = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":550
+  /* "src/core.pyx":550
  * 		snp_cov={}
  * 		CHROMS = get_chroma()
  * 		genome=[]             # <<<<<<<<<<<<<<
@@ -20717,7 +20707,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   __pyx_v_genome = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":551
+  /* "src/core.pyx":551
  * 		CHROMS = get_chroma()
  * 		genome=[]
  * 		for chrom in CHROMS:             # <<<<<<<<<<<<<<
@@ -20766,7 +20756,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
     __Pyx_XDECREF_SET(__pyx_v_chrom, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":552
+    /* "src/core.pyx":552
  * 		genome=[]
  * 		for chrom in CHROMS:
  * 			if self.SNP.get(chrom) == None: snp_cov[chrom]=(0,0)             # <<<<<<<<<<<<<<
@@ -20812,7 +20802,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":554
+    /* "src/core.pyx":554
  * 			if self.SNP.get(chrom) == None: snp_cov[chrom]=(0,0)
  * 			else:
  * 				if len(self.SNP[chrom])==0: snp_cov[chrom]=(0,0)             # <<<<<<<<<<<<<<
@@ -20833,7 +20823,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
         goto __pyx_L6;
       }
 
-      /* "gtcnv/core.pyx":555
+      /* "src/core.pyx":555
  * 			else:
  * 				if len(self.SNP[chrom])==0: snp_cov[chrom]=(0,0)
  * 				else: snp_cov[chrom]=(np.median([x[1] for x in self.SNP[chrom]]),len(self.SNP[chrom]))             # <<<<<<<<<<<<<<
@@ -20949,7 +20939,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
       }
       __pyx_L6:;
 
-      /* "gtcnv/core.pyx":556
+      /* "src/core.pyx":556
  * 				if len(self.SNP[chrom])==0: snp_cov[chrom]=(0,0)
  * 				else: snp_cov[chrom]=(np.median([x[1] for x in self.SNP[chrom]]),len(self.SNP[chrom]))
  * 				genome+=[x[1] for x in self.SNP[chrom]]             # <<<<<<<<<<<<<<
@@ -21019,7 +21009,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
     }
     __pyx_L5:;
 
-    /* "gtcnv/core.pyx":551
+    /* "src/core.pyx":551
  * 		CHROMS = get_chroma()
  * 		genome=[]
  * 		for chrom in CHROMS:             # <<<<<<<<<<<<<<
@@ -21029,7 +21019,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":557
+  /* "src/core.pyx":557
  * 				else: snp_cov[chrom]=(np.median([x[1] for x in self.SNP[chrom]]),len(self.SNP[chrom]))
  * 				genome+=[x[1] for x in self.SNP[chrom]]
  * 		snp_cov['GENOME']=(np.median(genome),len(genome))             # <<<<<<<<<<<<<<
@@ -21080,7 +21070,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   if (unlikely(PyDict_SetItem(__pyx_v_snp_cov, __pyx_n_s_GENOME, __pyx_t_4) < 0)) __PYX_ERR(0, 557, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":558
+  /* "src/core.pyx":558
  * 				genome+=[x[1] for x in self.SNP[chrom]]
  * 		snp_cov['GENOME']=(np.median(genome),len(genome))
  * 		return snp_cov             # <<<<<<<<<<<<<<
@@ -21092,7 +21082,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   __pyx_r = __pyx_v_snp_cov;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":547
+  /* "src/core.pyx":547
  * 		self.SNP=SNP
  * 		self.HET=HET
  * 	def preprocessVCF(self):             # <<<<<<<<<<<<<<
@@ -21108,7 +21098,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("gtcnv.core.gtVCF.preprocessVCF", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtVCF.preprocessVCF", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_snp_cov);
@@ -21121,7 +21111,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":559
+/* "src/core.pyx":559
  * 		snp_cov['GENOME']=(np.median(genome),len(genome))
  * 		return snp_cov
  * 	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):             # <<<<<<<<<<<<<<
@@ -21130,9 +21120,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_2preprocessVCF(CYTHON_UNUSED PyObj
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_5extract_SNP_features(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_5gtVCF_5extract_SNP_features = {"extract_SNP_features", (PyCFunction)__pyx_pw_5gtcnv_4core_5gtVCF_5extract_SNP_features, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_5extract_SNP_features(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_5gtVCF_5extract_SNP_features(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_5gtVCF_5extract_SNP_features = {"extract_SNP_features", (PyCFunction)__pyx_pw_3src_4core_5gtVCF_5extract_SNP_features, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_5gtVCF_5extract_SNP_features(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_sorted_cnv = 0;
   PyObject *__pyx_v_master_cnv = 0;
@@ -21195,18 +21185,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_5gtVCF_5extract_SNP_features(PyObject *__
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("extract_SNP_features", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 559, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.gtVCF.extract_SNP_features", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtVCF.extract_SNP_features", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(__pyx_self, __pyx_v_self, __pyx_v_sorted_cnv, __pyx_v_master_cnv, __pyx_v_snp_cov);
+  __pyx_r = __pyx_pf_3src_4core_5gtVCF_4extract_SNP_features(__pyx_self, __pyx_v_self, __pyx_v_sorted_cnv, __pyx_v_master_cnv, __pyx_v_snp_cov);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_sorted_cnv, PyObject *__pyx_v_master_cnv, PyObject *__pyx_v_snp_cov) {
+static PyObject *__pyx_pf_3src_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_sorted_cnv, PyObject *__pyx_v_master_cnv, PyObject *__pyx_v_snp_cov) {
   int __pyx_v_s;
   int __pyx_v_e;
   PyObject *__pyx_v_SNP_feats = NULL;
@@ -21244,7 +21234,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   int __pyx_t_18;
   __Pyx_RefNannySetupContext("extract_SNP_features", 0);
 
-  /* "gtcnv/core.pyx":560
+  /* "src/core.pyx":560
  * 		return snp_cov
  * 	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):
  * 		cdef int s=0             # <<<<<<<<<<<<<<
@@ -21253,7 +21243,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
  */
   __pyx_v_s = 0;
 
-  /* "gtcnv/core.pyx":561
+  /* "src/core.pyx":561
  * 	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):
  * 		cdef int s=0
  * 		cdef int e=0             # <<<<<<<<<<<<<<
@@ -21262,7 +21252,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
  */
   __pyx_v_e = 0;
 
-  /* "gtcnv/core.pyx":562
+  /* "src/core.pyx":562
  * 		cdef int s=0
  * 		cdef int e=0
  * 		SNP_feats={}             # <<<<<<<<<<<<<<
@@ -21274,7 +21264,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   __pyx_v_SNP_feats = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":563
+  /* "src/core.pyx":563
  * 		cdef int e=0
  * 		SNP_feats={}
  * 		HET_feats={}             # <<<<<<<<<<<<<<
@@ -21286,7 +21276,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   __pyx_v_HET_feats = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":564
+  /* "src/core.pyx":564
  * 		SNP_feats={}
  * 		HET_feats={}
  * 		for call in sorted_cnv:             # <<<<<<<<<<<<<<
@@ -21335,7 +21325,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     __Pyx_XDECREF_SET(__pyx_v_call, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":565
+    /* "src/core.pyx":565
  * 		HET_feats={}
  * 		for call in sorted_cnv:
  * 			if master_cnv.get(call)==None: continue             # <<<<<<<<<<<<<<
@@ -21377,7 +21367,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       goto __pyx_L3_continue;
     }
 
-    /* "gtcnv/core.pyx":566
+    /* "src/core.pyx":566
  * 		for call in sorted_cnv:
  * 			if master_cnv.get(call)==None: continue
  * 			(cnv_span,flank_span,windows) = master_cnv[call]             # <<<<<<<<<<<<<<
@@ -21450,7 +21440,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     __Pyx_XDECREF_SET(__pyx_v_windows, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":567
+    /* "src/core.pyx":567
  * 			if master_cnv.get(call)==None: continue
  * 			(cnv_span,flank_span,windows) = master_cnv[call]
  * 			snp_cov_locus=[]             # <<<<<<<<<<<<<<
@@ -21462,7 +21452,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     __Pyx_XDECREF_SET(__pyx_v_snp_cov_locus, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":568
+    /* "src/core.pyx":568
  * 			(cnv_span,flank_span,windows) = master_cnv[call]
  * 			snp_cov_locus=[]
  * 			het_ratio_locus=[]             # <<<<<<<<<<<<<<
@@ -21474,7 +21464,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     __Pyx_XDECREF_SET(__pyx_v_het_ratio_locus, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":569
+    /* "src/core.pyx":569
  * 			snp_cov_locus=[]
  * 			het_ratio_locus=[]
  * 			for x in cnv_span:             # <<<<<<<<<<<<<<
@@ -21523,7 +21513,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "gtcnv/core.pyx":570
+      /* "src/core.pyx":570
  * 			het_ratio_locus=[]
  * 			for x in cnv_span:
  * 				c = x[0]             # <<<<<<<<<<<<<<
@@ -21535,7 +21525,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "gtcnv/core.pyx":571
+      /* "src/core.pyx":571
  * 			for x in cnv_span:
  * 				c = x[0]
  * 				norm_cov = snp_cov[(self.iid,c)]             # <<<<<<<<<<<<<<
@@ -21558,7 +21548,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __Pyx_XDECREF_SET(__pyx_v_norm_cov, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "gtcnv/core.pyx":572
+      /* "src/core.pyx":572
  * 				c = x[0]
  * 				norm_cov = snp_cov[(self.iid,c)]
  * 				s,e = map(int,(x[1],x[2]))             # <<<<<<<<<<<<<<
@@ -21645,7 +21635,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __pyx_v_s = __pyx_t_13;
       __pyx_v_e = __pyx_t_14;
 
-      /* "gtcnv/core.pyx":573
+      /* "src/core.pyx":573
  * 				norm_cov = snp_cov[(self.iid,c)]
  * 				s,e = map(int,(x[1],x[2]))
  * 				if self.SNP.get(c) == None: continue             # <<<<<<<<<<<<<<
@@ -21690,7 +21680,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
         goto __pyx_L8_continue;
       }
 
-      /* "gtcnv/core.pyx":574
+      /* "src/core.pyx":574
  * 				s,e = map(int,(x[1],x[2]))
  * 				if self.SNP.get(c) == None: continue
  * 				SNPsub = self.SNP[c]             # <<<<<<<<<<<<<<
@@ -21705,7 +21695,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __Pyx_XDECREF_SET(__pyx_v_SNPsub, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":575
+      /* "src/core.pyx":575
  * 				if self.SNP.get(c) == None: continue
  * 				SNPsub = self.SNP[c]
  * 				for x in SNPsub:             # <<<<<<<<<<<<<<
@@ -21754,7 +21744,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
         __Pyx_DECREF_SET(__pyx_v_x, __pyx_t_7);
         __pyx_t_7 = 0;
 
-        /* "gtcnv/core.pyx":576
+        /* "src/core.pyx":576
  * 				SNPsub = self.SNP[c]
  * 				for x in SNPsub:
  * 					if x[0] >= s and x[0] <= e: snp_cov_locus.append(x[1])             # <<<<<<<<<<<<<<
@@ -21794,7 +21784,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
           goto __pyx_L15;
         }
 
-        /* "gtcnv/core.pyx":577
+        /* "src/core.pyx":577
  * 				for x in SNPsub:
  * 					if x[0] >= s and x[0] <= e: snp_cov_locus.append(x[1])
  * 					elif x[0] > e: break             # <<<<<<<<<<<<<<
@@ -21815,7 +21805,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
         }
         __pyx_L15:;
 
-        /* "gtcnv/core.pyx":575
+        /* "src/core.pyx":575
  * 				if self.SNP.get(c) == None: continue
  * 				SNPsub = self.SNP[c]
  * 				for x in SNPsub:             # <<<<<<<<<<<<<<
@@ -21826,7 +21816,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __pyx_L14_break:;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":578
+      /* "src/core.pyx":578
  * 					if x[0] >= s and x[0] <= e: snp_cov_locus.append(x[1])
  * 					elif x[0] > e: break
  * 				if self.HET.get(c) == None: continue             # <<<<<<<<<<<<<<
@@ -21871,7 +21861,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
         goto __pyx_L8_continue;
       }
 
-      /* "gtcnv/core.pyx":579
+      /* "src/core.pyx":579
  * 					elif x[0] > e: break
  * 				if self.HET.get(c) == None: continue
  * 				HETsub = self.HET[c]             # <<<<<<<<<<<<<<
@@ -21886,7 +21876,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __Pyx_XDECREF_SET(__pyx_v_HETsub, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":580
+      /* "src/core.pyx":580
  * 				if self.HET.get(c) == None: continue
  * 				HETsub = self.HET[c]
  * 				for x in HETsub:             # <<<<<<<<<<<<<<
@@ -21935,7 +21925,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
         __Pyx_DECREF_SET(__pyx_v_x, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":581
+        /* "src/core.pyx":581
  * 				HETsub = self.HET[c]
  * 				for x in HETsub:
  * 					if x[0] >= s and x[0] <= e: het_ratio_locus.append(x[1])             # <<<<<<<<<<<<<<
@@ -21975,7 +21965,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
           goto __pyx_L21;
         }
 
-        /* "gtcnv/core.pyx":582
+        /* "src/core.pyx":582
  * 				for x in HETsub:
  * 					if x[0] >= s and x[0] <= e: het_ratio_locus.append(x[1])
  * 					elif x[0] > e: break             # <<<<<<<<<<<<<<
@@ -21996,7 +21986,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
         }
         __pyx_L21:;
 
-        /* "gtcnv/core.pyx":580
+        /* "src/core.pyx":580
  * 				if self.HET.get(c) == None: continue
  * 				HETsub = self.HET[c]
  * 				for x in HETsub:             # <<<<<<<<<<<<<<
@@ -22007,7 +21997,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       __pyx_L20_break:;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "gtcnv/core.pyx":569
+      /* "src/core.pyx":569
  * 			snp_cov_locus=[]
  * 			het_ratio_locus=[]
  * 			for x in cnv_span:             # <<<<<<<<<<<<<<
@@ -22018,7 +22008,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":583
+    /* "src/core.pyx":583
  * 					if x[0] >= s and x[0] <= e: het_ratio_locus.append(x[1])
  * 					elif x[0] > e: break
  * 			if len(snp_cov_locus)==0: SNP_feats[call]=(float('nan'),0)             # <<<<<<<<<<<<<<
@@ -22043,7 +22033,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       goto __pyx_L24;
     }
 
-    /* "gtcnv/core.pyx":584
+    /* "src/core.pyx":584
  * 					elif x[0] > e: break
  * 			if len(snp_cov_locus)==0: SNP_feats[call]=(float('nan'),0)
  * 			else: SNP_feats[call]=(np.nanmedian(snp_cov_locus)/norm_cov,len(snp_cov_locus))             # <<<<<<<<<<<<<<
@@ -22101,7 +22091,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     }
     __pyx_L24:;
 
-    /* "gtcnv/core.pyx":585
+    /* "src/core.pyx":585
  * 			if len(snp_cov_locus)==0: SNP_feats[call]=(float('nan'),0)
  * 			else: SNP_feats[call]=(np.nanmedian(snp_cov_locus)/norm_cov,len(snp_cov_locus))
  * 			if len(het_ratio_locus)==0: HET_feats[call]=(float('nan'),0)             # <<<<<<<<<<<<<<
@@ -22126,7 +22116,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
       goto __pyx_L25;
     }
 
-    /* "gtcnv/core.pyx":586
+    /* "src/core.pyx":586
  * 			else: SNP_feats[call]=(np.nanmedian(snp_cov_locus)/norm_cov,len(snp_cov_locus))
  * 			if len(het_ratio_locus)==0: HET_feats[call]=(float('nan'),0)
  * 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))             # <<<<<<<<<<<<<<
@@ -22180,7 +22170,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
     }
     __pyx_L25:;
 
-    /* "gtcnv/core.pyx":564
+    /* "src/core.pyx":564
  * 		SNP_feats={}
  * 		HET_feats={}
  * 		for call in sorted_cnv:             # <<<<<<<<<<<<<<
@@ -22191,7 +22181,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":587
+  /* "src/core.pyx":587
  * 			if len(het_ratio_locus)==0: HET_feats[call]=(float('nan'),0)
  * 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))
  * 		return SNP_feats,HET_feats             # <<<<<<<<<<<<<<
@@ -22211,7 +22201,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":559
+  /* "src/core.pyx":559
  * 		snp_cov['GENOME']=(np.median(genome),len(genome))
  * 		return snp_cov
  * 	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):             # <<<<<<<<<<<<<<
@@ -22227,7 +22217,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.gtVCF.extract_SNP_features", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.gtVCF.extract_SNP_features", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_SNP_feats);
@@ -22248,7 +22238,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":588
+/* "src/core.pyx":588
  * 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))
  * 		return SNP_feats,HET_feats
  * def preprocess(iid,bamfh,vcffh,ofh,gen,seed):             # <<<<<<<<<<<<<<
@@ -22257,9 +22247,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_5gtVCF_4extract_SNP_features(CYTHON_UNUSE
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_13preprocess(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_13preprocess = {"preprocess", (PyCFunction)__pyx_pw_5gtcnv_4core_13preprocess, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_13preprocess(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_13preprocess(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_13preprocess = {"preprocess", (PyCFunction)__pyx_pw_3src_4core_13preprocess, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_13preprocess(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_iid = 0;
   PyObject *__pyx_v_bamfh = 0;
   PyObject *__pyx_v_vcffh = 0;
@@ -22340,18 +22330,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_13preprocess(PyObject *__pyx_self, PyObje
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("preprocess", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 588, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.preprocess", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.preprocess", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_12preprocess(__pyx_self, __pyx_v_iid, __pyx_v_bamfh, __pyx_v_vcffh, __pyx_v_ofh, __pyx_v_gen, __pyx_v_seed);
+  __pyx_r = __pyx_pf_3src_4core_12preprocess(__pyx_self, __pyx_v_iid, __pyx_v_bamfh, __pyx_v_vcffh, __pyx_v_ofh, __pyx_v_gen, __pyx_v_seed);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_ofh, PyObject *__pyx_v_gen, PyObject *__pyx_v_seed) {
+static PyObject *__pyx_pf_3src_4core_12preprocess(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_ofh, PyObject *__pyx_v_gen, PyObject *__pyx_v_seed) {
   PyObject *__pyx_v_outdir = NULL;
   PyObject *__pyx_v_bed = NULL;
   PyObject *__pyx_v_outfh = NULL;
@@ -22367,7 +22357,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannySetupContext("preprocess", 0);
   __Pyx_INCREF(__pyx_v_ofh);
 
-  /* "gtcnv/core.pyx":589
+  /* "src/core.pyx":589
  * 		return SNP_feats,HET_feats
  * def preprocess(iid,bamfh,vcffh,ofh,gen,seed):
  * 	outdir = os.getcwd()+'/gtCNV_preprocessing/'             # <<<<<<<<<<<<<<
@@ -22403,19 +22393,19 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __pyx_v_outdir = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":590
+  /* "src/core.pyx":590
  * def preprocess(iid,bamfh,vcffh,ofh,gen,seed):
  * 	outdir = os.getcwd()+'/gtCNV_preprocessing/'
  * 	bed = randomChr(seed,gen)             # <<<<<<<<<<<<<<
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = outdir + ofh
  */
-  __pyx_t_3 = __pyx_f_5gtcnv_4core_randomChr(__pyx_v_seed, __pyx_v_gen); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 590, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_3src_4core_randomChr(__pyx_v_seed, __pyx_v_gen); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 590, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_bed = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":591
+  /* "src/core.pyx":591
  * 	outdir = os.getcwd()+'/gtCNV_preprocessing/'
  * 	bed = randomChr(seed,gen)
  * 	if not os.path.exists(outdir): os.makedirs(outdir)             # <<<<<<<<<<<<<<
@@ -22492,7 +22482,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
 
-  /* "gtcnv/core.pyx":592
+  /* "src/core.pyx":592
  * 	bed = randomChr(seed,gen)
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = outdir + ofh             # <<<<<<<<<<<<<<
@@ -22504,7 +22494,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __Pyx_DECREF_SET(__pyx_v_ofh, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":593
+  /* "src/core.pyx":593
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = outdir + ofh
  * 	outfh = open(ofh,'w')             # <<<<<<<<<<<<<<
@@ -22525,7 +22515,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __pyx_v_outfh = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":594
+  /* "src/core.pyx":594
  * 	ofh = outdir + ofh
  * 	outfh = open(ofh,'w')
  * 	outfh.write('\t'.join(("#ID","CHROM","COVERAGE_MEDIAN","READ_LENGTH_MEDIAN","INSERT_SIZE_MEDIAN","INSERT_SIZE_MAD","BAM_BP_PARSED","SNP_COVERAGE_MEDIAN","SNP_PARSED"))+'\n')             # <<<<<<<<<<<<<<
@@ -22567,7 +22557,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":595
+  /* "src/core.pyx":595
  * 	outfh = open(ofh,'w')
  * 	outfh.write('\t'.join(("#ID","CHROM","COVERAGE_MEDIAN","READ_LENGTH_MEDIAN","INSERT_SIZE_MEDIAN","INSERT_SIZE_MAD","BAM_BP_PARSED","SNP_COVERAGE_MEDIAN","SNP_PARSED"))+'\n')
  * 	outfh.close()             # <<<<<<<<<<<<<<
@@ -22596,18 +22586,18 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":596
+  /* "src/core.pyx":596
  * 	outfh.write('\t'.join(("#ID","CHROM","COVERAGE_MEDIAN","READ_LENGTH_MEDIAN","INSERT_SIZE_MEDIAN","INSERT_SIZE_MAD","BAM_BP_PARSED","SNP_COVERAGE_MEDIAN","SNP_PARSED"))+'\n')
  * 	outfh.close()
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)             # <<<<<<<<<<<<<<
  * class Prepro(object):
  * 	def __init__(self,pre):
  */
-  __pyx_t_4 = __pyx_f_5gtcnv_4core_gtCNV_preprocess(__pyx_v_iid, __pyx_v_bamfh, __pyx_v_vcffh, __pyx_v_bed, __pyx_v_ofh, __pyx_v_gen); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_3src_4core_gtCNV_preprocess(__pyx_v_iid, __pyx_v_bamfh, __pyx_v_vcffh, __pyx_v_bed, __pyx_v_ofh, __pyx_v_gen); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 596, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":588
+  /* "src/core.pyx":588
  * 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))
  * 		return SNP_feats,HET_feats
  * def preprocess(iid,bamfh,vcffh,ofh,gen,seed):             # <<<<<<<<<<<<<<
@@ -22624,7 +22614,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("gtcnv.core.preprocess", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.preprocess", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_outdir);
@@ -22636,7 +22626,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":598
+/* "src/core.pyx":598
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)
  * class Prepro(object):
  * 	def __init__(self,pre):             # <<<<<<<<<<<<<<
@@ -22645,9 +22635,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_12preprocess(CYTHON_UNUSED PyObject *__py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_6Prepro_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_6Prepro_1__init__ = {"__init__", (PyCFunction)__pyx_pw_5gtcnv_4core_6Prepro_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_6Prepro_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_6Prepro_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_6Prepro_1__init__ = {"__init__", (PyCFunction)__pyx_pw_3src_4core_6Prepro_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_6Prepro_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_pre = 0;
   PyObject *__pyx_r = 0;
@@ -22692,18 +22682,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_6Prepro_1__init__(PyObject *__pyx_self, P
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 598, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.Prepro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.Prepro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_6Prepro___init__(__pyx_self, __pyx_v_self, __pyx_v_pre);
+  __pyx_r = __pyx_pf_3src_4core_6Prepro___init__(__pyx_self, __pyx_v_self, __pyx_v_pre);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pre) {
+static PyObject *__pyx_pf_3src_4core_6Prepro___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pre) {
   PyObject *__pyx_v_chr_cov = NULL;
   PyObject *__pyx_v_insert_size = NULL;
   PyObject *__pyx_v_mad = NULL;
@@ -22730,7 +22720,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   int __pyx_t_14;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "gtcnv/core.pyx":599
+  /* "src/core.pyx":599
  * class Prepro(object):
  * 	def __init__(self,pre):
  * 		chr_cov={}             # <<<<<<<<<<<<<<
@@ -22742,7 +22732,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   __pyx_v_chr_cov = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":600
+  /* "src/core.pyx":600
  * 	def __init__(self,pre):
  * 		chr_cov={}
  * 		insert_size={}             # <<<<<<<<<<<<<<
@@ -22754,7 +22744,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   __pyx_v_insert_size = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":601
+  /* "src/core.pyx":601
  * 		chr_cov={}
  * 		insert_size={}
  * 		mad={}             # <<<<<<<<<<<<<<
@@ -22766,7 +22756,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   __pyx_v_mad = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":602
+  /* "src/core.pyx":602
  * 		insert_size={}
  * 		mad={}
  * 		read_length={}             # <<<<<<<<<<<<<<
@@ -22778,7 +22768,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   __pyx_v_read_length = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":603
+  /* "src/core.pyx":603
  * 		mad={}
  * 		read_length={}
  * 		snp_cov={}             # <<<<<<<<<<<<<<
@@ -22790,7 +22780,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   __pyx_v_snp_cov = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":604
+  /* "src/core.pyx":604
  * 		read_length={}
  * 		snp_cov={}
  * 		with open(pre) as f:             # <<<<<<<<<<<<<<
@@ -22843,7 +22833,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
           __pyx_v_f = __pyx_t_4;
           __pyx_t_4 = 0;
 
-          /* "gtcnv/core.pyx":605
+          /* "src/core.pyx":605
  * 		snp_cov={}
  * 		with open(pre) as f:
  * 			next(f)             # <<<<<<<<<<<<<<
@@ -22854,7 +22844,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-          /* "gtcnv/core.pyx":606
+          /* "src/core.pyx":606
  * 		with open(pre) as f:
  * 			next(f)
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -22903,7 +22893,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":607
+            /* "src/core.pyx":607
  * 			next(f)
  * 			for l in f:
  * 				r = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -22924,7 +22914,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
             __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "gtcnv/core.pyx":608
+            /* "src/core.pyx":608
  * 			for l in f:
  * 				r = l.rstrip('\n').split('\t')
  * 				chr_cov[(str(r[0]),str(r[1]))]=float(r[2])             # <<<<<<<<<<<<<<
@@ -22968,7 +22958,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "gtcnv/core.pyx":609
+            /* "src/core.pyx":609
  * 				r = l.rstrip('\n').split('\t')
  * 				chr_cov[(str(r[0]),str(r[1]))]=float(r[2])
  * 				snp_cov[(r[0],r[1])]=float(r[7])             # <<<<<<<<<<<<<<
@@ -22996,7 +22986,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-            /* "gtcnv/core.pyx":610
+            /* "src/core.pyx":610
  * 				chr_cov[(str(r[0]),str(r[1]))]=float(r[2])
  * 				snp_cov[(r[0],r[1])]=float(r[7])
  * 				if r[1] == "GENOME":             # <<<<<<<<<<<<<<
@@ -23009,7 +22999,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
             if (__pyx_t_12) {
 
-              /* "gtcnv/core.pyx":611
+              /* "src/core.pyx":611
  * 				snp_cov[(r[0],r[1])]=float(r[7])
  * 				if r[1] == "GENOME":
  * 					mad[r[0]]=float(r[5])             # <<<<<<<<<<<<<<
@@ -23027,7 +23017,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "gtcnv/core.pyx":612
+              /* "src/core.pyx":612
  * 				if r[1] == "GENOME":
  * 					mad[r[0]]=float(r[5])
  * 					insert_size[r[0]]=float(r[4])             # <<<<<<<<<<<<<<
@@ -23045,7 +23035,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-              /* "gtcnv/core.pyx":613
+              /* "src/core.pyx":613
  * 					mad[r[0]]=float(r[5])
  * 					insert_size[r[0]]=float(r[4])
  * 					read_length[r[0]]=float(r[3])             # <<<<<<<<<<<<<<
@@ -23063,7 +23053,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "gtcnv/core.pyx":610
+              /* "src/core.pyx":610
  * 				chr_cov[(str(r[0]),str(r[1]))]=float(r[2])
  * 				snp_cov[(r[0],r[1])]=float(r[7])
  * 				if r[1] == "GENOME":             # <<<<<<<<<<<<<<
@@ -23072,7 +23062,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
             }
 
-            /* "gtcnv/core.pyx":606
+            /* "src/core.pyx":606
  * 		with open(pre) as f:
  * 			next(f)
  * 			for l in f:             # <<<<<<<<<<<<<<
@@ -23082,7 +23072,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
           }
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-          /* "gtcnv/core.pyx":604
+          /* "src/core.pyx":604
  * 		read_length={}
  * 		snp_cov={}
  * 		with open(pre) as f:             # <<<<<<<<<<<<<<
@@ -23102,7 +23092,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.Prepro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.Prepro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_11) < 0) __PYX_ERR(0, 604, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_GOTREF(__pyx_t_1);
@@ -23167,7 +23157,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
     __pyx_L21:;
   }
 
-  /* "gtcnv/core.pyx":614
+  /* "src/core.pyx":614
  * 					insert_size[r[0]]=float(r[4])
  * 					read_length[r[0]]=float(r[3])
  * 		self.chr_cov=chr_cov             # <<<<<<<<<<<<<<
@@ -23176,7 +23166,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_chr_cov, __pyx_v_chr_cov) < 0) __PYX_ERR(0, 614, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":615
+  /* "src/core.pyx":615
  * 					read_length[r[0]]=float(r[3])
  * 		self.chr_cov=chr_cov
  * 		self.insert_size=insert_size             # <<<<<<<<<<<<<<
@@ -23185,7 +23175,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_insert_size, __pyx_v_insert_size) < 0) __PYX_ERR(0, 615, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":616
+  /* "src/core.pyx":616
  * 		self.chr_cov=chr_cov
  * 		self.insert_size=insert_size
  * 		self.insert_mad=mad             # <<<<<<<<<<<<<<
@@ -23194,7 +23184,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_insert_mad, __pyx_v_mad) < 0) __PYX_ERR(0, 616, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":617
+  /* "src/core.pyx":617
  * 		self.insert_size=insert_size
  * 		self.insert_mad=mad
  * 		self.read_len=read_length             # <<<<<<<<<<<<<<
@@ -23203,7 +23193,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_read_len, __pyx_v_read_length) < 0) __PYX_ERR(0, 617, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":618
+  /* "src/core.pyx":618
  * 		self.insert_mad=mad
  * 		self.read_len=read_length
  * 		self.snp_cov=snp_cov             # <<<<<<<<<<<<<<
@@ -23212,7 +23202,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_snp_cov, __pyx_v_snp_cov) < 0) __PYX_ERR(0, 618, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":598
+  /* "src/core.pyx":598
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)
  * class Prepro(object):
  * 	def __init__(self,pre):             # <<<<<<<<<<<<<<
@@ -23229,7 +23219,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_11);
-  __Pyx_AddTraceback("gtcnv.core.Prepro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.Prepro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_chr_cov);
@@ -23245,7 +23235,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":619
+/* "src/core.pyx":619
  * 		self.read_len=read_length
  * 		self.snp_cov=snp_cov
  * def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):             # <<<<<<<<<<<<<<
@@ -23254,9 +23244,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_6Prepro___init__(CYTHON_UNUSED PyObject *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_15extract_feats(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_15extract_feats = {"extract_feats", (PyCFunction)__pyx_pw_5gtcnv_4core_15extract_feats, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_15extract_feats(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_15extract_feats(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_15extract_feats = {"extract_feats", (PyCFunction)__pyx_pw_3src_4core_15extract_feats, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_15extract_feats(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_iid = 0;
   PyObject *__pyx_v_bamfh = 0;
   PyObject *__pyx_v_vcffh = 0;
@@ -23364,18 +23354,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_15extract_feats(PyObject *__pyx_self, PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("extract_feats", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 619, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.extract_feats", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.extract_feats", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_14extract_feats(__pyx_self, __pyx_v_iid, __pyx_v_bamfh, __pyx_v_vcffh, __pyx_v_cnv, __pyx_v_prefh, __pyx_v_gender, __pyx_v_out, __pyx_v_gen, __pyx_v_pcrfree);
+  __pyx_r = __pyx_pf_3src_4core_14extract_feats(__pyx_self, __pyx_v_iid, __pyx_v_bamfh, __pyx_v_vcffh, __pyx_v_cnv, __pyx_v_prefh, __pyx_v_gender, __pyx_v_out, __pyx_v_gen, __pyx_v_pcrfree);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_cnv, PyObject *__pyx_v_prefh, CYTHON_UNUSED PyObject *__pyx_v_gender, PyObject *__pyx_v_out, PyObject *__pyx_v_gen, PyObject *__pyx_v_pcrfree) {
+static PyObject *__pyx_pf_3src_4core_14extract_feats(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iid, PyObject *__pyx_v_bamfh, PyObject *__pyx_v_vcffh, PyObject *__pyx_v_cnv, PyObject *__pyx_v_prefh, CYTHON_UNUSED PyObject *__pyx_v_gender, PyObject *__pyx_v_out, PyObject *__pyx_v_gen, PyObject *__pyx_v_pcrfree) {
   PyObject *__pyx_v_master_cnv = NULL;
   PyObject *__pyx_v_gc_dict = NULL;
   PyObject *__pyx_v_cnv_gc = NULL;
@@ -23446,43 +23436,43 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   PyObject *__pyx_t_26 = NULL;
   __Pyx_RefNannySetupContext("extract_feats", 0);
 
-  /* "gtcnv/core.pyx":620
+  /* "src/core.pyx":620
  * 		self.snp_cov=snp_cov
  * def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):
  * 	master_cnv = filter_calls(cnv,gen)             # <<<<<<<<<<<<<<
  * 	gc_dict = gc_norm(pcrfree)
  * 	cnv_gc=gc_cnv(cnv,master_cnv,gen)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_filter_calls(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 620, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_filter_calls(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_master_cnv = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":621
+  /* "src/core.pyx":621
  * def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):
  * 	master_cnv = filter_calls(cnv,gen)
  * 	gc_dict = gc_norm(pcrfree)             # <<<<<<<<<<<<<<
  * 	cnv_gc=gc_cnv(cnv,master_cnv,gen)
  * 	bam = pysam.AlignmentFile(bamfh,"rb")
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_gc_norm(__pyx_v_pcrfree); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_gc_norm(__pyx_v_pcrfree); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 621, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_gc_dict = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":622
+  /* "src/core.pyx":622
  * 	master_cnv = filter_calls(cnv,gen)
  * 	gc_dict = gc_norm(pcrfree)
  * 	cnv_gc=gc_cnv(cnv,master_cnv,gen)             # <<<<<<<<<<<<<<
  * 	bam = pysam.AlignmentFile(bamfh,"rb")
  * 	chrFlag = bamHead(bam)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_gc_cnv(__pyx_v_cnv, __pyx_v_master_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 622, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_gc_cnv(__pyx_v_cnv, __pyx_v_master_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_cnv_gc = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":623
+  /* "src/core.pyx":623
  * 	gc_dict = gc_norm(pcrfree)
  * 	cnv_gc=gc_cnv(cnv,master_cnv,gen)
  * 	bam = pysam.AlignmentFile(bamfh,"rb")             # <<<<<<<<<<<<<<
@@ -23524,19 +23514,19 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_bam = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":624
+  /* "src/core.pyx":624
  * 	cnv_gc=gc_cnv(cnv,master_cnv,gen)
  * 	bam = pysam.AlignmentFile(bamfh,"rb")
  * 	chrFlag = bamHead(bam)             # <<<<<<<<<<<<<<
  * 	pre = Prepro(prefh)
  * 	insert_size = pre.insert_size[iid]
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_bamHead(__pyx_v_bam); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 624, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_bamHead(__pyx_v_bam); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_chrFlag = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":625
+  /* "src/core.pyx":625
  * 	bam = pysam.AlignmentFile(bamfh,"rb")
  * 	chrFlag = bamHead(bam)
  * 	pre = Prepro(prefh)             # <<<<<<<<<<<<<<
@@ -23573,7 +23563,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_pre = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":626
+  /* "src/core.pyx":626
  * 	chrFlag = bamHead(bam)
  * 	pre = Prepro(prefh)
  * 	insert_size = pre.insert_size[iid]             # <<<<<<<<<<<<<<
@@ -23588,7 +23578,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_insert_size = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":627
+  /* "src/core.pyx":627
  * 	pre = Prepro(prefh)
  * 	insert_size = pre.insert_size[iid]
  * 	insert_mad = pre.insert_mad[iid]             # <<<<<<<<<<<<<<
@@ -23603,7 +23593,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_insert_mad = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":628
+  /* "src/core.pyx":628
  * 	insert_size = pre.insert_size[iid]
  * 	insert_mad = pre.insert_mad[iid]
  * 	snp_cov = pre.snp_cov             # <<<<<<<<<<<<<<
@@ -23615,7 +23605,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_snp_cov = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":629
+  /* "src/core.pyx":629
  * 	insert_mad = pre.insert_mad[iid]
  * 	snp_cov = pre.snp_cov
  * 	outdir = os.getcwd()+'/gtCNV_features/'             # <<<<<<<<<<<<<<
@@ -23651,7 +23641,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_outdir = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":630
+  /* "src/core.pyx":630
  * 	snp_cov = pre.snp_cov
  * 	outdir = os.getcwd()+'/gtCNV_features/'
  * 	if not os.path.exists(outdir): os.makedirs(outdir)             # <<<<<<<<<<<<<<
@@ -23728,7 +23718,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
 
-  /* "gtcnv/core.pyx":631
+  /* "src/core.pyx":631
  * 	outdir = os.getcwd()+'/gtCNV_features/'
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = open(outdir+out,'w')             # <<<<<<<<<<<<<<
@@ -23751,7 +23741,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_ofh = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":632
+  /* "src/core.pyx":632
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = open(outdir+out,'w')
  * 	out_head = '\t'.join(('chr','start','end','type','size','id','coverage','coverage_GCcorrected','discordant_ratio','split_ratio','SNP_coverage','HET_ratio','SNPs','HET_SNPs'))             # <<<<<<<<<<<<<<
@@ -23763,7 +23753,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_out_head = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":633
+  /* "src/core.pyx":633
  * 	ofh = open(outdir+out,'w')
  * 	out_head = '\t'.join(('chr','start','end','type','size','id','coverage','coverage_GCcorrected','discordant_ratio','split_ratio','SNP_coverage','HET_ratio','SNPs','HET_SNPs'))
  * 	ofh.write(out_head+'\n')             # <<<<<<<<<<<<<<
@@ -23802,7 +23792,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":634
+  /* "src/core.pyx":634
  * 	out_head = '\t'.join(('chr','start','end','type','size','id','coverage','coverage_GCcorrected','discordant_ratio','split_ratio','SNP_coverage','HET_ratio','SNPs','HET_SNPs'))
  * 	ofh.write(out_head+'\n')
  * 	SNPs, HETs = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').extract_SNP_features(cnv,master_cnv,snp_cov)             # <<<<<<<<<<<<<<
@@ -23958,7 +23948,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __pyx_v_HETs = __pyx_t_9;
   __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":635
+  /* "src/core.pyx":635
  * 	ofh.write(out_head+'\n')
  * 	SNPs, HETs = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').extract_SNP_features(cnv,master_cnv,snp_cov)
  * 	for call in cnv:             # <<<<<<<<<<<<<<
@@ -24007,7 +23997,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_call, __pyx_t_9);
     __pyx_t_9 = 0;
 
-    /* "gtcnv/core.pyx":636
+    /* "src/core.pyx":636
  * 	SNPs, HETs = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').extract_SNP_features(cnv,master_cnv,snp_cov)
  * 	for call in cnv:
  * 		(c,s,e,cl) = call             # <<<<<<<<<<<<<<
@@ -24084,7 +24074,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_cl, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":637
+    /* "src/core.pyx":637
  * 	for call in cnv:
  * 		(c,s,e,cl) = call
  * 		if SNPs.get(call)==None or HETs.get(call)==None or cnv_gc.get(call)==None or master_cnv.get(call)==None: continue             # <<<<<<<<<<<<<<
@@ -24236,7 +24226,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       goto __pyx_L6_continue;
     }
 
-    /* "gtcnv/core.pyx":638
+    /* "src/core.pyx":638
  * 		(c,s,e,cl) = call
  * 		if SNPs.get(call)==None or HETs.get(call)==None or cnv_gc.get(call)==None or master_cnv.get(call)==None: continue
  * 		snp_coverage, snps = SNPs[call]             # <<<<<<<<<<<<<<
@@ -24300,7 +24290,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_snps, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "gtcnv/core.pyx":639
+    /* "src/core.pyx":639
  * 		if SNPs.get(call)==None or HETs.get(call)==None or cnv_gc.get(call)==None or master_cnv.get(call)==None: continue
  * 		snp_coverage, snps = SNPs[call]
  * 		het_ratio, hets = HETs[call]             # <<<<<<<<<<<<<<
@@ -24364,7 +24354,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_hets, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":640
+    /* "src/core.pyx":640
  * 		snp_coverage, snps = SNPs[call]
  * 		het_ratio, hets = HETs[call]
  * 		GC_content = cnv_gc[call]             # <<<<<<<<<<<<<<
@@ -24376,7 +24366,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_GC_content, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":641
+    /* "src/core.pyx":641
  * 		het_ratio, hets = HETs[call]
  * 		GC_content = cnv_gc[call]
  * 		(cnv_span,flank_span,windows) = master_cnv[call]             # <<<<<<<<<<<<<<
@@ -24449,7 +24439,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_windows, __pyx_t_9);
     __pyx_t_9 = 0;
 
-    /* "gtcnv/core.pyx":642
+    /* "src/core.pyx":642
  * 		GC_content = cnv_gc[call]
  * 		(cnv_span,flank_span,windows) = master_cnv[call]
  * 		size = int(e)-int(s)+1             # <<<<<<<<<<<<<<
@@ -24470,7 +24460,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_size, __pyx_t_9);
     __pyx_t_9 = 0;
 
-    /* "gtcnv/core.pyx":643
+    /* "src/core.pyx":643
  * 		(cnv_span,flank_span,windows) = master_cnv[call]
  * 		size = int(e)-int(s)+1
  * 		ci = insert_size+(5*insert_mad)             # <<<<<<<<<<<<<<
@@ -24485,14 +24475,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_ci, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "gtcnv/core.pyx":644
+    /* "src/core.pyx":644
  * 		size = int(e)-int(s)+1
  * 		ci = insert_size+(5*insert_mad)
  * 		discordant,split,concordant = discordant_split_cnv(flank_span,bam,size,ci,windows,chrFlag)             # <<<<<<<<<<<<<<
  * 		if size > 1000:
  * 			"""read count coverage estimation"""
  */
-    __pyx_t_8 = __pyx_f_5gtcnv_4core_discordant_split_cnv(__pyx_v_flank_span, __pyx_v_bam, __pyx_v_size, __pyx_v_ci, __pyx_v_windows, __pyx_v_chrFlag); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 644, __pyx_L1_error)
+    __pyx_t_8 = __pyx_f_3src_4core_discordant_split_cnv(__pyx_v_flank_span, __pyx_v_bam, __pyx_v_size, __pyx_v_ci, __pyx_v_windows, __pyx_v_chrFlag); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 644, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     if ((likely(PyTuple_CheckExact(__pyx_t_8))) || (PyList_CheckExact(__pyx_t_8))) {
       PyObject* sequence = __pyx_t_8;
@@ -24558,7 +24548,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_concordant, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":645
+    /* "src/core.pyx":645
  * 		ci = insert_size+(5*insert_mad)
  * 		discordant,split,concordant = discordant_split_cnv(flank_span,bam,size,ci,windows,chrFlag)
  * 		if size > 1000:             # <<<<<<<<<<<<<<
@@ -24570,14 +24560,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     if (__pyx_t_7) {
 
-      /* "gtcnv/core.pyx":647
+      /* "src/core.pyx":647
  * 		if size > 1000:
  * 			"""read count coverage estimation"""
  * 			(read_count,bp_span) = count_reads(cnv_span,bam,ci,chrFlag)             # <<<<<<<<<<<<<<
  * 			cov=float('nan')
  * 			if pre.chr_cov[(iid,c)] != 0: cov = normalize_coverage(read_count,bp_span,pre.chr_cov[(iid,c)],pre.read_len[iid])
  */
-      __pyx_t_8 = __pyx_f_5gtcnv_4core_count_reads(__pyx_v_cnv_span, __pyx_v_bam, __pyx_v_ci, __pyx_v_chrFlag); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 647, __pyx_L1_error)
+      __pyx_t_8 = __pyx_f_3src_4core_count_reads(__pyx_v_cnv_span, __pyx_v_bam, __pyx_v_ci, __pyx_v_chrFlag); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 647, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if ((likely(PyTuple_CheckExact(__pyx_t_8))) || (PyList_CheckExact(__pyx_t_8))) {
         PyObject* sequence = __pyx_t_8;
@@ -24634,7 +24624,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_bp_span, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":648
+      /* "src/core.pyx":648
  * 			"""read count coverage estimation"""
  * 			(read_count,bp_span) = count_reads(cnv_span,bam,ci,chrFlag)
  * 			cov=float('nan')             # <<<<<<<<<<<<<<
@@ -24646,7 +24636,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_cov, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "gtcnv/core.pyx":649
+      /* "src/core.pyx":649
  * 			(read_count,bp_span) = count_reads(cnv_span,bam,ci,chrFlag)
  * 			cov=float('nan')
  * 			if pre.chr_cov[(iid,c)] != 0: cov = normalize_coverage(read_count,bp_span,pre.chr_cov[(iid,c)],pre.read_len[iid])             # <<<<<<<<<<<<<<
@@ -24697,13 +24687,13 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_15 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_15 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 649, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = __pyx_f_5gtcnv_4core_normalize_coverage(__pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 649, __pyx_L1_error)
+        __pyx_t_5 = __pyx_f_3src_4core_normalize_coverage(__pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 649, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF_SET(__pyx_v_cov, __pyx_t_5);
         __pyx_t_5 = 0;
       }
 
-      /* "gtcnv/core.pyx":650
+      /* "src/core.pyx":650
  * 			cov=float('nan')
  * 			if pre.chr_cov[(iid,c)] != 0: cov = normalize_coverage(read_count,bp_span,pre.chr_cov[(iid,c)],pre.read_len[iid])
  * 			GCnorm_ratio = 1.0             # <<<<<<<<<<<<<<
@@ -24713,7 +24703,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_INCREF(__pyx_float_1_0);
       __Pyx_XDECREF_SET(__pyx_v_GCnorm_ratio, __pyx_float_1_0);
 
-      /* "gtcnv/core.pyx":651
+      /* "src/core.pyx":651
  * 			if pre.chr_cov[(iid,c)] != 0: cov = normalize_coverage(read_count,bp_span,pre.chr_cov[(iid,c)],pre.read_len[iid])
  * 			GCnorm_ratio = 1.0
  * 			if gc_dict.get(('RC',GC_content))==None:             # <<<<<<<<<<<<<<
@@ -24762,7 +24752,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":652
+        /* "src/core.pyx":652
  * 			GCnorm_ratio = 1.0
  * 			if gc_dict.get(('RC',GC_content))==None:
  * 				if gc_dict.get(('DOC',GC_content)) !=None: GCnorm_ratio=gc_dict[('DOC',GC_content)]             # <<<<<<<<<<<<<<
@@ -24825,7 +24815,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
           __pyx_t_8 = 0;
         }
 
-        /* "gtcnv/core.pyx":651
+        /* "src/core.pyx":651
  * 			if pre.chr_cov[(iid,c)] != 0: cov = normalize_coverage(read_count,bp_span,pre.chr_cov[(iid,c)],pre.read_len[iid])
  * 			GCnorm_ratio = 1.0
  * 			if gc_dict.get(('RC',GC_content))==None:             # <<<<<<<<<<<<<<
@@ -24835,7 +24825,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
         goto __pyx_L27;
       }
 
-      /* "gtcnv/core.pyx":653
+      /* "src/core.pyx":653
  * 			if gc_dict.get(('RC',GC_content))==None:
  * 				if gc_dict.get(('DOC',GC_content)) !=None: GCnorm_ratio=gc_dict[('DOC',GC_content)]
  * 			else: GCnorm_ratio = gc_dict[('RC',GC_content)]             # <<<<<<<<<<<<<<
@@ -24859,7 +24849,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       }
       __pyx_L27:;
 
-      /* "gtcnv/core.pyx":654
+      /* "src/core.pyx":654
  * 				if gc_dict.get(('DOC',GC_content)) !=None: GCnorm_ratio=gc_dict[('DOC',GC_content)]
  * 			else: GCnorm_ratio = gc_dict[('RC',GC_content)]
  * 			GCcov = cov * GCnorm_ratio             # <<<<<<<<<<<<<<
@@ -24871,7 +24861,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_GCcov, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":645
+      /* "src/core.pyx":645
  * 		ci = insert_size+(5*insert_mad)
  * 		discordant,split,concordant = discordant_split_cnv(flank_span,bam,size,ci,windows,chrFlag)
  * 		if size > 1000:             # <<<<<<<<<<<<<<
@@ -24881,7 +24871,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       goto __pyx_L23;
     }
 
-    /* "gtcnv/core.pyx":656
+    /* "src/core.pyx":656
  * 			GCcov = cov * GCnorm_ratio
  * 		else:
  * 			"""median depth of coverage estimation"""             # <<<<<<<<<<<<<<
@@ -24890,7 +24880,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
  */
     /*else*/ {
 
-      /* "gtcnv/core.pyx":657
+      /* "src/core.pyx":657
  * 		else:
  * 			"""median depth of coverage estimation"""
  * 			median_doc = depth_of_coverage(cnv_span,bamfh,chrFlag,pre.read_len[iid])             # <<<<<<<<<<<<<<
@@ -24902,13 +24892,13 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __pyx_t_8 = PyObject_GetItem(__pyx_t_5, __pyx_v_iid); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 657, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __pyx_f_5gtcnv_4core_depth_of_coverage(__pyx_v_cnv_span, __pyx_v_bamfh, __pyx_v_chrFlag, __pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 657, __pyx_L1_error)
+      __pyx_t_5 = __pyx_f_3src_4core_depth_of_coverage(__pyx_v_cnv_span, __pyx_v_bamfh, __pyx_v_chrFlag, __pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 657, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_XDECREF_SET(__pyx_v_median_doc, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":658
+      /* "src/core.pyx":658
  * 			"""median depth of coverage estimation"""
  * 			median_doc = depth_of_coverage(cnv_span,bamfh,chrFlag,pre.read_len[iid])
  * 			cov=float('nan')             # <<<<<<<<<<<<<<
@@ -24920,7 +24910,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_cov, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":659
+      /* "src/core.pyx":659
  * 			median_doc = depth_of_coverage(cnv_span,bamfh,chrFlag,pre.read_len[iid])
  * 			cov=float('nan')
  * 			if pre.chr_cov[(iid,c)]!= 0: cov = median_doc/pre.chr_cov[(iid,c)]             # <<<<<<<<<<<<<<
@@ -24967,7 +24957,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
         __pyx_t_9 = 0;
       }
 
-      /* "gtcnv/core.pyx":660
+      /* "src/core.pyx":660
  * 			cov=float('nan')
  * 			if pre.chr_cov[(iid,c)]!= 0: cov = median_doc/pre.chr_cov[(iid,c)]
  * 			GCnorm_ratio=1.0             # <<<<<<<<<<<<<<
@@ -24977,7 +24967,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_INCREF(__pyx_float_1_0);
       __Pyx_XDECREF_SET(__pyx_v_GCnorm_ratio, __pyx_float_1_0);
 
-      /* "gtcnv/core.pyx":661
+      /* "src/core.pyx":661
  * 			if pre.chr_cov[(iid,c)]!= 0: cov = median_doc/pre.chr_cov[(iid,c)]
  * 			GCnorm_ratio=1.0
  * 			if gc_dict.get(('DOC',GC_content)) != None: GCnorm_ratio=gc_dict[('DOC',GC_content)]             # <<<<<<<<<<<<<<
@@ -25040,7 +25030,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
         __pyx_t_9 = 0;
       }
 
-      /* "gtcnv/core.pyx":662
+      /* "src/core.pyx":662
  * 			GCnorm_ratio=1.0
  * 			if gc_dict.get(('DOC',GC_content)) != None: GCnorm_ratio=gc_dict[('DOC',GC_content)]
  * 			GCcov = cov * GCnorm_ratio             # <<<<<<<<<<<<<<
@@ -25054,7 +25044,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     }
     __pyx_L23:;
 
-    /* "gtcnv/core.pyx":663
+    /* "src/core.pyx":663
  * 			if gc_dict.get(('DOC',GC_content)) != None: GCnorm_ratio=gc_dict[('DOC',GC_content)]
  * 			GCcov = cov * GCnorm_ratio
  * 		if float(concordant) == 0.0:             # <<<<<<<<<<<<<<
@@ -25065,7 +25055,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __pyx_t_7 = ((__pyx_t_15 == 0.0) != 0);
     if (__pyx_t_7) {
 
-      /* "gtcnv/core.pyx":664
+      /* "src/core.pyx":664
  * 			GCcov = cov * GCnorm_ratio
  * 		if float(concordant) == 0.0:
  * 			discordant_ratio = str(round(float(discordant)/1.0,3))             # <<<<<<<<<<<<<<
@@ -25097,7 +25087,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_discordant_ratio, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":665
+      /* "src/core.pyx":665
  * 		if float(concordant) == 0.0:
  * 			discordant_ratio = str(round(float(discordant)/1.0,3))
  * 			split_ratio = str(round(float(split)/1.0,3))             # <<<<<<<<<<<<<<
@@ -25129,7 +25119,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_split_ratio, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":663
+      /* "src/core.pyx":663
  * 			if gc_dict.get(('DOC',GC_content)) != None: GCnorm_ratio=gc_dict[('DOC',GC_content)]
  * 			GCcov = cov * GCnorm_ratio
  * 		if float(concordant) == 0.0:             # <<<<<<<<<<<<<<
@@ -25139,7 +25129,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       goto __pyx_L31;
     }
 
-    /* "gtcnv/core.pyx":667
+    /* "src/core.pyx":667
  * 			split_ratio = str(round(float(split)/1.0,3))
  * 		else:
  * 			discordant_ratio = str(round(float(discordant)/float(concordant),3))             # <<<<<<<<<<<<<<
@@ -25173,7 +25163,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_discordant_ratio, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":668
+      /* "src/core.pyx":668
  * 		else:
  * 			discordant_ratio = str(round(float(discordant)/float(concordant),3))
  * 			split_ratio = str(round(float(split)/float(concordant),3))             # <<<<<<<<<<<<<<
@@ -25208,7 +25198,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     }
     __pyx_L31:;
 
-    /* "gtcnv/core.pyx":669
+    /* "src/core.pyx":669
  * 			discordant_ratio = str(round(float(discordant)/float(concordant),3))
  * 			split_ratio = str(round(float(split)/float(concordant),3))
  * 		ofh.write('\t'.join((   str(c),str(s),str(e),str(cl),str(size),str(iid),             # <<<<<<<<<<<<<<
@@ -25266,7 +25256,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_GOTREF(__pyx_t_19);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":670
+    /* "src/core.pyx":670
  * 			split_ratio = str(round(float(split)/float(concordant),3))
  * 		ofh.write('\t'.join((   str(c),str(s),str(e),str(cl),str(size),str(iid),
  * 				    str(round(float(cov),3)), str(round(float(GCcov),3)),             # <<<<<<<<<<<<<<
@@ -25316,7 +25306,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_GOTREF(__pyx_t_20);
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-    /* "gtcnv/core.pyx":672
+    /* "src/core.pyx":672
  * 				    str(round(float(cov),3)), str(round(float(GCcov),3)),
  * 				    discordant_ratio, split_ratio,
  * 				    str(np.around(snp_coverage,decimals=3)),str(snps),str(np.around(het_ratio,decimals=3)),str(hets) ))+'\n')             # <<<<<<<<<<<<<<
@@ -25392,7 +25382,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_GOTREF(__pyx_t_23);
     __Pyx_DECREF(__pyx_t_25); __pyx_t_25 = 0;
 
-    /* "gtcnv/core.pyx":669
+    /* "src/core.pyx":669
  * 			discordant_ratio = str(round(float(discordant)/float(concordant),3))
  * 			split_ratio = str(round(float(split)/float(concordant),3))
  * 		ofh.write('\t'.join((   str(c),str(s),str(e),str(cl),str(size),str(iid),             # <<<<<<<<<<<<<<
@@ -25447,7 +25437,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_GOTREF(__pyx_t_23);
     __Pyx_DECREF(__pyx_t_25); __pyx_t_25 = 0;
 
-    /* "gtcnv/core.pyx":672
+    /* "src/core.pyx":672
  * 				    str(round(float(cov),3)), str(round(float(GCcov),3)),
  * 				    discordant_ratio, split_ratio,
  * 				    str(np.around(snp_coverage,decimals=3)),str(snps),str(np.around(het_ratio,decimals=3)),str(hets) ))+'\n')             # <<<<<<<<<<<<<<
@@ -25485,7 +25475,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "gtcnv/core.pyx":635
+    /* "src/core.pyx":635
  * 	ofh.write(out_head+'\n')
  * 	SNPs, HETs = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').extract_SNP_features(cnv,master_cnv,snp_cov)
  * 	for call in cnv:             # <<<<<<<<<<<<<<
@@ -25496,7 +25486,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":673
+  /* "src/core.pyx":673
  * 				    discordant_ratio, split_ratio,
  * 				    str(np.around(snp_coverage,decimals=3)),str(snps),str(np.around(het_ratio,decimals=3)),str(hets) ))+'\n')
  * 	bam.close()             # <<<<<<<<<<<<<<
@@ -25525,7 +25515,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":674
+  /* "src/core.pyx":674
  * 				    str(np.around(snp_coverage,decimals=3)),str(snps),str(np.around(het_ratio,decimals=3)),str(hets) ))+'\n')
  * 	bam.close()
  * 	ofh.close()             # <<<<<<<<<<<<<<
@@ -25554,7 +25544,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":619
+  /* "src/core.pyx":619
  * 		self.read_len=read_length
  * 		self.snp_cov=snp_cov
  * def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):             # <<<<<<<<<<<<<<
@@ -25583,7 +25573,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_t_24);
   __Pyx_XDECREF(__pyx_t_25);
   __Pyx_XDECREF(__pyx_t_26);
-  __Pyx_AddTraceback("gtcnv.core.extract_feats", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.extract_feats", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_master_cnv);
@@ -25631,7 +25621,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":675
+/* "src/core.pyx":675
  * 	bam.close()
  * 	ofh.close()
  * cdef returnPAR(cnv,gen):             # <<<<<<<<<<<<<<
@@ -25639,7 +25629,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_14extract_feats(CYTHON_UNUSED PyObject *_
  * 	results = pbed.BedTool(cnv).intersect(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_out = NULL;
   PyObject *__pyx_v_results = NULL;
   PyObject *__pyx_v_x = NULL;
@@ -25657,7 +25647,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("returnPAR", 0);
 
-  /* "gtcnv/core.pyx":676
+  /* "src/core.pyx":676
  * 	ofh.close()
  * cdef returnPAR(cnv,gen):
  * 	out=[]             # <<<<<<<<<<<<<<
@@ -25669,7 +25659,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_v_out = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":677
+  /* "src/core.pyx":677
  * cdef returnPAR(cnv,gen):
  * 	out=[]
  * 	results = pbed.BedTool(cnv).intersect(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)             # <<<<<<<<<<<<<<
@@ -25787,7 +25777,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_v_results = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":678
+  /* "src/core.pyx":678
  * 	out=[]
  * 	results = pbed.BedTool(cnv).intersect(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)
  * 	if len(results) > 0:             # <<<<<<<<<<<<<<
@@ -25798,7 +25788,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_t_8 = ((__pyx_t_7 > 0) != 0);
   if (__pyx_t_8) {
 
-    /* "gtcnv/core.pyx":679
+    /* "src/core.pyx":679
  * 	results = pbed.BedTool(cnv).intersect(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)
  * 	if len(results) > 0:
  * 		for x in results: out.append(tuple(x))             # <<<<<<<<<<<<<<
@@ -25853,7 +25843,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "gtcnv/core.pyx":678
+    /* "src/core.pyx":678
  * 	out=[]
  * 	results = pbed.BedTool(cnv).intersect(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,wa=True,u=True)
  * 	if len(results) > 0:             # <<<<<<<<<<<<<<
@@ -25862,7 +25852,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
  */
   }
 
-  /* "gtcnv/core.pyx":680
+  /* "src/core.pyx":680
  * 	if len(results) > 0:
  * 		for x in results: out.append(tuple(x))
  * 	return out             # <<<<<<<<<<<<<<
@@ -25874,7 +25864,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_r = __pyx_v_out;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":675
+  /* "src/core.pyx":675
  * 	bam.close()
  * 	ofh.close()
  * cdef returnPAR(cnv,gen):             # <<<<<<<<<<<<<<
@@ -25890,7 +25880,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.returnPAR", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.returnPAR", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_out);
@@ -25901,7 +25891,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":681
+/* "src/core.pyx":681
  * 		for x in results: out.append(tuple(x))
  * 	return out
  * cdef removePAR(cnv,gen):             # <<<<<<<<<<<<<<
@@ -25909,7 +25899,7 @@ static PyObject *__pyx_f_5gtcnv_4core_returnPAR(PyObject *__pyx_v_cnv, PyObject 
  * 	results= pbed.BedTool(cnv).subtract(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,A=True)
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_removePAR(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_out = NULL;
   PyObject *__pyx_v_results = NULL;
   PyObject *__pyx_v_x = NULL;
@@ -25927,7 +25917,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("removePAR", 0);
 
-  /* "gtcnv/core.pyx":682
+  /* "src/core.pyx":682
  * 	return out
  * cdef removePAR(cnv,gen):
  * 	out=[]             # <<<<<<<<<<<<<<
@@ -25939,7 +25929,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_v_out = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":683
+  /* "src/core.pyx":683
  * cdef removePAR(cnv,gen):
  * 	out=[]
  * 	results= pbed.BedTool(cnv).subtract(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,A=True)             # <<<<<<<<<<<<<<
@@ -26056,7 +26046,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_v_results = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":684
+  /* "src/core.pyx":684
  * 	out=[]
  * 	results= pbed.BedTool(cnv).subtract(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,A=True)
  * 	if len(results) > 0:             # <<<<<<<<<<<<<<
@@ -26067,7 +26057,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_t_8 = ((__pyx_t_7 > 0) != 0);
   if (__pyx_t_8) {
 
-    /* "gtcnv/core.pyx":685
+    /* "src/core.pyx":685
  * 	results= pbed.BedTool(cnv).subtract(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,A=True)
  * 	if len(results) > 0:
  * 		for x in results.sort(): out.append(tuple(x))             # <<<<<<<<<<<<<<
@@ -26143,7 +26133,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":684
+    /* "src/core.pyx":684
  * 	out=[]
  * 	results= pbed.BedTool(cnv).subtract(pbed.BedTool(get_path()+'/resources/par_'+gen+'.bed'),f=0.5,A=True)
  * 	if len(results) > 0:             # <<<<<<<<<<<<<<
@@ -26152,7 +26142,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
  */
   }
 
-  /* "gtcnv/core.pyx":686
+  /* "src/core.pyx":686
  * 	if len(results) > 0:
  * 		for x in results.sort(): out.append(tuple(x))
  * 	return out             # <<<<<<<<<<<<<<
@@ -26164,7 +26154,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   __pyx_r = __pyx_v_out;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":681
+  /* "src/core.pyx":681
  * 		for x in results: out.append(tuple(x))
  * 	return out
  * cdef removePAR(cnv,gen):             # <<<<<<<<<<<<<<
@@ -26180,7 +26170,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.removePAR", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.removePAR", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_out);
@@ -26191,7 +26181,7 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":687
+/* "src/core.pyx":687
  * 		for x in results.sort(): out.append(tuple(x))
  * 	return out
  * def likFilter(x,lik,f):             # <<<<<<<<<<<<<<
@@ -26200,10 +26190,10 @@ static PyObject *__pyx_f_5gtcnv_4core_removePAR(PyObject *__pyx_v_cnv, PyObject 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_17likFilter(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_5gtcnv_4core_16likFilter[] = "\n\tde novo filter recommendations\n\t";
-static PyMethodDef __pyx_mdef_5gtcnv_4core_17likFilter = {"likFilter", (PyCFunction)__pyx_pw_5gtcnv_4core_17likFilter, METH_VARARGS|METH_KEYWORDS, __pyx_doc_5gtcnv_4core_16likFilter};
-static PyObject *__pyx_pw_5gtcnv_4core_17likFilter(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_17likFilter(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3src_4core_16likFilter[] = "\n\tde novo filter recommendations\n\t";
+static PyMethodDef __pyx_mdef_3src_4core_17likFilter = {"likFilter", (PyCFunction)__pyx_pw_3src_4core_17likFilter, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3src_4core_16likFilter};
+static PyObject *__pyx_pw_3src_4core_17likFilter(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_x = 0;
   PyObject *__pyx_v_lik = 0;
   PyObject *__pyx_v_f = 0;
@@ -26257,18 +26247,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_17likFilter(PyObject *__pyx_self, PyObjec
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("likFilter", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 687, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.likFilter", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.likFilter", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_16likFilter(__pyx_self, __pyx_v_x, __pyx_v_lik, __pyx_v_f);
+  __pyx_r = __pyx_pf_3src_4core_16likFilter(__pyx_self, __pyx_v_x, __pyx_v_lik, __pyx_v_f);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x, PyObject *__pyx_v_lik, PyObject *__pyx_v_f) {
+static PyObject *__pyx_pf_3src_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x, PyObject *__pyx_v_lik, PyObject *__pyx_v_f) {
   unsigned int __pyx_v_sz;
   double __pyx_v_dpe;
   double __pyx_v_sr;
@@ -26287,7 +26277,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   int __pyx_t_9;
   __Pyx_RefNannySetupContext("likFilter", 0);
 
-  /* "gtcnv/core.pyx":695
+  /* "src/core.pyx":695
  * 	cdef double sr
  * 	cdef unsigned short passflag
  * 	clf=x[len(x)-1]             # <<<<<<<<<<<<<<
@@ -26301,7 +26291,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __pyx_v_clf = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":696
+  /* "src/core.pyx":696
  * 	cdef unsigned short passflag
  * 	clf=x[len(x)-1]
  * 	sz=int(x[3])             # <<<<<<<<<<<<<<
@@ -26317,7 +26307,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_sz = __pyx_t_5;
 
-  /* "gtcnv/core.pyx":697
+  /* "src/core.pyx":697
  * 	clf=x[len(x)-1]
  * 	sz=int(x[3])
  * 	dpe=float(x[7])             # <<<<<<<<<<<<<<
@@ -26330,7 +26320,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_dpe = __pyx_t_6;
 
-  /* "gtcnv/core.pyx":698
+  /* "src/core.pyx":698
  * 	sz=int(x[3])
  * 	dpe=float(x[7])
  * 	sr=float(x[8])             # <<<<<<<<<<<<<<
@@ -26343,7 +26333,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_sr = __pyx_t_6;
 
-  /* "gtcnv/core.pyx":699
+  /* "src/core.pyx":699
  * 	dpe=float(x[7])
  * 	sr=float(x[8])
  * 	passflag=1             # <<<<<<<<<<<<<<
@@ -26352,7 +26342,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
  */
   __pyx_v_passflag = 1;
 
-  /* "gtcnv/core.pyx":700
+  /* "src/core.pyx":700
  * 	sr=float(x[8])
  * 	passflag=1
  * 	if 'DEL' in clf and 'HEMIZYGOUS' not in clf:             # <<<<<<<<<<<<<<
@@ -26372,7 +26362,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":701
+    /* "src/core.pyx":701
  * 	passflag=1
  * 	if 'DEL' in clf and 'HEMIZYGOUS' not in clf:
  * 		if (dpe!=0 or sr!=0) and lik<12: passflag=0             # <<<<<<<<<<<<<<
@@ -26401,7 +26391,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       goto __pyx_L6;
     }
 
-    /* "gtcnv/core.pyx":702
+    /* "src/core.pyx":702
  * 	if 'DEL' in clf and 'HEMIZYGOUS' not in clf:
  * 		if (dpe!=0 or sr!=0) and lik<12: passflag=0
  * 		elif dpe==0 and sr==0:             # <<<<<<<<<<<<<<
@@ -26419,7 +26409,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     __pyx_L10_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "gtcnv/core.pyx":703
+      /* "src/core.pyx":703
  * 		if (dpe!=0 or sr!=0) and lik<12: passflag=0
  * 		elif dpe==0 and sr==0:
  * 			if f=='r':             # <<<<<<<<<<<<<<
@@ -26429,7 +26419,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       __pyx_t_7 = (__Pyx_PyString_Equals(__pyx_v_f, __pyx_n_s_r, Py_EQ)); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 703, __pyx_L1_error)
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":704
+        /* "src/core.pyx":704
  * 		elif dpe==0 and sr==0:
  * 			if f=='r':
  * 				if sz<=1000: passflag=0             # <<<<<<<<<<<<<<
@@ -26442,7 +26432,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L13;
         }
 
-        /* "gtcnv/core.pyx":705
+        /* "src/core.pyx":705
  * 			if f=='r':
  * 				if sz<=1000: passflag=0
  * 				elif (1000<sz<=5000) and lik<20: passflag=0             # <<<<<<<<<<<<<<
@@ -26469,7 +26459,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L13;
         }
 
-        /* "gtcnv/core.pyx":706
+        /* "src/core.pyx":706
  * 				if sz<=1000: passflag=0
  * 				elif (1000<sz<=5000) and lik<20: passflag=0
  * 				elif sz>5000 and lik<18: passflag=0             # <<<<<<<<<<<<<<
@@ -26492,7 +26482,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
         }
         __pyx_L13:;
 
-        /* "gtcnv/core.pyx":703
+        /* "src/core.pyx":703
  * 		if (dpe!=0 or sr!=0) and lik<12: passflag=0
  * 		elif dpe==0 and sr==0:
  * 			if f=='r':             # <<<<<<<<<<<<<<
@@ -26502,7 +26492,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
         goto __pyx_L12;
       }
 
-      /* "gtcnv/core.pyx":707
+      /* "src/core.pyx":707
  * 				elif (1000<sz<=5000) and lik<20: passflag=0
  * 				elif sz>5000 and lik<18: passflag=0
  * 			elif f=='n':             # <<<<<<<<<<<<<<
@@ -26512,7 +26502,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       __pyx_t_7 = (__Pyx_PyString_Equals(__pyx_v_f, __pyx_n_s_n, Py_EQ)); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 707, __pyx_L1_error)
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":708
+        /* "src/core.pyx":708
  * 				elif sz>5000 and lik<18: passflag=0
  * 			elif f=='n':
  * 				if sz<=1000: passflag=0             # <<<<<<<<<<<<<<
@@ -26525,7 +26515,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L18;
         }
 
-        /* "gtcnv/core.pyx":709
+        /* "src/core.pyx":709
  * 			elif f=='n':
  * 				if sz<=1000: passflag=0
  * 				elif (1000<sz<=3000) and lik<24: passflag=0             # <<<<<<<<<<<<<<
@@ -26552,7 +26542,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L18;
         }
 
-        /* "gtcnv/core.pyx":710
+        /* "src/core.pyx":710
  * 				if sz<=1000: passflag=0
  * 				elif (1000<sz<=3000) and lik<24: passflag=0
  * 				elif sz>3000 and lik<20: passflag=0             # <<<<<<<<<<<<<<
@@ -26575,7 +26565,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
         }
         __pyx_L18:;
 
-        /* "gtcnv/core.pyx":707
+        /* "src/core.pyx":707
  * 				elif (1000<sz<=5000) and lik<20: passflag=0
  * 				elif sz>5000 and lik<18: passflag=0
  * 			elif f=='n':             # <<<<<<<<<<<<<<
@@ -26585,7 +26575,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       }
       __pyx_L12:;
 
-      /* "gtcnv/core.pyx":702
+      /* "src/core.pyx":702
  * 	if 'DEL' in clf and 'HEMIZYGOUS' not in clf:
  * 		if (dpe!=0 or sr!=0) and lik<12: passflag=0
  * 		elif dpe==0 and sr==0:             # <<<<<<<<<<<<<<
@@ -26595,7 +26585,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     }
     __pyx_L6:;
 
-    /* "gtcnv/core.pyx":700
+    /* "src/core.pyx":700
  * 	sr=float(x[8])
  * 	passflag=1
  * 	if 'DEL' in clf and 'HEMIZYGOUS' not in clf:             # <<<<<<<<<<<<<<
@@ -26605,7 +26595,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     goto __pyx_L3;
   }
 
-  /* "gtcnv/core.pyx":711
+  /* "src/core.pyx":711
  * 				elif (1000<sz<=3000) and lik<24: passflag=0
  * 				elif sz>3000 and lik<20: passflag=0
  * 	elif 'DUP_PairedEnd' in clf and lik <11: passflag=0             # <<<<<<<<<<<<<<
@@ -26629,7 +26619,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     goto __pyx_L3;
   }
 
-  /* "gtcnv/core.pyx":712
+  /* "src/core.pyx":712
  * 				elif sz>3000 and lik<20: passflag=0
  * 	elif 'DUP_PairedEnd' in clf and lik <11: passflag=0
  * 	elif 'DUP_HetAllelicDepth' in clf:             # <<<<<<<<<<<<<<
@@ -26640,7 +26630,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __pyx_t_9 = (__pyx_t_7 != 0);
   if (__pyx_t_9) {
 
-    /* "gtcnv/core.pyx":713
+    /* "src/core.pyx":713
  * 	elif 'DUP_PairedEnd' in clf and lik <11: passflag=0
  * 	elif 'DUP_HetAllelicDepth' in clf:
  * 		if (dpe!=0 or sr!=0) and lik<10: passflag=0             # <<<<<<<<<<<<<<
@@ -26669,7 +26659,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       goto __pyx_L25;
     }
 
-    /* "gtcnv/core.pyx":714
+    /* "src/core.pyx":714
  * 	elif 'DUP_HetAllelicDepth' in clf:
  * 		if (dpe!=0 or sr!=0) and lik<10: passflag=0
  * 		elif dpe==0 and sr==0:             # <<<<<<<<<<<<<<
@@ -26687,7 +26677,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     __pyx_L29_bool_binop_done:;
     if (__pyx_t_9) {
 
-      /* "gtcnv/core.pyx":715
+      /* "src/core.pyx":715
  * 		if (dpe!=0 or sr!=0) and lik<10: passflag=0
  * 		elif dpe==0 and sr==0:
  * 			if f=='r':             # <<<<<<<<<<<<<<
@@ -26697,7 +26687,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_f, __pyx_n_s_r, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 715, __pyx_L1_error)
       if (__pyx_t_9) {
 
-        /* "gtcnv/core.pyx":716
+        /* "src/core.pyx":716
  * 		elif dpe==0 and sr==0:
  * 			if f=='r':
  * 				if sz<=3000: passflag=0             # <<<<<<<<<<<<<<
@@ -26710,7 +26700,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L32;
         }
 
-        /* "gtcnv/core.pyx":717
+        /* "src/core.pyx":717
  * 			if f=='r':
  * 				if sz<=3000: passflag=0
  * 				elif (3000<sz<=100000) and lik<15: passflag=0             # <<<<<<<<<<<<<<
@@ -26737,7 +26727,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L32;
         }
 
-        /* "gtcnv/core.pyx":718
+        /* "src/core.pyx":718
  * 				if sz<=3000: passflag=0
  * 				elif (3000<sz<=100000) and lik<15: passflag=0
  * 				elif sz>100000 and lik<13: passflag=0             # <<<<<<<<<<<<<<
@@ -26760,7 +26750,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
         }
         __pyx_L32:;
 
-        /* "gtcnv/core.pyx":715
+        /* "src/core.pyx":715
  * 		if (dpe!=0 or sr!=0) and lik<10: passflag=0
  * 		elif dpe==0 and sr==0:
  * 			if f=='r':             # <<<<<<<<<<<<<<
@@ -26770,7 +26760,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
         goto __pyx_L31;
       }
 
-      /* "gtcnv/core.pyx":719
+      /* "src/core.pyx":719
  * 				elif (3000<sz<=100000) and lik<15: passflag=0
  * 				elif sz>100000 and lik<13: passflag=0
  * 			elif f=='n':             # <<<<<<<<<<<<<<
@@ -26780,7 +26770,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_f, __pyx_n_s_n, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 719, __pyx_L1_error)
       if (__pyx_t_9) {
 
-        /* "gtcnv/core.pyx":720
+        /* "src/core.pyx":720
  * 				elif sz>100000 and lik<13: passflag=0
  * 			elif f=='n':
  * 				if sz<=3000: passflag=0             # <<<<<<<<<<<<<<
@@ -26793,7 +26783,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
           goto __pyx_L37;
         }
 
-        /* "gtcnv/core.pyx":721
+        /* "src/core.pyx":721
  * 			elif f=='n':
  * 				if sz<=3000: passflag=0
  * 				elif sz>3000 and lik<10: passflag=0             # <<<<<<<<<<<<<<
@@ -26816,7 +26806,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
         }
         __pyx_L37:;
 
-        /* "gtcnv/core.pyx":719
+        /* "src/core.pyx":719
  * 				elif (3000<sz<=100000) and lik<15: passflag=0
  * 				elif sz>100000 and lik<13: passflag=0
  * 			elif f=='n':             # <<<<<<<<<<<<<<
@@ -26826,7 +26816,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       }
       __pyx_L31:;
 
-      /* "gtcnv/core.pyx":714
+      /* "src/core.pyx":714
  * 	elif 'DUP_HetAllelicDepth' in clf:
  * 		if (dpe!=0 or sr!=0) and lik<10: passflag=0
  * 		elif dpe==0 and sr==0:             # <<<<<<<<<<<<<<
@@ -26836,7 +26826,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     }
     __pyx_L25:;
 
-    /* "gtcnv/core.pyx":712
+    /* "src/core.pyx":712
  * 				elif sz>3000 and lik<20: passflag=0
  * 	elif 'DUP_PairedEnd' in clf and lik <11: passflag=0
  * 	elif 'DUP_HetAllelicDepth' in clf:             # <<<<<<<<<<<<<<
@@ -26846,7 +26836,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     goto __pyx_L3;
   }
 
-  /* "gtcnv/core.pyx":722
+  /* "src/core.pyx":722
  * 				if sz<=3000: passflag=0
  * 				elif sz>3000 and lik<10: passflag=0
  * 	elif 'HEMIZYGOUS_DEL' in clf and lik<8: passflag=0             # <<<<<<<<<<<<<<
@@ -26870,7 +26860,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     goto __pyx_L3;
   }
 
-  /* "gtcnv/core.pyx":723
+  /* "src/core.pyx":723
  * 				elif sz>3000 and lik<10: passflag=0
  * 	elif 'HEMIZYGOUS_DEL' in clf and lik<8: passflag=0
  * 	elif 'HEMIZYGOUS_DUP' in clf:             # <<<<<<<<<<<<<<
@@ -26881,7 +26871,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __pyx_t_7 = (__pyx_t_9 != 0);
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":724
+    /* "src/core.pyx":724
  * 	elif 'HEMIZYGOUS_DEL' in clf and lik<8: passflag=0
  * 	elif 'HEMIZYGOUS_DUP' in clf:
  * 		if sz<=5000: passflag=0             # <<<<<<<<<<<<<<
@@ -26894,7 +26884,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
       goto __pyx_L42;
     }
 
-    /* "gtcnv/core.pyx":725
+    /* "src/core.pyx":725
  * 	elif 'HEMIZYGOUS_DUP' in clf:
  * 		if sz<=5000: passflag=0
  * 		elif sz>5000 and lik<10: passflag=0             # <<<<<<<<<<<<<<
@@ -26917,7 +26907,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
     }
     __pyx_L42:;
 
-    /* "gtcnv/core.pyx":723
+    /* "src/core.pyx":723
  * 				elif sz>3000 and lik<10: passflag=0
  * 	elif 'HEMIZYGOUS_DEL' in clf and lik<8: passflag=0
  * 	elif 'HEMIZYGOUS_DUP' in clf:             # <<<<<<<<<<<<<<
@@ -26927,7 +26917,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   }
   __pyx_L3:;
 
-  /* "gtcnv/core.pyx":726
+  /* "src/core.pyx":726
  * 		if sz<=5000: passflag=0
  * 		elif sz>5000 and lik<10: passflag=0
  * 	return passflag             # <<<<<<<<<<<<<<
@@ -26941,7 +26931,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":687
+  /* "src/core.pyx":687
  * 		for x in results.sort(): out.append(tuple(x))
  * 	return out
  * def likFilter(x,lik,f):             # <<<<<<<<<<<<<<
@@ -26953,7 +26943,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("gtcnv.core.likFilter", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.likFilter", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_clf);
@@ -26962,7 +26952,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":727
+/* "src/core.pyx":727
  * 		elif sz>5000 and lik<10: passflag=0
  * 	return passflag
  * def genotype(feats,sex,gen,out):             # <<<<<<<<<<<<<<
@@ -26971,9 +26961,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_16likFilter(CYTHON_UNUSED PyObject *__pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_19genotype(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_19genotype = {"genotype", (PyCFunction)__pyx_pw_5gtcnv_4core_19genotype, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_19genotype(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_19genotype(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_19genotype = {"genotype", (PyCFunction)__pyx_pw_3src_4core_19genotype, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_19genotype(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_feats = 0;
   PyObject *__pyx_v_sex = 0;
   PyObject *__pyx_v_gen = 0;
@@ -27036,18 +27026,18 @@ static PyObject *__pyx_pw_5gtcnv_4core_19genotype(PyObject *__pyx_self, PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("genotype", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 727, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.genotype", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.genotype", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_18genotype(__pyx_self, __pyx_v_feats, __pyx_v_sex, __pyx_v_gen, __pyx_v_out);
+  __pyx_r = __pyx_pf_3src_4core_18genotype(__pyx_self, __pyx_v_feats, __pyx_v_sex, __pyx_v_gen, __pyx_v_out);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_feats, PyObject *__pyx_v_sex, PyObject *__pyx_v_gen, PyObject *__pyx_v_out) {
+static PyObject *__pyx_pf_3src_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_feats, PyObject *__pyx_v_sex, PyObject *__pyx_v_gen, PyObject *__pyx_v_out) {
   PyObject *__pyx_v_REF = NULL;
   PyObject *__pyx_v_NON = NULL;
   PyObject *__pyx_v_GQ = NULL;
@@ -27100,7 +27090,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   int __pyx_t_17;
   __Pyx_RefNannySetupContext("genotype", 0);
 
-  /* "gtcnv/core.pyx":728
+  /* "src/core.pyx":728
  * 	return passflag
  * def genotype(feats,sex,gen,out):
  * 	REF={}             # <<<<<<<<<<<<<<
@@ -27112,7 +27102,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_REF = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":729
+  /* "src/core.pyx":729
  * def genotype(feats,sex,gen,out):
  * 	REF={}
  * 	NON={}             # <<<<<<<<<<<<<<
@@ -27124,7 +27114,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_NON = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":730
+  /* "src/core.pyx":730
  * 	REF={}
  * 	NON={}
  * 	GQ={}             # <<<<<<<<<<<<<<
@@ -27136,7 +27126,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_GQ = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":731
+  /* "src/core.pyx":731
  * 	NON={}
  * 	GQ={}
  * 	HEMI={}             # <<<<<<<<<<<<<<
@@ -27148,7 +27138,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_HEMI = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":732
+  /* "src/core.pyx":732
  * 	GQ={}
  * 	HEMI={}
  * 	FILT={}             # <<<<<<<<<<<<<<
@@ -27160,7 +27150,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_FILT = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":733
+  /* "src/core.pyx":733
  * 	HEMI={}
  * 	FILT={}
  * 	males = [k for k in sex if sex[k] == 'M']             # <<<<<<<<<<<<<<
@@ -27222,7 +27212,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_males = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":734
+  /* "src/core.pyx":734
  * 	FILT={}
  * 	males = [k for k in sex if sex[k] == 'M']
  * 	sex_chrom = ['chrX','chrY']             # <<<<<<<<<<<<<<
@@ -27240,7 +27230,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_sex_chrom = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":735
+  /* "src/core.pyx":735
  * 	males = [k for k in sex if sex[k] == 'M']
  * 	sex_chrom = ['chrX','chrY']
  * 	dels = [ k for k in feats if 'DEL' in k[3]]             # <<<<<<<<<<<<<<
@@ -27303,7 +27293,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_dels = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":736
+  /* "src/core.pyx":736
  * 	sex_chrom = ['chrX','chrY']
  * 	dels = [ k for k in feats if 'DEL' in k[3]]
  * 	dups = [ k for k in feats if 'DUP' in k[3]]             # <<<<<<<<<<<<<<
@@ -27366,7 +27356,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_dups = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":737
+  /* "src/core.pyx":737
  * 	dels = [ k for k in feats if 'DEL' in k[3]]
  * 	dups = [ k for k in feats if 'DUP' in k[3]]
  * 	autosome_dels = [k for k in dels if k[0] not in sex_chrom]             # <<<<<<<<<<<<<<
@@ -27399,7 +27389,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_autosome_dels = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":738
+  /* "src/core.pyx":738
  * 	dups = [ k for k in feats if 'DUP' in k[3]]
  * 	autosome_dels = [k for k in dels if k[0] not in sex_chrom]
  * 	autosome_dups = [k for k in dups if k[0] not in sex_chrom]             # <<<<<<<<<<<<<<
@@ -27432,7 +27422,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_autosome_dups = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":739
+  /* "src/core.pyx":739
  * 	autosome_dels = [k for k in dels if k[0] not in sex_chrom]
  * 	autosome_dups = [k for k in dups if k[0] not in sex_chrom]
  * 	sexchr_dels = [k for k in dels if k[0] in sex_chrom]             # <<<<<<<<<<<<<<
@@ -27465,7 +27455,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_sexchr_dels = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":740
+  /* "src/core.pyx":740
  * 	autosome_dups = [k for k in dups if k[0] not in sex_chrom]
  * 	sexchr_dels = [k for k in dels if k[0] in sex_chrom]
  * 	sexchr_dups = [k for k in dups if k[0] in sex_chrom]             # <<<<<<<<<<<<<<
@@ -27498,31 +27488,31 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_sexchr_dups = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":741
+  /* "src/core.pyx":741
  * 	sexchr_dels = [k for k in dels if k[0] in sex_chrom]
  * 	sexchr_dups = [k for k in dups if k[0] in sex_chrom]
  * 	del_par=returnPAR(sexchr_dels,gen)             # <<<<<<<<<<<<<<
  * 	dup_par=returnPAR(sexchr_dups,gen)
  * 	if len(del_par) > 0:
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_returnPAR(__pyx_v_sexchr_dels, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 741, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_returnPAR(__pyx_v_sexchr_dels, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 741, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_del_par = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":742
+  /* "src/core.pyx":742
  * 	sexchr_dups = [k for k in dups if k[0] in sex_chrom]
  * 	del_par=returnPAR(sexchr_dels,gen)
  * 	dup_par=returnPAR(sexchr_dups,gen)             # <<<<<<<<<<<<<<
  * 	if len(del_par) > 0:
  * 		for k in del_par: autosome_dels.append(k)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_returnPAR(__pyx_v_sexchr_dups, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_returnPAR(__pyx_v_sexchr_dups, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_dup_par = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":743
+  /* "src/core.pyx":743
  * 	del_par=returnPAR(sexchr_dels,gen)
  * 	dup_par=returnPAR(sexchr_dups,gen)
  * 	if len(del_par) > 0:             # <<<<<<<<<<<<<<
@@ -27533,7 +27523,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_6 = ((__pyx_t_3 > 0) != 0);
   if (__pyx_t_6) {
 
-    /* "gtcnv/core.pyx":744
+    /* "src/core.pyx":744
  * 	dup_par=returnPAR(sexchr_dups,gen)
  * 	if len(del_par) > 0:
  * 		for k in del_par: autosome_dels.append(k)             # <<<<<<<<<<<<<<
@@ -27585,7 +27575,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":743
+    /* "src/core.pyx":743
  * 	del_par=returnPAR(sexchr_dels,gen)
  * 	dup_par=returnPAR(sexchr_dups,gen)
  * 	if len(del_par) > 0:             # <<<<<<<<<<<<<<
@@ -27594,7 +27584,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
   }
 
-  /* "gtcnv/core.pyx":745
+  /* "src/core.pyx":745
  * 	if len(del_par) > 0:
  * 		for k in del_par: autosome_dels.append(k)
  * 	if len(dup_par) > 0:             # <<<<<<<<<<<<<<
@@ -27605,7 +27595,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_6 = ((__pyx_t_3 > 0) != 0);
   if (__pyx_t_6) {
 
-    /* "gtcnv/core.pyx":746
+    /* "src/core.pyx":746
  * 		for k in del_par: autosome_dels.append(k)
  * 	if len(dup_par) > 0:
  * 		for k in dup_par: autosome_dups.append(k)             # <<<<<<<<<<<<<<
@@ -27657,7 +27647,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":745
+    /* "src/core.pyx":745
  * 	if len(del_par) > 0:
  * 		for k in del_par: autosome_dels.append(k)
  * 	if len(dup_par) > 0:             # <<<<<<<<<<<<<<
@@ -27666,7 +27656,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
   }
 
-  /* "gtcnv/core.pyx":747
+  /* "src/core.pyx":747
  * 	if len(dup_par) > 0:
  * 		for k in dup_par: autosome_dups.append(k)
  * 	male_sexchr_del=[]             # <<<<<<<<<<<<<<
@@ -27678,7 +27668,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_male_sexchr_del = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":748
+  /* "src/core.pyx":748
  * 		for k in dup_par: autosome_dups.append(k)
  * 	male_sexchr_del=[]
  * 	male_sexchr_dup=[]             # <<<<<<<<<<<<<<
@@ -27690,14 +27680,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_male_sexchr_dup = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":749
+  /* "src/core.pyx":749
  * 	male_sexchr_del=[]
  * 	male_sexchr_dup=[]
  * 	for k in removePAR(sexchr_dels,gen):             # <<<<<<<<<<<<<<
  * 		if k[5] not in males: autosome_dels.append(k)
  * 		else: male_sexchr_del.append(k)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_removePAR(__pyx_v_sexchr_dels, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 749, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_removePAR(__pyx_v_sexchr_dels, __pyx_v_gen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 749, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_3 = 0;
@@ -27742,7 +27732,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":750
+    /* "src/core.pyx":750
  * 	male_sexchr_dup=[]
  * 	for k in removePAR(sexchr_dels,gen):
  * 		if k[5] not in males: autosome_dels.append(k)             # <<<<<<<<<<<<<<
@@ -27759,7 +27749,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       goto __pyx_L32;
     }
 
-    /* "gtcnv/core.pyx":751
+    /* "src/core.pyx":751
  * 	for k in removePAR(sexchr_dels,gen):
  * 		if k[5] not in males: autosome_dels.append(k)
  * 		else: male_sexchr_del.append(k)             # <<<<<<<<<<<<<<
@@ -27771,7 +27761,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __pyx_L32:;
 
-    /* "gtcnv/core.pyx":749
+    /* "src/core.pyx":749
  * 	male_sexchr_del=[]
  * 	male_sexchr_dup=[]
  * 	for k in removePAR(sexchr_dels,gen):             # <<<<<<<<<<<<<<
@@ -27781,14 +27771,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":752
+  /* "src/core.pyx":752
  * 		if k[5] not in males: autosome_dels.append(k)
  * 		else: male_sexchr_del.append(k)
  * 	for k in removePAR(sexchr_dups,gen):             # <<<<<<<<<<<<<<
  * 		if k[5] not in males: autosome_dups.append(k)
  * 		else: male_sexchr_dup.append(k)
  */
-  __pyx_t_2 = __pyx_f_5gtcnv_4core_removePAR(__pyx_v_sexchr_dups, __pyx_v_gen); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 752, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_3src_4core_removePAR(__pyx_v_sexchr_dups, __pyx_v_gen); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 752, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_1 = __pyx_t_2; __Pyx_INCREF(__pyx_t_1); __pyx_t_3 = 0;
@@ -27833,7 +27823,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":753
+    /* "src/core.pyx":753
  * 		else: male_sexchr_del.append(k)
  * 	for k in removePAR(sexchr_dups,gen):
  * 		if k[5] not in males: autosome_dups.append(k)             # <<<<<<<<<<<<<<
@@ -27850,7 +27840,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       goto __pyx_L35;
     }
 
-    /* "gtcnv/core.pyx":754
+    /* "src/core.pyx":754
  * 	for k in removePAR(sexchr_dups,gen):
  * 		if k[5] not in males: autosome_dups.append(k)
  * 		else: male_sexchr_dup.append(k)             # <<<<<<<<<<<<<<
@@ -27862,7 +27852,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __pyx_L35:;
 
-    /* "gtcnv/core.pyx":752
+    /* "src/core.pyx":752
  * 		if k[5] not in males: autosome_dels.append(k)
  * 		else: male_sexchr_del.append(k)
  * 	for k in removePAR(sexchr_dups,gen):             # <<<<<<<<<<<<<<
@@ -27872,7 +27862,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":755
+  /* "src/core.pyx":755
  * 		if k[5] not in males: autosome_dups.append(k)
  * 		else: male_sexchr_dup.append(k)
  * 	head = ['chr','start','end','type','size','id','old_covr','covr_GC','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs']             # <<<<<<<<<<<<<<
@@ -27926,7 +27916,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_head = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":756
+  /* "src/core.pyx":756
  * 		else: male_sexchr_dup.append(k)
  * 	head = ['chr','start','end','type','size','id','old_covr','covr_GC','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs']
  * 	pd.options.mode.chained_assignment = None             # <<<<<<<<<<<<<<
@@ -27944,7 +27934,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   if (__Pyx_PyObject_SetAttrStr(__pyx_t_1, __pyx_n_s_chained_assignment, Py_None) < 0) __PYX_ERR(0, 756, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":757
+  /* "src/core.pyx":757
  * 	head = ['chr','start','end','type','size','id','old_covr','covr_GC','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs']
  * 	pd.options.mode.chained_assignment = None
  * 	genos=[]             # <<<<<<<<<<<<<<
@@ -27956,7 +27946,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_genos = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":758
+  /* "src/core.pyx":758
  * 	pd.options.mode.chained_assignment = None
  * 	genos=[]
  * 	outdir = os.getcwd()+'/gtCNV_genotypes/'             # <<<<<<<<<<<<<<
@@ -27992,7 +27982,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_outdir = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":759
+  /* "src/core.pyx":759
  * 	genos=[]
  * 	outdir = os.getcwd()+'/gtCNV_genotypes/'
  * 	if not os.path.exists(outdir): os.makedirs(outdir)             # <<<<<<<<<<<<<<
@@ -28069,7 +28059,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
 
-  /* "gtcnv/core.pyx":760
+  /* "src/core.pyx":760
  * 	outdir = os.getcwd()+'/gtCNV_genotypes/'
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = open(outdir+out,'w')             # <<<<<<<<<<<<<<
@@ -28092,7 +28082,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_ofh = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":761
+  /* "src/core.pyx":761
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = open(outdir+out,'w')
  * 	ofh.write('\t'.join(('#CHROM','START','END','LENGTH','TYPE','ID','COVERAGE','DISCORDANT_PAIRED-END','SPLIT_READS','SNP_COVERAGE','SNPs','HETEROZYGOUS_ALLELIC_DEPTH_RATIO','HETEROZYGOUS_SNPs','COPY_NUMBER','GTL_HOM-ALT','GTL_HET','GTL_HOM-REF','GTL_ALT','PHRED_REF','PHRED_ALT','CLASSIFIER'))+'\n')             # <<<<<<<<<<<<<<
@@ -28134,7 +28124,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":762
+  /* "src/core.pyx":762
  * 	ofh = open(outdir+out,'w')
  * 	ofh.write('\t'.join(('#CHROM','START','END','LENGTH','TYPE','ID','COVERAGE','DISCORDANT_PAIRED-END','SPLIT_READS','SNP_COVERAGE','SNPs','HETEROZYGOUS_ALLELIC_DEPTH_RATIO','HETEROZYGOUS_SNPs','COPY_NUMBER','GTL_HOM-ALT','GTL_HET','GTL_HOM-REF','GTL_ALT','PHRED_REF','PHRED_ALT','CLASSIFIER'))+'\n')
  * 	if len(autosome_dels) > 0:             # <<<<<<<<<<<<<<
@@ -28145,7 +28135,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_7 = ((__pyx_t_3 > 0) != 0);
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":763
+    /* "src/core.pyx":763
  * 	ofh.write('\t'.join(('#CHROM','START','END','LENGTH','TYPE','ID','COVERAGE','DISCORDANT_PAIRED-END','SPLIT_READS','SNP_COVERAGE','SNPs','HETEROZYGOUS_ALLELIC_DEPTH_RATIO','HETEROZYGOUS_SNPs','COPY_NUMBER','GTL_HOM-ALT','GTL_HET','GTL_HOM-REF','GTL_ALT','PHRED_REF','PHRED_ALT','CLASSIFIER'))+'\n')
  * 	if len(autosome_dels) > 0:
  * 		autosome_del_df = pd.DataFrame(autosome_dels)             # <<<<<<<<<<<<<<
@@ -28185,7 +28175,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __pyx_v_autosome_del_df = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":764
+    /* "src/core.pyx":764
  * 	if len(autosome_dels) > 0:
  * 		autosome_del_df = pd.DataFrame(autosome_dels)
  * 		autosome_del_df.columns=head             # <<<<<<<<<<<<<<
@@ -28194,14 +28184,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_autosome_del_df, __pyx_n_s_columns, __pyx_v_head) < 0) __PYX_ERR(0, 764, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":765
+    /* "src/core.pyx":765
  * 		autosome_del_df = pd.DataFrame(autosome_dels)
  * 		autosome_del_df.columns=head
  * 		for x in autosome_del_svm(autosome_del_df).values:             # <<<<<<<<<<<<<<
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			k = (x[0],x[1],x[2],x[4],x[5])
  */
-    __pyx_t_5 = __pyx_f_5gtcnv_4core_autosome_del_svm(__pyx_v_autosome_del_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 765, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_3src_4core_autosome_del_svm(__pyx_v_autosome_del_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 765, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_values); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 765, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
@@ -28249,7 +28239,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_10);
       __pyx_t_10 = 0;
 
-      /* "gtcnv/core.pyx":766
+      /* "src/core.pyx":766
  * 		autosome_del_df.columns=head
  * 		for x in autosome_del_svm(autosome_del_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')             # <<<<<<<<<<<<<<
@@ -28303,7 +28293,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "gtcnv/core.pyx":767
+      /* "src/core.pyx":767
  * 		for x in autosome_del_svm(autosome_del_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			k = (x[0],x[1],x[2],x[4],x[5])             # <<<<<<<<<<<<<<
@@ -28340,7 +28330,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_12);
       __pyx_t_12 = 0;
 
-      /* "gtcnv/core.pyx":768
+      /* "src/core.pyx":768
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			k = (x[0],x[1],x[2],x[4],x[5])
  * 			kk = (x[0],x[1],x[2],x[4])             # <<<<<<<<<<<<<<
@@ -28372,7 +28362,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_kk, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":769
+      /* "src/core.pyx":769
  * 			k = (x[0],x[1],x[2],x[4],x[5])
  * 			kk = (x[0],x[1],x[2],x[4])
  * 			x[6] = format(float(x[6])*2,'.2f')             # <<<<<<<<<<<<<<
@@ -28399,7 +28389,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 6, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 769, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":770
+      /* "src/core.pyx":770
  * 			kk = (x[0],x[1],x[2],x[4])
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))             # <<<<<<<<<<<<<<
@@ -28471,7 +28461,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(PyDict_SetItem(__pyx_v_GQ, __pyx_v_k, __pyx_t_9) < 0)) __PYX_ERR(0, 770, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":771
+      /* "src/core.pyx":771
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			if int(x[13]) == 2:             # <<<<<<<<<<<<<<
@@ -28490,7 +28480,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":772
+        /* "src/core.pyx":772
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			if int(x[13]) == 2:
  * 				x[13]='0/0'             # <<<<<<<<<<<<<<
@@ -28499,7 +28489,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s_0_0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 772, __pyx_L1_error)
 
-        /* "gtcnv/core.pyx":773
+        /* "src/core.pyx":773
  * 			if int(x[13]) == 2:
  * 				x[13]='0/0'
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'             # <<<<<<<<<<<<<<
@@ -28527,7 +28517,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L41;
         }
 
-        /* "gtcnv/core.pyx":775
+        /* "src/core.pyx":775
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'
  * 				else:
  * 					lik=ceil(float(x[18]))             # <<<<<<<<<<<<<<
@@ -28571,7 +28561,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_9);
           __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":776
+          /* "src/core.pyx":776
  * 				else:
  * 					lik=ceil(float(x[18]))
  * 					FILT[k]=likFilter(x,lik,'r')             # <<<<<<<<<<<<<<
@@ -28613,7 +28603,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_9) < 0)) __PYX_ERR(0, 776, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":777
+          /* "src/core.pyx":777
  * 					lik=ceil(float(x[18]))
  * 					FILT[k]=likFilter(x,lik,'r')
  * 					if REF.get(kk)==None: REF[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -28637,7 +28627,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L44;
           }
 
-          /* "gtcnv/core.pyx":778
+          /* "src/core.pyx":778
  * 					FILT[k]=likFilter(x,lik,'r')
  * 					if REF.get(kk)==None: REF[kk]=[lik]
  * 					else: REF[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -28654,7 +28644,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L41:;
 
-        /* "gtcnv/core.pyx":771
+        /* "src/core.pyx":771
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			if int(x[13]) == 2:             # <<<<<<<<<<<<<<
@@ -28664,7 +28654,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L40;
       }
 
-      /* "gtcnv/core.pyx":780
+      /* "src/core.pyx":780
  * 					else: REF[kk].append(lik)
  * 			else:
  * 				if int(x[13])==1: x[13]='0/1'             # <<<<<<<<<<<<<<
@@ -28687,7 +28677,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L45;
         }
 
-        /* "gtcnv/core.pyx":781
+        /* "src/core.pyx":781
  * 			else:
  * 				if int(x[13])==1: x[13]='0/1'
  * 				else: x[13]='1/1'             # <<<<<<<<<<<<<<
@@ -28699,7 +28689,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L45:;
 
-        /* "gtcnv/core.pyx":782
+        /* "src/core.pyx":782
  * 				if int(x[13])==1: x[13]='0/1'
  * 				else: x[13]='1/1'
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'             # <<<<<<<<<<<<<<
@@ -28727,7 +28717,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L46;
         }
 
-        /* "gtcnv/core.pyx":784
+        /* "src/core.pyx":784
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'
  * 				else:
  * 					lik=ceil(float(x[19]))             # <<<<<<<<<<<<<<
@@ -28771,7 +28761,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_1);
           __pyx_t_1 = 0;
 
-          /* "gtcnv/core.pyx":785
+          /* "src/core.pyx":785
  * 				else:
  * 					lik=ceil(float(x[19]))
  * 					FILT[k]=likFilter(x,lik,'n')             # <<<<<<<<<<<<<<
@@ -28813,7 +28803,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_1) < 0)) __PYX_ERR(0, 785, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-          /* "gtcnv/core.pyx":786
+          /* "src/core.pyx":786
  * 					lik=ceil(float(x[19]))
  * 					FILT[k]=likFilter(x,lik,'n')
  * 					if NON.get(kk)==None: NON[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -28837,7 +28827,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L49;
           }
 
-          /* "gtcnv/core.pyx":787
+          /* "src/core.pyx":787
  * 					FILT[k]=likFilter(x,lik,'n')
  * 					if NON.get(kk)==None: NON[kk]=[lik]
  * 					else: NON[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -28856,7 +28846,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       }
       __pyx_L40:;
 
-      /* "gtcnv/core.pyx":788
+      /* "src/core.pyx":788
  * 					if NON.get(kk)==None: NON[kk]=[lik]
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))             # <<<<<<<<<<<<<<
@@ -28868,7 +28858,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_genos, __pyx_t_9); if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 788, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":765
+      /* "src/core.pyx":765
  * 		autosome_del_df = pd.DataFrame(autosome_dels)
  * 		autosome_del_df.columns=head
  * 		for x in autosome_del_svm(autosome_del_df).values:             # <<<<<<<<<<<<<<
@@ -28878,7 +28868,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":762
+    /* "src/core.pyx":762
  * 	ofh = open(outdir+out,'w')
  * 	ofh.write('\t'.join(('#CHROM','START','END','LENGTH','TYPE','ID','COVERAGE','DISCORDANT_PAIRED-END','SPLIT_READS','SNP_COVERAGE','SNPs','HETEROZYGOUS_ALLELIC_DEPTH_RATIO','HETEROZYGOUS_SNPs','COPY_NUMBER','GTL_HOM-ALT','GTL_HET','GTL_HOM-REF','GTL_ALT','PHRED_REF','PHRED_ALT','CLASSIFIER'))+'\n')
  * 	if len(autosome_dels) > 0:             # <<<<<<<<<<<<<<
@@ -28887,7 +28877,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
   }
 
-  /* "gtcnv/core.pyx":789
+  /* "src/core.pyx":789
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	if len(autosome_dups) > 0:             # <<<<<<<<<<<<<<
@@ -28898,7 +28888,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_7 = ((__pyx_t_3 > 0) != 0);
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":790
+    /* "src/core.pyx":790
  * 			genos.append(tuple(x))
  * 	if len(autosome_dups) > 0:
  * 		autosome_dup_df = pd.DataFrame(autosome_dups)             # <<<<<<<<<<<<<<
@@ -28938,7 +28928,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __pyx_v_autosome_dup_df = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":791
+    /* "src/core.pyx":791
  * 	if len(autosome_dups) > 0:
  * 		autosome_dup_df = pd.DataFrame(autosome_dups)
  * 		autosome_dup_df.columns=head             # <<<<<<<<<<<<<<
@@ -28947,14 +28937,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_autosome_dup_df, __pyx_n_s_columns, __pyx_v_head) < 0) __PYX_ERR(0, 791, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":792
+    /* "src/core.pyx":792
  * 		autosome_dup_df = pd.DataFrame(autosome_dups)
  * 		autosome_dup_df.columns=head
  * 		for x in autosome_dup_svm(autosome_dup_df).values:             # <<<<<<<<<<<<<<
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6])*2,'.2f')
  */
-    __pyx_t_5 = __pyx_f_5gtcnv_4core_autosome_dup_svm(__pyx_v_autosome_dup_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 792, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_3src_4core_autosome_dup_svm(__pyx_v_autosome_dup_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 792, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 792, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -29002,7 +28992,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":793
+      /* "src/core.pyx":793
  * 		autosome_dup_df.columns=head
  * 		for x in autosome_dup_svm(autosome_dup_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')             # <<<<<<<<<<<<<<
@@ -29056,7 +29046,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":794
+      /* "src/core.pyx":794
  * 		for x in autosome_dup_svm(autosome_dup_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6])*2,'.2f')             # <<<<<<<<<<<<<<
@@ -29083,7 +29073,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 6, __pyx_t_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 794, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":795
+      /* "src/core.pyx":795
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))             # <<<<<<<<<<<<<<
@@ -29156,7 +29146,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(PyDict_SetItem(__pyx_v_GQ, __pyx_v_k, __pyx_t_2) < 0)) __PYX_ERR(0, 795, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":796
+      /* "src/core.pyx":796
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			if int(x[13]) == 2:             # <<<<<<<<<<<<<<
@@ -29175,7 +29165,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":797
+        /* "src/core.pyx":797
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			if int(x[13]) == 2:
  * 				x[13]='0/0'             # <<<<<<<<<<<<<<
@@ -29184,7 +29174,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s_0_0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 797, __pyx_L1_error)
 
-        /* "gtcnv/core.pyx":798
+        /* "src/core.pyx":798
  * 			if int(x[13]) == 2:
  * 				x[13]='0/0'
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'             # <<<<<<<<<<<<<<
@@ -29212,7 +29202,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L54;
         }
 
-        /* "gtcnv/core.pyx":800
+        /* "src/core.pyx":800
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'
  * 				else:
  * 					lik=ceil(float(x[18]))             # <<<<<<<<<<<<<<
@@ -29256,7 +29246,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "gtcnv/core.pyx":801
+          /* "src/core.pyx":801
  * 				else:
  * 					lik=ceil(float(x[18]))
  * 					FILT[k]=likFilter(x,lik,'r')             # <<<<<<<<<<<<<<
@@ -29299,7 +29289,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_2) < 0)) __PYX_ERR(0, 801, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "gtcnv/core.pyx":802
+          /* "src/core.pyx":802
  * 					lik=ceil(float(x[18]))
  * 					FILT[k]=likFilter(x,lik,'r')
  * 					if REF.get(kk)==None: REF[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -29325,7 +29315,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L57;
           }
 
-          /* "gtcnv/core.pyx":803
+          /* "src/core.pyx":803
  * 					FILT[k]=likFilter(x,lik,'r')
  * 					if REF.get(kk)==None: REF[kk]=[lik]
  * 					else: REF[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -29343,7 +29333,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L54:;
 
-        /* "gtcnv/core.pyx":796
+        /* "src/core.pyx":796
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			if int(x[13]) == 2:             # <<<<<<<<<<<<<<
@@ -29353,7 +29343,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L53;
       }
 
-      /* "gtcnv/core.pyx":805
+      /* "src/core.pyx":805
  * 					else: REF[kk].append(lik)
  * 			else:
  * 				if int(x[13])==3: x[13]='0/1'             # <<<<<<<<<<<<<<
@@ -29376,7 +29366,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L58;
         }
 
-        /* "gtcnv/core.pyx":806
+        /* "src/core.pyx":806
  * 			else:
  * 				if int(x[13])==3: x[13]='0/1'
  * 				else: x[13]='1/1'             # <<<<<<<<<<<<<<
@@ -29388,7 +29378,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L58:;
 
-        /* "gtcnv/core.pyx":807
+        /* "src/core.pyx":807
  * 				if int(x[13])==3: x[13]='0/1'
  * 				else: x[13]='1/1'
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'             # <<<<<<<<<<<<<<
@@ -29416,7 +29406,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L59;
         }
 
-        /* "gtcnv/core.pyx":809
+        /* "src/core.pyx":809
  * 				if x[5] not in males and x[0] == 'chrY': x[13]='.'
  * 				else:
  * 					lik=ceil(float(x[19]))             # <<<<<<<<<<<<<<
@@ -29460,7 +29450,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_1);
           __pyx_t_1 = 0;
 
-          /* "gtcnv/core.pyx":810
+          /* "src/core.pyx":810
  * 				else:
  * 					lik=ceil(float(x[19]))
  * 					FILT[k]=likFilter(x,lik,'n')             # <<<<<<<<<<<<<<
@@ -29503,7 +29493,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_1) < 0)) __PYX_ERR(0, 810, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-          /* "gtcnv/core.pyx":811
+          /* "src/core.pyx":811
  * 					lik=ceil(float(x[19]))
  * 					FILT[k]=likFilter(x,lik,'n')
  * 					if NON.get(kk)==None: NON[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -29529,7 +29519,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L62;
           }
 
-          /* "gtcnv/core.pyx":812
+          /* "src/core.pyx":812
  * 					FILT[k]=likFilter(x,lik,'n')
  * 					if NON.get(kk)==None: NON[kk]=[lik]
  * 					else: NON[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -29549,7 +29539,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       }
       __pyx_L53:;
 
-      /* "gtcnv/core.pyx":813
+      /* "src/core.pyx":813
  * 					if NON.get(kk)==None: NON[kk]=[lik]
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))             # <<<<<<<<<<<<<<
@@ -29561,7 +29551,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_genos, __pyx_t_2); if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 813, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":792
+      /* "src/core.pyx":792
  * 		autosome_dup_df = pd.DataFrame(autosome_dups)
  * 		autosome_dup_df.columns=head
  * 		for x in autosome_dup_svm(autosome_dup_df).values:             # <<<<<<<<<<<<<<
@@ -29571,7 +29561,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":789
+    /* "src/core.pyx":789
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	if len(autosome_dups) > 0:             # <<<<<<<<<<<<<<
@@ -29580,7 +29570,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
   }
 
-  /* "gtcnv/core.pyx":814
+  /* "src/core.pyx":814
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	if len(male_sexchr_del) > 0:             # <<<<<<<<<<<<<<
@@ -29591,7 +29581,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_7 = ((__pyx_t_3 > 0) != 0);
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":815
+    /* "src/core.pyx":815
  * 			genos.append(tuple(x))
  * 	if len(male_sexchr_del) > 0:
  * 		sexchr_del_df = pd.DataFrame(male_sexchr_del)             # <<<<<<<<<<<<<<
@@ -29631,7 +29621,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __pyx_v_sexchr_del_df = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":816
+    /* "src/core.pyx":816
  * 	if len(male_sexchr_del) > 0:
  * 		sexchr_del_df = pd.DataFrame(male_sexchr_del)
  * 		sexchr_del_df.columns=head             # <<<<<<<<<<<<<<
@@ -29640,14 +29630,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_sexchr_del_df, __pyx_n_s_columns, __pyx_v_head) < 0) __PYX_ERR(0, 816, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":817
+    /* "src/core.pyx":817
  * 		sexchr_del_df = pd.DataFrame(male_sexchr_del)
  * 		sexchr_del_df.columns=head
  * 		for x in sexchr_del_svm(sexchr_del_df).values:             # <<<<<<<<<<<<<<
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6]),'.2f')
  */
-    __pyx_t_5 = __pyx_f_5gtcnv_4core_sexchr_del_svm(__pyx_v_sexchr_del_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 817, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_3src_4core_sexchr_del_svm(__pyx_v_sexchr_del_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 817, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 817, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -29695,7 +29685,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":818
+      /* "src/core.pyx":818
  * 		sexchr_del_df.columns=head
  * 		for x in sexchr_del_svm(sexchr_del_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')             # <<<<<<<<<<<<<<
@@ -29749,7 +29739,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":819
+      /* "src/core.pyx":819
  * 		for x in sexchr_del_svm(sexchr_del_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6]),'.2f')             # <<<<<<<<<<<<<<
@@ -29775,7 +29765,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 6, __pyx_t_9, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 819, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":820
+      /* "src/core.pyx":820
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6]),'.2f')
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))             # <<<<<<<<<<<<<<
@@ -29829,7 +29819,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(PyDict_SetItem(__pyx_v_GQ, __pyx_v_k, __pyx_t_12) < 0)) __PYX_ERR(0, 820, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "gtcnv/core.pyx":821
+      /* "src/core.pyx":821
  * 			x[6] = format(float(x[6]),'.2f')
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			HEMI[kk]=1             # <<<<<<<<<<<<<<
@@ -29839,7 +29829,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(!__pyx_v_kk)) { __Pyx_RaiseUnboundLocalError("kk"); __PYX_ERR(0, 821, __pyx_L1_error) }
       if (unlikely(PyDict_SetItem(__pyx_v_HEMI, __pyx_v_kk, __pyx_int_1) < 0)) __PYX_ERR(0, 821, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":822
+      /* "src/core.pyx":822
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			HEMI[kk]=1
  * 			if int(x[13]) == 1:             # <<<<<<<<<<<<<<
@@ -29858,7 +29848,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":823
+        /* "src/core.pyx":823
  * 			HEMI[kk]=1
  * 			if int(x[13]) == 1:
  * 				x[13]='0'             # <<<<<<<<<<<<<<
@@ -29867,7 +29857,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s_0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 823, __pyx_L1_error)
 
-        /* "gtcnv/core.pyx":824
+        /* "src/core.pyx":824
  * 			if int(x[13]) == 1:
  * 				x[13]='0'
  * 				lik=ceil(float(x[18]))             # <<<<<<<<<<<<<<
@@ -29910,7 +29900,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_12);
         __pyx_t_12 = 0;
 
-        /* "gtcnv/core.pyx":825
+        /* "src/core.pyx":825
  * 				x[13]='0'
  * 				lik=ceil(float(x[18]))
  * 				FILT[k]=likFilter(x,lik,'r')             # <<<<<<<<<<<<<<
@@ -29953,7 +29943,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_12) < 0)) __PYX_ERR(0, 825, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-        /* "gtcnv/core.pyx":826
+        /* "src/core.pyx":826
  * 				lik=ceil(float(x[18]))
  * 				FILT[k]=likFilter(x,lik,'r')
  * 				if REF.get(kk)==None: REF[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -29979,7 +29969,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L67;
         }
 
-        /* "gtcnv/core.pyx":827
+        /* "src/core.pyx":827
  * 				FILT[k]=likFilter(x,lik,'r')
  * 				if REF.get(kk)==None: REF[kk]=[lik]
  * 				else: REF[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -29995,7 +29985,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L67:;
 
-        /* "gtcnv/core.pyx":822
+        /* "src/core.pyx":822
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			HEMI[kk]=1
  * 			if int(x[13]) == 1:             # <<<<<<<<<<<<<<
@@ -30005,7 +29995,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L66;
       }
 
-      /* "gtcnv/core.pyx":829
+      /* "src/core.pyx":829
  * 				else: REF[kk].append(lik)
  * 			else:
  * 				x[13]='1'             # <<<<<<<<<<<<<<
@@ -30015,7 +30005,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       /*else*/ {
         if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 829, __pyx_L1_error)
 
-        /* "gtcnv/core.pyx":830
+        /* "src/core.pyx":830
  * 			else:
  * 				x[13]='1'
  * 				lik=ceil(float(x[19]))             # <<<<<<<<<<<<<<
@@ -30058,7 +30048,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":831
+        /* "src/core.pyx":831
  * 				x[13]='1'
  * 				lik=ceil(float(x[19]))
  * 				FILT[k]=likFilter(x,lik,'n')             # <<<<<<<<<<<<<<
@@ -30101,7 +30091,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_9) < 0)) __PYX_ERR(0, 831, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":832
+        /* "src/core.pyx":832
  * 				lik=ceil(float(x[19]))
  * 				FILT[k]=likFilter(x,lik,'n')
  * 				if NON.get(kk)==None: NON[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -30127,7 +30117,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L68;
         }
 
-        /* "gtcnv/core.pyx":833
+        /* "src/core.pyx":833
  * 				FILT[k]=likFilter(x,lik,'n')
  * 				if NON.get(kk)==None: NON[kk]=[lik]
  * 				else: NON[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -30145,7 +30135,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       }
       __pyx_L66:;
 
-      /* "gtcnv/core.pyx":834
+      /* "src/core.pyx":834
  * 				if NON.get(kk)==None: NON[kk]=[lik]
  * 				else: NON[kk].append(lik)
  * 			genos.append(tuple(x))             # <<<<<<<<<<<<<<
@@ -30157,7 +30147,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_genos, __pyx_t_12); if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 834, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "gtcnv/core.pyx":817
+      /* "src/core.pyx":817
  * 		sexchr_del_df = pd.DataFrame(male_sexchr_del)
  * 		sexchr_del_df.columns=head
  * 		for x in sexchr_del_svm(sexchr_del_df).values:             # <<<<<<<<<<<<<<
@@ -30167,7 +30157,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":814
+    /* "src/core.pyx":814
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	if len(male_sexchr_del) > 0:             # <<<<<<<<<<<<<<
@@ -30176,7 +30166,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
   }
 
-  /* "gtcnv/core.pyx":835
+  /* "src/core.pyx":835
  * 				else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	if len(male_sexchr_dup) > 0:             # <<<<<<<<<<<<<<
@@ -30187,7 +30177,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_7 = ((__pyx_t_3 > 0) != 0);
   if (__pyx_t_7) {
 
-    /* "gtcnv/core.pyx":836
+    /* "src/core.pyx":836
  * 			genos.append(tuple(x))
  * 	if len(male_sexchr_dup) > 0:
  * 		sexchr_dup_df = pd.DataFrame(male_sexchr_dup)             # <<<<<<<<<<<<<<
@@ -30227,7 +30217,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     __pyx_v_sexchr_dup_df = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":837
+    /* "src/core.pyx":837
  * 	if len(male_sexchr_dup) > 0:
  * 		sexchr_dup_df = pd.DataFrame(male_sexchr_dup)
  * 		sexchr_dup_df.columns=head             # <<<<<<<<<<<<<<
@@ -30236,14 +30226,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_sexchr_dup_df, __pyx_n_s_columns, __pyx_v_head) < 0) __PYX_ERR(0, 837, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":838
+    /* "src/core.pyx":838
  * 		sexchr_dup_df = pd.DataFrame(male_sexchr_dup)
  * 		sexchr_dup_df.columns=head
  * 		for x in sexchr_dup_svm(sexchr_dup_df).values:             # <<<<<<<<<<<<<<
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6])*2,'.2f')
  */
-    __pyx_t_5 = __pyx_f_5gtcnv_4core_sexchr_dup_svm(__pyx_v_sexchr_dup_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 838, __pyx_L1_error)
+    __pyx_t_5 = __pyx_f_3src_4core_sexchr_dup_svm(__pyx_v_sexchr_dup_df); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 838, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_values); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 838, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
@@ -30291,7 +30281,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":839
+      /* "src/core.pyx":839
  * 		sexchr_dup_df.columns=head
  * 		for x in sexchr_dup_svm(sexchr_dup_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')             # <<<<<<<<<<<<<<
@@ -30345,7 +30335,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":840
+      /* "src/core.pyx":840
  * 		for x in sexchr_dup_svm(sexchr_dup_df).values:
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6])*2,'.2f')             # <<<<<<<<<<<<<<
@@ -30372,7 +30362,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 6, __pyx_t_9, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 840, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":841
+      /* "src/core.pyx":841
  * 			ofh.write('\t'.join(map(str,x))+'\n')
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))             # <<<<<<<<<<<<<<
@@ -30426,7 +30416,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(PyDict_SetItem(__pyx_v_GQ, __pyx_v_k, __pyx_t_11) < 0)) __PYX_ERR(0, 841, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-      /* "gtcnv/core.pyx":842
+      /* "src/core.pyx":842
  * 			x[6] = format(float(x[6])*2,'.2f')
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			HEMI[kk]=1             # <<<<<<<<<<<<<<
@@ -30436,7 +30426,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(!__pyx_v_kk)) { __Pyx_RaiseUnboundLocalError("kk"); __PYX_ERR(0, 842, __pyx_L1_error) }
       if (unlikely(PyDict_SetItem(__pyx_v_HEMI, __pyx_v_kk, __pyx_int_1) < 0)) __PYX_ERR(0, 842, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":843
+      /* "src/core.pyx":843
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			HEMI[kk]=1
  * 			if int(x[13]) == 1:             # <<<<<<<<<<<<<<
@@ -30455,7 +30445,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       if (__pyx_t_7) {
 
-        /* "gtcnv/core.pyx":844
+        /* "src/core.pyx":844
  * 			HEMI[kk]=1
  * 			if int(x[13]) == 1:
  * 				x[13]='0'             # <<<<<<<<<<<<<<
@@ -30464,7 +30454,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s_0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 844, __pyx_L1_error)
 
-        /* "gtcnv/core.pyx":845
+        /* "src/core.pyx":845
  * 			if int(x[13]) == 1:
  * 				x[13]='0'
  * 				lik=ceil(float(x[18]))             # <<<<<<<<<<<<<<
@@ -30507,7 +30497,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_11);
         __pyx_t_11 = 0;
 
-        /* "gtcnv/core.pyx":846
+        /* "src/core.pyx":846
  * 				x[13]='0'
  * 				lik=ceil(float(x[18]))
  * 				if x[5] not in males and x[0] == 'chrY':             # <<<<<<<<<<<<<<
@@ -30532,7 +30522,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __pyx_L74_bool_binop_done:;
         if (__pyx_t_7) {
 
-          /* "gtcnv/core.pyx":847
+          /* "src/core.pyx":847
  * 				lik=ceil(float(x[18]))
  * 				if x[5] not in males and x[0] == 'chrY':
  * 					x[13]='.'             # <<<<<<<<<<<<<<
@@ -30541,7 +30531,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
           if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s__72, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 847, __pyx_L1_error)
 
-          /* "gtcnv/core.pyx":848
+          /* "src/core.pyx":848
  * 				if x[5] not in males and x[0] == 'chrY':
  * 					x[13]='.'
  * 					FILT[k]=0             # <<<<<<<<<<<<<<
@@ -30551,7 +30541,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(!__pyx_v_k)) { __Pyx_RaiseUnboundLocalError("k"); __PYX_ERR(0, 848, __pyx_L1_error) }
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_int_0) < 0)) __PYX_ERR(0, 848, __pyx_L1_error)
 
-          /* "gtcnv/core.pyx":846
+          /* "src/core.pyx":846
  * 				x[13]='0'
  * 				lik=ceil(float(x[18]))
  * 				if x[5] not in males and x[0] == 'chrY':             # <<<<<<<<<<<<<<
@@ -30560,7 +30550,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         }
 
-        /* "gtcnv/core.pyx":849
+        /* "src/core.pyx":849
  * 					x[13]='.'
  * 					FILT[k]=0
  * 				if x[5] in males:             # <<<<<<<<<<<<<<
@@ -30574,7 +30564,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __pyx_t_14 = (__pyx_t_7 != 0);
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":850
+          /* "src/core.pyx":850
  * 					FILT[k]=0
  * 				if x[5] in males:
  * 					FILT[k]=likFilter(x,lik,'r')             # <<<<<<<<<<<<<<
@@ -30617,7 +30607,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_11) < 0)) __PYX_ERR(0, 850, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-          /* "gtcnv/core.pyx":851
+          /* "src/core.pyx":851
  * 				if x[5] in males:
  * 					FILT[k]=likFilter(x,lik,'r')
  * 					if REF.get(kk)==None: REF[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -30643,7 +30633,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L77;
           }
 
-          /* "gtcnv/core.pyx":852
+          /* "src/core.pyx":852
  * 					FILT[k]=likFilter(x,lik,'r')
  * 					if REF.get(kk)==None: REF[kk]=[lik]
  * 					else: REF[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -30659,7 +30649,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           }
           __pyx_L77:;
 
-          /* "gtcnv/core.pyx":849
+          /* "src/core.pyx":849
  * 					x[13]='.'
  * 					FILT[k]=0
  * 				if x[5] in males:             # <<<<<<<<<<<<<<
@@ -30668,7 +30658,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         }
 
-        /* "gtcnv/core.pyx":843
+        /* "src/core.pyx":843
  * 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
  * 			HEMI[kk]=1
  * 			if int(x[13]) == 1:             # <<<<<<<<<<<<<<
@@ -30678,7 +30668,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L72;
       }
 
-      /* "gtcnv/core.pyx":854
+      /* "src/core.pyx":854
  * 					else: REF[kk].append(lik)
  * 			else:
  * 				x[13]='1'             # <<<<<<<<<<<<<<
@@ -30688,7 +30678,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       /*else*/ {
         if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s_1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 854, __pyx_L1_error)
 
-        /* "gtcnv/core.pyx":855
+        /* "src/core.pyx":855
  * 			else:
  * 				x[13]='1'
  * 				lik=ceil(float(x[19]))             # <<<<<<<<<<<<<<
@@ -30731,7 +30721,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_9);
         __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":856
+        /* "src/core.pyx":856
  * 				x[13]='1'
  * 				lik=ceil(float(x[19]))
  * 				if x[5] not in males and x[0] == 'chrY':             # <<<<<<<<<<<<<<
@@ -30756,7 +30746,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __pyx_L79_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":857
+          /* "src/core.pyx":857
  * 				lik=ceil(float(x[19]))
  * 				if x[5] not in males and x[0] == 'chrY':
  * 						x[13]='.'             # <<<<<<<<<<<<<<
@@ -30765,7 +30755,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
           if (unlikely(__Pyx_SetItemInt(__pyx_v_x, 13, __pyx_kp_s__72, long, 1, __Pyx_PyInt_From_long, 0, 0, 0) < 0)) __PYX_ERR(0, 857, __pyx_L1_error)
 
-          /* "gtcnv/core.pyx":858
+          /* "src/core.pyx":858
  * 				if x[5] not in males and x[0] == 'chrY':
  * 						x[13]='.'
  * 						FILT[k]=0             # <<<<<<<<<<<<<<
@@ -30775,7 +30765,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(!__pyx_v_k)) { __Pyx_RaiseUnboundLocalError("k"); __PYX_ERR(0, 858, __pyx_L1_error) }
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_int_0) < 0)) __PYX_ERR(0, 858, __pyx_L1_error)
 
-          /* "gtcnv/core.pyx":856
+          /* "src/core.pyx":856
  * 				x[13]='1'
  * 				lik=ceil(float(x[19]))
  * 				if x[5] not in males and x[0] == 'chrY':             # <<<<<<<<<<<<<<
@@ -30784,7 +30774,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
         }
 
-        /* "gtcnv/core.pyx":859
+        /* "src/core.pyx":859
  * 						x[13]='.'
  * 						FILT[k]=0
  * 				if x[5] in males:             # <<<<<<<<<<<<<<
@@ -30798,7 +30788,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
         __pyx_t_6 = (__pyx_t_14 != 0);
         if (__pyx_t_6) {
 
-          /* "gtcnv/core.pyx":860
+          /* "src/core.pyx":860
  * 						FILT[k]=0
  * 				if x[5] in males:
  * 					FILT[k]=likFilter(x,lik,'n')             # <<<<<<<<<<<<<<
@@ -30841,7 +30831,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_FILT, __pyx_v_k, __pyx_t_9) < 0)) __PYX_ERR(0, 860, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":861
+          /* "src/core.pyx":861
  * 				if x[5] in males:
  * 					FILT[k]=likFilter(x,lik,'n')
  * 					if NON.get(kk)==None: NON[kk]=[lik]             # <<<<<<<<<<<<<<
@@ -30867,7 +30857,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L82;
           }
 
-          /* "gtcnv/core.pyx":862
+          /* "src/core.pyx":862
  * 					FILT[k]=likFilter(x,lik,'n')
  * 					if NON.get(kk)==None: NON[kk]=[lik]
  * 					else: NON[kk].append(lik)             # <<<<<<<<<<<<<<
@@ -30883,7 +30873,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
           }
           __pyx_L82:;
 
-          /* "gtcnv/core.pyx":859
+          /* "src/core.pyx":859
  * 						x[13]='.'
  * 						FILT[k]=0
  * 				if x[5] in males:             # <<<<<<<<<<<<<<
@@ -30894,7 +30884,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       }
       __pyx_L72:;
 
-      /* "gtcnv/core.pyx":863
+      /* "src/core.pyx":863
  * 					if NON.get(kk)==None: NON[kk]=[lik]
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))             # <<<<<<<<<<<<<<
@@ -30906,7 +30896,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_genos, __pyx_t_11); if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 863, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-      /* "gtcnv/core.pyx":838
+      /* "src/core.pyx":838
  * 		sexchr_dup_df = pd.DataFrame(male_sexchr_dup)
  * 		sexchr_dup_df.columns=head
  * 		for x in sexchr_dup_svm(sexchr_dup_df).values:             # <<<<<<<<<<<<<<
@@ -30916,7 +30906,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":835
+    /* "src/core.pyx":835
  * 				else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	if len(male_sexchr_dup) > 0:             # <<<<<<<<<<<<<<
@@ -30925,7 +30915,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  */
   }
 
-  /* "gtcnv/core.pyx":864
+  /* "src/core.pyx":864
  * 					else: NON[kk].append(lik)
  * 			genos.append(tuple(x))
  * 	refmed={}             # <<<<<<<<<<<<<<
@@ -30937,7 +30927,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_refmed = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":865
+  /* "src/core.pyx":865
  * 			genos.append(tuple(x))
  * 	refmed={}
  * 	nonmed={}             # <<<<<<<<<<<<<<
@@ -30949,7 +30939,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_nonmed = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":866
+  /* "src/core.pyx":866
  * 	refmed={}
  * 	nonmed={}
  * 	ofh.close()             # <<<<<<<<<<<<<<
@@ -30978,7 +30968,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":867
+  /* "src/core.pyx":867
  * 	nonmed={}
  * 	ofh.close()
  * 	for x in REF: refmed[x]=int(np.median(REF[x]))             # <<<<<<<<<<<<<<
@@ -31039,7 +31029,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":868
+  /* "src/core.pyx":868
  * 	ofh.close()
  * 	for x in REF: refmed[x]=int(np.median(REF[x]))
  * 	for x in NON: nonmed[x]=int(np.median(NON[x]))             # <<<<<<<<<<<<<<
@@ -31100,7 +31090,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":869
+  /* "src/core.pyx":869
  * 	for x in REF: refmed[x]=int(np.median(REF[x]))
  * 	for x in NON: nonmed[x]=int(np.median(NON[x]))
  * 	return genos,refmed,nonmed,GQ,HEMI,FILT             # <<<<<<<<<<<<<<
@@ -31132,7 +31122,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":727
+  /* "src/core.pyx":727
  * 		elif sz>5000 and lik<10: passflag=0
  * 	return passflag
  * def genotype(feats,sex,gen,out):             # <<<<<<<<<<<<<<
@@ -31149,7 +31139,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("gtcnv.core.genotype", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.genotype", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_REF);
@@ -31188,7 +31178,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":870
+/* "src/core.pyx":870
  * 	for x in NON: nonmed[x]=int(np.median(NON[x]))
  * 	return genos,refmed,nonmed,GQ,HEMI,FILT
  * cdef del_autosome_tab(df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -31196,7 +31186,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_18genotype(CYTHON_UNUSED PyObject *__pyx_
  * 	cn=[]
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
+static PyObject *__pyx_f_3src_4core_del_autosome_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
   PyObject *__pyx_v_cn = NULL;
   PyObject *__pyx_v_x = NULL;
   PyObject *__pyx_r = NULL;
@@ -31214,7 +31204,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   __Pyx_RefNannySetupContext("del_autosome_tab", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":871
+  /* "src/core.pyx":871
  * 	return genos,refmed,nonmed,GQ,HEMI,FILT
  * cdef del_autosome_tab(df,lik,clfname):
  * 	df['classif']=clfname             # <<<<<<<<<<<<<<
@@ -31223,7 +31213,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_classif, __pyx_v_clfname) < 0)) __PYX_ERR(0, 871, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":872
+  /* "src/core.pyx":872
  * cdef del_autosome_tab(df,lik,clfname):
  * 	df['classif']=clfname
  * 	cn=[]             # <<<<<<<<<<<<<<
@@ -31235,7 +31225,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   __pyx_v_cn = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":873
+  /* "src/core.pyx":873
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -31284,7 +31274,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":874
+    /* "src/core.pyx":874
  * 	cn=[]
  * 	for x in lik:
  * 		if x[0] > x[1] and x[0] > x[2]: cn.append(0)             # <<<<<<<<<<<<<<
@@ -31321,7 +31311,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":875
+    /* "src/core.pyx":875
  * 	for x in lik:
  * 		if x[0] > x[1] and x[0] > x[2]: cn.append(0)
  * 		elif x[1] > x[0] and x[1] > x[2]: cn.append(1)             # <<<<<<<<<<<<<<
@@ -31358,7 +31348,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":876
+    /* "src/core.pyx":876
  * 		if x[0] > x[1] and x[0] > x[2]: cn.append(0)
  * 		elif x[1] > x[0] and x[1] > x[2]: cn.append(1)
  * 		elif x[2] > x[0] and x[2] > x[1]: cn.append(2)             # <<<<<<<<<<<<<<
@@ -31395,7 +31385,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":877
+    /* "src/core.pyx":877
  * 		elif x[1] > x[0] and x[1] > x[2]: cn.append(1)
  * 		elif x[2] > x[0] and x[2] > x[1]: cn.append(2)
  * 		else: cn.append(2)             # <<<<<<<<<<<<<<
@@ -31407,7 +31397,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
     }
     __pyx_L5:;
 
-    /* "gtcnv/core.pyx":873
+    /* "src/core.pyx":873
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -31417,7 +31407,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":878
+  /* "src/core.pyx":878
  * 		elif x[2] > x[0] and x[2] > x[1]: cn.append(2)
  * 		else: cn.append(2)
  * 	df['copy_number']=cn             # <<<<<<<<<<<<<<
@@ -31426,7 +31416,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_copy_number, __pyx_v_cn) < 0)) __PYX_ERR(0, 878, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":879
+  /* "src/core.pyx":879
  * 		else: cn.append(2)
  * 	df['copy_number']=cn
  * 	df['likHOM'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -31438,7 +31428,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likHOM, __pyx_t_1) < 0)) __PYX_ERR(0, 879, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":880
+  /* "src/core.pyx":880
  * 	df['copy_number']=cn
  * 	df['likHOM'] = lik[:,0]
  * 	df['likHET'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -31450,7 +31440,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likHET, __pyx_t_1) < 0)) __PYX_ERR(0, 880, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":881
+  /* "src/core.pyx":881
  * 	df['likHOM'] = lik[:,0]
  * 	df['likHET'] = lik[:,1]
  * 	df['likREF'] = lik[:,2]             # <<<<<<<<<<<<<<
@@ -31462,7 +31452,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likREF, __pyx_t_1) < 0)) __PYX_ERR(0, 881, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":882
+  /* "src/core.pyx":882
  * 	df['likHET'] = lik[:,1]
  * 	df['likREF'] = lik[:,2]
  * 	df['NONREF'] = 1 - df['likREF']             # <<<<<<<<<<<<<<
@@ -31477,7 +31467,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_NONREF, __pyx_t_4) < 0)) __PYX_ERR(0, 882, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":883
+  /* "src/core.pyx":883
  * 	df['likREF'] = lik[:,2]
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])             # <<<<<<<<<<<<<<
@@ -31526,7 +31516,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_REF, __pyx_t_6) < 0)) __PYX_ERR(0, 883, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":884
+  /* "src/core.pyx":884
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])             # <<<<<<<<<<<<<<
@@ -31575,7 +31565,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_NONREF, __pyx_t_10) < 0)) __PYX_ERR(0, 884, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "gtcnv/core.pyx":885
+  /* "src/core.pyx":885
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likHOM','likHET','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]             # <<<<<<<<<<<<<<
@@ -31653,7 +31643,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":886
+  /* "src/core.pyx":886
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likHOM','likHET','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df             # <<<<<<<<<<<<<<
@@ -31665,7 +31655,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   __pyx_r = __pyx_v_df;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":870
+  /* "src/core.pyx":870
  * 	for x in NON: nonmed[x]=int(np.median(NON[x]))
  * 	return genos,refmed,nonmed,GQ,HEMI,FILT
  * cdef del_autosome_tab(df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -31680,7 +31670,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("gtcnv.core.del_autosome_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.del_autosome_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cn);
@@ -31691,7 +31681,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":887
+/* "src/core.pyx":887
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likHOM','likHET','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df
  * cdef del_sexchr_tab (df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -31699,7 +31689,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_autosome_tab(PyObject *__pyx_v_df, PyO
  * 	cn=[]
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
+static PyObject *__pyx_f_3src_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
   PyObject *__pyx_v_cn = NULL;
   PyObject *__pyx_v_x = NULL;
   PyObject *__pyx_r = NULL;
@@ -31716,7 +31706,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __Pyx_RefNannySetupContext("del_sexchr_tab", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":888
+  /* "src/core.pyx":888
  * 	return df
  * cdef del_sexchr_tab (df,lik,clfname):
  * 	df['classif']=clfname             # <<<<<<<<<<<<<<
@@ -31725,7 +31715,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_classif, __pyx_v_clfname) < 0)) __PYX_ERR(0, 888, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":889
+  /* "src/core.pyx":889
  * cdef del_sexchr_tab (df,lik,clfname):
  * 	df['classif']=clfname
  * 	cn=[]             # <<<<<<<<<<<<<<
@@ -31737,7 +31727,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __pyx_v_cn = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":890
+  /* "src/core.pyx":890
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -31786,7 +31776,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":891
+    /* "src/core.pyx":891
  * 	cn=[]
  * 	for x in lik:
  * 		if x[0] > x[1]: cn.append(0)             # <<<<<<<<<<<<<<
@@ -31807,7 +31797,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":892
+    /* "src/core.pyx":892
  * 	for x in lik:
  * 		if x[0] > x[1]: cn.append(0)
  * 		elif x[1] > x[0]: cn.append(1)             # <<<<<<<<<<<<<<
@@ -31828,7 +31818,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":893
+    /* "src/core.pyx":893
  * 		if x[0] > x[1]: cn.append(0)
  * 		elif x[1] > x[0]: cn.append(1)
  * 		else: cn.append(1)             # <<<<<<<<<<<<<<
@@ -31840,7 +31830,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
     }
     __pyx_L5:;
 
-    /* "gtcnv/core.pyx":890
+    /* "src/core.pyx":890
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -31850,7 +31840,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":894
+  /* "src/core.pyx":894
  * 		elif x[1] > x[0]: cn.append(1)
  * 		else: cn.append(1)
  * 	df['copy_number']=cn             # <<<<<<<<<<<<<<
@@ -31859,7 +31849,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_copy_number, __pyx_v_cn) < 0)) __PYX_ERR(0, 894, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":895
+  /* "src/core.pyx":895
  * 		else: cn.append(1)
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -31871,7 +31861,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likVAR, __pyx_t_1) < 0)) __PYX_ERR(0, 895, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":896
+  /* "src/core.pyx":896
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]
  * 	df['likREF'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -31883,7 +31873,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likREF, __pyx_t_1) < 0)) __PYX_ERR(0, 896, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":897
+  /* "src/core.pyx":897
  * 	df['likVAR'] = lik[:,0]
  * 	df['likREF'] = lik[:,1]
  * 	df['NONREF'] = 1 - df['likREF']             # <<<<<<<<<<<<<<
@@ -31898,7 +31888,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_NONREF, __pyx_t_4) < 0)) __PYX_ERR(0, 897, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":898
+  /* "src/core.pyx":898
  * 	df['likREF'] = lik[:,1]
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])             # <<<<<<<<<<<<<<
@@ -31947,7 +31937,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_REF, __pyx_t_5) < 0)) __PYX_ERR(0, 898, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":899
+  /* "src/core.pyx":899
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])             # <<<<<<<<<<<<<<
@@ -31996,7 +31986,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_NONREF, __pyx_t_9) < 0)) __PYX_ERR(0, 899, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":900
+  /* "src/core.pyx":900
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]             # <<<<<<<<<<<<<<
@@ -32074,7 +32064,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":901
+  /* "src/core.pyx":901
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df             # <<<<<<<<<<<<<<
@@ -32086,7 +32076,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __pyx_r = __pyx_v_df;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":887
+  /* "src/core.pyx":887
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likHOM','likHET','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df
  * cdef del_sexchr_tab (df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -32101,7 +32091,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.del_sexchr_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.del_sexchr_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cn);
@@ -32112,7 +32102,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":902
+/* "src/core.pyx":902
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df
  * cdef dup_autosome_tab(df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -32120,7 +32110,7 @@ static PyObject *__pyx_f_5gtcnv_4core_del_sexchr_tab(PyObject *__pyx_v_df, PyObj
  * 	cn=[]
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
+static PyObject *__pyx_f_3src_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
   PyObject *__pyx_v_cn = NULL;
   PyObject *__pyx_v_x = NULL;
   PyObject *__pyx_r = NULL;
@@ -32138,7 +32128,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   __Pyx_RefNannySetupContext("dup_autosome_tab", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":903
+  /* "src/core.pyx":903
  * 	return df
  * cdef dup_autosome_tab(df,lik,clfname):
  * 	df['classif']=clfname             # <<<<<<<<<<<<<<
@@ -32147,7 +32137,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_classif, __pyx_v_clfname) < 0)) __PYX_ERR(0, 903, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":904
+  /* "src/core.pyx":904
  * cdef dup_autosome_tab(df,lik,clfname):
  * 	df['classif']=clfname
  * 	cn=[]             # <<<<<<<<<<<<<<
@@ -32159,7 +32149,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   __pyx_v_cn = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":905
+  /* "src/core.pyx":905
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -32208,7 +32198,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":906
+    /* "src/core.pyx":906
  * 	cn=[]
  * 	for x in lik:
  * 		if x[0] > x[1] and x[0] > x[2]: cn.append(4)             # <<<<<<<<<<<<<<
@@ -32245,7 +32235,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":907
+    /* "src/core.pyx":907
  * 	for x in lik:
  * 		if x[0] > x[1] and x[0] > x[2]: cn.append(4)
  * 		elif x[1] > x[0] and x[1] > x[2]: cn.append(3)             # <<<<<<<<<<<<<<
@@ -32282,7 +32272,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":908
+    /* "src/core.pyx":908
  * 		if x[0] > x[1] and x[0] > x[2]: cn.append(4)
  * 		elif x[1] > x[0] and x[1] > x[2]: cn.append(3)
  * 		elif x[2] > x[0] and x[2] > x[1]: cn.append(2)             # <<<<<<<<<<<<<<
@@ -32319,7 +32309,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":909
+    /* "src/core.pyx":909
  * 		elif x[1] > x[0] and x[1] > x[2]: cn.append(3)
  * 		elif x[2] > x[0] and x[2] > x[1]: cn.append(2)
  * 		else: cn.append(2)             # <<<<<<<<<<<<<<
@@ -32331,7 +32321,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
     }
     __pyx_L5:;
 
-    /* "gtcnv/core.pyx":905
+    /* "src/core.pyx":905
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -32341,7 +32331,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":910
+  /* "src/core.pyx":910
  * 		elif x[2] > x[0] and x[2] > x[1]: cn.append(2)
  * 		else: cn.append(2)
  * 	df['copy_number']=cn             # <<<<<<<<<<<<<<
@@ -32350,7 +32340,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_copy_number, __pyx_v_cn) < 0)) __PYX_ERR(0, 910, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":911
+  /* "src/core.pyx":911
  * 		else: cn.append(2)
  * 	df['copy_number']=cn
  * 	df['likCN4'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -32362,7 +32352,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likCN4, __pyx_t_1) < 0)) __PYX_ERR(0, 911, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":912
+  /* "src/core.pyx":912
  * 	df['copy_number']=cn
  * 	df['likCN4'] = lik[:,0]
  * 	df['likCN3'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -32374,7 +32364,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likCN3, __pyx_t_1) < 0)) __PYX_ERR(0, 912, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":913
+  /* "src/core.pyx":913
  * 	df['likCN4'] = lik[:,0]
  * 	df['likCN3'] = lik[:,1]
  * 	df['likREF'] = lik[:,2]             # <<<<<<<<<<<<<<
@@ -32386,7 +32376,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likREF, __pyx_t_1) < 0)) __PYX_ERR(0, 913, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":914
+  /* "src/core.pyx":914
  * 	df['likCN3'] = lik[:,1]
  * 	df['likREF'] = lik[:,2]
  * 	df['NONREF'] = 1 - df['likREF']             # <<<<<<<<<<<<<<
@@ -32401,7 +32391,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_NONREF, __pyx_t_4) < 0)) __PYX_ERR(0, 914, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":915
+  /* "src/core.pyx":915
  * 	df['likREF'] = lik[:,2]
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])             # <<<<<<<<<<<<<<
@@ -32450,7 +32440,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_REF, __pyx_t_6) < 0)) __PYX_ERR(0, 915, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":916
+  /* "src/core.pyx":916
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])             # <<<<<<<<<<<<<<
@@ -32499,7 +32489,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_NONREF, __pyx_t_10) < 0)) __PYX_ERR(0, 916, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "gtcnv/core.pyx":917
+  /* "src/core.pyx":917
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likCN4','likCN3','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]             # <<<<<<<<<<<<<<
@@ -32577,7 +32567,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "gtcnv/core.pyx":918
+  /* "src/core.pyx":918
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likCN4','likCN3','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df             # <<<<<<<<<<<<<<
@@ -32589,7 +32579,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   __pyx_r = __pyx_v_df;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":902
+  /* "src/core.pyx":902
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df
  * cdef dup_autosome_tab(df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -32604,7 +32594,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("gtcnv.core.dup_autosome_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.dup_autosome_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cn);
@@ -32615,7 +32605,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":919
+/* "src/core.pyx":919
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likCN4','likCN3','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df
  * cdef dup_sexchr_tab(df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -32623,7 +32613,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_autosome_tab(PyObject *__pyx_v_df, PyO
  * 	cn=[]
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
+static PyObject *__pyx_f_3src_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObject *__pyx_v_lik, PyObject *__pyx_v_clfname) {
   PyObject *__pyx_v_cn = NULL;
   PyObject *__pyx_v_x = NULL;
   PyObject *__pyx_r = NULL;
@@ -32640,7 +32630,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __Pyx_RefNannySetupContext("dup_sexchr_tab", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":920
+  /* "src/core.pyx":920
  * 	return df
  * cdef dup_sexchr_tab(df,lik,clfname):
  * 	df['classif']=clfname             # <<<<<<<<<<<<<<
@@ -32649,7 +32639,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_classif, __pyx_v_clfname) < 0)) __PYX_ERR(0, 920, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":921
+  /* "src/core.pyx":921
  * cdef dup_sexchr_tab(df,lik,clfname):
  * 	df['classif']=clfname
  * 	cn=[]             # <<<<<<<<<<<<<<
@@ -32661,7 +32651,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __pyx_v_cn = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":922
+  /* "src/core.pyx":922
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -32710,7 +32700,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":923
+    /* "src/core.pyx":923
  * 	cn=[]
  * 	for x in lik:
  * 		if x[0] > x[1]: cn.append(2)             # <<<<<<<<<<<<<<
@@ -32731,7 +32721,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":924
+    /* "src/core.pyx":924
  * 	for x in lik:
  * 		if x[0] > x[1]: cn.append(2)
  * 		elif x[1] > x[0]: cn.append(1)             # <<<<<<<<<<<<<<
@@ -32752,7 +32742,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":925
+    /* "src/core.pyx":925
  * 		if x[0] > x[1]: cn.append(2)
  * 		elif x[1] > x[0]: cn.append(1)
  * 		else: cn.append(2)             # <<<<<<<<<<<<<<
@@ -32764,7 +32754,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
     }
     __pyx_L5:;
 
-    /* "gtcnv/core.pyx":922
+    /* "src/core.pyx":922
  * 	df['classif']=clfname
  * 	cn=[]
  * 	for x in lik:             # <<<<<<<<<<<<<<
@@ -32774,7 +32764,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":926
+  /* "src/core.pyx":926
  * 		elif x[1] > x[0]: cn.append(1)
  * 		else: cn.append(2)
  * 	df['copy_number']=cn             # <<<<<<<<<<<<<<
@@ -32783,7 +32773,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_copy_number, __pyx_v_cn) < 0)) __PYX_ERR(0, 926, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":927
+  /* "src/core.pyx":927
  * 		else: cn.append(2)
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -32795,7 +32785,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likVAR, __pyx_t_1) < 0)) __PYX_ERR(0, 927, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":928
+  /* "src/core.pyx":928
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]
  * 	df['likREF'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -32807,7 +32797,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_likREF, __pyx_t_1) < 0)) __PYX_ERR(0, 928, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":929
+  /* "src/core.pyx":929
  * 	df['likVAR'] = lik[:,0]
  * 	df['likREF'] = lik[:,1]
  * 	df['NONREF'] = 1 - df['likREF']             # <<<<<<<<<<<<<<
@@ -32822,7 +32812,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_NONREF, __pyx_t_4) < 0)) __PYX_ERR(0, 929, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":930
+  /* "src/core.pyx":930
  * 	df['likREF'] = lik[:,1]
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])             # <<<<<<<<<<<<<<
@@ -32871,7 +32861,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_REF, __pyx_t_5) < 0)) __PYX_ERR(0, 930, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":931
+  /* "src/core.pyx":931
  * 	df['NONREF'] = 1 - df['likREF']
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])             # <<<<<<<<<<<<<<
@@ -32920,7 +32910,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_PHRED_NONREF, __pyx_t_9) < 0)) __PYX_ERR(0, 931, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":932
+  /* "src/core.pyx":932
  * 	df['PHRED_REF'] = -10.0 * np.log10(1.0-df['likREF'])
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif',]]             # <<<<<<<<<<<<<<
@@ -32998,7 +32988,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":933
+  /* "src/core.pyx":933
  * 	df['PHRED_NONREF'] = -10.0 * np.log10(1.0-df['NONREF'])
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif',]]
  * 	return df             # <<<<<<<<<<<<<<
@@ -33010,7 +33000,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __pyx_r = __pyx_v_df;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":919
+  /* "src/core.pyx":919
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likCN4','likCN3','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif']]
  * 	return df
  * cdef dup_sexchr_tab(df,lik,clfname):             # <<<<<<<<<<<<<<
@@ -33025,7 +33015,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("gtcnv.core.dup_sexchr_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.dup_sexchr_tab", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cn);
@@ -33036,7 +33026,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":934
+/* "src/core.pyx":934
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif',]]
  * 	return df
  * cdef merge3d (df):             # <<<<<<<<<<<<<<
@@ -33044,7 +33034,7 @@ static PyObject *__pyx_f_5gtcnv_4core_dup_sexchr_tab(PyObject *__pyx_v_df, PyObj
  * cdef prepHET(df):
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_merge3d(PyObject *__pyx_v_df) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -33056,7 +33046,7 @@ static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *__pyx_v_df) {
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("merge3d", 0);
 
-  /* "gtcnv/core.pyx":935
+  /* "src/core.pyx":935
  * 	return df
  * cdef merge3d (df):
  * 	return np.vstack(np.asarray( (df['covr'],df['dpe'],df['sr']), order = 'C', dtype='float' )).T             # <<<<<<<<<<<<<<
@@ -33138,7 +33128,7 @@ static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *__pyx_v_df) {
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":934
+  /* "src/core.pyx":934
  * 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif',]]
  * 	return df
  * cdef merge3d (df):             # <<<<<<<<<<<<<<
@@ -33155,7 +33145,7 @@ static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("gtcnv.core.merge3d", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.merge3d", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -33163,7 +33153,7 @@ static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":936
+/* "src/core.pyx":936
  * cdef merge3d (df):
  * 	return np.vstack(np.asarray( (df['covr'],df['dpe'],df['sr']), order = 'C', dtype='float' )).T
  * cdef prepHET(df):             # <<<<<<<<<<<<<<
@@ -33171,7 +33161,7 @@ static PyObject *__pyx_f_5gtcnv_4core_merge3d(PyObject *__pyx_v_df) {
  * 	return df,X
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_prepHET(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_X = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -33183,7 +33173,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("prepHET", 0);
 
-  /* "gtcnv/core.pyx":937
+  /* "src/core.pyx":937
  * 	return np.vstack(np.asarray( (df['covr'],df['dpe'],df['sr']), order = 'C', dtype='float' )).T
  * cdef prepHET(df):
  * 	X = np.vstack(np.asarray((df['covr'],df['HET_ratio']),order='C',dtype='float')).T             # <<<<<<<<<<<<<<
@@ -33258,7 +33248,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
   __pyx_v_X = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":938
+  /* "src/core.pyx":938
  * cdef prepHET(df):
  * 	X = np.vstack(np.asarray((df['covr'],df['HET_ratio']),order='C',dtype='float')).T
  * 	return df,X             # <<<<<<<<<<<<<<
@@ -33278,7 +33268,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":936
+  /* "src/core.pyx":936
  * cdef merge3d (df):
  * 	return np.vstack(np.asarray( (df['covr'],df['dpe'],df['sr']), order = 'C', dtype='float' )).T
  * cdef prepHET(df):             # <<<<<<<<<<<<<<
@@ -33294,7 +33284,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.prepHET", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.prepHET", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_X);
@@ -33303,7 +33293,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":939
+/* "src/core.pyx":939
  * 	X = np.vstack(np.asarray((df['covr'],df['HET_ratio']),order='C',dtype='float')).T
  * 	return df,X
  * cdef prepPE(df):             # <<<<<<<<<<<<<<
@@ -33311,26 +33301,26 @@ static PyObject *__pyx_f_5gtcnv_4core_prepHET(PyObject *__pyx_v_df) {
  * 	return df,X
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_prepPE(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_prepPE(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_X = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("prepPE", 0);
 
-  /* "gtcnv/core.pyx":940
+  /* "src/core.pyx":940
  * 	return df,X
  * cdef prepPE(df):
  * 	X = merge3d(df)             # <<<<<<<<<<<<<<
  * 	return df,X
  * cdef prep3d(df):
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_merge3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 940, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_merge3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 940, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_X = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":941
+  /* "src/core.pyx":941
  * cdef prepPE(df):
  * 	X = merge3d(df)
  * 	return df,X             # <<<<<<<<<<<<<<
@@ -33350,7 +33340,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepPE(PyObject *__pyx_v_df) {
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":939
+  /* "src/core.pyx":939
  * 	X = np.vstack(np.asarray((df['covr'],df['HET_ratio']),order='C',dtype='float')).T
  * 	return df,X
  * cdef prepPE(df):             # <<<<<<<<<<<<<<
@@ -33361,7 +33351,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepPE(PyObject *__pyx_v_df) {
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("gtcnv.core.prepPE", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.prepPE", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_X);
@@ -33370,7 +33360,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepPE(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":942
+/* "src/core.pyx":942
  * 	X = merge3d(df)
  * 	return df,X
  * cdef prep3d(df):             # <<<<<<<<<<<<<<
@@ -33378,7 +33368,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prepPE(PyObject *__pyx_v_df) {
  * 	df[['size']]=df[['size']].astype(int)
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_prep3d(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_X = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -33389,7 +33379,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   __Pyx_RefNannySetupContext("prep3d", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":943
+  /* "src/core.pyx":943
  * 	return df,X
  * cdef prep3d(df):
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)             # <<<<<<<<<<<<<<
@@ -33453,7 +33443,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":944
+  /* "src/core.pyx":944
  * cdef prep3d(df):
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	df[['size']]=df[['size']].astype(int)             # <<<<<<<<<<<<<<
@@ -33505,7 +33495,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":945
+  /* "src/core.pyx":945
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	df[['size']]=df[['size']].astype(int)
  * 	df=df[df['covr_GC'] < 5.0]             # <<<<<<<<<<<<<<
@@ -33522,7 +33512,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":946
+  /* "src/core.pyx":946
  * 	df[['size']]=df[['size']].astype(int)
  * 	df=df[df['covr_GC'] < 5.0]
  * 	df['covr']=df['covr_GC']             # <<<<<<<<<<<<<<
@@ -33534,19 +33524,19 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_covr, __pyx_t_1) < 0)) __PYX_ERR(0, 946, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":947
+  /* "src/core.pyx":947
  * 	df=df[df['covr_GC'] < 5.0]
  * 	df['covr']=df['covr_GC']
  * 	X = merge3d(df)             # <<<<<<<<<<<<<<
  * 	return df,X
  * cdef prep4d(df):
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_merge3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 947, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_merge3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 947, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_X = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":948
+  /* "src/core.pyx":948
  * 	df['covr']=df['covr_GC']
  * 	X = merge3d(df)
  * 	return df,X             # <<<<<<<<<<<<<<
@@ -33566,7 +33556,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":942
+  /* "src/core.pyx":942
  * 	X = merge3d(df)
  * 	return df,X
  * cdef prep3d(df):             # <<<<<<<<<<<<<<
@@ -33580,7 +33570,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("gtcnv.core.prep3d", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.prep3d", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_X);
@@ -33590,7 +33580,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":949
+/* "src/core.pyx":949
  * 	X = merge3d(df)
  * 	return df,X
  * cdef prep4d(df):             # <<<<<<<<<<<<<<
@@ -33598,7 +33588,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep3d(PyObject *__pyx_v_df) {
  * 	df[['size']]=df[['size']].astype(int)
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_prep4d(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_big = NULL;
   PyObject *__pyx_v_sma = NULL;
   PyObject *__pyx_v_X1 = NULL;
@@ -33612,7 +33602,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __Pyx_RefNannySetupContext("prep4d", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":950
+  /* "src/core.pyx":950
  * 	return df,X
  * cdef prep4d(df):
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)             # <<<<<<<<<<<<<<
@@ -33676,7 +33666,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":951
+  /* "src/core.pyx":951
  * cdef prep4d(df):
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	df[['size']]=df[['size']].astype(int)             # <<<<<<<<<<<<<<
@@ -33728,7 +33718,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":952
+  /* "src/core.pyx":952
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	df[['size']]=df[['size']].astype(int)
  * 	df = df[df['covr_GC'] < 5.0]             # <<<<<<<<<<<<<<
@@ -33745,7 +33735,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":953
+  /* "src/core.pyx":953
  * 	df[['size']]=df[['size']].astype(int)
  * 	df = df[df['covr_GC'] < 5.0]
  * 	df['covr']=df['covr_GC']             # <<<<<<<<<<<<<<
@@ -33757,7 +33747,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_covr, __pyx_t_1) < 0)) __PYX_ERR(0, 953, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":954
+  /* "src/core.pyx":954
  * 	df = df[df['covr_GC'] < 5.0]
  * 	df['covr']=df['covr_GC']
  * 	big = df[df['size'] > 1000]             # <<<<<<<<<<<<<<
@@ -33774,7 +33764,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __pyx_v_big = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":955
+  /* "src/core.pyx":955
  * 	df['covr']=df['covr_GC']
  * 	big = df[df['size'] > 1000]
  * 	sma = df[df['size'] <= 1000]             # <<<<<<<<<<<<<<
@@ -33791,31 +33781,31 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __pyx_v_sma = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":956
+  /* "src/core.pyx":956
  * 	big = df[df['size'] > 1000]
  * 	sma = df[df['size'] <= 1000]
  * 	X1 = merge3d(big)             # <<<<<<<<<<<<<<
  * 	X2 = merge3d(sma)
  * 	return big,sma,X1,X2
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_merge3d(__pyx_v_big); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 956, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_merge3d(__pyx_v_big); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 956, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_X1 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":957
+  /* "src/core.pyx":957
  * 	sma = df[df['size'] <= 1000]
  * 	X1 = merge3d(big)
  * 	X2 = merge3d(sma)             # <<<<<<<<<<<<<<
  * 	return big,sma,X1,X2
  * cdef autosome_del_svm(df):
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_merge3d(__pyx_v_sma); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 957, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_merge3d(__pyx_v_sma); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 957, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_X2 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":958
+  /* "src/core.pyx":958
  * 	X1 = merge3d(big)
  * 	X2 = merge3d(sma)
  * 	return big,sma,X1,X2             # <<<<<<<<<<<<<<
@@ -33841,7 +33831,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":949
+  /* "src/core.pyx":949
  * 	X = merge3d(df)
  * 	return df,X
  * cdef prep4d(df):             # <<<<<<<<<<<<<<
@@ -33855,7 +33845,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("gtcnv.core.prep4d", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.prep4d", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_big);
@@ -33868,7 +33858,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":959
+/* "src/core.pyx":959
  * 	X2 = merge3d(sma)
  * 	return big,sma,X1,X2
  * cdef autosome_del_svm(df):             # <<<<<<<<<<<<<<
@@ -33876,7 +33866,7 @@ static PyObject *__pyx_f_5gtcnv_4core_prep4d(PyObject *__pyx_v_df) {
  * 	final=pd.DataFrame()
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_bigdf = NULL;
   PyObject *__pyx_v_smadf = NULL;
   PyObject *__pyx_v_BIG = NULL;
@@ -33904,14 +33894,14 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   int __pyx_t_15;
   __Pyx_RefNannySetupContext("autosome_del_svm", 0);
 
-  /* "gtcnv/core.pyx":960
+  /* "src/core.pyx":960
  * 	return big,sma,X1,X2
  * cdef autosome_del_svm(df):
  * 	(bigdf,smadf,BIG,SMA) = prep4d(df)             # <<<<<<<<<<<<<<
  * 	final=pd.DataFrame()
  * 	if len(BIG) > 0:
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_prep4d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 960, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_prep4d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 960, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
     PyObject* sequence = __pyx_t_1;
@@ -33985,7 +33975,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   __pyx_v_SMA = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":961
+  /* "src/core.pyx":961
  * cdef autosome_del_svm(df):
  * 	(bigdf,smadf,BIG,SMA) = prep4d(df)
  * 	final=pd.DataFrame()             # <<<<<<<<<<<<<<
@@ -34018,7 +34008,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   __pyx_v_final = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":962
+  /* "src/core.pyx":962
  * 	(bigdf,smadf,BIG,SMA) = prep4d(df)
  * 	final=pd.DataFrame()
  * 	if len(BIG) > 0:             # <<<<<<<<<<<<<<
@@ -34029,7 +34019,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   __pyx_t_9 = ((__pyx_t_8 > 0) != 0);
   if (__pyx_t_9) {
 
-    /* "gtcnv/core.pyx":963
+    /* "src/core.pyx":963
  * 	final=pd.DataFrame()
  * 	if len(BIG) > 0:
  * 		clf=''             # <<<<<<<<<<<<<<
@@ -34039,7 +34029,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
     __Pyx_INCREF(__pyx_kp_s__2);
     __pyx_v_clf = __pyx_kp_s__2;
 
-    /* "gtcnv/core.pyx":964
+    /* "src/core.pyx":964
  * 	if len(BIG) > 0:
  * 		clf=''
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_LRG-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -34163,7 +34153,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("gtcnv.core.autosome_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("src.core.autosome_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 964, __pyx_L12_except_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_GOTREF(__pyx_t_1);
@@ -34228,7 +34218,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
       __pyx_L21:;
     }
 
-    /* "gtcnv/core.pyx":965
+    /* "src/core.pyx":965
  * 		clf=''
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_LRG-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(BIG)             # <<<<<<<<<<<<<<
@@ -34265,7 +34255,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
     __pyx_v_lik = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":966
+    /* "src/core.pyx":966
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_LRG-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(BIG)
  * 		final=final.append(del_autosome_tab(bigdf,lik,'DEL_gt1KB'))             # <<<<<<<<<<<<<<
@@ -34274,7 +34264,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_final, __pyx_n_s_append); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 966, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __pyx_f_5gtcnv_4core_del_autosome_tab(__pyx_v_bigdf, __pyx_v_lik, __pyx_n_s_DEL_gt1KB); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 966, __pyx_L1_error)
+    __pyx_t_4 = __pyx_f_3src_4core_del_autosome_tab(__pyx_v_bigdf, __pyx_v_lik, __pyx_n_s_DEL_gt1KB); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 966, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
@@ -34305,7 +34295,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
     __Pyx_DECREF_SET(__pyx_v_final, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":962
+    /* "src/core.pyx":962
  * 	(bigdf,smadf,BIG,SMA) = prep4d(df)
  * 	final=pd.DataFrame()
  * 	if len(BIG) > 0:             # <<<<<<<<<<<<<<
@@ -34314,7 +34304,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
  */
   }
 
-  /* "gtcnv/core.pyx":967
+  /* "src/core.pyx":967
  * 		lik = clf.predict_proba(BIG)
  * 		final=final.append(del_autosome_tab(bigdf,lik,'DEL_gt1KB'))
  * 	if len(SMA) > 0:             # <<<<<<<<<<<<<<
@@ -34325,7 +34315,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   __pyx_t_15 = ((__pyx_t_8 > 0) != 0);
   if (__pyx_t_15) {
 
-    /* "gtcnv/core.pyx":968
+    /* "src/core.pyx":968
  * 		final=final.append(del_autosome_tab(bigdf,lik,'DEL_gt1KB'))
  * 	if len(SMA) > 0:
  * 		clf=''             # <<<<<<<<<<<<<<
@@ -34335,7 +34325,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
     __Pyx_INCREF(__pyx_kp_s__2);
     __Pyx_XDECREF_SET(__pyx_v_clf, __pyx_kp_s__2);
 
-    /* "gtcnv/core.pyx":969
+    /* "src/core.pyx":969
  * 	if len(SMA) > 0:
  * 		clf=''
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_SMA-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -34459,7 +34449,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("gtcnv.core.autosome_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("src.core.autosome_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_3, &__pyx_t_4) < 0) __PYX_ERR(0, 969, __pyx_L29_except_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_GOTREF(__pyx_t_3);
@@ -34524,7 +34514,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
       __pyx_L38:;
     }
 
-    /* "gtcnv/core.pyx":970
+    /* "src/core.pyx":970
  * 		clf=''
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_SMA-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(SMA)             # <<<<<<<<<<<<<<
@@ -34561,7 +34551,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
     __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":971
+    /* "src/core.pyx":971
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_SMA-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(SMA)
  * 		final=final.append(del_autosome_tab(smadf,lik,'DEL_lt1KB'))             # <<<<<<<<<<<<<<
@@ -34570,7 +34560,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_final, __pyx_n_s_append); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 971, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __pyx_f_5gtcnv_4core_del_autosome_tab(__pyx_v_smadf, __pyx_v_lik, __pyx_n_s_DEL_lt1KB); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 971, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_3src_4core_del_autosome_tab(__pyx_v_smadf, __pyx_v_lik, __pyx_n_s_DEL_lt1KB); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 971, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_2 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
@@ -34601,7 +34591,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
     __Pyx_DECREF_SET(__pyx_v_final, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":967
+    /* "src/core.pyx":967
  * 		lik = clf.predict_proba(BIG)
  * 		final=final.append(del_autosome_tab(bigdf,lik,'DEL_gt1KB'))
  * 	if len(SMA) > 0:             # <<<<<<<<<<<<<<
@@ -34610,7 +34600,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
  */
   }
 
-  /* "gtcnv/core.pyx":972
+  /* "src/core.pyx":972
  * 		lik = clf.predict_proba(SMA)
  * 		final=final.append(del_autosome_tab(smadf,lik,'DEL_lt1KB'))
  * 	return final             # <<<<<<<<<<<<<<
@@ -34622,7 +34612,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   __pyx_r = __pyx_v_final;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":959
+  /* "src/core.pyx":959
  * 	X2 = merge3d(sma)
  * 	return big,sma,X1,X2
  * cdef autosome_del_svm(df):             # <<<<<<<<<<<<<<
@@ -34638,7 +34628,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gtcnv.core.autosome_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.autosome_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_bigdf);
@@ -34654,7 +34644,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":973
+/* "src/core.pyx":973
  * 		final=final.append(del_autosome_tab(smadf,lik,'DEL_lt1KB'))
  * 	return final
  * cdef sexchr_del_svm(df):             # <<<<<<<<<<<<<<
@@ -34662,7 +34652,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_del_svm(PyObject *__pyx_v_df) {
  * 	clf=''
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_X = NULL;
   PyObject *__pyx_v_clf = NULL;
   PyObject *__pyx_v_f = NULL;
@@ -34684,14 +34674,14 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   __Pyx_RefNannySetupContext("sexchr_del_svm", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":974
+  /* "src/core.pyx":974
  * 	return final
  * cdef sexchr_del_svm(df):
  * 	(df,X) = prep3d(df)             # <<<<<<<<<<<<<<
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_sexchr_deletion_CLF.pkl','rb') as f: clf=pickle.load(f)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_prep3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 974, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_prep3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 974, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
     PyObject* sequence = __pyx_t_1;
@@ -34748,7 +34738,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   __pyx_v_X = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":975
+  /* "src/core.pyx":975
  * cdef sexchr_del_svm(df):
  * 	(df,X) = prep3d(df)
  * 	clf=''             # <<<<<<<<<<<<<<
@@ -34758,7 +34748,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   __Pyx_INCREF(__pyx_kp_s__2);
   __pyx_v_clf = __pyx_kp_s__2;
 
-  /* "gtcnv/core.pyx":976
+  /* "src/core.pyx":976
  * 	(df,X) = prep3d(df)
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_sexchr_deletion_CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -34880,7 +34870,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.sexchr_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.sexchr_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 976, __pyx_L11_except_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_GOTREF(__pyx_t_1);
@@ -34945,7 +34935,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
     __pyx_L20:;
   }
 
-  /* "gtcnv/core.pyx":977
+  /* "src/core.pyx":977
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_sexchr_deletion_CLF.pkl','rb') as f: clf=pickle.load(f)
  * 	lik = clf.predict_proba(X)             # <<<<<<<<<<<<<<
@@ -34982,7 +34972,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   __pyx_v_lik = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":978
+  /* "src/core.pyx":978
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_sexchr_deletion_CLF.pkl','rb') as f: clf=pickle.load(f)
  * 	lik = clf.predict_proba(X)
  * 	return del_sexchr_tab(df,lik,'HEMIZYGOUS_DEL')             # <<<<<<<<<<<<<<
@@ -34990,13 +34980,13 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
  * 	snpCLF=pd.DataFrame()
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __pyx_f_5gtcnv_4core_del_sexchr_tab(__pyx_v_df, __pyx_v_lik, __pyx_n_s_HEMIZYGOUS_DEL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 978, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_3src_4core_del_sexchr_tab(__pyx_v_df, __pyx_v_lik, __pyx_n_s_HEMIZYGOUS_DEL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 978, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":973
+  /* "src/core.pyx":973
  * 		final=final.append(del_autosome_tab(smadf,lik,'DEL_lt1KB'))
  * 	return final
  * cdef sexchr_del_svm(df):             # <<<<<<<<<<<<<<
@@ -35010,7 +35000,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("gtcnv.core.sexchr_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.sexchr_del_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_X);
@@ -35023,7 +35013,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":979
+/* "src/core.pyx":979
  * 	lik = clf.predict_proba(X)
  * 	return del_sexchr_tab(df,lik,'HEMIZYGOUS_DEL')
  * cdef autosome_dup_svm(df):             # <<<<<<<<<<<<<<
@@ -35031,7 +35021,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_del_svm(PyObject *__pyx_v_df) {
  * 	peCLF=pd.DataFrame()
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_snpCLF = NULL;
   PyObject *__pyx_v_peCLF = NULL;
   PyObject *__pyx_v_final = NULL;
@@ -35067,7 +35057,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_RefNannySetupContext("autosome_dup_svm", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":980
+  /* "src/core.pyx":980
  * 	return del_sexchr_tab(df,lik,'HEMIZYGOUS_DEL')
  * cdef autosome_dup_svm(df):
  * 	snpCLF=pd.DataFrame()             # <<<<<<<<<<<<<<
@@ -35100,7 +35090,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_snpCLF = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":981
+  /* "src/core.pyx":981
  * cdef autosome_dup_svm(df):
  * 	snpCLF=pd.DataFrame()
  * 	peCLF=pd.DataFrame()             # <<<<<<<<<<<<<<
@@ -35133,7 +35123,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_peCLF = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":982
+  /* "src/core.pyx":982
  * 	snpCLF=pd.DataFrame()
  * 	peCLF=pd.DataFrame()
  * 	final=pd.DataFrame()             # <<<<<<<<<<<<<<
@@ -35166,7 +35156,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_final = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":983
+  /* "src/core.pyx":983
  * 	peCLF=pd.DataFrame()
  * 	final=pd.DataFrame()
  * 	df[['SNPs','HET_SNPs']]=df[['SNPs','HET_SNPs']].astype(int)             # <<<<<<<<<<<<<<
@@ -35224,7 +35214,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":984
+  /* "src/core.pyx":984
  * 	final=pd.DataFrame()
  * 	df[['SNPs','HET_SNPs']]=df[['SNPs','HET_SNPs']].astype(int)
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)             # <<<<<<<<<<<<<<
@@ -35288,7 +35278,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":985
+  /* "src/core.pyx":985
  * 	df[['SNPs','HET_SNPs']]=df[['SNPs','HET_SNPs']].astype(int)
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	mean_covr=[]             # <<<<<<<<<<<<<<
@@ -35300,7 +35290,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_mean_covr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":986
+  /* "src/core.pyx":986
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	mean_covr=[]
  * 	for ind,ele in df.iterrows():             # <<<<<<<<<<<<<<
@@ -35422,7 +35412,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_XDECREF_SET(__pyx_v_ele, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":987
+    /* "src/core.pyx":987
  * 	mean_covr=[]
  * 	for ind,ele in df.iterrows():
  * 		if ele['SNPs'] > 0: mean_covr.append(np.mean((ele['covr_GC'],float(ele['SNP_coverage']))))             # <<<<<<<<<<<<<<
@@ -35487,7 +35477,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
       goto __pyx_L7;
     }
 
-    /* "gtcnv/core.pyx":988
+    /* "src/core.pyx":988
  * 	for ind,ele in df.iterrows():
  * 		if ele['SNPs'] > 0: mean_covr.append(np.mean((ele['covr_GC'],float(ele['SNP_coverage']))))
  * 		else: mean_covr.append(ele['covr_GC'])             # <<<<<<<<<<<<<<
@@ -35502,7 +35492,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     }
     __pyx_L7:;
 
-    /* "gtcnv/core.pyx":986
+    /* "src/core.pyx":986
  * 	df[['covr_GC','dpe','sr']]=df[['covr_GC','dpe','sr']].astype(float)
  * 	mean_covr=[]
  * 	for ind,ele in df.iterrows():             # <<<<<<<<<<<<<<
@@ -35512,7 +35502,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":989
+  /* "src/core.pyx":989
  * 		if ele['SNPs'] > 0: mean_covr.append(np.mean((ele['covr_GC'],float(ele['SNP_coverage']))))
  * 		else: mean_covr.append(ele['covr_GC'])
  * 	df['covr']=mean_covr             # <<<<<<<<<<<<<<
@@ -35521,7 +35511,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
  */
   if (unlikely(PyObject_SetItem(__pyx_v_df, __pyx_n_s_covr, __pyx_v_mean_covr) < 0)) __PYX_ERR(0, 989, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":990
+  /* "src/core.pyx":990
  * 		else: mean_covr.append(ele['covr_GC'])
  * 	df['covr']=mean_covr
  * 	df=df[df['covr'] < 5.0]             # <<<<<<<<<<<<<<
@@ -35538,7 +35528,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":991
+  /* "src/core.pyx":991
  * 	df['covr']=mean_covr
  * 	df=df[df['covr'] < 5.0]
  * 	snpList=[]             # <<<<<<<<<<<<<<
@@ -35550,7 +35540,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_snpList = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":992
+  /* "src/core.pyx":992
  * 	df=df[df['covr'] < 5.0]
  * 	snpList=[]
  * 	peList=[]             # <<<<<<<<<<<<<<
@@ -35562,7 +35552,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_peList = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":993
+  /* "src/core.pyx":993
  * 	snpList=[]
  * 	peList=[]
  * 	for ind,ele in df.iterrows():             # <<<<<<<<<<<<<<
@@ -35684,7 +35674,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_XDECREF_SET(__pyx_v_ele, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":994
+    /* "src/core.pyx":994
  * 	peList=[]
  * 	for ind,ele in df.iterrows():
  * 		if ele['dpe']==0 and ele['sr']==0 and ele['HET_SNPs'] > 0: snpList.append(ind)             # <<<<<<<<<<<<<<
@@ -35728,7 +35718,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
       goto __pyx_L12;
     }
 
-    /* "gtcnv/core.pyx":995
+    /* "src/core.pyx":995
  * 	for ind,ele in df.iterrows():
  * 		if ele['dpe']==0 and ele['sr']==0 and ele['HET_SNPs'] > 0: snpList.append(ind)
  * 		else: peList.append(ind)             # <<<<<<<<<<<<<<
@@ -35740,7 +35730,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     }
     __pyx_L12:;
 
-    /* "gtcnv/core.pyx":993
+    /* "src/core.pyx":993
  * 	snpList=[]
  * 	peList=[]
  * 	for ind,ele in df.iterrows():             # <<<<<<<<<<<<<<
@@ -35750,7 +35740,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":996
+  /* "src/core.pyx":996
  * 		if ele['dpe']==0 and ele['sr']==0 and ele['HET_SNPs'] > 0: snpList.append(ind)
  * 		else: peList.append(ind)
  * 	snpCLF=df.loc[snpList]             # <<<<<<<<<<<<<<
@@ -35765,7 +35755,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF_SET(__pyx_v_snpCLF, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":997
+  /* "src/core.pyx":997
  * 		else: peList.append(ind)
  * 	snpCLF=df.loc[snpList]
  * 	snpCLF[['HET_ratio']]=snpCLF[['HET_ratio']].astype(float)             # <<<<<<<<<<<<<<
@@ -35817,7 +35807,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":998
+  /* "src/core.pyx":998
  * 	snpCLF=df.loc[snpList]
  * 	snpCLF[['HET_ratio']]=snpCLF[['HET_ratio']].astype(float)
  * 	peCLF=df.loc[peList]             # <<<<<<<<<<<<<<
@@ -35832,7 +35822,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF_SET(__pyx_v_peCLF, __pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":999
+  /* "src/core.pyx":999
  * 	snpCLF[['HET_ratio']]=snpCLF[['HET_ratio']].astype(float)
  * 	peCLF=df.loc[peList]
  * 	X=None             # <<<<<<<<<<<<<<
@@ -35842,7 +35832,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_INCREF(Py_None);
   __pyx_v_X = Py_None;
 
-  /* "gtcnv/core.pyx":1000
+  /* "src/core.pyx":1000
  * 	peCLF=df.loc[peList]
  * 	X=None
  * 	clf=None             # <<<<<<<<<<<<<<
@@ -35852,7 +35842,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_INCREF(Py_None);
   __pyx_v_clf = Py_None;
 
-  /* "gtcnv/core.pyx":1001
+  /* "src/core.pyx":1001
  * 	X=None
  * 	clf=None
  * 	temp=pd.DataFrame()             # <<<<<<<<<<<<<<
@@ -35885,7 +35875,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_temp = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1002
+  /* "src/core.pyx":1002
  * 	clf=None
  * 	temp=pd.DataFrame()
  * 	if len(snpCLF) >0:             # <<<<<<<<<<<<<<
@@ -35896,14 +35886,14 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_t_9 = ((__pyx_t_5 > 0) != 0);
   if (__pyx_t_9) {
 
-    /* "gtcnv/core.pyx":1003
+    /* "src/core.pyx":1003
  * 	temp=pd.DataFrame()
  * 	if len(snpCLF) >0:
  * 		temp,X = prepHET(snpCLF)             # <<<<<<<<<<<<<<
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_duplication_SNP-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(X)
  */
-    __pyx_t_4 = __pyx_f_5gtcnv_4core_prepHET(__pyx_v_snpCLF); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1003, __pyx_L1_error)
+    __pyx_t_4 = __pyx_f_3src_4core_prepHET(__pyx_v_snpCLF); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1003, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if ((likely(PyTuple_CheckExact(__pyx_t_4))) || (PyList_CheckExact(__pyx_t_4))) {
       PyObject* sequence = __pyx_t_4;
@@ -35960,7 +35950,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":1004
+    /* "src/core.pyx":1004
  * 	if len(snpCLF) >0:
  * 		temp,X = prepHET(snpCLF)
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_duplication_SNP-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -36084,7 +36074,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("gtcnv.core.autosome_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("src.core.autosome_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_4, &__pyx_t_3) < 0) __PYX_ERR(0, 1004, __pyx_L25_except_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_GOTREF(__pyx_t_4);
@@ -36149,7 +36139,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
       __pyx_L34:;
     }
 
-    /* "gtcnv/core.pyx":1005
+    /* "src/core.pyx":1005
  * 		temp,X = prepHET(snpCLF)
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_duplication_SNP-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(X)             # <<<<<<<<<<<<<<
@@ -36186,7 +36176,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __pyx_v_lik = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":1006
+    /* "src/core.pyx":1006
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_duplication_SNP-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(X)
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_HetAllelicDepth'))             # <<<<<<<<<<<<<<
@@ -36195,7 +36185,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_final, __pyx_n_s_append); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1006, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __pyx_f_5gtcnv_4core_dup_autosome_tab(__pyx_v_temp, __pyx_v_lik, __pyx_n_s_DUP_HetAllelicDepth); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1006, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_3src_4core_dup_autosome_tab(__pyx_v_temp, __pyx_v_lik, __pyx_n_s_DUP_HetAllelicDepth); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1006, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_2 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
@@ -36226,7 +36216,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_DECREF_SET(__pyx_v_final, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":1002
+    /* "src/core.pyx":1002
  * 	clf=None
  * 	temp=pd.DataFrame()
  * 	if len(snpCLF) >0:             # <<<<<<<<<<<<<<
@@ -36235,7 +36225,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
  */
   }
 
-  /* "gtcnv/core.pyx":1007
+  /* "src/core.pyx":1007
  * 		lik = clf.predict_proba(X)
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_HetAllelicDepth'))
  * 	clf=None             # <<<<<<<<<<<<<<
@@ -36245,7 +36235,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_INCREF(Py_None);
   __Pyx_DECREF_SET(__pyx_v_clf, Py_None);
 
-  /* "gtcnv/core.pyx":1008
+  /* "src/core.pyx":1008
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_HetAllelicDepth'))
  * 	clf=None
  * 	X=None             # <<<<<<<<<<<<<<
@@ -36255,7 +36245,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_INCREF(Py_None);
   __Pyx_DECREF_SET(__pyx_v_X, Py_None);
 
-  /* "gtcnv/core.pyx":1009
+  /* "src/core.pyx":1009
  * 	clf=None
  * 	X=None
  * 	temp=pd.DataFrame()             # <<<<<<<<<<<<<<
@@ -36288,7 +36278,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_DECREF_SET(__pyx_v_temp, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":1010
+  /* "src/core.pyx":1010
  * 	X=None
  * 	temp=pd.DataFrame()
  * 	if len(peCLF) >0:             # <<<<<<<<<<<<<<
@@ -36299,14 +36289,14 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_t_12 = ((__pyx_t_5 > 0) != 0);
   if (__pyx_t_12) {
 
-    /* "gtcnv/core.pyx":1011
+    /* "src/core.pyx":1011
  * 	temp=pd.DataFrame()
  * 	if len(peCLF) >0:
  * 		temp,X= prepPE(peCLF)             # <<<<<<<<<<<<<<
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_autosome_duplication_PE-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(X)
  */
-    __pyx_t_3 = __pyx_f_5gtcnv_4core_prepPE(__pyx_v_peCLF); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1011, __pyx_L1_error)
+    __pyx_t_3 = __pyx_f_3src_4core_prepPE(__pyx_v_peCLF); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1011, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
       PyObject* sequence = __pyx_t_3;
@@ -36363,7 +36353,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "gtcnv/core.pyx":1012
+    /* "src/core.pyx":1012
  * 	if len(peCLF) >0:
  * 		temp,X= prepPE(peCLF)
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_autosome_duplication_PE-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -36487,7 +36477,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("gtcnv.core.autosome_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("src.core.autosome_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_3, &__pyx_t_1) < 0) __PYX_ERR(0, 1012, __pyx_L44_except_error)
             __Pyx_GOTREF(__pyx_t_7);
             __Pyx_GOTREF(__pyx_t_3);
@@ -36552,7 +36542,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
       __pyx_L53:;
     }
 
-    /* "gtcnv/core.pyx":1013
+    /* "src/core.pyx":1013
  * 		temp,X= prepPE(peCLF)
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_autosome_duplication_PE-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(X)             # <<<<<<<<<<<<<<
@@ -36589,7 +36579,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":1014
+    /* "src/core.pyx":1014
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_autosome_duplication_PE-CLF.pkl','rb') as f: clf=pickle.load(f)
  * 		lik = clf.predict_proba(X)
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_PairedEnd'))             # <<<<<<<<<<<<<<
@@ -36598,7 +36588,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_final, __pyx_n_s_append); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1014, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __pyx_f_5gtcnv_4core_dup_autosome_tab(__pyx_v_temp, __pyx_v_lik, __pyx_n_s_DUP_PairedEnd); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1014, __pyx_L1_error)
+    __pyx_t_4 = __pyx_f_3src_4core_dup_autosome_tab(__pyx_v_temp, __pyx_v_lik, __pyx_n_s_DUP_PairedEnd); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1014, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
@@ -36629,7 +36619,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
     __Pyx_DECREF_SET(__pyx_v_final, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":1010
+    /* "src/core.pyx":1010
  * 	X=None
  * 	temp=pd.DataFrame()
  * 	if len(peCLF) >0:             # <<<<<<<<<<<<<<
@@ -36638,7 +36628,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
  */
   }
 
-  /* "gtcnv/core.pyx":1015
+  /* "src/core.pyx":1015
  * 		lik = clf.predict_proba(X)
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_PairedEnd'))
  * 	return final             # <<<<<<<<<<<<<<
@@ -36650,7 +36640,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __pyx_r = __pyx_v_final;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":979
+  /* "src/core.pyx":979
  * 	lik = clf.predict_proba(X)
  * 	return del_sexchr_tab(df,lik,'HEMIZYGOUS_DEL')
  * cdef autosome_dup_svm(df):             # <<<<<<<<<<<<<<
@@ -36666,7 +36656,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("gtcnv.core.autosome_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.autosome_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_snpCLF);
@@ -36688,7 +36678,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1016
+/* "src/core.pyx":1016
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_PairedEnd'))
  * 	return final
  * cdef sexchr_dup_svm(df):             # <<<<<<<<<<<<<<
@@ -36696,7 +36686,7 @@ static PyObject *__pyx_f_5gtcnv_4core_autosome_dup_svm(PyObject *__pyx_v_df) {
  * 	clf=''
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
+static PyObject *__pyx_f_3src_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   PyObject *__pyx_v_X = NULL;
   PyObject *__pyx_v_clf = NULL;
   PyObject *__pyx_v_f = NULL;
@@ -36718,14 +36708,14 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_RefNannySetupContext("sexchr_dup_svm", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "gtcnv/core.pyx":1017
+  /* "src/core.pyx":1017
  * 	return final
  * cdef sexchr_dup_svm(df):
  * 	(df,X) = prep3d(df)             # <<<<<<<<<<<<<<
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_sexchr_duplication_CLF.pkl','rb') as f: clf=pickle.load(f)
  */
-  __pyx_t_1 = __pyx_f_5gtcnv_4core_prep3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1017, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_3src_4core_prep3d(__pyx_v_df); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1017, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
     PyObject* sequence = __pyx_t_1;
@@ -36782,7 +36772,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_X = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":1018
+  /* "src/core.pyx":1018
  * cdef sexchr_dup_svm(df):
  * 	(df,X) = prep3d(df)
  * 	clf=''             # <<<<<<<<<<<<<<
@@ -36792,7 +36782,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_INCREF(__pyx_kp_s__2);
   __pyx_v_clf = __pyx_kp_s__2;
 
-  /* "gtcnv/core.pyx":1019
+  /* "src/core.pyx":1019
  * 	(df,X) = prep3d(df)
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_sexchr_duplication_CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -36914,7 +36904,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.sexchr_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.sexchr_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 1019, __pyx_L11_except_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_GOTREF(__pyx_t_1);
@@ -36979,7 +36969,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
     __pyx_L20:;
   }
 
-  /* "gtcnv/core.pyx":1020
+  /* "src/core.pyx":1020
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_sexchr_duplication_CLF.pkl','rb') as f: clf=pickle.load(f)
  * 	lik = clf.predict_proba(X)             # <<<<<<<<<<<<<<
@@ -37016,7 +37006,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   __pyx_v_lik = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1021
+  /* "src/core.pyx":1021
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_sexchr_duplication_CLF.pkl','rb') as f: clf=pickle.load(f)
  * 	lik = clf.predict_proba(X)
  * 	return dup_sexchr_tab(df,lik,'HEMIZYGOUS_DUP')             # <<<<<<<<<<<<<<
@@ -37024,13 +37014,13 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
  * 	cdef unsigned int s1
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __pyx_f_5gtcnv_4core_dup_sexchr_tab(__pyx_v_df, __pyx_v_lik, __pyx_n_s_HEMIZYGOUS_DUP); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1021, __pyx_L1_error)
+  __pyx_t_4 = __pyx_f_3src_4core_dup_sexchr_tab(__pyx_v_df, __pyx_v_lik, __pyx_n_s_HEMIZYGOUS_DUP); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1021, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1016
+  /* "src/core.pyx":1016
  * 		final=final.append(dup_autosome_tab(temp,lik,'DUP_PairedEnd'))
  * 	return final
  * cdef sexchr_dup_svm(df):             # <<<<<<<<<<<<<<
@@ -37044,7 +37034,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("gtcnv.core.sexchr_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.sexchr_dup_svm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_X);
@@ -37057,7 +37047,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1022
+/* "src/core.pyx":1022
  * 	lik = clf.predict_proba(X)
  * 	return dup_sexchr_tab(df,lik,'HEMIZYGOUS_DUP')
  * cdef recipOver(x):             # <<<<<<<<<<<<<<
@@ -37065,7 +37055,7 @@ static PyObject *__pyx_f_5gtcnv_4core_sexchr_dup_svm(PyObject *__pyx_v_df) {
  * 	cdef unsigned int s2
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
+static PyObject *__pyx_f_3src_4core_recipOver(PyObject *__pyx_v_x) {
   unsigned int __pyx_v_s1;
   unsigned int __pyx_v_s2;
   unsigned int __pyx_v_e1;
@@ -37091,7 +37081,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   int __pyx_t_12;
   __Pyx_RefNannySetupContext("recipOver", 0);
 
-  /* "gtcnv/core.pyx":1027
+  /* "src/core.pyx":1027
  * 	cdef unsigned int e1
  * 	cdef unsigned int e2
  * 	(s1,s2,e1,e2) = x             # <<<<<<<<<<<<<<
@@ -37172,7 +37162,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __pyx_v_e1 = __pyx_t_9;
   __pyx_v_e2 = __pyx_t_10;
 
-  /* "gtcnv/core.pyx":1031
+  /* "src/core.pyx":1031
  * 	cdef double ovr1
  * 	cdef double ovr2
  * 	sz1 = e1-s1+1             # <<<<<<<<<<<<<<
@@ -37184,7 +37174,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __pyx_v_sz1 = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1032
+  /* "src/core.pyx":1032
  * 	cdef double ovr2
  * 	sz1 = e1-s1+1
  * 	sz2 = e2-s2+1             # <<<<<<<<<<<<<<
@@ -37196,7 +37186,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __pyx_v_sz2 = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1033
+  /* "src/core.pyx":1033
  * 	sz1 = e1-s1+1
  * 	sz2 = e2-s2+1
  * 	smax=max(s1,s2)             # <<<<<<<<<<<<<<
@@ -37215,7 +37205,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __pyx_v_smax = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1034
+  /* "src/core.pyx":1034
  * 	sz2 = e2-s2+1
  * 	smax=max(s1,s2)
  * 	emin=min(e1,e2)             # <<<<<<<<<<<<<<
@@ -37234,7 +37224,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __pyx_v_emin = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1035
+  /* "src/core.pyx":1035
  * 	smax=max(s1,s2)
  * 	emin=min(e1,e2)
  * 	ovr = emin-smax+1             # <<<<<<<<<<<<<<
@@ -37250,7 +37240,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_ovr = __pyx_t_11;
 
-  /* "gtcnv/core.pyx":1036
+  /* "src/core.pyx":1036
  * 	emin=min(e1,e2)
  * 	ovr = emin-smax+1
  * 	return min((ovr/sz1),(ovr/sz2))             # <<<<<<<<<<<<<<
@@ -37285,7 +37275,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1022
+  /* "src/core.pyx":1022
  * 	lik = clf.predict_proba(X)
  * 	return dup_sexchr_tab(df,lik,'HEMIZYGOUS_DUP')
  * cdef recipOver(x):             # <<<<<<<<<<<<<<
@@ -37300,7 +37290,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("gtcnv.core.recipOver", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.recipOver", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_sz1);
@@ -37312,7 +37302,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1037
+/* "src/core.pyx":1037
  * 	ovr = emin-smax+1
  * 	return min((ovr/sz1),(ovr/sz2))
  * cdef cytobandOverlap(cnv,gen):             # <<<<<<<<<<<<<<
@@ -37320,7 +37310,7 @@ static PyObject *__pyx_f_5gtcnv_4core_recipOver(PyObject *__pyx_v_x) {
  * 	try:
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_cyto = NULL;
   PyObject *__pyx_v_c = NULL;
   PyObject *__pyx_v_s = NULL;
@@ -37355,7 +37345,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
   int __pyx_t_20;
   __Pyx_RefNannySetupContext("cytobandOverlap", 0);
 
-  /* "gtcnv/core.pyx":1038
+  /* "src/core.pyx":1038
  * 	return min((ovr/sz1),(ovr/sz2))
  * cdef cytobandOverlap(cnv,gen):
  * 	cyto={}             # <<<<<<<<<<<<<<
@@ -37367,7 +37357,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
   __pyx_v_cyto = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1039
+  /* "src/core.pyx":1039
  * cdef cytobandOverlap(cnv,gen):
  * 	cyto={}
  * 	try:             # <<<<<<<<<<<<<<
@@ -37383,7 +37373,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
     __Pyx_XGOTREF(__pyx_t_4);
     /*try:*/ {
 
-      /* "gtcnv/core.pyx":1040
+      /* "src/core.pyx":1040
  * 	cyto={}
  * 	try:
  * 		for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect(get_path()+'/resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):             # <<<<<<<<<<<<<<
@@ -37593,7 +37583,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
         __Pyx_XDECREF_SET(__pyx_v_ovr, __pyx_t_16);
         __pyx_t_16 = 0;
 
-        /* "gtcnv/core.pyx":1041
+        /* "src/core.pyx":1041
  * 	try:
  * 		for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect(get_path()+'/resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):
  * 			if cyto.get((c,s,e))==None: cyto[(c,s,e)]=c2.replace('chr','')+band             # <<<<<<<<<<<<<<
@@ -37644,7 +37634,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
           goto __pyx_L15;
         }
 
-        /* "gtcnv/core.pyx":1042
+        /* "src/core.pyx":1042
  * 		for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect(get_path()+'/resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):
  * 			if cyto.get((c,s,e))==None: cyto[(c,s,e)]=c2.replace('chr','')+band
  * 			else: cyto[(c,s,e)]=cyto[(c,s,e)]+','+c2.replace('chr','')+band             # <<<<<<<<<<<<<<
@@ -37698,7 +37688,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
         }
         __pyx_L15:;
 
-        /* "gtcnv/core.pyx":1040
+        /* "src/core.pyx":1040
  * 	cyto={}
  * 	try:
  * 		for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect(get_path()+'/resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):             # <<<<<<<<<<<<<<
@@ -37708,7 +37698,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
       }
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "gtcnv/core.pyx":1039
+      /* "src/core.pyx":1039
  * cdef cytobandOverlap(cnv,gen):
  * 	cyto={}
  * 	try:             # <<<<<<<<<<<<<<
@@ -37735,7 +37725,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
     __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":1043
+    /* "src/core.pyx":1043
  * 			if cyto.get((c,s,e))==None: cyto[(c,s,e)]=c2.replace('chr','')+band
  * 			else: cyto[(c,s,e)]=cyto[(c,s,e)]+','+c2.replace('chr','')+band
  * 	except pbed.cbedtools.MalformedBedLineError: cyto[(c,s,e)]='NA'             # <<<<<<<<<<<<<<
@@ -37753,7 +37743,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
     __pyx_t_20 = __Pyx_PyErr_ExceptionMatches(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_20) {
-      __Pyx_AddTraceback("gtcnv.core.cytobandOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("src.core.cytobandOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
       if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_15, &__pyx_t_16) < 0) __PYX_ERR(0, 1043, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_GOTREF(__pyx_t_15);
@@ -37782,7 +37772,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "gtcnv/core.pyx":1039
+    /* "src/core.pyx":1039
  * cdef cytobandOverlap(cnv,gen):
  * 	cyto={}
  * 	try:             # <<<<<<<<<<<<<<
@@ -37804,7 +37794,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
     __pyx_L10_try_end:;
   }
 
-  /* "gtcnv/core.pyx":1044
+  /* "src/core.pyx":1044
  * 			else: cyto[(c,s,e)]=cyto[(c,s,e)]+','+c2.replace('chr','')+band
  * 	except pbed.cbedtools.MalformedBedLineError: cyto[(c,s,e)]='NA'
  * 	return cyto             # <<<<<<<<<<<<<<
@@ -37816,7 +37806,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
   __pyx_r = __pyx_v_cyto;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1037
+  /* "src/core.pyx":1037
  * 	ovr = emin-smax+1
  * 	return min((ovr/sz1),(ovr/sz2))
  * cdef cytobandOverlap(cnv,gen):             # <<<<<<<<<<<<<<
@@ -37838,7 +37828,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
   __Pyx_XDECREF(__pyx_t_15);
   __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_17);
-  __Pyx_AddTraceback("gtcnv.core.cytobandOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.cytobandOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cyto);
@@ -37856,7 +37846,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1045
+/* "src/core.pyx":1045
  * 	except pbed.cbedtools.MalformedBedLineError: cyto[(c,s,e)]='NA'
  * 	return cyto
  * cdef flagsOverlap(cnv,gen):             # <<<<<<<<<<<<<<
@@ -37864,7 +37854,7 @@ static PyObject *__pyx_f_5gtcnv_4core_cytobandOverlap(PyObject *__pyx_v_cnv, PyO
  * 	cdef int ovr
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_flags = NULL;
   int __pyx_v_ovr;
   PyObject *__pyx_v_x = NULL;
@@ -37897,7 +37887,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   PyObject *(*__pyx_t_17)(PyObject *);
   __Pyx_RefNannySetupContext("flagsOverlap", 0);
 
-  /* "gtcnv/core.pyx":1046
+  /* "src/core.pyx":1046
  * 	return cyto
  * cdef flagsOverlap(cnv,gen):
  * 	flags={}             # <<<<<<<<<<<<<<
@@ -37909,7 +37899,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   __pyx_v_flags = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1048
+  /* "src/core.pyx":1048
  * 	flags={}
  * 	cdef int ovr
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_flags.bed.gz'.format(gen),wao=True):             # <<<<<<<<<<<<<<
@@ -38025,7 +38015,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":1049
+    /* "src/core.pyx":1049
  * 	cdef int ovr
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_flags.bed.gz'.format(gen),wao=True):
  * 		x=list(x)             # <<<<<<<<<<<<<<
@@ -38037,7 +38027,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
     __Pyx_DECREF_SET(__pyx_v_x, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":1050
+    /* "src/core.pyx":1050
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_flags.bed.gz'.format(gen),wao=True):
  * 		x=list(x)
  * 		x[len(x)-1]=int(x[len(x)-1])             # <<<<<<<<<<<<<<
@@ -38056,7 +38046,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
     if (unlikely(__Pyx_SetItemInt(__pyx_v_x, __pyx_t_9, __pyx_t_3, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 0, 0) < 0)) __PYX_ERR(0, 1050, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":1051
+    /* "src/core.pyx":1051
  * 		x=list(x)
  * 		x[len(x)-1]=int(x[len(x)-1])
  * 		if(x[(len(x)-1)]==0): continue             # <<<<<<<<<<<<<<
@@ -38076,7 +38066,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
       goto __pyx_L3_continue;
     }
 
-    /* "gtcnv/core.pyx":1052
+    /* "src/core.pyx":1052
  * 		x[len(x)-1]=int(x[len(x)-1])
  * 		if(x[(len(x)-1)]==0): continue
  * 		(c,s,e,c2,s2,e2,flag,ovr) = x             # <<<<<<<<<<<<<<
@@ -38142,7 +38132,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
     __pyx_t_13 = 0;
     __pyx_v_ovr = __pyx_t_15;
 
-    /* "gtcnv/core.pyx":1053
+    /* "src/core.pyx":1053
  * 		if(x[(len(x)-1)]==0): continue
  * 		(c,s,e,c2,s2,e2,flag,ovr) = x
  * 		if flags.get((c,s,e,flag))==None: flags[(c,s,e,flag)]=int(ovr)             # <<<<<<<<<<<<<<
@@ -38201,7 +38191,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
       goto __pyx_L6;
     }
 
-    /* "gtcnv/core.pyx":1054
+    /* "src/core.pyx":1054
  * 		(c,s,e,c2,s2,e2,flag,ovr) = x
  * 		if flags.get((c,s,e,flag))==None: flags[(c,s,e,flag)]=int(ovr)
  * 		else: flags[(c,s,e,flag)]+=int(ovr)             # <<<<<<<<<<<<<<
@@ -38245,7 +38235,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
     }
     __pyx_L6:;
 
-    /* "gtcnv/core.pyx":1048
+    /* "src/core.pyx":1048
  * 	flags={}
  * 	cdef int ovr
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_flags.bed.gz'.format(gen),wao=True):             # <<<<<<<<<<<<<<
@@ -38256,7 +38246,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1055
+  /* "src/core.pyx":1055
  * 		if flags.get((c,s,e,flag))==None: flags[(c,s,e,flag)]=int(ovr)
  * 		else: flags[(c,s,e,flag)]+=int(ovr)
  * 	for (c,s,e,f) in flags: flags[(c,s,e,f)]= float(flags[(c,s,e,f)])/(int(e)-int(s)+1.0)             # <<<<<<<<<<<<<<
@@ -38400,7 +38390,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1056
+  /* "src/core.pyx":1056
  * 		else: flags[(c,s,e,flag)]+=int(ovr)
  * 	for (c,s,e,f) in flags: flags[(c,s,e,f)]= float(flags[(c,s,e,f)])/(int(e)-int(s)+1.0)
  * 	return flags             # <<<<<<<<<<<<<<
@@ -38412,7 +38402,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   __pyx_r = __pyx_v_flags;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1045
+  /* "src/core.pyx":1045
  * 	except pbed.cbedtools.MalformedBedLineError: cyto[(c,s,e)]='NA'
  * 	return cyto
  * cdef flagsOverlap(cnv,gen):             # <<<<<<<<<<<<<<
@@ -38431,7 +38421,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("gtcnv.core.flagsOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.flagsOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_flags);
@@ -38449,7 +38439,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1057
+/* "src/core.pyx":1057
  * 	for (c,s,e,f) in flags: flags[(c,s,e,f)]= float(flags[(c,s,e,f)])/(int(e)-int(s)+1.0)
  * 	return flags
  * cdef meiOverlap(cnv,gen):             # <<<<<<<<<<<<<<
@@ -38457,7 +38447,7 @@ static PyObject *__pyx_f_5gtcnv_4core_flagsOverlap(PyObject *__pyx_v_cnv, PyObje
  * 	mei={}
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
   double __pyx_v_rovr;
   PyObject *__pyx_v_mei = NULL;
   PyObject *__pyx_v_maxovr = NULL;
@@ -38482,7 +38472,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   int __pyx_t_14;
   __Pyx_RefNannySetupContext("meiOverlap", 0);
 
-  /* "gtcnv/core.pyx":1059
+  /* "src/core.pyx":1059
  * cdef meiOverlap(cnv,gen):
  * 	cdef double rovr
  * 	mei={}             # <<<<<<<<<<<<<<
@@ -38494,7 +38484,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   __pyx_v_mei = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1060
+  /* "src/core.pyx":1060
  * 	cdef double rovr
  * 	mei={}
  * 	maxovr={}             # <<<<<<<<<<<<<<
@@ -38506,7 +38496,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   __pyx_v_maxovr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1061
+  /* "src/core.pyx":1061
  * 	mei={}
  * 	maxovr={}
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_repeatmasker.bed.gz'.format(gen), f=0.8, F=0.8, wa=True, wb=True):             # <<<<<<<<<<<<<<
@@ -38625,7 +38615,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":1062
+    /* "src/core.pyx":1062
  * 	maxovr={}
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_repeatmasker.bed.gz'.format(gen), f=0.8, F=0.8, wa=True, wb=True):
  * 		rovr=0             # <<<<<<<<<<<<<<
@@ -38634,7 +38624,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
  */
     __pyx_v_rovr = 0.0;
 
-    /* "gtcnv/core.pyx":1063
+    /* "src/core.pyx":1063
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_repeatmasker.bed.gz'.format(gen), f=0.8, F=0.8, wa=True, wb=True):
  * 		rovr=0
  * 		rovr=recipOver(map(int,(x[1],x[4],x[2],x[5])))             # <<<<<<<<<<<<<<
@@ -38674,14 +38664,14 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1063, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __pyx_f_5gtcnv_4core_recipOver(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1063, __pyx_L1_error)
+    __pyx_t_6 = __pyx_f_3src_4core_recipOver(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1063, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_6); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1063, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_rovr = __pyx_t_9;
 
-    /* "gtcnv/core.pyx":1064
+    /* "src/core.pyx":1064
  * 		rovr=0
  * 		rovr=recipOver(map(int,(x[1],x[4],x[2],x[5])))
  * 		k = (x[0],x[1],x[2])             # <<<<<<<<<<<<<<
@@ -38708,7 +38698,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     __Pyx_XDECREF_SET(__pyx_v_k, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":1065
+    /* "src/core.pyx":1065
  * 		rovr=recipOver(map(int,(x[1],x[4],x[2],x[5])))
  * 		k = (x[0],x[1],x[2])
  * 		name = '{}:{}:{}'.format(x[7],x[8],x[6])             # <<<<<<<<<<<<<<
@@ -38756,7 +38746,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     __Pyx_XDECREF_SET(__pyx_v_name, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "gtcnv/core.pyx":1066
+    /* "src/core.pyx":1066
  * 		k = (x[0],x[1],x[2])
  * 		name = '{}:{}:{}'.format(x[7],x[8],x[6])
  * 		if maxovr.get(k)==None:             # <<<<<<<<<<<<<<
@@ -38771,7 +38761,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_13) {
 
-      /* "gtcnv/core.pyx":1067
+      /* "src/core.pyx":1067
  * 		name = '{}:{}:{}'.format(x[7],x[8],x[6])
  * 		if maxovr.get(k)==None:
  * 			maxovr[k]=rovr             # <<<<<<<<<<<<<<
@@ -38783,7 +38773,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
       if (unlikely(PyDict_SetItem(__pyx_v_maxovr, __pyx_v_k, __pyx_t_1) < 0)) __PYX_ERR(0, 1067, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "gtcnv/core.pyx":1068
+      /* "src/core.pyx":1068
  * 		if maxovr.get(k)==None:
  * 			maxovr[k]=rovr
  * 			mei[k]=name             # <<<<<<<<<<<<<<
@@ -38792,7 +38782,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
  */
       if (unlikely(PyDict_SetItem(__pyx_v_mei, __pyx_v_k, __pyx_v_name) < 0)) __PYX_ERR(0, 1068, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":1066
+      /* "src/core.pyx":1066
  * 		k = (x[0],x[1],x[2])
  * 		name = '{}:{}:{}'.format(x[7],x[8],x[6])
  * 		if maxovr.get(k)==None:             # <<<<<<<<<<<<<<
@@ -38802,7 +38792,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":1069
+    /* "src/core.pyx":1069
  * 			maxovr[k]=rovr
  * 			mei[k]=name
  * 		elif maxovr.get(k) != None and rovr > maxovr[k]:             # <<<<<<<<<<<<<<
@@ -38833,7 +38823,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     __pyx_L6_bool_binop_done:;
     if (__pyx_t_13) {
 
-      /* "gtcnv/core.pyx":1070
+      /* "src/core.pyx":1070
  * 			mei[k]=name
  * 		elif maxovr.get(k) != None and rovr > maxovr[k]:
  * 			maxovr[k]=rovr             # <<<<<<<<<<<<<<
@@ -38845,7 +38835,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
       if (unlikely(PyDict_SetItem(__pyx_v_maxovr, __pyx_v_k, __pyx_t_12) < 0)) __PYX_ERR(0, 1070, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "gtcnv/core.pyx":1071
+      /* "src/core.pyx":1071
  * 		elif maxovr.get(k) != None and rovr > maxovr[k]:
  * 			maxovr[k]=rovr
  * 			mei[k]=name             # <<<<<<<<<<<<<<
@@ -38854,7 +38844,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
  */
       if (unlikely(PyDict_SetItem(__pyx_v_mei, __pyx_v_k, __pyx_v_name) < 0)) __PYX_ERR(0, 1071, __pyx_L1_error)
 
-      /* "gtcnv/core.pyx":1069
+      /* "src/core.pyx":1069
  * 			maxovr[k]=rovr
  * 			mei[k]=name
  * 		elif maxovr.get(k) != None and rovr > maxovr[k]:             # <<<<<<<<<<<<<<
@@ -38864,7 +38854,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
       goto __pyx_L5;
     }
 
-    /* "gtcnv/core.pyx":1072
+    /* "src/core.pyx":1072
  * 			maxovr[k]=rovr
  * 			mei[k]=name
  * 		else: continue             # <<<<<<<<<<<<<<
@@ -38876,7 +38866,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
     }
     __pyx_L5:;
 
-    /* "gtcnv/core.pyx":1061
+    /* "src/core.pyx":1061
  * 	mei={}
  * 	maxovr={}
  * 	for x in cnv.intersect(get_path()+'/resources/annotation_files/{}_repeatmasker.bed.gz'.format(gen), f=0.8, F=0.8, wa=True, wb=True):             # <<<<<<<<<<<<<<
@@ -38887,7 +38877,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "gtcnv/core.pyx":1073
+  /* "src/core.pyx":1073
  * 			mei[k]=name
  * 		else: continue
  * 	return mei,maxovr             # <<<<<<<<<<<<<<
@@ -38907,7 +38897,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1057
+  /* "src/core.pyx":1057
  * 	for (c,s,e,f) in flags: flags[(c,s,e,f)]= float(flags[(c,s,e,f)])/(int(e)-int(s)+1.0)
  * 	return flags
  * cdef meiOverlap(cnv,gen):             # <<<<<<<<<<<<<<
@@ -38925,7 +38915,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("gtcnv.core.meiOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.meiOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_mei);
@@ -38938,7 +38928,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1074
+/* "src/core.pyx":1074
  * 		else: continue
  * 	return mei,maxovr
  * cdef thouGenOverlap(genos,gen):             # <<<<<<<<<<<<<<
@@ -38946,7 +38936,7 @@ static PyObject *__pyx_f_5gtcnv_4core_meiOverlap(PyObject *__pyx_v_cnv, PyObject
  * 	dels = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DEL' in x[3]]).sort()
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, PyObject *__pyx_v_gen) {
+static PyObject *__pyx_f_3src_4core_thouGenOverlap(PyObject *__pyx_v_genos, PyObject *__pyx_v_gen) {
   PyObject *__pyx_v_thouGen = NULL;
   PyObject *__pyx_v_dels = NULL;
   PyObject *__pyx_v_dups = NULL;
@@ -38971,7 +38961,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   Py_ssize_t __pyx_t_16;
   __Pyx_RefNannySetupContext("thouGenOverlap", 0);
 
-  /* "gtcnv/core.pyx":1075
+  /* "src/core.pyx":1075
  * 	return mei,maxovr
  * cdef thouGenOverlap(genos,gen):
  * 	thouGen={}             # <<<<<<<<<<<<<<
@@ -38983,7 +38973,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   __pyx_v_thouGen = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1076
+  /* "src/core.pyx":1076
  * cdef thouGenOverlap(genos,gen):
  * 	thouGen={}
  * 	dels = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DEL' in x[3]]).sort()             # <<<<<<<<<<<<<<
@@ -39121,7 +39111,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   __pyx_v_dels = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1077
+  /* "src/core.pyx":1077
  * 	thouGen={}
  * 	dels = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DEL' in x[3]]).sort()
  * 	dups = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DUP' in x[3]]).sort()             # <<<<<<<<<<<<<<
@@ -39259,7 +39249,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   __pyx_v_dups = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1078
+  /* "src/core.pyx":1078
  * 	dels = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DEL' in x[3]]).sort()
  * 	dups = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DUP' in x[3]]).sort()
  * 	for x in dels.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DEL.bed'.format(gen), f=0.5, F=0.5, wao=True):             # <<<<<<<<<<<<<<
@@ -39377,7 +39367,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_14);
     __pyx_t_14 = 0;
 
-    /* "gtcnv/core.pyx":1079
+    /* "src/core.pyx":1079
  * 	dups = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DUP' in x[3]]).sort()
  * 	for x in dels.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DEL.bed'.format(gen), f=0.5, F=0.5, wao=True):
  * 		x=list(x)             # <<<<<<<<<<<<<<
@@ -39389,7 +39379,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
     __Pyx_DECREF_SET(__pyx_v_x, __pyx_t_14);
     __pyx_t_14 = 0;
 
-    /* "gtcnv/core.pyx":1080
+    /* "src/core.pyx":1080
  * 	for x in dels.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DEL.bed'.format(gen), f=0.5, F=0.5, wao=True):
  * 		x=list(x)
  * 		if int(x[len(x)-1])==0: continue             # <<<<<<<<<<<<<<
@@ -39412,7 +39402,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
       goto __pyx_L9_continue;
     }
 
-    /* "gtcnv/core.pyx":1081
+    /* "src/core.pyx":1081
  * 		x=list(x)
  * 		if int(x[len(x)-1])==0: continue
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))             # <<<<<<<<<<<<<<
@@ -39498,7 +39488,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
 
-    /* "gtcnv/core.pyx":1078
+    /* "src/core.pyx":1078
  * 	dels = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DEL' in x[3]]).sort()
  * 	dups = pbed.BedTool([(x[0],x[1],x[2],x[3]) for x in genos if 'DUP' in x[3]]).sort()
  * 	for x in dels.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DEL.bed'.format(gen), f=0.5, F=0.5, wao=True):             # <<<<<<<<<<<<<<
@@ -39509,7 +39499,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "gtcnv/core.pyx":1082
+  /* "src/core.pyx":1082
  * 		if int(x[len(x)-1])==0: continue
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
  * 	for x in dups.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DUP.bed'.format(gen), f=0.5, F=0.5, wao=True):             # <<<<<<<<<<<<<<
@@ -39627,7 +39617,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":1083
+    /* "src/core.pyx":1083
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
  * 	for x in dups.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DUP.bed'.format(gen), f=0.5, F=0.5, wao=True):
  * 		x=list(x)             # <<<<<<<<<<<<<<
@@ -39639,7 +39629,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
     __Pyx_DECREF_SET(__pyx_v_x, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":1084
+    /* "src/core.pyx":1084
  * 	for x in dups.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DUP.bed'.format(gen), f=0.5, F=0.5, wao=True):
  * 		x=list(x)
  * 		if int(x[len(x)-1])==0: continue             # <<<<<<<<<<<<<<
@@ -39662,7 +39652,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
       goto __pyx_L12_continue;
     }
 
-    /* "gtcnv/core.pyx":1085
+    /* "src/core.pyx":1085
  * 		x=list(x)
  * 		if int(x[len(x)-1])==0: continue
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))             # <<<<<<<<<<<<<<
@@ -39748,7 +39738,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
 
-    /* "gtcnv/core.pyx":1082
+    /* "src/core.pyx":1082
  * 		if int(x[len(x)-1])==0: continue
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
  * 	for x in dups.intersect(get_path()+'/resources/annotation_files/{}_1000Genomes_DUP.bed'.format(gen), f=0.5, F=0.5, wao=True):             # <<<<<<<<<<<<<<
@@ -39759,19 +39749,19 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":1086
+  /* "src/core.pyx":1086
  * 		if int(x[len(x)-1])==0: continue
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
  * 	return thouGen             # <<<<<<<<<<<<<<
  * cdef geneOverlap(cnv,gen):
- * 	cdef unsigned short exonTotal
+ * 	cdef unsigned int exonTotal
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_thouGen);
   __pyx_r = __pyx_v_thouGen;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1074
+  /* "src/core.pyx":1074
  * 		else: continue
  * 	return mei,maxovr
  * cdef thouGenOverlap(genos,gen):             # <<<<<<<<<<<<<<
@@ -39791,7 +39781,7 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("gtcnv.core.thouGenOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.thouGenOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_thouGen);
@@ -39803,23 +39793,23 @@ static PyObject *__pyx_f_5gtcnv_4core_thouGenOverlap(PyObject *__pyx_v_genos, Py
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1087
+/* "src/core.pyx":1087
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
  * 	return thouGen
  * cdef geneOverlap(cnv,gen):             # <<<<<<<<<<<<<<
- * 	cdef unsigned short exonTotal
- * 	cdef unsigned short exonNum
+ * 	cdef unsigned int exonTotal
+ * 	cdef unsigned int exonNum
  */
 
-static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
-  unsigned short __pyx_v_exonTotal;
-  unsigned short __pyx_v_exonNum;
-  unsigned short __pyx_v_intronTotal;
-  unsigned short __pyx_v_intronNum;
-  unsigned short __pyx_v_exoncnt;
-  unsigned short __pyx_v_exontot;
-  unsigned short __pyx_v_introncnt;
-  unsigned short __pyx_v_introntot;
+static PyObject *__pyx_f_3src_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObject *__pyx_v_gen) {
+  unsigned int __pyx_v_exonTotal;
+  unsigned int __pyx_v_exonNum;
+  unsigned int __pyx_v_intronTotal;
+  unsigned int __pyx_v_intronNum;
+  unsigned int __pyx_v_exoncnt;
+  unsigned int __pyx_v_exontot;
+  unsigned int __pyx_v_introncnt;
+  unsigned int __pyx_v_introntot;
   PyObject *__pyx_v_GENEFH = NULL;
   PyObject *__pyx_v_genes = NULL;
   PyObject *__pyx_v_geneTEMP = NULL;
@@ -39862,13 +39852,13 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   Py_ssize_t __pyx_t_20;
   Py_ssize_t __pyx_t_21;
   Py_ssize_t __pyx_t_22;
-  unsigned short __pyx_t_23;
+  unsigned int __pyx_t_23;
   int __pyx_t_24;
   __Pyx_RefNannySetupContext("geneOverlap", 0);
 
-  /* "gtcnv/core.pyx":1096
- * 	cdef unsigned short introncnt
- * 	cdef unsigned short introntot
+  /* "src/core.pyx":1096
+ * 	cdef unsigned int introncnt
+ * 	cdef unsigned int introntot
  * 	GENEFH=get_path()+'/resources/annotation_files/{}_genes.bed.gz'.format(gen)             # <<<<<<<<<<<<<<
  * 	genes={}
  * 	geneTEMP={}
@@ -39927,8 +39917,8 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   __pyx_v_GENEFH = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":1097
- * 	cdef unsigned short introntot
+  /* "src/core.pyx":1097
+ * 	cdef unsigned int introntot
  * 	GENEFH=get_path()+'/resources/annotation_files/{}_genes.bed.gz'.format(gen)
  * 	genes={}             # <<<<<<<<<<<<<<
  * 	geneTEMP={}
@@ -39939,7 +39929,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   __pyx_v_genes = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":1098
+  /* "src/core.pyx":1098
  * 	GENEFH=get_path()+'/resources/annotation_files/{}_genes.bed.gz'.format(gen)
  * 	genes={}
  * 	geneTEMP={}             # <<<<<<<<<<<<<<
@@ -39951,7 +39941,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   __pyx_v_geneTEMP = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "gtcnv/core.pyx":1099
+  /* "src/core.pyx":1099
  * 	genes={}
  * 	geneTEMP={}
  * 	for (c,s,e,c2,s2,e2,gene) in cnv.intersect(GENEFH, wa=True,wb=True):             # <<<<<<<<<<<<<<
@@ -40101,7 +40091,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_gene, __pyx_t_11);
     __pyx_t_11 = 0;
 
-    /* "gtcnv/core.pyx":1100
+    /* "src/core.pyx":1100
  * 	geneTEMP={}
  * 	for (c,s,e,c2,s2,e2,gene) in cnv.intersect(GENEFH, wa=True,wb=True):
  * 		if geneTEMP.get((c,s,e))==None: geneTEMP[(c,s,e)]=[gene]             # <<<<<<<<<<<<<<
@@ -40149,7 +40139,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       goto __pyx_L7;
     }
 
-    /* "gtcnv/core.pyx":1101
+    /* "src/core.pyx":1101
  * 	for (c,s,e,c2,s2,e2,gene) in cnv.intersect(GENEFH, wa=True,wb=True):
  * 		if geneTEMP.get((c,s,e))==None: geneTEMP[(c,s,e)]=[gene]
  * 		elif gene not in geneTEMP[(c,s,e)]: geneTEMP[(c,s,e)].append(gene)             # <<<<<<<<<<<<<<
@@ -40193,7 +40183,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       goto __pyx_L7;
     }
 
-    /* "gtcnv/core.pyx":1102
+    /* "src/core.pyx":1102
  * 		if geneTEMP.get((c,s,e))==None: geneTEMP[(c,s,e)]=[gene]
  * 		elif gene not in geneTEMP[(c,s,e)]: geneTEMP[(c,s,e)].append(gene)
  * 		else: continue             # <<<<<<<<<<<<<<
@@ -40205,7 +40195,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     }
     __pyx_L7:;
 
-    /* "gtcnv/core.pyx":1099
+    /* "src/core.pyx":1099
  * 	genes={}
  * 	geneTEMP={}
  * 	for (c,s,e,c2,s2,e2,gene) in cnv.intersect(GENEFH, wa=True,wb=True):             # <<<<<<<<<<<<<<
@@ -40216,7 +40206,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1103
+  /* "src/core.pyx":1103
  * 		elif gene not in geneTEMP[(c,s,e)]: geneTEMP[(c,s,e)].append(gene)
  * 		else: continue
  * 	for x in geneTEMP:             # <<<<<<<<<<<<<<
@@ -40237,7 +40227,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1104
+    /* "src/core.pyx":1104
  * 		else: continue
  * 	for x in geneTEMP:
  * 		ori={}             # <<<<<<<<<<<<<<
@@ -40249,7 +40239,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_ori, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1105
+    /* "src/core.pyx":1105
  * 	for x in geneTEMP:
  * 		ori={}
  * 		exons={}             # <<<<<<<<<<<<<<
@@ -40261,7 +40251,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_exons, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1106
+    /* "src/core.pyx":1106
  * 		ori={}
  * 		exons={}
  * 		introns={}             # <<<<<<<<<<<<<<
@@ -40273,7 +40263,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_introns, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1107
+    /* "src/core.pyx":1107
  * 		exons={}
  * 		introns={}
  * 		trx={}             # <<<<<<<<<<<<<<
@@ -40285,7 +40275,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_trx, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1108
+    /* "src/core.pyx":1108
  * 		introns={}
  * 		trx={}
  * 		genlist=[]             # <<<<<<<<<<<<<<
@@ -40297,7 +40287,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     __Pyx_XDECREF_SET(__pyx_v_genlist, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1109
+    /* "src/core.pyx":1109
  * 		trx={}
  * 		genlist=[]
  * 		for y in geneTEMP[x]:             # <<<<<<<<<<<<<<
@@ -40349,7 +40339,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __Pyx_XDECREF_SET(__pyx_v_y, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":1110
+      /* "src/core.pyx":1110
  * 		genlist=[]
  * 		for y in geneTEMP[x]:
  * 			gene = y.split(',')             # <<<<<<<<<<<<<<
@@ -40364,7 +40354,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __Pyx_XDECREF_SET(__pyx_v_gene, __pyx_t_10);
       __pyx_t_10 = 0;
 
-      /* "gtcnv/core.pyx":1111
+      /* "src/core.pyx":1111
  * 		for y in geneTEMP[x]:
  * 			gene = y.split(',')
  * 			ori[gene[0]]=gene[1]             # <<<<<<<<<<<<<<
@@ -40379,7 +40369,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "gtcnv/core.pyx":1112
+      /* "src/core.pyx":1112
  * 			gene = y.split(',')
  * 			ori[gene[0]]=gene[1]
  * 			if 'exon' in y:             # <<<<<<<<<<<<<<
@@ -40390,7 +40380,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __pyx_t_14 = (__pyx_t_15 != 0);
       if (__pyx_t_14) {
 
-        /* "gtcnv/core.pyx":1113
+        /* "src/core.pyx":1113
  * 			ori[gene[0]]=gene[1]
  * 			if 'exon' in y:
  * 				trx[gene[0]]=gene[2]             # <<<<<<<<<<<<<<
@@ -40405,7 +40395,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "gtcnv/core.pyx":1114
+        /* "src/core.pyx":1114
  * 			if 'exon' in y:
  * 				trx[gene[0]]=gene[2]
  * 				exonTotal = int(gene[len(gene)-1].split('/').pop())             # <<<<<<<<<<<<<<
@@ -40428,11 +40418,11 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_t_10 = __Pyx_PyNumber_Int(__pyx_t_5); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1114, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1114, __pyx_L1_error)
+        __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1114, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __pyx_v_exonTotal = __pyx_t_23;
 
-        /* "gtcnv/core.pyx":1115
+        /* "src/core.pyx":1115
  * 				trx[gene[0]]=gene[2]
  * 				exonTotal = int(gene[len(gene)-1].split('/').pop())
  * 				exonNum = int(gene[len(gene)-1].split('/').pop(0).replace('exon_',''))             # <<<<<<<<<<<<<<
@@ -40461,18 +40451,18 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_t_10 = __Pyx_PyNumber_Int(__pyx_t_5); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1115, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1115, __pyx_L1_error)
+        __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1115, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __pyx_v_exonNum = __pyx_t_23;
 
-        /* "gtcnv/core.pyx":1116
+        /* "src/core.pyx":1116
  * 				exonTotal = int(gene[len(gene)-1].split('/').pop())
  * 				exonNum = int(gene[len(gene)-1].split('/').pop(0).replace('exon_',''))
  * 				exons[(gene[0],'TOTAL')]=exonTotal             # <<<<<<<<<<<<<<
  * 				if exons.get(gene[0])==None:
  * 					exons[gene[0]]=1
  */
-        __pyx_t_10 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exonTotal); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1116, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exonTotal); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1116, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1116, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
@@ -40488,7 +40478,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "gtcnv/core.pyx":1117
+        /* "src/core.pyx":1117
  * 				exonNum = int(gene[len(gene)-1].split('/').pop(0).replace('exon_',''))
  * 				exons[(gene[0],'TOTAL')]=exonTotal
  * 				if exons.get(gene[0])==None:             # <<<<<<<<<<<<<<
@@ -40506,7 +40496,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1118
+          /* "src/core.pyx":1118
  * 				exons[(gene[0],'TOTAL')]=exonTotal
  * 				if exons.get(gene[0])==None:
  * 					exons[gene[0]]=1             # <<<<<<<<<<<<<<
@@ -40518,7 +40508,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (unlikely(PyDict_SetItem(__pyx_v_exons, __pyx_t_10, __pyx_int_1) < 0)) __PYX_ERR(0, 1118, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-          /* "gtcnv/core.pyx":1119
+          /* "src/core.pyx":1119
  * 				if exons.get(gene[0])==None:
  * 					exons[gene[0]]=1
  * 					exons[(gene[0],exonNum)]=1             # <<<<<<<<<<<<<<
@@ -40527,7 +40517,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1119, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_9 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exonNum); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1119, __pyx_L1_error)
+          __pyx_t_9 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exonNum); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1119, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1119, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
@@ -40540,7 +40530,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (unlikely(PyDict_SetItem(__pyx_v_exons, __pyx_t_5, __pyx_int_1) < 0)) __PYX_ERR(0, 1119, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "gtcnv/core.pyx":1117
+          /* "src/core.pyx":1117
  * 				exonNum = int(gene[len(gene)-1].split('/').pop(0).replace('exon_',''))
  * 				exons[(gene[0],'TOTAL')]=exonTotal
  * 				if exons.get(gene[0])==None:             # <<<<<<<<<<<<<<
@@ -40550,7 +40540,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           goto __pyx_L13;
         }
 
-        /* "gtcnv/core.pyx":1120
+        /* "src/core.pyx":1120
  * 					exons[gene[0]]=1
  * 					exons[(gene[0],exonNum)]=1
  * 				elif exons.get((gene[0],exonNum)) == None:             # <<<<<<<<<<<<<<
@@ -40559,7 +40549,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_9 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exonNum); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1120, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exonNum); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
@@ -40578,7 +40568,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1121
+          /* "src/core.pyx":1121
  * 					exons[(gene[0],exonNum)]=1
  * 				elif exons.get((gene[0],exonNum)) == None:
  * 					exons[gene[0]]+=1             # <<<<<<<<<<<<<<
@@ -40596,7 +40586,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-          /* "gtcnv/core.pyx":1122
+          /* "src/core.pyx":1122
  * 				elif exons.get((gene[0],exonNum)) == None:
  * 					exons[gene[0]]+=1
  * 					exons[(gene[0],exonNum)]=1             # <<<<<<<<<<<<<<
@@ -40605,7 +40595,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1122, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exonNum); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1122, __pyx_L1_error)
+          __pyx_t_5 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exonNum); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1122, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1122, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
@@ -40618,7 +40608,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (unlikely(PyDict_SetItem(__pyx_v_exons, __pyx_t_9, __pyx_int_1) < 0)) __PYX_ERR(0, 1122, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1120
+          /* "src/core.pyx":1120
  * 					exons[gene[0]]=1
  * 					exons[(gene[0],exonNum)]=1
  * 				elif exons.get((gene[0],exonNum)) == None:             # <<<<<<<<<<<<<<
@@ -40628,7 +40618,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           goto __pyx_L13;
         }
 
-        /* "gtcnv/core.pyx":1123
+        /* "src/core.pyx":1123
  * 					exons[gene[0]]+=1
  * 					exons[(gene[0],exonNum)]=1
  * 				else: continue             # <<<<<<<<<<<<<<
@@ -40640,7 +40630,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         }
         __pyx_L13:;
 
-        /* "gtcnv/core.pyx":1112
+        /* "src/core.pyx":1112
  * 			gene = y.split(',')
  * 			ori[gene[0]]=gene[1]
  * 			if 'exon' in y:             # <<<<<<<<<<<<<<
@@ -40650,7 +40640,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L12;
       }
 
-      /* "gtcnv/core.pyx":1124
+      /* "src/core.pyx":1124
  * 					exons[(gene[0],exonNum)]=1
  * 				else: continue
  * 			elif 'UTR3' in y:             # <<<<<<<<<<<<<<
@@ -40661,7 +40651,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __pyx_t_15 = (__pyx_t_14 != 0);
       if (__pyx_t_15) {
 
-        /* "gtcnv/core.pyx":1125
+        /* "src/core.pyx":1125
  * 				else: continue
  * 			elif 'UTR3' in y:
  * 				trx[gene[0]]=gene[2]             # <<<<<<<<<<<<<<
@@ -40676,7 +40666,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":1126
+        /* "src/core.pyx":1126
  * 			elif 'UTR3' in y:
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],'UTR3')]=1             # <<<<<<<<<<<<<<
@@ -40696,7 +40686,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         if (unlikely(PyDict_SetItem(__pyx_v_exons, __pyx_t_5, __pyx_int_1) < 0)) __PYX_ERR(0, 1126, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "gtcnv/core.pyx":1124
+        /* "src/core.pyx":1124
  * 					exons[(gene[0],exonNum)]=1
  * 				else: continue
  * 			elif 'UTR3' in y:             # <<<<<<<<<<<<<<
@@ -40706,7 +40696,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L12;
       }
 
-      /* "gtcnv/core.pyx":1127
+      /* "src/core.pyx":1127
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],'UTR3')]=1
  * 			elif 'UTR5' in y:             # <<<<<<<<<<<<<<
@@ -40717,7 +40707,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __pyx_t_14 = (__pyx_t_15 != 0);
       if (__pyx_t_14) {
 
-        /* "gtcnv/core.pyx":1128
+        /* "src/core.pyx":1128
  * 				exons[(gene[0],'UTR3')]=1
  * 			elif 'UTR5' in y:
  * 				trx[gene[0]]=gene[2]             # <<<<<<<<<<<<<<
@@ -40732,7 +40722,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "gtcnv/core.pyx":1129
+        /* "src/core.pyx":1129
  * 			elif 'UTR5' in y:
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],'UTR5')]=1             # <<<<<<<<<<<<<<
@@ -40752,7 +40742,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         if (unlikely(PyDict_SetItem(__pyx_v_exons, __pyx_t_9, __pyx_int_1) < 0)) __PYX_ERR(0, 1129, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":1127
+        /* "src/core.pyx":1127
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],'UTR3')]=1
  * 			elif 'UTR5' in y:             # <<<<<<<<<<<<<<
@@ -40762,7 +40752,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L12;
       }
 
-      /* "gtcnv/core.pyx":1130
+      /* "src/core.pyx":1130
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],'UTR5')]=1
  * 			elif 'intron' in y:             # <<<<<<<<<<<<<<
@@ -40773,7 +40763,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __pyx_t_15 = (__pyx_t_14 != 0);
       if (__pyx_t_15) {
 
-        /* "gtcnv/core.pyx":1131
+        /* "src/core.pyx":1131
  * 				exons[(gene[0],'UTR5')]=1
  * 			elif 'intron' in y:
  * 				trx[gene[0]]=gene[2]             # <<<<<<<<<<<<<<
@@ -40788,7 +40778,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":1132
+        /* "src/core.pyx":1132
  * 			elif 'intron' in y:
  * 				trx[gene[0]]=gene[2]
  * 				intronTotal = int(gene[len(gene)-1].split('/').pop())             # <<<<<<<<<<<<<<
@@ -40811,11 +40801,11 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_t_9 = __Pyx_PyNumber_Int(__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1132, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1132, __pyx_L1_error)
+        __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1132, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __pyx_v_intronTotal = __pyx_t_23;
 
-        /* "gtcnv/core.pyx":1133
+        /* "src/core.pyx":1133
  * 				trx[gene[0]]=gene[2]
  * 				intronTotal = int(gene[len(gene)-1].split('/').pop())
  * 				intronNum = int(gene[len(gene)-1].split('/').pop(0).replace('intron_',''))             # <<<<<<<<<<<<<<
@@ -40844,18 +40834,18 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_t_9 = __Pyx_PyNumber_Int(__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1133, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1133, __pyx_L1_error)
+        __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1133, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __pyx_v_intronNum = __pyx_t_23;
 
-        /* "gtcnv/core.pyx":1134
+        /* "src/core.pyx":1134
  * 				intronTotal = int(gene[len(gene)-1].split('/').pop())
  * 				intronNum = int(gene[len(gene)-1].split('/').pop(0).replace('intron_',''))
  * 				introns[(gene[0],'TOTAL')]=intronTotal             # <<<<<<<<<<<<<<
  * 				if introns.get(gene[0])==None:
  * 					introns[gene[0]]=1
  */
-        __pyx_t_9 = __Pyx_PyInt_From_unsigned_short(__pyx_v_intronTotal); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1134, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyInt_From_unsigned_int(__pyx_v_intronTotal); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1134, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1134, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
@@ -40871,7 +40861,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":1135
+        /* "src/core.pyx":1135
  * 				intronNum = int(gene[len(gene)-1].split('/').pop(0).replace('intron_',''))
  * 				introns[(gene[0],'TOTAL')]=intronTotal
  * 				if introns.get(gene[0])==None:             # <<<<<<<<<<<<<<
@@ -40889,7 +40879,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         if (__pyx_t_15) {
 
-          /* "gtcnv/core.pyx":1136
+          /* "src/core.pyx":1136
  * 				introns[(gene[0],'TOTAL')]=intronTotal
  * 				if introns.get(gene[0])==None:
  * 					introns[gene[0]]=1             # <<<<<<<<<<<<<<
@@ -40901,7 +40891,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (unlikely(PyDict_SetItem(__pyx_v_introns, __pyx_t_9, __pyx_int_1) < 0)) __PYX_ERR(0, 1136, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1137
+          /* "src/core.pyx":1137
  * 				if introns.get(gene[0])==None:
  * 					introns[gene[0]]=1
  * 					introns[(gene[0],intronNum)]=1             # <<<<<<<<<<<<<<
@@ -40910,7 +40900,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1137, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
-          __pyx_t_10 = __Pyx_PyInt_From_unsigned_short(__pyx_v_intronNum); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1137, __pyx_L1_error)
+          __pyx_t_10 = __Pyx_PyInt_From_unsigned_int(__pyx_v_intronNum); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1137, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
           __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1137, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
@@ -40923,7 +40913,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (unlikely(PyDict_SetItem(__pyx_v_introns, __pyx_t_5, __pyx_int_1) < 0)) __PYX_ERR(0, 1137, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "gtcnv/core.pyx":1135
+          /* "src/core.pyx":1135
  * 				intronNum = int(gene[len(gene)-1].split('/').pop(0).replace('intron_',''))
  * 				introns[(gene[0],'TOTAL')]=intronTotal
  * 				if introns.get(gene[0])==None:             # <<<<<<<<<<<<<<
@@ -40933,7 +40923,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           goto __pyx_L14;
         }
 
-        /* "gtcnv/core.pyx":1138
+        /* "src/core.pyx":1138
  * 					introns[gene[0]]=1
  * 					introns[(gene[0],intronNum)]=1
  * 				elif introns.get((gene[0],intronNum)) == None:             # <<<<<<<<<<<<<<
@@ -40942,7 +40932,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1138, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_10 = __Pyx_PyInt_From_unsigned_short(__pyx_v_intronNum); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1138, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyInt_From_unsigned_int(__pyx_v_intronNum); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1138, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1138, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
@@ -40961,7 +40951,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         if (__pyx_t_15) {
 
-          /* "gtcnv/core.pyx":1139
+          /* "src/core.pyx":1139
  * 					introns[(gene[0],intronNum)]=1
  * 				elif introns.get((gene[0],intronNum)) == None:
  * 					introns[gene[0]]+=1             # <<<<<<<<<<<<<<
@@ -40979,7 +40969,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1140
+          /* "src/core.pyx":1140
  * 				elif introns.get((gene[0],intronNum)) == None:
  * 					introns[gene[0]]+=1
  * 					introns[(gene[0],intronNum)]=1             # <<<<<<<<<<<<<<
@@ -40988,7 +40978,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_gene, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1140, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
-          __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_intronNum); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1140, __pyx_L1_error)
+          __pyx_t_5 = __Pyx_PyInt_From_unsigned_int(__pyx_v_intronNum); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1140, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1140, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
@@ -41001,7 +40991,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (unlikely(PyDict_SetItem(__pyx_v_introns, __pyx_t_10, __pyx_int_1) < 0)) __PYX_ERR(0, 1140, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-          /* "gtcnv/core.pyx":1138
+          /* "src/core.pyx":1138
  * 					introns[gene[0]]=1
  * 					introns[(gene[0],intronNum)]=1
  * 				elif introns.get((gene[0],intronNum)) == None:             # <<<<<<<<<<<<<<
@@ -41011,7 +41001,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           goto __pyx_L14;
         }
 
-        /* "gtcnv/core.pyx":1141
+        /* "src/core.pyx":1141
  * 					introns[gene[0]]+=1
  * 					introns[(gene[0],intronNum)]=1
  * 				else: continue             # <<<<<<<<<<<<<<
@@ -41023,7 +41013,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         }
         __pyx_L14:;
 
-        /* "gtcnv/core.pyx":1130
+        /* "src/core.pyx":1130
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],'UTR5')]=1
  * 			elif 'intron' in y:             # <<<<<<<<<<<<<<
@@ -41033,7 +41023,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L12;
       }
 
-      /* "gtcnv/core.pyx":1142
+      /* "src/core.pyx":1142
  * 					introns[(gene[0],intronNum)]=1
  * 				else: continue
  * 			elif 'stream' in y:             # <<<<<<<<<<<<<<
@@ -41044,7 +41034,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __pyx_t_14 = (__pyx_t_15 != 0);
       if (__pyx_t_14) {
 
-        /* "gtcnv/core.pyx":1143
+        /* "src/core.pyx":1143
  * 				else: continue
  * 			elif 'stream' in y:
  * 				trx[gene[0]]=gene[2]             # <<<<<<<<<<<<<<
@@ -41059,7 +41049,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "gtcnv/core.pyx":1144
+        /* "src/core.pyx":1144
  * 			elif 'stream' in y:
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],gene[3])]=1             # <<<<<<<<<<<<<<
@@ -41081,7 +41071,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         if (unlikely(PyDict_SetItem(__pyx_v_exons, __pyx_t_9, __pyx_int_1) < 0)) __PYX_ERR(0, 1144, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "gtcnv/core.pyx":1142
+        /* "src/core.pyx":1142
  * 					introns[(gene[0],intronNum)]=1
  * 				else: continue
  * 			elif 'stream' in y:             # <<<<<<<<<<<<<<
@@ -41091,7 +41081,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L12;
       }
 
-      /* "gtcnv/core.pyx":1145
+      /* "src/core.pyx":1145
  * 				trx[gene[0]]=gene[2]
  * 				exons[(gene[0],gene[3])]=1
  * 			else: continue             # <<<<<<<<<<<<<<
@@ -41103,7 +41093,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       }
       __pyx_L12:;
 
-      /* "gtcnv/core.pyx":1109
+      /* "src/core.pyx":1109
  * 		trx={}
  * 		genlist=[]
  * 		for y in geneTEMP[x]:             # <<<<<<<<<<<<<<
@@ -41114,7 +41104,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     }
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "gtcnv/core.pyx":1146
+    /* "src/core.pyx":1146
  * 				exons[(gene[0],gene[3])]=1
  * 			else: continue
  * 		for y in trx:             # <<<<<<<<<<<<<<
@@ -41135,7 +41125,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __Pyx_XDECREF_SET(__pyx_v_y, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":1147
+      /* "src/core.pyx":1147
  * 			else: continue
  * 		for y in trx:
  * 			if ori.get(y) == None: continue             # <<<<<<<<<<<<<<
@@ -41152,7 +41142,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L15_continue;
       }
 
-      /* "gtcnv/core.pyx":1148
+      /* "src/core.pyx":1148
  * 		for y in trx:
  * 			if ori.get(y) == None: continue
  * 			orient=ori[y]             # <<<<<<<<<<<<<<
@@ -41164,7 +41154,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __Pyx_XDECREF_SET(__pyx_v_orient, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "gtcnv/core.pyx":1149
+      /* "src/core.pyx":1149
  * 			if ori.get(y) == None: continue
  * 			orient=ori[y]
  * 			exoncnt=0             # <<<<<<<<<<<<<<
@@ -41173,7 +41163,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
       __pyx_v_exoncnt = 0;
 
-      /* "gtcnv/core.pyx":1150
+      /* "src/core.pyx":1150
  * 			orient=ori[y]
  * 			exoncnt=0
  * 			exontot=0             # <<<<<<<<<<<<<<
@@ -41182,7 +41172,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
       __pyx_v_exontot = 0;
 
-      /* "gtcnv/core.pyx":1151
+      /* "src/core.pyx":1151
  * 			exoncnt=0
  * 			exontot=0
  * 			if exons.get(y) != None: exoncnt=exons[y]             # <<<<<<<<<<<<<<
@@ -41198,12 +41188,12 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       if (__pyx_t_14) {
         __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_exons, __pyx_v_y); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1151, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1151, __pyx_L1_error)
+        __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1151, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __pyx_v_exoncnt = __pyx_t_23;
       }
 
-      /* "gtcnv/core.pyx":1152
+      /* "src/core.pyx":1152
  * 			exontot=0
  * 			if exons.get(y) != None: exoncnt=exons[y]
  * 			if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]             # <<<<<<<<<<<<<<
@@ -41237,12 +41227,12 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_exons, __pyx_t_9); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1152, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_5); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1152, __pyx_L1_error)
+        __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_5); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1152, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_v_exontot = __pyx_t_23;
       }
 
-      /* "gtcnv/core.pyx":1153
+      /* "src/core.pyx":1153
  * 			if exons.get(y) != None: exoncnt=exons[y]
  * 			if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]
  * 			if orient == '+':             # <<<<<<<<<<<<<<
@@ -41252,7 +41242,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
       __pyx_t_14 = (__Pyx_PyString_Equals(__pyx_v_orient, __pyx_kp_s__124, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 1153, __pyx_L1_error)
       if (__pyx_t_14) {
 
-        /* "gtcnv/core.pyx":1154
+        /* "src/core.pyx":1154
  * 			if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]
  * 			if orient == '+':
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:             # <<<<<<<<<<<<<<
@@ -41299,7 +41289,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L22_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1155
+          /* "src/core.pyx":1155
  * 			if orient == '+':
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))             # <<<<<<<<<<<<<<
@@ -41336,7 +41326,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_5); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1155, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "gtcnv/core.pyx":1154
+          /* "src/core.pyx":1154
  * 			if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]
  * 			if orient == '+':
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:             # <<<<<<<<<<<<<<
@@ -41345,7 +41335,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1156
+        /* "src/core.pyx":1156
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:             # <<<<<<<<<<<<<<
@@ -41392,7 +41382,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L25_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1157
+          /* "src/core.pyx":1157
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))             # <<<<<<<<<<<<<<
@@ -41429,7 +41419,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_5); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1157, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "gtcnv/core.pyx":1156
+          /* "src/core.pyx":1156
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:             # <<<<<<<<<<<<<<
@@ -41438,7 +41428,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1158
+        /* "src/core.pyx":1158
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))             # <<<<<<<<<<<<<<
@@ -41451,9 +41441,9 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_exon_3, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1158, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_8 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exoncnt); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1158, __pyx_L1_error)
+          __pyx_t_8 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exoncnt); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1158, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
-          __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exontot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1158, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exontot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1158, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_3 = NULL;
           __pyx_t_22 = 0;
@@ -41511,7 +41501,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         }
 
-        /* "gtcnv/core.pyx":1159
+        /* "src/core.pyx":1159
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
  * 				if exons.get(y) == None or exoncnt != exontot:             # <<<<<<<<<<<<<<
@@ -41534,7 +41524,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L29_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1160
+          /* "src/core.pyx":1160
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
  * 				if exons.get(y) == None or exoncnt != exontot:
  * 					introncnt=0             # <<<<<<<<<<<<<<
@@ -41543,7 +41533,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_v_introncnt = 0;
 
-          /* "gtcnv/core.pyx":1161
+          /* "src/core.pyx":1161
  * 				if exons.get(y) == None or exoncnt != exontot:
  * 					introncnt=0
  * 					introntot=0             # <<<<<<<<<<<<<<
@@ -41552,7 +41542,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_v_introntot = 0;
 
-          /* "gtcnv/core.pyx":1162
+          /* "src/core.pyx":1162
  * 					introncnt=0
  * 					introntot=0
  * 					if introns.get(y) != None: introncnt=introns[y]             # <<<<<<<<<<<<<<
@@ -41568,12 +41558,12 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (__pyx_t_14) {
             __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_introns, __pyx_v_y); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1162, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_9);
-            __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1162, __pyx_L1_error)
+            __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_9); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1162, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             __pyx_v_introncnt = __pyx_t_23;
           }
 
-          /* "gtcnv/core.pyx":1163
+          /* "src/core.pyx":1163
  * 					introntot=0
  * 					if introns.get(y) != None: introncnt=introns[y]
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]             # <<<<<<<<<<<<<<
@@ -41607,12 +41597,12 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
             __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_v_introns, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1163, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1163, __pyx_L1_error)
+            __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1163, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             __pyx_v_introntot = __pyx_t_23;
           }
 
-          /* "gtcnv/core.pyx":1164
+          /* "src/core.pyx":1164
  * 					if introns.get(y) != None: introncnt=introns[y]
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))             # <<<<<<<<<<<<<<
@@ -41625,9 +41615,9 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
             __Pyx_GOTREF(__pyx_t_10);
             __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_intron_3, __pyx_n_s_format); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1164, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_2 = __Pyx_PyInt_From_unsigned_short(__pyx_v_introncnt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1164, __pyx_L1_error)
+            __pyx_t_2 = __Pyx_PyInt_From_unsigned_int(__pyx_v_introncnt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1164, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_introntot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1164, __pyx_L1_error)
+            __pyx_t_4 = __Pyx_PyInt_From_unsigned_int(__pyx_v_introntot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1164, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_8 = NULL;
             __pyx_t_22 = 0;
@@ -41685,7 +41675,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           }
 
-          /* "gtcnv/core.pyx":1159
+          /* "src/core.pyx":1159
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
  * 				if exons.get(y) == None or exoncnt != exontot:             # <<<<<<<<<<<<<<
@@ -41694,7 +41684,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1165
+        /* "src/core.pyx":1165
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:             # <<<<<<<<<<<<<<
@@ -41741,7 +41731,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L35_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1166
+          /* "src/core.pyx":1166
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))             # <<<<<<<<<<<<<<
@@ -41778,7 +41768,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_9); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1166, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1165
+          /* "src/core.pyx":1165
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:             # <<<<<<<<<<<<<<
@@ -41787,7 +41777,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1167
+        /* "src/core.pyx":1167
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:             # <<<<<<<<<<<<<<
@@ -41834,7 +41824,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L38_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1168
+          /* "src/core.pyx":1168
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))             # <<<<<<<<<<<<<<
@@ -41871,7 +41861,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_9); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1168, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1167
+          /* "src/core.pyx":1167
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:             # <<<<<<<<<<<<<<
@@ -41880,7 +41870,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1153
+        /* "src/core.pyx":1153
  * 			if exons.get(y) != None: exoncnt=exons[y]
  * 			if exons.get((y,'TOTAL')) != None: exontot=exons[(y,'TOTAL')]
  * 			if orient == '+':             # <<<<<<<<<<<<<<
@@ -41890,7 +41880,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         goto __pyx_L20;
       }
 
-      /* "gtcnv/core.pyx":1170
+      /* "src/core.pyx":1170
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
  * 			else:
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:             # <<<<<<<<<<<<<<
@@ -41938,7 +41928,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L41_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1171
+          /* "src/core.pyx":1171
  * 			else:
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))             # <<<<<<<<<<<<<<
@@ -41975,7 +41965,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_9); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1171, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1170
+          /* "src/core.pyx":1170
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
  * 			else:
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:             # <<<<<<<<<<<<<<
@@ -41984,7 +41974,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1172
+        /* "src/core.pyx":1172
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:             # <<<<<<<<<<<<<<
@@ -42031,7 +42021,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L44_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1173
+          /* "src/core.pyx":1173
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))             # <<<<<<<<<<<<<<
@@ -42068,7 +42058,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_9); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1173, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "gtcnv/core.pyx":1172
+          /* "src/core.pyx":1172
  * 				if exons.get((y,'upstream_1kb')) != 1 and exons.get((y,'downstream_1kb')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'downstream_1kb'))))
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:             # <<<<<<<<<<<<<<
@@ -42077,7 +42067,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1174
+        /* "src/core.pyx":1174
  * 				if exons.get((y,'UTR3'))==1 and exons.get((y,'UTR5')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))             # <<<<<<<<<<<<<<
@@ -42090,9 +42080,9 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_exon_3, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1174, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_3 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exoncnt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1174, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exoncnt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1174, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_exontot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1174, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyInt_From_unsigned_int(__pyx_v_exontot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1174, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_2 = NULL;
           __pyx_t_22 = 0;
@@ -42150,7 +42140,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         }
 
-        /* "gtcnv/core.pyx":1175
+        /* "src/core.pyx":1175
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
  * 				if exons.get(y) == None or exoncnt != exontot:             # <<<<<<<<<<<<<<
@@ -42173,7 +42163,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L48_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1176
+          /* "src/core.pyx":1176
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
  * 				if exons.get(y) == None or exoncnt != exontot:
  * 					introncnt=0             # <<<<<<<<<<<<<<
@@ -42182,7 +42172,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_v_introncnt = 0;
 
-          /* "gtcnv/core.pyx":1177
+          /* "src/core.pyx":1177
  * 				if exons.get(y) == None or exoncnt != exontot:
  * 					introncnt=0
  * 					introntot=0             # <<<<<<<<<<<<<<
@@ -42191,7 +42181,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
           __pyx_v_introntot = 0;
 
-          /* "gtcnv/core.pyx":1178
+          /* "src/core.pyx":1178
  * 					introncnt=0
  * 					introntot=0
  * 					if introns.get(y) != None: introncnt=introns[y]             # <<<<<<<<<<<<<<
@@ -42207,12 +42197,12 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           if (__pyx_t_14) {
             __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_introns, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1178, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_5); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1178, __pyx_L1_error)
+            __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_5); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1178, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __pyx_v_introncnt = __pyx_t_23;
           }
 
-          /* "gtcnv/core.pyx":1179
+          /* "src/core.pyx":1179
  * 					introntot=0
  * 					if introns.get(y) != None: introncnt=introns[y]
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]             # <<<<<<<<<<<<<<
@@ -42246,12 +42236,12 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
             __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_v_introns, __pyx_t_5); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1179, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_23 = __Pyx_PyInt_As_unsigned_short(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1179, __pyx_L1_error)
+            __pyx_t_23 = __Pyx_PyInt_As_unsigned_int(__pyx_t_10); if (unlikely((__pyx_t_23 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1179, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             __pyx_v_introntot = __pyx_t_23;
           }
 
-          /* "gtcnv/core.pyx":1180
+          /* "src/core.pyx":1180
  * 					if introns.get(y) != None: introncnt=introns[y]
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))             # <<<<<<<<<<<<<<
@@ -42264,9 +42254,9 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
             __Pyx_GOTREF(__pyx_t_10);
             __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_intron_3, __pyx_n_s_format); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1180, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_9);
-            __pyx_t_8 = __Pyx_PyInt_From_unsigned_short(__pyx_v_introncnt); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1180, __pyx_L1_error)
+            __pyx_t_8 = __Pyx_PyInt_From_unsigned_int(__pyx_v_introncnt); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1180, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
-            __pyx_t_4 = __Pyx_PyInt_From_unsigned_short(__pyx_v_introntot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1180, __pyx_L1_error)
+            __pyx_t_4 = __Pyx_PyInt_From_unsigned_int(__pyx_v_introntot); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1180, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_3 = NULL;
             __pyx_t_22 = 0;
@@ -42324,7 +42314,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           }
 
-          /* "gtcnv/core.pyx":1175
+          /* "src/core.pyx":1175
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR3'))))
  * 				if exoncnt != 0: genlist.append(','.join(map(str,(y,trx[y],'exon_{}/{}'.format(exoncnt,exontot)))))
  * 				if exons.get(y) == None or exoncnt != exontot:             # <<<<<<<<<<<<<<
@@ -42333,7 +42323,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1181
+        /* "src/core.pyx":1181
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:             # <<<<<<<<<<<<<<
@@ -42380,7 +42370,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L54_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1182
+          /* "src/core.pyx":1182
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))             # <<<<<<<<<<<<<<
@@ -42417,7 +42407,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_5); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1182, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "gtcnv/core.pyx":1181
+          /* "src/core.pyx":1181
  * 					if introns.get((y,'TOTAL'))!=None: introntot=introns[(y,'TOTAL')]
  * 					if introncnt !=0: genlist.append(','.join(map(str,(y,trx[y],'intron_{}/{}'.format(introncnt,introntot)))))
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:             # <<<<<<<<<<<<<<
@@ -42426,7 +42416,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
  */
         }
 
-        /* "gtcnv/core.pyx":1183
+        /* "src/core.pyx":1183
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:             # <<<<<<<<<<<<<<
@@ -42473,7 +42463,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
         __pyx_L57_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "gtcnv/core.pyx":1184
+          /* "src/core.pyx":1184
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))             # <<<<<<<<<<<<<<
@@ -42510,7 +42500,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
           __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_genlist, __pyx_t_5); if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 1184, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "gtcnv/core.pyx":1183
+          /* "src/core.pyx":1183
  * 				if exons.get((y,'UTR3'))!=1 and exons.get((y,'UTR5')) == 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'UTR5'))))
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:             # <<<<<<<<<<<<<<
@@ -42524,7 +42514,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
     }
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "gtcnv/core.pyx":1185
+    /* "src/core.pyx":1185
  * 				if exons.get((y,'upstream_1kb')) == 1 and exons.get((y,'downstream_1kb')) != 1:
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
  * 		if len(genlist)>=1 : genes[x]='|'.join(genlist)             # <<<<<<<<<<<<<<
@@ -42542,24 +42532,24 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1186
+  /* "src/core.pyx":1186
  * 					genlist.append(','.join(map(str,(y,trx[y],'upstream_1kb'))))
  * 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
  * 	return genes             # <<<<<<<<<<<<<<
  * def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
- * 	cdef unsigned short CNV_ID
+ * 	cdef unsigned int CNV_ID
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_genes);
   __pyx_r = __pyx_v_genes;
   goto __pyx_L0;
 
-  /* "gtcnv/core.pyx":1087
+  /* "src/core.pyx":1087
  * 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
  * 	return thouGen
  * cdef geneOverlap(cnv,gen):             # <<<<<<<<<<<<<<
- * 	cdef unsigned short exonTotal
- * 	cdef unsigned short exonNum
+ * 	cdef unsigned int exonTotal
+ * 	cdef unsigned int exonNum
  */
 
   /* function exit code */
@@ -42574,7 +42564,7 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("gtcnv.core.geneOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.geneOverlap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_GENEFH);
@@ -42600,18 +42590,18 @@ static PyObject *__pyx_f_5gtcnv_4core_geneOverlap(PyObject *__pyx_v_cnv, PyObjec
   return __pyx_r;
 }
 
-/* "gtcnv/core.pyx":1187
+/* "src/core.pyx":1187
  * 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
  * 	return genes
  * def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):             # <<<<<<<<<<<<<<
- * 	cdef unsigned short CNV_ID
- * 	cdef unsigned short SZ
+ * 	cdef unsigned int CNV_ID
+ * 	cdef unsigned int SZ
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5gtcnv_4core_21annotate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5gtcnv_4core_21annotate = {"annotate", (PyCFunction)__pyx_pw_5gtcnv_4core_21annotate, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5gtcnv_4core_21annotate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_4core_21annotate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_4core_21annotate = {"annotate", (PyCFunction)__pyx_pw_3src_4core_21annotate, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_4core_21annotate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_raw = 0;
   PyObject *__pyx_v_genos = 0;
   PyObject *__pyx_v_gen = 0;
@@ -42728,20 +42718,20 @@ static PyObject *__pyx_pw_5gtcnv_4core_21annotate(PyObject *__pyx_self, PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("annotate", 1, 10, 10, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1187, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gtcnv.core.annotate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.annotate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5gtcnv_4core_20annotate(__pyx_self, __pyx_v_raw, __pyx_v_genos, __pyx_v_gen, __pyx_v_REF, __pyx_v_NON, __pyx_v_GQ, __pyx_v_OFH, __pyx_v_sex, __pyx_v_hemi, __pyx_v_filt);
+  __pyx_r = __pyx_pf_3src_4core_20annotate(__pyx_self, __pyx_v_raw, __pyx_v_genos, __pyx_v_gen, __pyx_v_REF, __pyx_v_NON, __pyx_v_GQ, __pyx_v_OFH, __pyx_v_sex, __pyx_v_hemi, __pyx_v_filt);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_raw, PyObject *__pyx_v_genos, PyObject *__pyx_v_gen, PyObject *__pyx_v_REF, PyObject *__pyx_v_NON, PyObject *__pyx_v_GQ, PyObject *__pyx_v_OFH, PyObject *__pyx_v_sex, PyObject *__pyx_v_hemi, PyObject *__pyx_v_filt) {
-  unsigned short __pyx_v_CNV_ID;
-  unsigned short __pyx_v_SZ;
+static PyObject *__pyx_pf_3src_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_raw, PyObject *__pyx_v_genos, PyObject *__pyx_v_gen, PyObject *__pyx_v_REF, PyObject *__pyx_v_NON, PyObject *__pyx_v_GQ, PyObject *__pyx_v_OFH, PyObject *__pyx_v_sex, PyObject *__pyx_v_hemi, PyObject *__pyx_v_filt) {
+  unsigned int __pyx_v_CNV_ID;
+  unsigned int __pyx_v_SZ;
   PyObject *__pyx_v_genes = NULL;
   PyObject *__pyx_v_cyto = NULL;
   PyObject *__pyx_v_mei = NULL;
@@ -42823,7 +42813,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   PyObject *__pyx_t_22 = NULL;
   int __pyx_t_23;
   int __pyx_t_24;
-  unsigned short __pyx_t_25;
+  unsigned int __pyx_t_25;
   double __pyx_t_26;
   PyObject *(*__pyx_t_27)(PyObject *);
   PyObject *__pyx_t_28 = NULL;
@@ -42833,9 +42823,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   PyObject *__pyx_t_32 = NULL;
   __Pyx_RefNannySetupContext("annotate", 0);
 
-  /* "gtcnv/core.pyx":1190
- * 	cdef unsigned short CNV_ID
- * 	cdef unsigned short SZ
+  /* "src/core.pyx":1190
+ * 	cdef unsigned int CNV_ID
+ * 	cdef unsigned int SZ
  * 	genes={}             # <<<<<<<<<<<<<<
  * 	cyto={}
  * 	mei={}
@@ -42845,8 +42835,8 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_genes = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1191
- * 	cdef unsigned short SZ
+  /* "src/core.pyx":1191
+ * 	cdef unsigned int SZ
  * 	genes={}
  * 	cyto={}             # <<<<<<<<<<<<<<
  * 	mei={}
@@ -42857,7 +42847,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_cyto = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1192
+  /* "src/core.pyx":1192
  * 	genes={}
  * 	cyto={}
  * 	mei={}             # <<<<<<<<<<<<<<
@@ -42869,7 +42859,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_mei = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1193
+  /* "src/core.pyx":1193
  * 	cyto={}
  * 	mei={}
  * 	flags={}             # <<<<<<<<<<<<<<
@@ -42881,7 +42871,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_flags = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1194
+  /* "src/core.pyx":1194
  * 	mei={}
  * 	flags={}
  * 	thouGen={}             # <<<<<<<<<<<<<<
@@ -42893,7 +42883,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_thouGen = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1195
+  /* "src/core.pyx":1195
  * 	flags={}
  * 	thouGen={}
  * 	FILT={}             # <<<<<<<<<<<<<<
@@ -42905,7 +42895,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_FILT = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1196
+  /* "src/core.pyx":1196
  * 	thouGen={}
  * 	FILT={}
  * 	AF={}             # <<<<<<<<<<<<<<
@@ -42917,7 +42907,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_AF = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1197
+  /* "src/core.pyx":1197
  * 	FILT={}
  * 	AF={}
  * 	GT={}             # <<<<<<<<<<<<<<
@@ -42929,7 +42919,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_GT = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1198
+  /* "src/core.pyx":1198
  * 	AF={}
  * 	GT={}
  * 	refcnt={}             # <<<<<<<<<<<<<<
@@ -42941,7 +42931,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_refcnt = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1199
+  /* "src/core.pyx":1199
  * 	GT={}
  * 	refcnt={}
  * 	males = [k for k in sex if sex[k] == 'M']             # <<<<<<<<<<<<<<
@@ -43003,7 +42993,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_males = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1200
+  /* "src/core.pyx":1200
  * 	refcnt={}
  * 	males = [k for k in sex if sex[k] == 'M']
  * 	IID = list(set([x[5] for x in genos]))             # <<<<<<<<<<<<<<
@@ -43068,7 +43058,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_IID = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1201
+  /* "src/core.pyx":1201
  * 	males = [k for k in sex if sex[k] == 'M']
  * 	IID = list(set([x[5] for x in genos]))
  * 	IID.sort(key=str.lower)             # <<<<<<<<<<<<<<
@@ -43089,7 +43079,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1202
+  /* "src/core.pyx":1202
  * 	IID = list(set([x[5] for x in genos]))
  * 	IID.sort(key=str.lower)
  * 	cnv=pbed.BedTool(list(set([(x[0],x[1],x[2]) for x in raw]))).sort()             # <<<<<<<<<<<<<<
@@ -43221,38 +43211,38 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_cnv = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1203
+  /* "src/core.pyx":1203
  * 	IID.sort(key=str.lower)
  * 	cnv=pbed.BedTool(list(set([(x[0],x[1],x[2]) for x in raw]))).sort()
  * 	cyto=cytobandOverlap(cnv,gen)             # <<<<<<<<<<<<<<
  * 	flags=flagsOverlap(cnv,gen)
  * 	mei,meiRO=meiOverlap(cnv,gen)
  */
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_cytobandOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1203, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_cytobandOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1203, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF_SET(__pyx_v_cyto, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1204
+  /* "src/core.pyx":1204
  * 	cnv=pbed.BedTool(list(set([(x[0],x[1],x[2]) for x in raw]))).sort()
  * 	cyto=cytobandOverlap(cnv,gen)
  * 	flags=flagsOverlap(cnv,gen)             # <<<<<<<<<<<<<<
  * 	mei,meiRO=meiOverlap(cnv,gen)
  * 	thouGen=thouGenOverlap(raw,gen)
  */
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_flagsOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1204, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_flagsOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF_SET(__pyx_v_flags, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1205
+  /* "src/core.pyx":1205
  * 	cyto=cytobandOverlap(cnv,gen)
  * 	flags=flagsOverlap(cnv,gen)
  * 	mei,meiRO=meiOverlap(cnv,gen)             # <<<<<<<<<<<<<<
  * 	thouGen=thouGenOverlap(raw,gen)
  * 	genes=geneOverlap(cnv,gen)
  */
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_meiOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1205, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_meiOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if ((likely(PyTuple_CheckExact(__pyx_t_5))) || (PyList_CheckExact(__pyx_t_5))) {
     PyObject* sequence = __pyx_t_5;
@@ -43309,31 +43299,31 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_meiRO = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":1206
+  /* "src/core.pyx":1206
  * 	flags=flagsOverlap(cnv,gen)
  * 	mei,meiRO=meiOverlap(cnv,gen)
  * 	thouGen=thouGenOverlap(raw,gen)             # <<<<<<<<<<<<<<
  * 	genes=geneOverlap(cnv,gen)
  * 	for x in genos:
  */
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_thouGenOverlap(__pyx_v_raw, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1206, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_thouGenOverlap(__pyx_v_raw, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF_SET(__pyx_v_thouGen, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1207
+  /* "src/core.pyx":1207
  * 	mei,meiRO=meiOverlap(cnv,gen)
  * 	thouGen=thouGenOverlap(raw,gen)
  * 	genes=geneOverlap(cnv,gen)             # <<<<<<<<<<<<<<
  * 	for x in genos:
  * 		k = (x[0],x[1],x[2],x[4])
  */
-  __pyx_t_5 = __pyx_f_5gtcnv_4core_geneOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1207, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_3src_4core_geneOverlap(__pyx_v_cnv, __pyx_v_gen); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF_SET(__pyx_v_genes, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1208
+  /* "src/core.pyx":1208
  * 	thouGen=thouGenOverlap(raw,gen)
  * 	genes=geneOverlap(cnv,gen)
  * 	for x in genos:             # <<<<<<<<<<<<<<
@@ -43382,7 +43372,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":1209
+    /* "src/core.pyx":1209
  * 	genes=geneOverlap(cnv,gen)
  * 	for x in genos:
  * 		k = (x[0],x[1],x[2],x[4])             # <<<<<<<<<<<<<<
@@ -43414,7 +43404,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "gtcnv/core.pyx":1210
+    /* "src/core.pyx":1210
  * 	for x in genos:
  * 		k = (x[0],x[1],x[2],x[4])
  * 		filty=0             # <<<<<<<<<<<<<<
@@ -43424,7 +43414,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_XDECREF_SET(__pyx_v_filty, __pyx_int_0);
 
-    /* "gtcnv/core.pyx":1211
+    /* "src/core.pyx":1211
  * 		k = (x[0],x[1],x[2],x[4])
  * 		filty=0
  * 		if filt.get((x[0],x[1],x[2],x[4],x[5]))!=None: filty=filt[(x[0],x[1],x[2],x[4],x[5])]             # <<<<<<<<<<<<<<
@@ -43525,7 +43515,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_10 = 0;
     }
 
-    /* "gtcnv/core.pyx":1212
+    /* "src/core.pyx":1212
  * 		filty=0
  * 		if filt.get((x[0],x[1],x[2],x[4],x[5]))!=None: filty=filt[(x[0],x[1],x[2],x[4],x[5])]
  * 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:             # <<<<<<<<<<<<<<
@@ -43593,7 +43583,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_6) {
 
-      /* "gtcnv/core.pyx":1213
+      /* "src/core.pyx":1213
  * 		if filt.get((x[0],x[1],x[2],x[4],x[5]))!=None: filty=filt[(x[0],x[1],x[2],x[4],x[5])]
  * 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:
  * 			lik=format(float(x[len(x)-2]),'.2f')             # <<<<<<<<<<<<<<
@@ -43621,7 +43611,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_lik, __pyx_t_10);
       __pyx_t_10 = 0;
 
-      /* "gtcnv/core.pyx":1214
+      /* "src/core.pyx":1214
  * 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:
  * 			lik=format(float(x[len(x)-2]),'.2f')
  * 			if '1' not in x[13]:             # <<<<<<<<<<<<<<
@@ -43635,7 +43625,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_16 = (__pyx_t_6 != 0);
       if (__pyx_t_16) {
 
-        /* "gtcnv/core.pyx":1215
+        /* "src/core.pyx":1215
  * 			lik=format(float(x[len(x)-2]),'.2f')
  * 			if '1' not in x[13]:
  * 				lik=format(float(x[len(x)-3]),'.2f')             # <<<<<<<<<<<<<<
@@ -43663,7 +43653,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_DECREF_SET(__pyx_v_lik, __pyx_t_2);
         __pyx_t_2 = 0;
 
-        /* "gtcnv/core.pyx":1216
+        /* "src/core.pyx":1216
  * 			if '1' not in x[13]:
  * 				lik=format(float(x[len(x)-3]),'.2f')
  * 				if refcnt.get(k)==None: refcnt[k]=1             # <<<<<<<<<<<<<<
@@ -43681,7 +43671,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L17;
         }
 
-        /* "gtcnv/core.pyx":1217
+        /* "src/core.pyx":1217
  * 				lik=format(float(x[len(x)-3]),'.2f')
  * 				if refcnt.get(k)==None: refcnt[k]=1
  * 				else: refcnt[k]+=1             # <<<<<<<<<<<<<<
@@ -43702,7 +43692,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L17:;
 
-        /* "gtcnv/core.pyx":1214
+        /* "src/core.pyx":1214
  * 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:
  * 			lik=format(float(x[len(x)-2]),'.2f')
  * 			if '1' not in x[13]:             # <<<<<<<<<<<<<<
@@ -43711,7 +43701,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
       }
 
-      /* "gtcnv/core.pyx":1218
+      /* "src/core.pyx":1218
  * 				if refcnt.get(k)==None: refcnt[k]=1
  * 				else: refcnt[k]+=1
  * 			if '1' in x[13]:             # <<<<<<<<<<<<<<
@@ -43725,7 +43715,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_6 = (__pyx_t_16 != 0);
       if (__pyx_t_6) {
 
-        /* "gtcnv/core.pyx":1219
+        /* "src/core.pyx":1219
  * 				else: refcnt[k]+=1
  * 			if '1' in x[13]:
  * 				if AF.get((k,x[5]))==None:             # <<<<<<<<<<<<<<
@@ -43751,7 +43741,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         if (__pyx_t_6) {
 
-          /* "gtcnv/core.pyx":1220
+          /* "src/core.pyx":1220
  * 			if '1' in x[13]:
  * 				if AF.get((k,x[5]))==None:
  * 					if AF.get(k)==None: AF[k]=1             # <<<<<<<<<<<<<<
@@ -43769,7 +43759,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
             goto __pyx_L20;
           }
 
-          /* "gtcnv/core.pyx":1221
+          /* "src/core.pyx":1221
  * 				if AF.get((k,x[5]))==None:
  * 					if AF.get(k)==None: AF[k]=1
  * 					else: AF[k]+=1             # <<<<<<<<<<<<<<
@@ -43790,7 +43780,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           }
           __pyx_L20:;
 
-          /* "gtcnv/core.pyx":1222
+          /* "src/core.pyx":1222
  * 					if AF.get(k)==None: AF[k]=1
  * 					else: AF[k]+=1
  * 					AF[(k,x[5])]=1             # <<<<<<<<<<<<<<
@@ -43810,7 +43800,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           if (unlikely(PyDict_SetItem(__pyx_v_AF, __pyx_t_2, __pyx_int_1) < 0)) __PYX_ERR(0, 1222, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "gtcnv/core.pyx":1219
+          /* "src/core.pyx":1219
  * 				else: refcnt[k]+=1
  * 			if '1' in x[13]:
  * 				if AF.get((k,x[5]))==None:             # <<<<<<<<<<<<<<
@@ -43819,7 +43809,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
         }
 
-        /* "gtcnv/core.pyx":1223
+        /* "src/core.pyx":1223
  * 					else: AF[k]+=1
  * 					AF[(k,x[5])]=1
  * 				lik=format(float(x[len(x)-2]),'.2f')             # <<<<<<<<<<<<<<
@@ -43847,7 +43837,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_DECREF_SET(__pyx_v_lik, __pyx_t_10);
         __pyx_t_10 = 0;
 
-        /* "gtcnv/core.pyx":1218
+        /* "src/core.pyx":1218
  * 				if refcnt.get(k)==None: refcnt[k]=1
  * 				else: refcnt[k]+=1
  * 			if '1' in x[13]:             # <<<<<<<<<<<<<<
@@ -43856,7 +43846,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
       }
 
-      /* "gtcnv/core.pyx":1224
+      /* "src/core.pyx":1224
  * 					AF[(k,x[5])]=1
  * 				lik=format(float(x[len(x)-2]),'.2f')
  * 			v = ':'.join(map(str,(x[13],             # <<<<<<<<<<<<<<
@@ -43866,7 +43856,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_x, 13, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1224, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
 
-      /* "gtcnv/core.pyx":1226
+      /* "src/core.pyx":1226
  * 			v = ':'.join(map(str,(x[13],
  * 					filty,
  * 					format(float(x[7]),'.2f'), #DPE             # <<<<<<<<<<<<<<
@@ -43890,7 +43880,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1227
+      /* "src/core.pyx":1227
  * 					filty,
  * 					format(float(x[7]),'.2f'), #DPE
  * 					format(float(x[8]),'.2f'), #SR             # <<<<<<<<<<<<<<
@@ -43914,7 +43904,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1228
+      /* "src/core.pyx":1228
  * 					format(float(x[7]),'.2f'), #DPE
  * 					format(float(x[8]),'.2f'), #SR
  * 					format(float(x[6]),'.2f'), #COVR             # <<<<<<<<<<<<<<
@@ -43938,7 +43928,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1229
+      /* "src/core.pyx":1229
  * 					format(float(x[8]),'.2f'), #SR
  * 					format(float(x[6]),'.2f'), #COVR
  * 					format(float(x[9]),'.2f'),  #SNP COVR             # <<<<<<<<<<<<<<
@@ -43962,7 +43952,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1230
+      /* "src/core.pyx":1230
  * 					format(float(x[6]),'.2f'), #COVR
  * 					format(float(x[9]),'.2f'),  #SNP COVR
  * 					int(x[10]), #SNPs             # <<<<<<<<<<<<<<
@@ -43975,7 +43965,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1231
+      /* "src/core.pyx":1231
  * 					format(float(x[9]),'.2f'),  #SNP COVR
  * 					int(x[10]), #SNPs
  * 					format(float(x[11]),'.2f'), #HET ratio             # <<<<<<<<<<<<<<
@@ -43999,7 +43989,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1232
+      /* "src/core.pyx":1232
  * 					int(x[10]), #SNPs
  * 					format(float(x[11]),'.2f'), #HET ratio
  * 					int(x[12]), #HETs             # <<<<<<<<<<<<<<
@@ -44012,7 +44002,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "gtcnv/core.pyx":1234
+      /* "src/core.pyx":1234
  * 					int(x[12]), #HETs
  * 					lik,
  * 					GQ[(x[0],x[1],x[2],x[4],x[5])])))             # <<<<<<<<<<<<<<
@@ -44050,7 +44040,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
 
-      /* "gtcnv/core.pyx":1224
+      /* "src/core.pyx":1224
  * 					AF[(k,x[5])]=1
  * 				lik=format(float(x[len(x)-2]),'.2f')
  * 			v = ':'.join(map(str,(x[13],             # <<<<<<<<<<<<<<
@@ -44109,7 +44099,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_v, ((PyObject*)__pyx_t_21));
       __pyx_t_21 = 0;
 
-      /* "gtcnv/core.pyx":1235
+      /* "src/core.pyx":1235
  * 					lik,
  * 					GQ[(x[0],x[1],x[2],x[4],x[5])])))
  * 			if FILT.get(k)==None: FILT[k]=[filty]             # <<<<<<<<<<<<<<
@@ -44133,7 +44123,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L21;
       }
 
-      /* "gtcnv/core.pyx":1236
+      /* "src/core.pyx":1236
  * 					GQ[(x[0],x[1],x[2],x[4],x[5])])))
  * 			if FILT.get(k)==None: FILT[k]=[filty]
  * 			else : FILT[k].append(filty)             # <<<<<<<<<<<<<<
@@ -44148,7 +44138,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       }
       __pyx_L21:;
 
-      /* "gtcnv/core.pyx":1237
+      /* "src/core.pyx":1237
  * 			if FILT.get(k)==None: FILT[k]=[filty]
  * 			else : FILT[k].append(filty)
  * 			GT[(k,x[5])]=v             # <<<<<<<<<<<<<<
@@ -44168,7 +44158,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       if (unlikely(PyDict_SetItem(__pyx_v_GT, __pyx_t_21, __pyx_v_v) < 0)) __PYX_ERR(0, 1237, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-      /* "gtcnv/core.pyx":1212
+      /* "src/core.pyx":1212
  * 		filty=0
  * 		if filt.get((x[0],x[1],x[2],x[4],x[5]))!=None: filty=filt[(x[0],x[1],x[2],x[4],x[5])]
  * 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:             # <<<<<<<<<<<<<<
@@ -44177,7 +44167,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
     }
 
-    /* "gtcnv/core.pyx":1208
+    /* "src/core.pyx":1208
  * 	thouGen=thouGenOverlap(raw,gen)
  * 	genes=geneOverlap(cnv,gen)
  * 	for x in genos:             # <<<<<<<<<<<<<<
@@ -44187,7 +44177,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1238
+  /* "src/core.pyx":1238
  * 			else : FILT[k].append(filty)
  * 			GT[(k,x[5])]=v
  * 	for x in genos:             # <<<<<<<<<<<<<<
@@ -44236,7 +44226,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_21);
     __pyx_t_21 = 0;
 
-    /* "gtcnv/core.pyx":1239
+    /* "src/core.pyx":1239
  * 			GT[(k,x[5])]=v
  * 	for x in genos:
  * 		k = (x[0],x[1],x[2],x[4])             # <<<<<<<<<<<<<<
@@ -44268,7 +44258,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_11);
     __pyx_t_11 = 0;
 
-    /* "gtcnv/core.pyx":1240
+    /* "src/core.pyx":1240
  * 	for x in genos:
  * 		k = (x[0],x[1],x[2],x[4])
  * 		for iid in IID:             # <<<<<<<<<<<<<<
@@ -44287,7 +44277,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_iid, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "gtcnv/core.pyx":1241
+      /* "src/core.pyx":1241
  * 		k = (x[0],x[1],x[2],x[4])
  * 		for iid in IID:
  * 			if GT.get((k,iid))==None:             # <<<<<<<<<<<<<<
@@ -44311,7 +44301,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       if (__pyx_t_6) {
 
-        /* "gtcnv/core.pyx":1242
+        /* "src/core.pyx":1242
  * 		for iid in IID:
  * 			if GT.get((k,iid))==None:
  * 				if x[0] == 'chrY' and iid not in males: GT[(k,iid)]='.'             # <<<<<<<<<<<<<<
@@ -44345,7 +44335,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L27;
         }
 
-        /* "gtcnv/core.pyx":1243
+        /* "src/core.pyx":1243
  * 			if GT.get((k,iid))==None:
  * 				if x[0] == 'chrY' and iid not in males: GT[(k,iid)]='.'
  * 				elif x[0] == 'chrY' and iid in males: GT[(k,iid)]='0'             # <<<<<<<<<<<<<<
@@ -44379,7 +44369,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L27;
         }
 
-        /* "gtcnv/core.pyx":1244
+        /* "src/core.pyx":1244
  * 				if x[0] == 'chrY' and iid not in males: GT[(k,iid)]='.'
  * 				elif x[0] == 'chrY' and iid in males: GT[(k,iid)]='0'
  * 				elif x[0] == 'chrX' and iid in males and hemi.get(k) != None: GT[(k,iid)]='0'             # <<<<<<<<<<<<<<
@@ -44449,7 +44439,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           goto __pyx_L27;
         }
 
-        /* "gtcnv/core.pyx":1245
+        /* "src/core.pyx":1245
  * 				elif x[0] == 'chrY' and iid in males: GT[(k,iid)]='0'
  * 				elif x[0] == 'chrX' and iid in males and hemi.get(k) != None: GT[(k,iid)]='0'
  * 				else: GT[(k,iid)]='0/0'             # <<<<<<<<<<<<<<
@@ -44470,7 +44460,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         }
         __pyx_L27:;
 
-        /* "gtcnv/core.pyx":1241
+        /* "src/core.pyx":1241
  * 		k = (x[0],x[1],x[2],x[4])
  * 		for iid in IID:
  * 			if GT.get((k,iid))==None:             # <<<<<<<<<<<<<<
@@ -44479,7 +44469,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
       }
 
-      /* "gtcnv/core.pyx":1240
+      /* "src/core.pyx":1240
  * 	for x in genos:
  * 		k = (x[0],x[1],x[2],x[4])
  * 		for iid in IID:             # <<<<<<<<<<<<<<
@@ -44489,7 +44479,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "gtcnv/core.pyx":1238
+    /* "src/core.pyx":1238
  * 			else : FILT[k].append(filty)
  * 			GT[(k,x[5])]=v
  * 	for x in genos:             # <<<<<<<<<<<<<<
@@ -44499,7 +44489,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1246
+  /* "src/core.pyx":1246
  * 				elif x[0] == 'chrX' and iid in males and hemi.get(k) != None: GT[(k,iid)]='0'
  * 				else: GT[(k,iid)]='0/0'
  * 	VCF=[]             # <<<<<<<<<<<<<<
@@ -44511,7 +44501,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_VCF = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "gtcnv/core.pyx":1247
+  /* "src/core.pyx":1247
  * 				else: GT[(k,iid)]='0/0'
  * 	VCF=[]
  * 	CNV_ID=1             # <<<<<<<<<<<<<<
@@ -44520,7 +44510,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
   __pyx_v_CNV_ID = 1;
 
-  /* "gtcnv/core.pyx":1248
+  /* "src/core.pyx":1248
  * 	VCF=[]
  * 	CNV_ID=1
  * 	for (c,s,e,cl) in pbed.BedTool(list(set([(x[0],x[1],x[2],x[3]) for x in raw]))).sort():             # <<<<<<<<<<<<<<
@@ -44766,7 +44756,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_cl, __pyx_t_21);
     __pyx_t_21 = 0;
 
-    /* "gtcnv/core.pyx":1249
+    /* "src/core.pyx":1249
  * 	CNV_ID=1
  * 	for (c,s,e,cl) in pbed.BedTool(list(set([(x[0],x[1],x[2],x[3]) for x in raw]))).sort():
  * 		SZ=int(e)-int(s)+1             # <<<<<<<<<<<<<<
@@ -44784,11 +44774,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __pyx_t_21 = __Pyx_PyInt_AddObjC(__pyx_t_17, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1249, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-    __pyx_t_25 = __Pyx_PyInt_As_unsigned_short(__pyx_t_21); if (unlikely((__pyx_t_25 == (unsigned short)-1) && PyErr_Occurred())) __PYX_ERR(0, 1249, __pyx_L1_error)
+    __pyx_t_25 = __Pyx_PyInt_As_unsigned_int(__pyx_t_21); if (unlikely((__pyx_t_25 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1249, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
     __pyx_v_SZ = __pyx_t_25;
 
-    /* "gtcnv/core.pyx":1250
+    /* "src/core.pyx":1250
  * 	for (c,s,e,cl) in pbed.BedTool(list(set([(x[0],x[1],x[2],x[3]) for x in raw]))).sort():
  * 		SZ=int(e)-int(s)+1
  * 		TYPE=cl             # <<<<<<<<<<<<<<
@@ -44798,7 +44788,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_v_cl);
     __Pyx_XDECREF_SET(__pyx_v_TYPE, __pyx_v_cl);
 
-    /* "gtcnv/core.pyx":1251
+    /* "src/core.pyx":1251
  * 		SZ=int(e)-int(s)+1
  * 		TYPE=cl
  * 		THOUGEN_ID='NA'             # <<<<<<<<<<<<<<
@@ -44808,7 +44798,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_THOUGEN_ID, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1252
+    /* "src/core.pyx":1252
  * 		TYPE=cl
  * 		THOUGEN_ID='NA'
  * 		THOUGEN_OVR='NA'             # <<<<<<<<<<<<<<
@@ -44818,7 +44808,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_THOUGEN_OVR, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1253
+    /* "src/core.pyx":1253
  * 		THOUGEN_ID='NA'
  * 		THOUGEN_OVR='NA'
  * 		SEGD=0.00             # <<<<<<<<<<<<<<
@@ -44828,7 +44818,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_float_0_00);
     __Pyx_XDECREF_SET(__pyx_v_SEGD, __pyx_float_0_00);
 
-    /* "gtcnv/core.pyx":1254
+    /* "src/core.pyx":1254
  * 		THOUGEN_OVR='NA'
  * 		SEGD=0.00
  * 		ABPTS=0.00             # <<<<<<<<<<<<<<
@@ -44838,7 +44828,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_float_0_00);
     __Pyx_XDECREF_SET(__pyx_v_ABPTS, __pyx_float_0_00);
 
-    /* "gtcnv/core.pyx":1255
+    /* "src/core.pyx":1255
  * 		SEGD=0.00
  * 		ABPTS=0.00
  * 		UNMAP=0.00             # <<<<<<<<<<<<<<
@@ -44848,7 +44838,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_float_0_00);
     __Pyx_XDECREF_SET(__pyx_v_UNMAP, __pyx_float_0_00);
 
-    /* "gtcnv/core.pyx":1256
+    /* "src/core.pyx":1256
  * 		ABPTS=0.00
  * 		UNMAP=0.00
  * 		CENTMER=0.00             # <<<<<<<<<<<<<<
@@ -44858,7 +44848,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_float_0_00);
     __Pyx_XDECREF_SET(__pyx_v_CENTMER, __pyx_float_0_00);
 
-    /* "gtcnv/core.pyx":1257
+    /* "src/core.pyx":1257
  * 		UNMAP=0.00
  * 		CENTMER=0.00
  * 		STR=0.00             # <<<<<<<<<<<<<<
@@ -44868,7 +44858,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_float_0_00);
     __Pyx_XDECREF_SET(__pyx_v_STR, __pyx_float_0_00);
 
-    /* "gtcnv/core.pyx":1258
+    /* "src/core.pyx":1258
  * 		CENTMER=0.00
  * 		STR=0.00
  * 		meiName="NA"             # <<<<<<<<<<<<<<
@@ -44878,7 +44868,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_meiName, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1259
+    /* "src/core.pyx":1259
  * 		STR=0.00
  * 		meiName="NA"
  * 		REPEATMASKER=0.00             # <<<<<<<<<<<<<<
@@ -44888,7 +44878,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_float_0_00);
     __Pyx_XDECREF_SET(__pyx_v_REPEATMASKER, __pyx_float_0_00);
 
-    /* "gtcnv/core.pyx":1260
+    /* "src/core.pyx":1260
  * 		meiName="NA"
  * 		REPEATMASKER=0.00
  * 		GENE='intergenic'             # <<<<<<<<<<<<<<
@@ -44898,7 +44888,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_intergenic);
     __Pyx_XDECREF_SET(__pyx_v_GENE, __pyx_n_s_intergenic);
 
-    /* "gtcnv/core.pyx":1261
+    /* "src/core.pyx":1261
  * 		REPEATMASKER=0.00
  * 		GENE='intergenic'
  * 		CYTOB='NA'             # <<<<<<<<<<<<<<
@@ -44908,7 +44898,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_CYTOB, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1262
+    /* "src/core.pyx":1262
  * 		GENE='intergenic'
  * 		CYTOB='NA'
  * 		MEDREF='NA'             # <<<<<<<<<<<<<<
@@ -44918,7 +44908,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_MEDREF, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1263
+    /* "src/core.pyx":1263
  * 		CYTOB='NA'
  * 		MEDREF='NA'
  * 		QUAL='NA'             # <<<<<<<<<<<<<<
@@ -44928,7 +44918,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_QUAL, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1264
+    /* "src/core.pyx":1264
  * 		MEDREF='NA'
  * 		QUAL='NA'
  * 		ALLELE='NA'             # <<<<<<<<<<<<<<
@@ -44938,7 +44928,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_NA);
     __Pyx_XDECREF_SET(__pyx_v_ALLELE, __pyx_n_s_NA);
 
-    /* "gtcnv/core.pyx":1265
+    /* "src/core.pyx":1265
  * 		QUAL='NA'
  * 		ALLELE='NA'
  * 		GTS=[]             # <<<<<<<<<<<<<<
@@ -44950,7 +44940,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_GTS, ((PyObject*)__pyx_t_21));
     __pyx_t_21 = 0;
 
-    /* "gtcnv/core.pyx":1266
+    /* "src/core.pyx":1266
  * 		ALLELE='NA'
  * 		GTS=[]
  * 		PASS='PASS'             # <<<<<<<<<<<<<<
@@ -44960,7 +44950,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_n_s_PASS);
     __Pyx_XDECREF_SET(__pyx_v_PASS, __pyx_n_s_PASS);
 
-    /* "gtcnv/core.pyx":1267
+    /* "src/core.pyx":1267
  * 		GTS=[]
  * 		PASS='PASS'
  * 		fail=[]             # <<<<<<<<<<<<<<
@@ -44972,7 +44962,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_fail, ((PyObject*)__pyx_t_21));
     __pyx_t_21 = 0;
 
-    /* "gtcnv/core.pyx":1268
+    /* "src/core.pyx":1268
  * 		PASS='PASS'
  * 		fail=[]
  * 		cnvref=0             # <<<<<<<<<<<<<<
@@ -44982,7 +44972,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_XDECREF_SET(__pyx_v_cnvref, __pyx_int_0);
 
-    /* "gtcnv/core.pyx":1269
+    /* "src/core.pyx":1269
  * 		fail=[]
  * 		cnvref=0
  * 		if refcnt.get((c,s,e,cl))!=None: cnvref=refcnt[(c,s,e,cl)]             # <<<<<<<<<<<<<<
@@ -45032,7 +45022,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_17 = 0;
     }
 
-    /* "gtcnv/core.pyx":1270
+    /* "src/core.pyx":1270
  * 		cnvref=0
  * 		if refcnt.get((c,s,e,cl))!=None: cnvref=refcnt[(c,s,e,cl)]
  * 		if mei.get((c,s,e))!=None:             # <<<<<<<<<<<<<<
@@ -45084,7 +45074,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
     if (__pyx_t_6) {
 
-      /* "gtcnv/core.pyx":1271
+      /* "src/core.pyx":1271
  * 		if refcnt.get((c,s,e,cl))!=None: cnvref=refcnt[(c,s,e,cl)]
  * 		if mei.get((c,s,e))!=None:
  * 			meiName=mei[(c,s,e)]             # <<<<<<<<<<<<<<
@@ -45108,7 +45098,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF_SET(__pyx_v_meiName, __pyx_t_17);
       __pyx_t_17 = 0;
 
-      /* "gtcnv/core.pyx":1272
+      /* "src/core.pyx":1272
  * 		if mei.get((c,s,e))!=None:
  * 			meiName=mei[(c,s,e)]
  * 			TYPE=TYPE+':'+meiName             # <<<<<<<<<<<<<<
@@ -45123,7 +45113,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_DECREF_SET(__pyx_v_TYPE, __pyx_t_21);
       __pyx_t_21 = 0;
 
-      /* "gtcnv/core.pyx":1270
+      /* "src/core.pyx":1270
  * 		cnvref=0
  * 		if refcnt.get((c,s,e,cl))!=None: cnvref=refcnt[(c,s,e,cl)]
  * 		if mei.get((c,s,e))!=None:             # <<<<<<<<<<<<<<
@@ -45132,7 +45122,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
     }
 
-    /* "gtcnv/core.pyx":1273
+    /* "src/core.pyx":1273
  * 			meiName=mei[(c,s,e)]
  * 			TYPE=TYPE+':'+meiName
  * 		DESX='{}:{}-{}_{}'.format(c,s,e,TYPE.replace('DEL','deletion').replace('DUP','duplication'))             # <<<<<<<<<<<<<<
@@ -45188,7 +45178,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_DESX, __pyx_t_21);
     __pyx_t_21 = 0;
 
-    /* "gtcnv/core.pyx":1274
+    /* "src/core.pyx":1274
  * 			TYPE=TYPE+':'+meiName
  * 		DESX='{}:{}-{}_{}'.format(c,s,e,TYPE.replace('DEL','deletion').replace('DUP','duplication'))
  * 		if cyto.get((c,s,e))!=None: CYTOB=cyto[(c,s,e)]             # <<<<<<<<<<<<<<
@@ -45257,7 +45247,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1275
+    /* "src/core.pyx":1275
  * 		DESX='{}:{}-{}_{}'.format(c,s,e,TYPE.replace('DEL','deletion').replace('DUP','duplication'))
  * 		if cyto.get((c,s,e))!=None: CYTOB=cyto[(c,s,e)]
  * 		if flags.get((c,s,e,'abparts'))!=None: ABPTS=format(flags[(c,s,e,'abparts')],'.2f')             # <<<<<<<<<<<<<<
@@ -45343,7 +45333,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1276
+    /* "src/core.pyx":1276
  * 		if cyto.get((c,s,e))!=None: CYTOB=cyto[(c,s,e)]
  * 		if flags.get((c,s,e,'abparts'))!=None: ABPTS=format(flags[(c,s,e,'abparts')],'.2f')
  * 		if flags.get((c,s,e,'centromere'))!=None: CENTMER=format(flags[(c,s,e,'centromere')],'.2f')             # <<<<<<<<<<<<<<
@@ -45429,7 +45419,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1277
+    /* "src/core.pyx":1277
  * 		if flags.get((c,s,e,'abparts'))!=None: ABPTS=format(flags[(c,s,e,'abparts')],'.2f')
  * 		if flags.get((c,s,e,'centromere'))!=None: CENTMER=format(flags[(c,s,e,'centromere')],'.2f')
  * 		if flags.get((c,s,e,'segDup'))!=None: SEGD=format(flags[(c,s,e,'segDup')],'.2f')             # <<<<<<<<<<<<<<
@@ -45515,12 +45505,12 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1278
+    /* "src/core.pyx":1278
  * 		if flags.get((c,s,e,'centromere'))!=None: CENTMER=format(flags[(c,s,e,'centromere')],'.2f')
  * 		if flags.get((c,s,e,'segDup'))!=None: SEGD=format(flags[(c,s,e,'segDup')],'.2f')
  * 		if flags.get((c,s,e,'STR'))!=None: STR=format(flags[(c,s,e,'STR')],'.2f')             # <<<<<<<<<<<<<<
  * 		if flags.get((c,s,e,'unmapable'))!=None: UNMAP=format(flags[(c,s,e,'unmapable')],'.2f')
- * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = format(thouGen[(c,s,e,cl)],'.2f')
+ * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]
  */
     __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_flags, __pyx_n_s_get); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1278, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
@@ -45601,11 +45591,11 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1279
+    /* "src/core.pyx":1279
  * 		if flags.get((c,s,e,'segDup'))!=None: SEGD=format(flags[(c,s,e,'segDup')],'.2f')
  * 		if flags.get((c,s,e,'STR'))!=None: STR=format(flags[(c,s,e,'STR')],'.2f')
  * 		if flags.get((c,s,e,'unmapable'))!=None: UNMAP=format(flags[(c,s,e,'unmapable')],'.2f')             # <<<<<<<<<<<<<<
- * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = format(thouGen[(c,s,e,cl)],'.2f')
+ * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]
  * 		if meiRO.get((c,s,e))!=None: REPEATMASKER=format(meiRO[(c,s,e)],'.2f')
  */
     __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_flags, __pyx_n_s_get); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1279, __pyx_L1_error)
@@ -45687,10 +45677,10 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1280
+    /* "src/core.pyx":1280
  * 		if flags.get((c,s,e,'STR'))!=None: STR=format(flags[(c,s,e,'STR')],'.2f')
  * 		if flags.get((c,s,e,'unmapable'))!=None: UNMAP=format(flags[(c,s,e,'unmapable')],'.2f')
- * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = format(thouGen[(c,s,e,cl)],'.2f')             # <<<<<<<<<<<<<<
+ * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]             # <<<<<<<<<<<<<<
  * 		if meiRO.get((c,s,e))!=None: REPEATMASKER=format(meiRO[(c,s,e)],'.2f')
  * 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]
  */
@@ -45758,17 +45748,6 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = PyObject_GetItem(__pyx_v_thouGen, __pyx_t_17); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1280, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = PyTuple_New(2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1280, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __Pyx_GIVEREF(__pyx_t_21);
-      PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_21);
-      __Pyx_INCREF(__pyx_kp_s_2f);
-      __Pyx_GIVEREF(__pyx_kp_s_2f);
-      PyTuple_SET_ITEM(__pyx_t_17, 1, __pyx_kp_s_2f);
-      __pyx_t_21 = 0;
-      __pyx_t_21 = __Pyx_PyObject_Call(__pyx_builtin_format, __pyx_t_17, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1280, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_21);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       if ((likely(PyTuple_CheckExact(__pyx_t_21))) || (PyList_CheckExact(__pyx_t_21))) {
         PyObject* sequence = __pyx_t_21;
         #if CYTHON_COMPILING_IN_CPYTHON
@@ -45825,9 +45804,9 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_11 = 0;
     }
 
-    /* "gtcnv/core.pyx":1281
+    /* "src/core.pyx":1281
  * 		if flags.get((c,s,e,'unmapable'))!=None: UNMAP=format(flags[(c,s,e,'unmapable')],'.2f')
- * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = format(thouGen[(c,s,e,cl)],'.2f')
+ * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]
  * 		if meiRO.get((c,s,e))!=None: REPEATMASKER=format(meiRO[(c,s,e)],'.2f')             # <<<<<<<<<<<<<<
  * 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]
  * 		if REF.get((c,s,e,cl))!=None: MEDREF=REF[(c,s,e,cl)]
@@ -45905,8 +45884,8 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1282
- * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = format(thouGen[(c,s,e,cl)],'.2f')
+    /* "src/core.pyx":1282
+ * 		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]
  * 		if meiRO.get((c,s,e))!=None: REPEATMASKER=format(meiRO[(c,s,e)],'.2f')
  * 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]             # <<<<<<<<<<<<<<
  * 		if REF.get((c,s,e,cl))!=None: MEDREF=REF[(c,s,e,cl)]
@@ -45974,7 +45953,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1283
+    /* "src/core.pyx":1283
  * 		if meiRO.get((c,s,e))!=None: REPEATMASKER=format(meiRO[(c,s,e)],'.2f')
  * 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]
  * 		if REF.get((c,s,e,cl))!=None: MEDREF=REF[(c,s,e,cl)]             # <<<<<<<<<<<<<<
@@ -46049,7 +46028,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1284
+    /* "src/core.pyx":1284
  * 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]
  * 		if REF.get((c,s,e,cl))!=None: MEDREF=REF[(c,s,e,cl)]
  * 		if NON.get((c,s,e,cl))!=None: QUAL=NON[(c,s,e,cl)]             # <<<<<<<<<<<<<<
@@ -46124,7 +46103,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_21 = 0;
     }
 
-    /* "gtcnv/core.pyx":1285
+    /* "src/core.pyx":1285
  * 		if REF.get((c,s,e,cl))!=None: MEDREF=REF[(c,s,e,cl)]
  * 		if NON.get((c,s,e,cl))!=None: QUAL=NON[(c,s,e,cl)]
  * 		if AF.get((c,s,e,cl))!=None: ALLELE=format(AF[(c,s,e,cl)]/float(len(IID)),'.2f')             # <<<<<<<<<<<<<<
@@ -46192,7 +46171,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_5 = 0;
     }
 
-    /* "gtcnv/core.pyx":1286
+    /* "src/core.pyx":1286
  * 		if NON.get((c,s,e,cl))!=None: QUAL=NON[(c,s,e,cl)]
  * 		if AF.get((c,s,e,cl))!=None: ALLELE=format(AF[(c,s,e,cl)]/float(len(IID)),'.2f')
  * 		if float(ABPTS) >= 0.5: fail.append('ABPARTS')             # <<<<<<<<<<<<<<
@@ -46205,7 +46184,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_n_s_ABPARTS); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1286, __pyx_L1_error)
     }
 
-    /* "gtcnv/core.pyx":1287
+    /* "src/core.pyx":1287
  * 		if AF.get((c,s,e,cl))!=None: ALLELE=format(AF[(c,s,e,cl)]/float(len(IID)),'.2f')
  * 		if float(ABPTS) >= 0.5: fail.append('ABPARTS')
  * 		if float(CENTMER) >= 0.5: fail.append('CENTROMERE')             # <<<<<<<<<<<<<<
@@ -46218,7 +46197,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_n_s_CENTROMERE); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1287, __pyx_L1_error)
     }
 
-    /* "gtcnv/core.pyx":1288
+    /* "src/core.pyx":1288
  * 		if float(ABPTS) >= 0.5: fail.append('ABPARTS')
  * 		if float(CENTMER) >= 0.5: fail.append('CENTROMERE')
  * 		if float(SEGD) >= 0.5: fail.append('SEGDUP')             # <<<<<<<<<<<<<<
@@ -46231,7 +46210,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_n_s_SEGDUP); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1288, __pyx_L1_error)
     }
 
-    /* "gtcnv/core.pyx":1289
+    /* "src/core.pyx":1289
  * 		if float(CENTMER) >= 0.5: fail.append('CENTROMERE')
  * 		if float(SEGD) >= 0.5: fail.append('SEGDUP')
  * 		if float(STR) >= 0.5: fail.append('STR')             # <<<<<<<<<<<<<<
@@ -46244,7 +46223,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_n_s_STR); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1289, __pyx_L1_error)
     }
 
-    /* "gtcnv/core.pyx":1290
+    /* "src/core.pyx":1290
  * 		if float(SEGD) >= 0.5: fail.append('SEGDUP')
  * 		if float(STR) >= 0.5: fail.append('STR')
  * 		if float(UNMAP) >= 0.5: fail.append('UNMAPABLE')             # <<<<<<<<<<<<<<
@@ -46257,7 +46236,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_n_s_UNMAPABLE); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1290, __pyx_L1_error)
     }
 
-    /* "gtcnv/core.pyx":1291
+    /* "src/core.pyx":1291
  * 		if float(STR) >= 0.5: fail.append('STR')
  * 		if float(UNMAP) >= 0.5: fail.append('UNMAPABLE')
  * 		if cnvref == len(IID): fail.append('ALLREF')             # <<<<<<<<<<<<<<
@@ -46275,7 +46254,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_n_s_ALLREF); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1291, __pyx_L1_error)
     }
 
-    /* "gtcnv/core.pyx":1292
+    /* "src/core.pyx":1292
  * 		if float(UNMAP) >= 0.5: fail.append('UNMAPABLE')
  * 		if cnvref == len(IID): fail.append('ALLREF')
  * 		if FILT.get((c,s,e,cl))!= None:             # <<<<<<<<<<<<<<
@@ -46305,7 +46284,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
     if (__pyx_t_6) {
 
-      /* "gtcnv/core.pyx":1293
+      /* "src/core.pyx":1293
  * 		if cnvref == len(IID): fail.append('ALLREF')
  * 		if FILT.get((c,s,e,cl))!= None:
  * 			gtPass = len([x for x in FILT[(c,s,e,cl)] if x==1])             # <<<<<<<<<<<<<<
@@ -46389,7 +46368,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_gtPass, __pyx_t_21);
       __pyx_t_21 = 0;
 
-      /* "gtcnv/core.pyx":1294
+      /* "src/core.pyx":1294
  * 		if FILT.get((c,s,e,cl))!= None:
  * 			gtPass = len([x for x in FILT[(c,s,e,cl)] if x==1])
  * 			if gtPass/len(FILT[(c,s,e,cl)]) < 0.9: fail.append('GENOTYPE-FAIL')             # <<<<<<<<<<<<<<
@@ -46428,7 +46407,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_fail, __pyx_kp_s_GENOTYPE_FAIL); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1294, __pyx_L1_error)
       }
 
-      /* "gtcnv/core.pyx":1292
+      /* "src/core.pyx":1292
  * 		if float(UNMAP) >= 0.5: fail.append('UNMAPABLE')
  * 		if cnvref == len(IID): fail.append('ALLREF')
  * 		if FILT.get((c,s,e,cl))!= None:             # <<<<<<<<<<<<<<
@@ -46438,7 +46417,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       goto __pyx_L63;
     }
 
-    /* "gtcnv/core.pyx":1295
+    /* "src/core.pyx":1295
  * 			gtPass = len([x for x in FILT[(c,s,e,cl)] if x==1])
  * 			if gtPass/len(FILT[(c,s,e,cl)]) < 0.9: fail.append('GENOTYPE-FAIL')
  * 		else: fail.append('FAIL')             # <<<<<<<<<<<<<<
@@ -46450,7 +46429,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     }
     __pyx_L63:;
 
-    /* "gtcnv/core.pyx":1296
+    /* "src/core.pyx":1296
  * 			if gtPass/len(FILT[(c,s,e,cl)]) < 0.9: fail.append('GENOTYPE-FAIL')
  * 		else: fail.append('FAIL')
  * 		if len(fail) > 0: PASS = ','.join(fail)             # <<<<<<<<<<<<<<
@@ -46466,7 +46445,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __pyx_t_5 = 0;
     }
 
-    /* "gtcnv/core.pyx":1297
+    /* "src/core.pyx":1297
  * 		else: fail.append('FAIL')
  * 		if len(fail) > 0: PASS = ','.join(fail)
  * 		INFO = 'END={};SVTYPE={};SVLEN={};AF={};CYTOBAND={};REPEATMASKER={},{};1000G_ID={};1000G_OVERLAP={};DESCRIPTION={};GENES={};ABPARTS={};CENTROMERE={};SEGDUP={};STR={};UNMAPABLE={};MEDREFGL={}'.format(e,TYPE,SZ,ALLELE,CYTOB,meiName,REPEATMASKER,THOUGEN_ID,THOUGEN_OVR,DESX,GENE,ABPTS,CENTMER,SEGD,STR,UNMAP,MEDREF)             # <<<<<<<<<<<<<<
@@ -46475,7 +46454,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
     __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_END_SVTYPE_SVLEN_AF_CYTOBAND_REP, __pyx_n_s_format); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1297, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __pyx_t_11 = __Pyx_PyInt_From_unsigned_short(__pyx_v_SZ); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1297, __pyx_L1_error)
+    __pyx_t_11 = __Pyx_PyInt_From_unsigned_int(__pyx_v_SZ); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1297, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     __pyx_t_17 = NULL;
     __pyx_t_15 = 0;
@@ -46552,7 +46531,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_INFO, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1298
+    /* "src/core.pyx":1298
  * 		if len(fail) > 0: PASS = ','.join(fail)
  * 		INFO = 'END={};SVTYPE={};SVLEN={};AF={};CYTOBAND={};REPEATMASKER={},{};1000G_ID={};1000G_OVERLAP={};DESCRIPTION={};GENES={};ABPARTS={};CENTROMERE={};SEGDUP={};STR={};UNMAPABLE={};MEDREFGL={}'.format(e,TYPE,SZ,ALLELE,CYTOB,meiName,REPEATMASKER,THOUGEN_ID,THOUGEN_OVR,DESX,GENE,ABPTS,CENTMER,SEGD,STR,UNMAP,MEDREF)
  * 		for x in IID:             # <<<<<<<<<<<<<<
@@ -46571,7 +46550,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_21);
       __pyx_t_21 = 0;
 
-      /* "gtcnv/core.pyx":1299
+      /* "src/core.pyx":1299
  * 		INFO = 'END={};SVTYPE={};SVLEN={};AF={};CYTOBAND={};REPEATMASKER={},{};1000G_ID={};1000G_OVERLAP={};DESCRIPTION={};GENES={};ABPARTS={};CENTROMERE={};SEGDUP={};STR={};UNMAPABLE={};MEDREFGL={}'.format(e,TYPE,SZ,ALLELE,CYTOB,meiName,REPEATMASKER,THOUGEN_ID,THOUGEN_OVR,DESX,GENE,ABPTS,CENTMER,SEGD,STR,UNMAP,MEDREF)
  * 		for x in IID:
  * 			if GT.get(((c,s,e,cl),x))!=None: GTS.append(GT[((c,s,e,cl),x)])             # <<<<<<<<<<<<<<
@@ -46638,7 +46617,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         goto __pyx_L71;
       }
 
-      /* "gtcnv/core.pyx":1300
+      /* "src/core.pyx":1300
  * 		for x in IID:
  * 			if GT.get(((c,s,e,cl),x))!=None: GTS.append(GT[((c,s,e,cl),x)])
  * 			else: GTS.append('./.')             # <<<<<<<<<<<<<<
@@ -46650,7 +46629,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
       }
       __pyx_L71:;
 
-      /* "gtcnv/core.pyx":1298
+      /* "src/core.pyx":1298
  * 		if len(fail) > 0: PASS = ','.join(fail)
  * 		INFO = 'END={};SVTYPE={};SVLEN={};AF={};CYTOBAND={};REPEATMASKER={},{};1000G_ID={};1000G_OVERLAP={};DESCRIPTION={};GENES={};ABPARTS={};CENTROMERE={};SEGDUP={};STR={};UNMAPABLE={};MEDREFGL={}'.format(e,TYPE,SZ,ALLELE,CYTOB,meiName,REPEATMASKER,THOUGEN_ID,THOUGEN_OVR,DESX,GENE,ABPTS,CENTMER,SEGD,STR,UNMAP,MEDREF)
  * 		for x in IID:             # <<<<<<<<<<<<<<
@@ -46660,14 +46639,14 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "gtcnv/core.pyx":1301
+    /* "src/core.pyx":1301
  * 			if GT.get(((c,s,e,cl),x))!=None: GTS.append(GT[((c,s,e,cl),x)])
  * 			else: GTS.append('./.')
  * 		out= '\t'.join(map(str,(c,s,CNV_ID,'.','<'+TYPE+'>',QUAL,PASS,INFO,'GT:FT:PE:SR:CN:SC:SP:AR:HT:SQ:GL','\t'.join(GTS))))             # <<<<<<<<<<<<<<
  * 		VCF.append(out)
  * 		CNV_ID+=1
  */
-    __pyx_t_5 = __Pyx_PyInt_From_unsigned_short(__pyx_v_CNV_ID); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1301, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_unsigned_int(__pyx_v_CNV_ID); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_1 = PyNumber_Add(__pyx_kp_s__128, __pyx_v_TYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -46725,7 +46704,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_out, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "gtcnv/core.pyx":1302
+    /* "src/core.pyx":1302
  * 			else: GTS.append('./.')
  * 		out= '\t'.join(map(str,(c,s,CNV_ID,'.','<'+TYPE+'>',QUAL,PASS,INFO,'GT:FT:PE:SR:CN:SC:SP:AR:HT:SQ:GL','\t'.join(GTS))))
  * 		VCF.append(out)             # <<<<<<<<<<<<<<
@@ -46734,7 +46713,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
     __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_VCF, __pyx_v_out); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1302, __pyx_L1_error)
 
-    /* "gtcnv/core.pyx":1303
+    /* "src/core.pyx":1303
  * 		out= '\t'.join(map(str,(c,s,CNV_ID,'.','<'+TYPE+'>',QUAL,PASS,INFO,'GT:FT:PE:SR:CN:SC:SP:AR:HT:SQ:GL','\t'.join(GTS))))
  * 		VCF.append(out)
  * 		CNV_ID+=1             # <<<<<<<<<<<<<<
@@ -46743,7 +46722,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
     __pyx_v_CNV_ID = (__pyx_v_CNV_ID + 1);
 
-    /* "gtcnv/core.pyx":1248
+    /* "src/core.pyx":1248
  * 	VCF=[]
  * 	CNV_ID=1
  * 	for (c,s,e,cl) in pbed.BedTool(list(set([(x[0],x[1],x[2],x[3]) for x in raw]))).sort():             # <<<<<<<<<<<<<<
@@ -46753,7 +46732,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":1304
+  /* "src/core.pyx":1304
  * 		VCF.append(out)
  * 		CNV_ID+=1
  * 	date=[]             # <<<<<<<<<<<<<<
@@ -46765,7 +46744,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_date = ((PyObject*)__pyx_t_9);
   __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":1305
+  /* "src/core.pyx":1305
  * 		CNV_ID+=1
  * 	date=[]
  * 	date.append(datetime.date.today())             # <<<<<<<<<<<<<<
@@ -46801,7 +46780,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_date, __pyx_t_9); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1305, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":1307
+  /* "src/core.pyx":1307
  * 	date.append(datetime.date.today())
  * 	VCFHEAD=[	'##fileformat=VCFv4.1',
  * 			'##fileDate={}'.format(date[0]),             # <<<<<<<<<<<<<<
@@ -46836,7 +46815,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":1308
+  /* "src/core.pyx":1308
  * 	VCFHEAD=[	'##fileformat=VCFv4.1',
  * 			'##fileDate={}'.format(date[0]),
  * 			'##reference={}'.format(fasta_config(gen)),             # <<<<<<<<<<<<<<
@@ -46845,7 +46824,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
  */
   __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_reference, __pyx_n_s_format); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 1308, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_21);
-  __pyx_t_11 = __pyx_f_5gtcnv_4core_fasta_config(__pyx_v_gen); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1308, __pyx_L1_error)
+  __pyx_t_11 = __pyx_f_3src_4core_fasta_config(__pyx_v_gen); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 1308, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __pyx_t_5 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_21))) {
@@ -46874,7 +46853,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-  /* "gtcnv/core.pyx":1309
+  /* "src/core.pyx":1309
  * 			'##fileDate={}'.format(date[0]),
  * 			'##reference={}'.format(fasta_config(gen)),
  * 			'##GTCNV_CMD="{}"'.format(' '.join(map(str,sys.argv[:]))),             # <<<<<<<<<<<<<<
@@ -46932,7 +46911,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1306
+  /* "src/core.pyx":1306
  * 	date=[]
  * 	date.append(datetime.date.today())
  * 	VCFHEAD=[	'##fileformat=VCFv4.1',             # <<<<<<<<<<<<<<
@@ -47040,7 +47019,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_VCFHEAD = ((PyObject*)__pyx_t_17);
   __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1340
+  /* "src/core.pyx":1340
  * 			'##ALT=<ID=DUP,Description="Duplication, if 80% reciprocal overlap with RepeatMasker element, the class, name, and family are given separated by colons">',
  * 		]
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:             # <<<<<<<<<<<<<<
@@ -47144,7 +47123,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           __pyx_v_f = __pyx_t_17;
           __pyx_t_17 = 0;
 
-          /* "gtcnv/core.pyx":1341
+          /* "src/core.pyx":1341
  * 		]
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -47193,7 +47172,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
             __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "gtcnv/core.pyx":1342
+            /* "src/core.pyx":1342
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:
  * 		for l in f:
  * 			(chrom,size) = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -47266,7 +47245,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
             __Pyx_XDECREF_SET(__pyx_v_size, __pyx_t_12);
             __pyx_t_12 = 0;
 
-            /* "gtcnv/core.pyx":1343
+            /* "src/core.pyx":1343
  * 		for l in f:
  * 			(chrom,size) = l.rstrip('\n').split('\t')
  * 			VCFHEAD.append('##contig=<ID={},length={}>'.format(chrom.replace('chr',''),size))             # <<<<<<<<<<<<<<
@@ -47310,7 +47289,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
             __pyx_t_23 = __Pyx_PyList_Append(__pyx_v_VCFHEAD, __pyx_t_21); if (unlikely(__pyx_t_23 == -1)) __PYX_ERR(0, 1343, __pyx_L76_error)
             __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
 
-            /* "gtcnv/core.pyx":1341
+            /* "src/core.pyx":1341
  * 		]
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:
  * 		for l in f:             # <<<<<<<<<<<<<<
@@ -47320,7 +47299,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
           }
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-          /* "gtcnv/core.pyx":1340
+          /* "src/core.pyx":1340
  * 			'##ALT=<ID=DUP,Description="Duplication, if 80% reciprocal overlap with RepeatMasker element, the class, name, and family are given separated by colons">',
  * 		]
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:             # <<<<<<<<<<<<<<
@@ -47350,7 +47329,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
         __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
         __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("gtcnv.core.annotate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("src.core.annotate", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_17, &__pyx_t_21, &__pyx_t_12) < 0) __PYX_ERR(0, 1340, __pyx_L78_except_error)
           __Pyx_GOTREF(__pyx_t_17);
           __Pyx_GOTREF(__pyx_t_21);
@@ -47415,7 +47394,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __pyx_L91:;
   }
 
-  /* "gtcnv/core.pyx":1344
+  /* "src/core.pyx":1344
  * 			(chrom,size) = l.rstrip('\n').split('\t')
  * 			VCFHEAD.append('##contig=<ID={},length={}>'.format(chrom.replace('chr',''),size))
  * 	outdir = os.getcwd()+'/gtCNV_genotypes/'             # <<<<<<<<<<<<<<
@@ -47451,7 +47430,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_outdir = __pyx_t_17;
   __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1345
+  /* "src/core.pyx":1345
  * 			VCFHEAD.append('##contig=<ID={},length={}>'.format(chrom.replace('chr',''),size))
  * 	outdir = os.getcwd()+'/gtCNV_genotypes/'
  * 	if not os.path.exists(outdir): os.makedirs(outdir)             # <<<<<<<<<<<<<<
@@ -47528,7 +47507,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
   }
 
-  /* "gtcnv/core.pyx":1346
+  /* "src/core.pyx":1346
  * 	outdir = os.getcwd()+'/gtCNV_genotypes/'
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	outfh = open(outdir+OFH,'w')             # <<<<<<<<<<<<<<
@@ -47551,7 +47530,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __pyx_v_outfh = __pyx_t_17;
   __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1347
+  /* "src/core.pyx":1347
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	outfh = open(outdir+OFH,'w')
  * 	outfh.write('\n'.join(VCFHEAD)+'\n')             # <<<<<<<<<<<<<<
@@ -47593,7 +47572,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1348
+  /* "src/core.pyx":1348
  * 	outfh = open(outdir+OFH,'w')
  * 	outfh.write('\n'.join(VCFHEAD)+'\n')
  * 	outfh.write('\t'.join(('#CHROM','POS','ID','REF','ALT','QUAL','FILTER','INFO','FORMAT','\t'.join(IID)))+'\n')             # <<<<<<<<<<<<<<
@@ -47670,7 +47649,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1349
+  /* "src/core.pyx":1349
  * 	outfh.write('\n'.join(VCFHEAD)+'\n')
  * 	outfh.write('\t'.join(('#CHROM','POS','ID','REF','ALT','QUAL','FILTER','INFO','FORMAT','\t'.join(IID)))+'\n')
  * 	outfh.write('\n'.join(VCF)+'\n')             # <<<<<<<<<<<<<<
@@ -47711,7 +47690,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1350
+  /* "src/core.pyx":1350
  * 	outfh.write('\t'.join(('#CHROM','POS','ID','REF','ALT','QUAL','FILTER','INFO','FORMAT','\t'.join(IID)))+'\n')
  * 	outfh.write('\n'.join(VCF)+'\n')
  * 	outfh.close()             # <<<<<<<<<<<<<<
@@ -47738,12 +47717,12 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-  /* "gtcnv/core.pyx":1187
+  /* "src/core.pyx":1187
  * 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
  * 	return genes
  * def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):             # <<<<<<<<<<<<<<
- * 	cdef unsigned short CNV_ID
- * 	cdef unsigned short SZ
+ * 	cdef unsigned int CNV_ID
+ * 	cdef unsigned int SZ
  */
 
   /* function exit code */
@@ -47765,7 +47744,7 @@ static PyObject *__pyx_pf_5gtcnv_4core_20annotate(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_XDECREF(__pyx_t_20);
   __Pyx_XDECREF(__pyx_t_21);
   __Pyx_XDECREF(__pyx_t_22);
-  __Pyx_AddTraceback("gtcnv.core.annotate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.core.annotate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_genes);
@@ -49950,14 +49929,14 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-static struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *__pyx_freelist_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls[8];
-static int __pyx_freecount_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls = 0;
+static struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *__pyx_freelist_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls[8];
+static int __pyx_freecount_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls = 0;
 
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls)))) {
-    o = (PyObject*)__pyx_freelist_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls[--__pyx_freecount_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls];
-    memset(o, 0, sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls)))) {
+    o = (PyObject*)__pyx_freelist_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls[--__pyx_freecount_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls];
+    memset(o, 0, sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -49967,21 +49946,21 @@ static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4c
   return o;
 }
 
-static void __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls(PyObject *o) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)o;
+static void __pyx_tp_dealloc_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls(PyObject *o) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *p = (struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_end_flank500bp);
   Py_CLEAR(p->__pyx_v_start_flank500bp);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls)))) {
-    __pyx_freelist_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls[__pyx_freecount_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls++] = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls)))) {
+    __pyx_freelist_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls[__pyx_freecount_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls++] = ((struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *p = (struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)o;
   if (p->__pyx_v_end_flank500bp) {
     e = (*v)(p->__pyx_v_end_flank500bp, a); if (e) return e;
   }
@@ -49991,9 +49970,9 @@ static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4co
   return 0;
 }
 
-static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls(PyObject *o) {
+static int __pyx_tp_clear_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *p = (struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)o;
   tmp = ((PyObject*)p->__pyx_v_end_flank500bp);
   p->__pyx_v_end_flank500bp = Py_None; Py_INCREF(Py_None);
   Py_XDECREF(tmp);
@@ -50003,12 +49982,12 @@ static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_
   return 0;
 }
 
-static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls = {
+static PyTypeObject __pyx_type_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls = {
   PyVarObject_HEAD_INIT(0, 0)
-  "gtcnv.core.__pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls", /*tp_name*/
-  sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls), /*tp_basicsize*/
+  "src.core.__pyx_scope_struct____pyx_f_3src_4core_filter_calls", /*tp_name*/
+  sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls, /*tp_dealloc*/
+  __pyx_tp_dealloc_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -50030,8 +50009,8 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls, /*tp_traverse*/
-  __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls, /*tp_clear*/
+  __pyx_tp_traverse_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls, /*tp_traverse*/
+  __pyx_tp_clear_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -50046,7 +50025,7 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls, /*tp_new*/
+  __pyx_tp_new_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -50061,14 +50040,14 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4
   #endif
 };
 
-static struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *__pyx_freelist_5gtcnv_4core___pyx_scope_struct_1_genexpr[8];
-static int __pyx_freecount_5gtcnv_4core___pyx_scope_struct_1_genexpr = 0;
+static struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *__pyx_freelist_3src_4core___pyx_scope_struct_1_genexpr[8];
+static int __pyx_freecount_3src_4core___pyx_scope_struct_1_genexpr = 0;
 
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_5gtcnv_4core___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr)))) {
-    o = (PyObject*)__pyx_freelist_5gtcnv_4core___pyx_scope_struct_1_genexpr[--__pyx_freecount_5gtcnv_4core___pyx_scope_struct_1_genexpr];
-    memset(o, 0, sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_4core___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr)))) {
+    o = (PyObject*)__pyx_freelist_3src_4core___pyx_scope_struct_1_genexpr[--__pyx_freecount_3src_4core___pyx_scope_struct_1_genexpr];
+    memset(o, 0, sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -50078,21 +50057,21 @@ static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyTypeOb
   return o;
 }
 
-static void __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyObject *o) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *)o;
+static void __pyx_tp_dealloc_3src_4core___pyx_scope_struct_1_genexpr(PyObject *o) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_outer_scope);
   Py_CLEAR(p->__pyx_v_i);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_5gtcnv_4core___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr)))) {
-    __pyx_freelist_5gtcnv_4core___pyx_scope_struct_1_genexpr[__pyx_freecount_5gtcnv_4core___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_4core___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr)))) {
+    __pyx_freelist_3src_4core___pyx_scope_struct_1_genexpr[__pyx_freecount_3src_4core___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3src_4core___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *)o;
   if (p->__pyx_outer_scope) {
     e = (*v)(((PyObject*)p->__pyx_outer_scope), a); if (e) return e;
   }
@@ -50102,11 +50081,11 @@ static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyObject 
   return 0;
 }
 
-static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyObject *o) {
+static int __pyx_tp_clear_3src_4core___pyx_scope_struct_1_genexpr(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr *)o;
   tmp = ((PyObject*)p->__pyx_outer_scope);
-  p->__pyx_outer_scope = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)Py_None); Py_INCREF(Py_None);
+  p->__pyx_outer_scope = ((struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   tmp = ((PyObject*)p->__pyx_v_i);
   p->__pyx_v_i = Py_None; Py_INCREF(Py_None);
@@ -50114,12 +50093,12 @@ static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_1_genexpr(PyObject *o)
   return 0;
 }
 
-static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr = {
+static PyTypeObject __pyx_type_3src_4core___pyx_scope_struct_1_genexpr = {
   PyVarObject_HEAD_INIT(0, 0)
-  "gtcnv.core.__pyx_scope_struct_1_genexpr", /*tp_name*/
-  sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
+  "src.core.__pyx_scope_struct_1_genexpr", /*tp_name*/
+  sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
+  __pyx_tp_dealloc_3src_4core___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -50141,8 +50120,8 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr = {
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_1_genexpr, /*tp_traverse*/
-  __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_1_genexpr, /*tp_clear*/
+  __pyx_tp_traverse_3src_4core___pyx_scope_struct_1_genexpr, /*tp_traverse*/
+  __pyx_tp_clear_3src_4core___pyx_scope_struct_1_genexpr, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -50157,7 +50136,7 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5gtcnv_4core___pyx_scope_struct_1_genexpr, /*tp_new*/
+  __pyx_tp_new_3src_4core___pyx_scope_struct_1_genexpr, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -50172,14 +50151,14 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr = {
   #endif
 };
 
-static struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *__pyx_freelist_5gtcnv_4core___pyx_scope_struct_2_genexpr[8];
-static int __pyx_freecount_5gtcnv_4core___pyx_scope_struct_2_genexpr = 0;
+static struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *__pyx_freelist_3src_4core___pyx_scope_struct_2_genexpr[8];
+static int __pyx_freecount_3src_4core___pyx_scope_struct_2_genexpr = 0;
 
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct_2_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_5gtcnv_4core___pyx_scope_struct_2_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr)))) {
-    o = (PyObject*)__pyx_freelist_5gtcnv_4core___pyx_scope_struct_2_genexpr[--__pyx_freecount_5gtcnv_4core___pyx_scope_struct_2_genexpr];
-    memset(o, 0, sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_4core___pyx_scope_struct_2_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr)))) {
+    o = (PyObject*)__pyx_freelist_3src_4core___pyx_scope_struct_2_genexpr[--__pyx_freecount_3src_4core___pyx_scope_struct_2_genexpr];
+    memset(o, 0, sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -50189,21 +50168,21 @@ static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyTypeOb
   return o;
 }
 
-static void __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyObject *o) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *)o;
+static void __pyx_tp_dealloc_3src_4core___pyx_scope_struct_2_genexpr(PyObject *o) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_outer_scope);
   Py_CLEAR(p->__pyx_v_i);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_5gtcnv_4core___pyx_scope_struct_2_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr)))) {
-    __pyx_freelist_5gtcnv_4core___pyx_scope_struct_2_genexpr[__pyx_freecount_5gtcnv_4core___pyx_scope_struct_2_genexpr++] = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_4core___pyx_scope_struct_2_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr)))) {
+    __pyx_freelist_3src_4core___pyx_scope_struct_2_genexpr[__pyx_freecount_3src_4core___pyx_scope_struct_2_genexpr++] = ((struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3src_4core___pyx_scope_struct_2_genexpr(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *)o;
   if (p->__pyx_outer_scope) {
     e = (*v)(((PyObject*)p->__pyx_outer_scope), a); if (e) return e;
   }
@@ -50213,11 +50192,11 @@ static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyObject 
   return 0;
 }
 
-static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyObject *o) {
+static int __pyx_tp_clear_3src_4core___pyx_scope_struct_2_genexpr(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr *)o;
   tmp = ((PyObject*)p->__pyx_outer_scope);
-  p->__pyx_outer_scope = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls *)Py_None); Py_INCREF(Py_None);
+  p->__pyx_outer_scope = ((struct __pyx_obj_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls *)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   tmp = ((PyObject*)p->__pyx_v_i);
   p->__pyx_v_i = Py_None; Py_INCREF(Py_None);
@@ -50225,12 +50204,12 @@ static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_2_genexpr(PyObject *o)
   return 0;
 }
 
-static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr = {
+static PyTypeObject __pyx_type_3src_4core___pyx_scope_struct_2_genexpr = {
   PyVarObject_HEAD_INIT(0, 0)
-  "gtcnv.core.__pyx_scope_struct_2_genexpr", /*tp_name*/
-  sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_2_genexpr), /*tp_basicsize*/
+  "src.core.__pyx_scope_struct_2_genexpr", /*tp_name*/
+  sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_2_genexpr), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct_2_genexpr, /*tp_dealloc*/
+  __pyx_tp_dealloc_3src_4core___pyx_scope_struct_2_genexpr, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -50252,8 +50231,8 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr = {
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_2_genexpr, /*tp_traverse*/
-  __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_2_genexpr, /*tp_clear*/
+  __pyx_tp_traverse_3src_4core___pyx_scope_struct_2_genexpr, /*tp_traverse*/
+  __pyx_tp_clear_3src_4core___pyx_scope_struct_2_genexpr, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -50268,7 +50247,7 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5gtcnv_4core___pyx_scope_struct_2_genexpr, /*tp_new*/
+  __pyx_tp_new_3src_4core___pyx_scope_struct_2_genexpr, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -50283,14 +50262,14 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr = {
   #endif
 };
 
-static struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *__pyx_freelist_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess[8];
-static int __pyx_freecount_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess = 0;
+static struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *__pyx_freelist_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess[8];
+static int __pyx_freecount_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess = 0;
 
-static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess)))) {
-    o = (PyObject*)__pyx_freelist_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess[--__pyx_freecount_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess];
-    memset(o, 0, sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess)))) {
+    o = (PyObject*)__pyx_freelist_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess[--__pyx_freecount_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess];
+    memset(o, 0, sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -50300,41 +50279,41 @@ static PyObject *__pyx_tp_new_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4
   return o;
 }
 
-static void __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *o) {
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *)o;
+static void __pyx_tp_dealloc_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess(PyObject *o) {
+  struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_chromo);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess)))) {
-    __pyx_freelist_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess[__pyx_freecount_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess++] = ((struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess)))) {
+    __pyx_freelist_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess[__pyx_freecount_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess++] = ((struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *)o;
   if (p->__pyx_v_chromo) {
     e = (*v)(p->__pyx_v_chromo, a); if (e) return e;
   }
   return 0;
 }
 
-static int __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess(PyObject *o) {
+static int __pyx_tp_clear_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *p = (struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess *)o;
+  struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *p = (struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess *)o;
   tmp = ((PyObject*)p->__pyx_v_chromo);
   p->__pyx_v_chromo = Py_None; Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
-static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess = {
+static PyTypeObject __pyx_type_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess = {
   PyVarObject_HEAD_INIT(0, 0)
-  "gtcnv.core.__pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess", /*tp_name*/
-  sizeof(struct __pyx_obj_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess), /*tp_basicsize*/
+  "src.core.__pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess", /*tp_name*/
+  sizeof(struct __pyx_obj_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess, /*tp_dealloc*/
+  __pyx_tp_dealloc_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -50356,8 +50335,8 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess, /*tp_traverse*/
-  __pyx_tp_clear_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess, /*tp_clear*/
+  __pyx_tp_traverse_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess, /*tp_traverse*/
+  __pyx_tp_clear_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -50372,7 +50351,7 @@ static PyTypeObject __pyx_type_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess, /*tp_new*/
+  __pyx_tp_new_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -50770,7 +50749,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_gtVCF___init, __pyx_k_gtVCF___init, sizeof(__pyx_k_gtVCF___init), 0, 0, 1, 1},
   {&__pyx_n_s_gtVCF_extract_SNP_features, __pyx_k_gtVCF_extract_SNP_features, sizeof(__pyx_k_gtVCF_extract_SNP_features), 0, 0, 1, 1},
   {&__pyx_n_s_gtVCF_preprocessVCF, __pyx_k_gtVCF_preprocessVCF, sizeof(__pyx_k_gtVCF_preprocessVCF), 0, 0, 1, 1},
-  {&__pyx_n_s_gtcnv_core, __pyx_k_gtcnv_core, sizeof(__pyx_k_gtcnv_core), 0, 0, 1, 1},
   {&__pyx_n_s_head, __pyx_k_head, sizeof(__pyx_k_head), 0, 0, 1, 1},
   {&__pyx_n_s_header, __pyx_k_header, sizeof(__pyx_k_header), 0, 0, 1, 1},
   {&__pyx_n_s_hemi, __pyx_k_hemi, sizeof(__pyx_k_hemi), 0, 0, 1, 1},
@@ -50963,6 +50941,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
   {&__pyx_n_s_split_ratio, __pyx_k_split_ratio, sizeof(__pyx_k_split_ratio), 0, 0, 1, 1},
   {&__pyx_n_s_sr, __pyx_k_sr, sizeof(__pyx_k_sr), 0, 0, 1, 1},
+  {&__pyx_n_s_src_core, __pyx_k_src_core, sizeof(__pyx_k_src_core), 0, 0, 1, 1},
   {&__pyx_n_s_ss, __pyx_k_ss, sizeof(__pyx_k_ss), 0, 0, 1, 1},
   {&__pyx_n_s_start, __pyx_k_start, sizeof(__pyx_k_start), 0, 0, 1, 1},
   {&__pyx_n_s_startswith, __pyx_k_startswith, sizeof(__pyx_k_startswith), 0, 0, 1, 1},
@@ -51031,7 +51010,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "gtcnv/core.pyx":21
+  /* "src/core.pyx":21
  * def errFH(fh):
  * 	sys.stderr.write('ERROR {} NOT FOUND\n'.format(fh))
  * 	sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51042,7 +51021,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "gtcnv/core.pyx":42
+  /* "src/core.pyx":42
  * 		with open(fh) as f:
  * 			for l in f:
  * 				if l.startswith('#'): continue             # <<<<<<<<<<<<<<
@@ -51053,7 +51032,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "gtcnv/core.pyx":45
+  /* "src/core.pyx":45
  * 				s=0
  * 				e=0
  * 				r= l.rstrip().split('\t')             # <<<<<<<<<<<<<<
@@ -51064,7 +51043,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "gtcnv/core.pyx":47
+  /* "src/core.pyx":47
  * 				r= l.rstrip().split('\t')
  * 				c=str(r[0])
  * 				if not c.startswith('chr'): c='chr'+c             # <<<<<<<<<<<<<<
@@ -51075,7 +51054,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "gtcnv/core.pyx":49
+  /* "src/core.pyx":49
  * 				if not c.startswith('chr'): c='chr'+c
  * 				s=int(r[1])
  * 				for i in r[7].split(';'):             # <<<<<<<<<<<<<<
@@ -51086,7 +51065,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "gtcnv/core.pyx":50
+  /* "src/core.pyx":50
  * 				s=int(r[1])
  * 				for i in r[7].split(';'):
  * 					if 'SVTYPE=' in i: cl=i.replace('SVTYPE=','')             # <<<<<<<<<<<<<<
@@ -51097,7 +51076,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "gtcnv/core.pyx":51
+  /* "src/core.pyx":51
  * 				for i in r[7].split(';'):
  * 					if 'SVTYPE=' in i: cl=i.replace('SVTYPE=','')
  * 					if 'END=' in i and 'CI' not in i and i.startswith('END='): e=int(i.replace('END=',''))             # <<<<<<<<<<<<<<
@@ -51111,7 +51090,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "gtcnv/core.pyx":40
+  /* "src/core.pyx":40
  * 	if 'VCF' in header: v=1
  * 	if v==True:
  * 		with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -51122,7 +51101,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "gtcnv/core.pyx":57
+  /* "src/core.pyx":57
  * 		with open(fh) as f:
  * 			for l in f:
  * 				if l.startswith('#'): continue             # <<<<<<<<<<<<<<
@@ -51133,7 +51112,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "gtcnv/core.pyx":60
+  /* "src/core.pyx":60
  * 				s=0
  * 				e=0
  * 				r=l.rstrip().split('\t')             # <<<<<<<<<<<<<<
@@ -51144,7 +51123,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "gtcnv/core.pyx":66
+  /* "src/core.pyx":66
  * 				if s<=0 or s>=e or e<=0: continue
  * 				cl=r[3]
  * 				if not c.startswith('chr'): c='chr'+c             # <<<<<<<<<<<<<<
@@ -51155,7 +51134,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "gtcnv/core.pyx":55
+  /* "src/core.pyx":55
  * 				if checkCall(cl)==True:cnv.append((c,s,e,cl))
  * 	else:
  * 		with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -51166,7 +51145,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "gtcnv/core.pyx":82
+  /* "src/core.pyx":82
  * 	except:
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))
  * 		sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51177,7 +51156,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "gtcnv/core.pyx":92
+  /* "src/core.pyx":92
  * 	with open(fh) as f:
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51191,7 +51170,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
 
-  /* "gtcnv/core.pyx":90
+  /* "src/core.pyx":90
  * 	if not os.path.isfile(fh): errFH(fh)
  * 	genders = ['M','F']
  * 	with open(fh) as f:             # <<<<<<<<<<<<<<
@@ -51202,7 +51181,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "gtcnv/core.pyx":125
+  /* "src/core.pyx":125
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:
  * 		for l in f:
  * 			r = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51216,7 +51195,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
 
-  /* "gtcnv/core.pyx":123
+  /* "src/core.pyx":123
  * 	cdef unsigned int s
  * 	sz={}
  * 	with open(get_path()+'/resources/{}.bedtools.genome'.format(gen)) as f:             # <<<<<<<<<<<<<<
@@ -51227,7 +51206,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
 
-  /* "gtcnv/core.pyx":147
+  /* "src/core.pyx":147
  * 	if not os.path.isfile(cfg):
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(cfg))
  * 		sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51238,7 +51217,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
 
-  /* "gtcnv/core.pyx":157
+  /* "src/core.pyx":157
  * 		if '>' not in l:
  * 			sys.stderr.write('ERROR {} MUST CONTAIN ">CHROM" in the first line\n'.format(fh))
  * 			sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51249,7 +51228,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
 
-  /* "gtcnv/core.pyx":153
+  /* "src/core.pyx":153
  * cdef FASTA_head(fh):
  * 	chr_flag=False
  * 	with open (fh,'r') as f:             # <<<<<<<<<<<<<<
@@ -51260,7 +51239,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
 
-  /* "gtcnv/core.pyx":200
+  /* "src/core.pyx":200
  * 	"""take the union of the two masked call sets"""
  * 	if len(masked_cnv) == 0:
  * 		sys.stderr.write('ERROR: CNVs completed masked by excluded regions\n')             # <<<<<<<<<<<<<<
@@ -51271,7 +51250,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__32);
   __Pyx_GIVEREF(__pyx_tuple__32);
 
-  /* "gtcnv/core.pyx":201
+  /* "src/core.pyx":201
  * 	if len(masked_cnv) == 0:
  * 		sys.stderr.write('ERROR: CNVs completed masked by excluded regions\n')
  * 		sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51282,7 +51261,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
 
-  /* "gtcnv/core.pyx":220
+  /* "src/core.pyx":220
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:
  * 		for l in f:
  * 			(tag,GC,norm) = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51296,7 +51275,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
 
-  /* "gtcnv/core.pyx":218
+  /* "src/core.pyx":218
  * cdef gc_norm(pcrfree):
  * 	pcr_dict={}
  * 	with open(get_path()+'/resources/GC_content_reference.txt','r') as f:             # <<<<<<<<<<<<<<
@@ -51307,7 +51286,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__36);
   __Pyx_GIVEREF(__pyx_tuple__36);
 
-  /* "gtcnv/core.pyx":263
+  /* "src/core.pyx":263
  * 	for (c,s,e) in cnv_list:
  * 		"""if the chromosome format lacks chr"""
  * 		if chrFlag == False: c = c.replace('chr','')             # <<<<<<<<<<<<<<
@@ -51318,7 +51297,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_GIVEREF(__pyx_tuple__37);
 
-  /* "gtcnv/core.pyx":287
+  /* "src/core.pyx":287
  * 	pos_doc={}
  * 	for (c,s,e) in cnv_list:
  * 		if chrFlag == False: c = c.replace('chr','')             # <<<<<<<<<<<<<<
@@ -51329,7 +51308,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__39);
   __Pyx_GIVEREF(__pyx_tuple__39);
 
-  /* "gtcnv/core.pyx":292
+  /* "src/core.pyx":292
  * 		str_flag=0
  * 		if isinstance(depth_result,str):
  * 			depth_result = depth_result.split('\n')             # <<<<<<<<<<<<<<
@@ -51340,7 +51319,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__40);
   __Pyx_GIVEREF(__pyx_tuple__40);
 
-  /* "gtcnv/core.pyx":295
+  /* "src/core.pyx":295
  * 			str_flag=1
  * 		for x in depth_result:
  * 			r = x.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51354,7 +51333,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__42);
   __Pyx_GIVEREF(__pyx_tuple__42);
 
-  /* "gtcnv/core.pyx":318
+  /* "src/core.pyx":318
  * 	((s1,e1),(s2,e2)) = windows
  * 	if read.is_secondary == True:
  * 		second_align = read.get_tag("SA").split(',')             # <<<<<<<<<<<<<<
@@ -51368,7 +51347,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__45);
   __Pyx_GIVEREF(__pyx_tuple__45);
 
-  /* "gtcnv/core.pyx":338
+  /* "src/core.pyx":338
  * 	split_count=0
  * 	concordant_count=0
  * 	if flank_list==None: return (0,0,0)             # <<<<<<<<<<<<<<
@@ -51379,7 +51358,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__46);
   __Pyx_GIVEREF(__pyx_tuple__46);
 
-  /* "gtcnv/core.pyx":341
+  /* "src/core.pyx":341
  * 	else:
  * 		for (c,s,e) in flank_list:
  * 			if chrFlag == False : c = c.replace("chr","")             # <<<<<<<<<<<<<<
@@ -51390,7 +51369,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__47);
   __Pyx_GIVEREF(__pyx_tuple__47);
 
-  /* "gtcnv/core.pyx":369
+  /* "src/core.pyx":369
  * 	bamhead = bam.header['SQ']
  * 	for i in  bamhead:
  * 		if str(i['SN']).find("chr") != -1: chrFlag=1             # <<<<<<<<<<<<<<
@@ -51401,7 +51380,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__48);
   __Pyx_GIVEREF(__pyx_tuple__48);
 
-  /* "gtcnv/core.pyx":372
+  /* "src/core.pyx":372
  * 	return chrFlag
  * cdef randomChr (seed,gen):
  * 	bed_master = pbed.BedTool('chr1 1 2',from_string=True)             # <<<<<<<<<<<<<<
@@ -51412,7 +51391,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__49);
   __Pyx_GIVEREF(__pyx_tuple__49);
 
-  /* "gtcnv/core.pyx":383
+  /* "src/core.pyx":383
  * 	chr_size=0
  * 	for (c,s,e) in bed:
  * 		if chrFlag == False: c = c.replace("chr","")             # <<<<<<<<<<<<<<
@@ -51423,7 +51402,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__50);
   __Pyx_GIVEREF(__pyx_tuple__50);
 
-  /* "gtcnv/core.pyx":440
+  /* "src/core.pyx":440
  * 	genome_snp_cov=0
  * 	genome_SNP=0
  * 	if snp_cov.get('GENOME') != None: genome_snp_cov, genome_SNP = snp_cov['GENOME']             # <<<<<<<<<<<<<<
@@ -51434,7 +51413,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__51);
   __Pyx_GIVEREF(__pyx_tuple__51);
 
-  /* "gtcnv/core.pyx":472
+  /* "src/core.pyx":472
  * 		with open(FH,'r') as f:
  * 			for l in f:
  * 				if not l.startswith('#'): break             # <<<<<<<<<<<<<<
@@ -51445,7 +51424,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__52);
   __Pyx_GIVEREF(__pyx_tuple__52);
 
-  /* "gtcnv/core.pyx":474
+  /* "src/core.pyx":474
  * 				if not l.startswith('#'): break
  * 				else:
  * 					lines.append(l.rstrip('\n'))             # <<<<<<<<<<<<<<
@@ -51456,7 +51435,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__53);
   __Pyx_GIVEREF(__pyx_tuple__53);
 
-  /* "gtcnv/core.pyx":470
+  /* "src/core.pyx":470
  * 		if not os.path.isfile(FH): errFH(FH)
  * 		lines=[]
  * 		with open(FH,'r') as f:             # <<<<<<<<<<<<<<
@@ -51467,7 +51446,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__54);
   __Pyx_GIVEREF(__pyx_tuple__54);
 
-  /* "gtcnv/core.pyx":483
+  /* "src/core.pyx":483
  * 		if self.isHC == self.isFB:
  * 			sys.stderr.write('ERROR: {} IS AMBIGUOUS. VCF HEADER MUST CONTAIN EITHER <HaplotypeCaller> or <freeBayes>\n'.format(FH))
  * 			sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51478,7 +51457,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__55);
   __Pyx_GIVEREF(__pyx_tuple__55);
 
-  /* "gtcnv/core.pyx":489
+  /* "src/core.pyx":489
  * 		with open(FH) as f:
  * 			for l in f:
  * 				if l.startswith('##'): continue             # <<<<<<<<<<<<<<
@@ -51489,7 +51468,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__57);
   __Pyx_GIVEREF(__pyx_tuple__57);
 
-  /* "gtcnv/core.pyx":490
+  /* "src/core.pyx":490
  * 			for l in f:
  * 				if l.startswith('##'): continue
  * 				elif l.startswith('#CHROM'):             # <<<<<<<<<<<<<<
@@ -51500,7 +51479,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__58);
   __Pyx_GIVEREF(__pyx_tuple__58);
 
-  /* "gtcnv/core.pyx":491
+  /* "src/core.pyx":491
  * 				if l.startswith('##'): continue
  * 				elif l.startswith('#CHROM'):
  * 					r=l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51514,7 +51493,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__60);
   __Pyx_GIVEREF(__pyx_tuple__60);
 
-  /* "gtcnv/core.pyx":495
+  /* "src/core.pyx":495
  * 						if r[x] in iid: IND=x
  * 					if IND == -9:
  * 						sys.stderr.write('ERROR {} NOT FOUND IN VCF HEADER: {}\n'.format(iid,l.rstrip('\n')))             # <<<<<<<<<<<<<<
@@ -51525,7 +51504,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__61);
   __Pyx_GIVEREF(__pyx_tuple__61);
 
-  /* "gtcnv/core.pyx":496
+  /* "src/core.pyx":496
  * 					if IND == -9:
  * 						sys.stderr.write('ERROR {} NOT FOUND IN VCF HEADER: {}\n'.format(iid,l.rstrip('\n')))
  * 						sys.exit(1)             # <<<<<<<<<<<<<<
@@ -51536,7 +51515,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__62);
   __Pyx_GIVEREF(__pyx_tuple__62);
 
-  /* "gtcnv/core.pyx":498
+  /* "src/core.pyx":498
  * 						sys.exit(1)
  * 				else:
  * 					r=l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51550,7 +51529,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__64);
   __Pyx_GIVEREF(__pyx_tuple__64);
 
-  /* "gtcnv/core.pyx":501
+  /* "src/core.pyx":501
  * 					try: r[IND]
  * 					except IndexError:
  * 						sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format(l.rstrip('\n')))             # <<<<<<<<<<<<<<
@@ -51561,7 +51540,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__65);
   __Pyx_GIVEREF(__pyx_tuple__65);
 
-  /* "gtcnv/core.pyx":507
+  /* "src/core.pyx":507
  * 					s = int(r[1])
  * 					if 'chr' not in c: c='chr'+str(c)
  * 					c = c.replace('chr23','chrX').replace('chr24','chrY')             # <<<<<<<<<<<<<<
@@ -51575,7 +51554,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__67);
   __Pyx_GIVEREF(__pyx_tuple__67);
 
-  /* "gtcnv/core.pyx":509
+  /* "src/core.pyx":509
  * 					c = c.replace('chr23','chrX').replace('chr24','chrY')
  * 					if c not in CHROMS: continue
  * 					FORMAT = r[8].split(':')             # <<<<<<<<<<<<<<
@@ -51586,7 +51565,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__68);
   __Pyx_GIVEREF(__pyx_tuple__68);
 
-  /* "gtcnv/core.pyx":516
+  /* "src/core.pyx":516
  * 						if FORMAT[x] == self.formatTag: AD_IND=x
  * 					if DP_IND == -9 or GT_IND == -9: continue
  * 					sample_info = r[IND].split(':')             # <<<<<<<<<<<<<<
@@ -51597,7 +51576,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__69);
   __Pyx_GIVEREF(__pyx_tuple__69);
 
-  /* "gtcnv/core.pyx":519
+  /* "src/core.pyx":519
  * 					killer=False
  * 					for x in xrange(9,len(r)):
  * 						temp_info = r[x].split(':')             # <<<<<<<<<<<<<<
@@ -51608,7 +51587,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__70);
   __Pyx_GIVEREF(__pyx_tuple__70);
 
-  /* "gtcnv/core.pyx":524
+  /* "src/core.pyx":524
  * 					if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': continue
  * 					depth=int(sample_info[DP_IND])
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')             # <<<<<<<<<<<<<<
@@ -51619,7 +51598,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__76);
   __Pyx_GIVEREF(__pyx_tuple__76);
 
-  /* "gtcnv/core.pyx":525
+  /* "src/core.pyx":525
  * 					depth=int(sample_info[DP_IND])
  * 					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
  * 					gt = [int(x) for x in sample_info[GT_IND].split('/')]             # <<<<<<<<<<<<<<
@@ -51630,7 +51609,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__77);
   __Pyx_GIVEREF(__pyx_tuple__77);
 
-  /* "gtcnv/core.pyx":530
+  /* "src/core.pyx":530
  * 					if gt[0] != gt[1]:
  * 						if AD_IND == -9: continue
  * 						allelic_depth = [float(x) for x in sample_info[AD_IND].split(',')]             # <<<<<<<<<<<<<<
@@ -51641,7 +51620,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__78);
   __Pyx_GIVEREF(__pyx_tuple__78);
 
-  /* "gtcnv/core.pyx":487
+  /* "src/core.pyx":487
  * 		if self.isFB == True: self.formatTag = 'DPR'
  * 		if self.isHC == True: self.formatTag = 'AD'
  * 		with open(FH) as f:             # <<<<<<<<<<<<<<
@@ -51652,7 +51631,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__79);
   __Pyx_GIVEREF(__pyx_tuple__79);
 
-  /* "gtcnv/core.pyx":552
+  /* "src/core.pyx":552
  * 		genome=[]
  * 		for chrom in CHROMS:
  * 			if self.SNP.get(chrom) == None: snp_cov[chrom]=(0,0)             # <<<<<<<<<<<<<<
@@ -51663,7 +51642,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__80);
   __Pyx_GIVEREF(__pyx_tuple__80);
 
-  /* "gtcnv/core.pyx":554
+  /* "src/core.pyx":554
  * 			if self.SNP.get(chrom) == None: snp_cov[chrom]=(0,0)
  * 			else:
  * 				if len(self.SNP[chrom])==0: snp_cov[chrom]=(0,0)             # <<<<<<<<<<<<<<
@@ -51674,7 +51653,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__81);
   __Pyx_GIVEREF(__pyx_tuple__81);
 
-  /* "gtcnv/core.pyx":594
+  /* "src/core.pyx":594
  * 	ofh = outdir + ofh
  * 	outfh = open(ofh,'w')
  * 	outfh.write('\t'.join(("#ID","CHROM","COVERAGE_MEDIAN","READ_LENGTH_MEDIAN","INSERT_SIZE_MEDIAN","INSERT_SIZE_MAD","BAM_BP_PARSED","SNP_COVERAGE_MEDIAN","SNP_PARSED"))+'\n')             # <<<<<<<<<<<<<<
@@ -51685,7 +51664,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__82);
   __Pyx_GIVEREF(__pyx_tuple__82);
 
-  /* "gtcnv/core.pyx":607
+  /* "src/core.pyx":607
  * 			next(f)
  * 			for l in f:
  * 				r = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -51699,7 +51678,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__84);
   __Pyx_GIVEREF(__pyx_tuple__84);
 
-  /* "gtcnv/core.pyx":604
+  /* "src/core.pyx":604
  * 		read_length={}
  * 		snp_cov={}
  * 		with open(pre) as f:             # <<<<<<<<<<<<<<
@@ -51710,7 +51689,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__85);
   __Pyx_GIVEREF(__pyx_tuple__85);
 
-  /* "gtcnv/core.pyx":632
+  /* "src/core.pyx":632
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = open(outdir+out,'w')
  * 	out_head = '\t'.join(('chr','start','end','type','size','id','coverage','coverage_GCcorrected','discordant_ratio','split_ratio','SNP_coverage','HET_ratio','SNPs','HET_SNPs'))             # <<<<<<<<<<<<<<
@@ -51721,7 +51700,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__86);
   __Pyx_GIVEREF(__pyx_tuple__86);
 
-  /* "gtcnv/core.pyx":761
+  /* "src/core.pyx":761
  * 	if not os.path.exists(outdir): os.makedirs(outdir)
  * 	ofh = open(outdir+out,'w')
  * 	ofh.write('\t'.join(('#CHROM','START','END','LENGTH','TYPE','ID','COVERAGE','DISCORDANT_PAIRED-END','SPLIT_READS','SNP_COVERAGE','SNPs','HETEROZYGOUS_ALLELIC_DEPTH_RATIO','HETEROZYGOUS_SNPs','COPY_NUMBER','GTL_HOM-ALT','GTL_HET','GTL_HOM-REF','GTL_ALT','PHRED_REF','PHRED_ALT','CLASSIFIER'))+'\n')             # <<<<<<<<<<<<<<
@@ -51732,7 +51711,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__87);
   __Pyx_GIVEREF(__pyx_tuple__87);
 
-  /* "gtcnv/core.pyx":879
+  /* "src/core.pyx":879
  * 		else: cn.append(2)
  * 	df['copy_number']=cn
  * 	df['likHOM'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -51746,7 +51725,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__89);
   __Pyx_GIVEREF(__pyx_tuple__89);
 
-  /* "gtcnv/core.pyx":880
+  /* "src/core.pyx":880
  * 	df['copy_number']=cn
  * 	df['likHOM'] = lik[:,0]
  * 	df['likHET'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -51760,7 +51739,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__91);
   __Pyx_GIVEREF(__pyx_tuple__91);
 
-  /* "gtcnv/core.pyx":881
+  /* "src/core.pyx":881
  * 	df['likHOM'] = lik[:,0]
  * 	df['likHET'] = lik[:,1]
  * 	df['likREF'] = lik[:,2]             # <<<<<<<<<<<<<<
@@ -51774,7 +51753,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__93);
   __Pyx_GIVEREF(__pyx_tuple__93);
 
-  /* "gtcnv/core.pyx":895
+  /* "src/core.pyx":895
  * 		else: cn.append(1)
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -51788,7 +51767,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__95);
   __Pyx_GIVEREF(__pyx_tuple__95);
 
-  /* "gtcnv/core.pyx":896
+  /* "src/core.pyx":896
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]
  * 	df['likREF'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -51802,7 +51781,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__97);
   __Pyx_GIVEREF(__pyx_tuple__97);
 
-  /* "gtcnv/core.pyx":911
+  /* "src/core.pyx":911
  * 		else: cn.append(2)
  * 	df['copy_number']=cn
  * 	df['likCN4'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -51816,7 +51795,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__99);
   __Pyx_GIVEREF(__pyx_tuple__99);
 
-  /* "gtcnv/core.pyx":912
+  /* "src/core.pyx":912
  * 	df['copy_number']=cn
  * 	df['likCN4'] = lik[:,0]
  * 	df['likCN3'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -51830,7 +51809,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__101);
   __Pyx_GIVEREF(__pyx_tuple__101);
 
-  /* "gtcnv/core.pyx":913
+  /* "src/core.pyx":913
  * 	df['likCN4'] = lik[:,0]
  * 	df['likCN3'] = lik[:,1]
  * 	df['likREF'] = lik[:,2]             # <<<<<<<<<<<<<<
@@ -51844,7 +51823,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__103);
   __Pyx_GIVEREF(__pyx_tuple__103);
 
-  /* "gtcnv/core.pyx":927
+  /* "src/core.pyx":927
  * 		else: cn.append(2)
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]             # <<<<<<<<<<<<<<
@@ -51858,7 +51837,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__105);
   __Pyx_GIVEREF(__pyx_tuple__105);
 
-  /* "gtcnv/core.pyx":928
+  /* "src/core.pyx":928
  * 	df['copy_number']=cn
  * 	df['likVAR'] = lik[:,0]
  * 	df['likREF'] = lik[:,1]             # <<<<<<<<<<<<<<
@@ -51872,7 +51851,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__107);
   __Pyx_GIVEREF(__pyx_tuple__107);
 
-  /* "gtcnv/core.pyx":964
+  /* "src/core.pyx":964
  * 	if len(BIG) > 0:
  * 		clf=''
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_LRG-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -51883,7 +51862,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__108);
   __Pyx_GIVEREF(__pyx_tuple__108);
 
-  /* "gtcnv/core.pyx":969
+  /* "src/core.pyx":969
  * 	if len(SMA) > 0:
  * 		clf=''
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_deletion_SMA-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -51894,7 +51873,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__109);
   __Pyx_GIVEREF(__pyx_tuple__109);
 
-  /* "gtcnv/core.pyx":976
+  /* "src/core.pyx":976
  * 	(df,X) = prep3d(df)
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_sexchr_deletion_CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -51905,7 +51884,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__110);
   __Pyx_GIVEREF(__pyx_tuple__110);
 
-  /* "gtcnv/core.pyx":1004
+  /* "src/core.pyx":1004
  * 	if len(snpCLF) >0:
  * 		temp,X = prepHET(snpCLF)
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_HighCov_autosome_duplication_SNP-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -51916,7 +51895,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__111);
   __Pyx_GIVEREF(__pyx_tuple__111);
 
-  /* "gtcnv/core.pyx":1012
+  /* "src/core.pyx":1012
  * 	if len(peCLF) >0:
  * 		temp,X= prepPE(peCLF)
  * 		with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_autosome_duplication_PE-CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -51927,7 +51906,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__112);
   __Pyx_GIVEREF(__pyx_tuple__112);
 
-  /* "gtcnv/core.pyx":1019
+  /* "src/core.pyx":1019
  * 	(df,X) = prep3d(df)
  * 	clf=''
  * 	with open(get_path()+'/resources/training_sets/1000Genomes_LowCov_sexchr_duplication_CLF.pkl','rb') as f: clf=pickle.load(f)             # <<<<<<<<<<<<<<
@@ -51938,7 +51917,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__113);
   __Pyx_GIVEREF(__pyx_tuple__113);
 
-  /* "gtcnv/core.pyx":1041
+  /* "src/core.pyx":1041
  * 	try:
  * 		for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect(get_path()+'/resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):
  * 			if cyto.get((c,s,e))==None: cyto[(c,s,e)]=c2.replace('chr','')+band             # <<<<<<<<<<<<<<
@@ -51949,7 +51928,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__114);
   __Pyx_GIVEREF(__pyx_tuple__114);
 
-  /* "gtcnv/core.pyx":1042
+  /* "src/core.pyx":1042
  * 		for (c,s,e,c2,s2,e2,band,t,ovr) in cnv.intersect(get_path()+'/resources/annotation_files/{}_cytoband.bed'.format(gen),wao=True):
  * 			if cyto.get((c,s,e))==None: cyto[(c,s,e)]=c2.replace('chr','')+band
  * 			else: cyto[(c,s,e)]=cyto[(c,s,e)]+','+c2.replace('chr','')+band             # <<<<<<<<<<<<<<
@@ -51960,7 +51939,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__115);
   __Pyx_GIVEREF(__pyx_tuple__115);
 
-  /* "gtcnv/core.pyx":1110
+  /* "src/core.pyx":1110
  * 		genlist=[]
  * 		for y in geneTEMP[x]:
  * 			gene = y.split(',')             # <<<<<<<<<<<<<<
@@ -51971,7 +51950,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__117);
   __Pyx_GIVEREF(__pyx_tuple__117);
 
-  /* "gtcnv/core.pyx":1114
+  /* "src/core.pyx":1114
  * 			if 'exon' in y:
  * 				trx[gene[0]]=gene[2]
  * 				exonTotal = int(gene[len(gene)-1].split('/').pop())             # <<<<<<<<<<<<<<
@@ -51982,7 +51961,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__118);
   __Pyx_GIVEREF(__pyx_tuple__118);
 
-  /* "gtcnv/core.pyx":1115
+  /* "src/core.pyx":1115
  * 				trx[gene[0]]=gene[2]
  * 				exonTotal = int(gene[len(gene)-1].split('/').pop())
  * 				exonNum = int(gene[len(gene)-1].split('/').pop(0).replace('exon_',''))             # <<<<<<<<<<<<<<
@@ -51996,7 +51975,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__120);
   __Pyx_GIVEREF(__pyx_tuple__120);
 
-  /* "gtcnv/core.pyx":1132
+  /* "src/core.pyx":1132
  * 			elif 'intron' in y:
  * 				trx[gene[0]]=gene[2]
  * 				intronTotal = int(gene[len(gene)-1].split('/').pop())             # <<<<<<<<<<<<<<
@@ -52007,7 +51986,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__121);
   __Pyx_GIVEREF(__pyx_tuple__121);
 
-  /* "gtcnv/core.pyx":1133
+  /* "src/core.pyx":1133
  * 				trx[gene[0]]=gene[2]
  * 				intronTotal = int(gene[len(gene)-1].split('/').pop())
  * 				intronNum = int(gene[len(gene)-1].split('/').pop(0).replace('intron_',''))             # <<<<<<<<<<<<<<
@@ -52021,7 +52000,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__123);
   __Pyx_GIVEREF(__pyx_tuple__123);
 
-  /* "gtcnv/core.pyx":1273
+  /* "src/core.pyx":1273
  * 			meiName=mei[(c,s,e)]
  * 			TYPE=TYPE+':'+meiName
  * 		DESX='{}:{}-{}_{}'.format(c,s,e,TYPE.replace('DEL','deletion').replace('DUP','duplication'))             # <<<<<<<<<<<<<<
@@ -52035,7 +52014,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__127);
   __Pyx_GIVEREF(__pyx_tuple__127);
 
-  /* "gtcnv/core.pyx":1309
+  /* "src/core.pyx":1309
  * 			'##fileDate={}'.format(date[0]),
  * 			'##reference={}'.format(fasta_config(gen)),
  * 			'##GTCNV_CMD="{}"'.format(' '.join(map(str,sys.argv[:]))),             # <<<<<<<<<<<<<<
@@ -52046,7 +52025,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_slice__129);
   __Pyx_GIVEREF(__pyx_slice__129);
 
-  /* "gtcnv/core.pyx":1342
+  /* "src/core.pyx":1342
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:
  * 		for l in f:
  * 			(chrom,size) = l.rstrip('\n').split('\t')             # <<<<<<<<<<<<<<
@@ -52060,7 +52039,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__131);
   __Pyx_GIVEREF(__pyx_tuple__131);
 
-  /* "gtcnv/core.pyx":1343
+  /* "src/core.pyx":1343
  * 		for l in f:
  * 			(chrom,size) = l.rstrip('\n').split('\t')
  * 			VCFHEAD.append('##contig=<ID={},length={}>'.format(chrom.replace('chr',''),size))             # <<<<<<<<<<<<<<
@@ -52071,7 +52050,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__132);
   __Pyx_GIVEREF(__pyx_tuple__132);
 
-  /* "gtcnv/core.pyx":1340
+  /* "src/core.pyx":1340
  * 			'##ALT=<ID=DUP,Description="Duplication, if 80% reciprocal overlap with RepeatMasker element, the class, name, and family are given separated by colons">',
  * 		]
  * 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:             # <<<<<<<<<<<<<<
@@ -52148,7 +52127,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__139);
   __Pyx_GIVEREF(__pyx_tuple__139);
 
-  /* "gtcnv/core.pyx":19
+  /* "src/core.pyx":19
  * except ImportError: import pickle
  * np.import_array()
  * def errFH(fh):             # <<<<<<<<<<<<<<
@@ -52160,7 +52139,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__140);
   __pyx_codeobj__141 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__140, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_errFH, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__141)) __PYX_ERR(0, 19, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":28
+  /* "src/core.pyx":28
  * 	if 'DEL' in cl or 'DUP' in cl: c=1
  * 	return c
  * def Bed(fh):             # <<<<<<<<<<<<<<
@@ -52172,7 +52151,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__142);
   __pyx_codeobj__143 = (PyObject*)__Pyx_PyCode_New(1, 0, 16, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__142, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_Bed, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__143)) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":75
+  /* "src/core.pyx":75
  * 		scnv.append((c,s,e,cl))
  * 	return scnv
  * def get_path():             # <<<<<<<<<<<<<<
@@ -52184,7 +52163,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__144);
   __pyx_codeobj__145 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__144, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_get_path, 75, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__145)) __PYX_ERR(0, 75, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":83
+  /* "src/core.pyx":83
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))
  * 		sys.exit(1)
  * def check_in(fh):             # <<<<<<<<<<<<<<
@@ -52196,7 +52175,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__146);
   __pyx_codeobj__147 = (PyObject*)__Pyx_PyCode_New(1, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_check_in, 83, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__147)) __PYX_ERR(0, 83, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":120
+  /* "src/core.pyx":120
  * 	chroms.append('chrY')
  * 	return chroms
  * def check_cnv(cnv,gen):             # <<<<<<<<<<<<<<
@@ -52208,7 +52187,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__148);
   __pyx_codeobj__149 = (PyObject*)__Pyx_PyCode_New(2, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__148, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_check_cnv, 120, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__149)) __PYX_ERR(0, 120, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":138
+  /* "src/core.pyx":138
  * 			else: ok.append((c,s,e,cl))
  * 	return raw,ok
  * def reportTime(init_time,s):             # <<<<<<<<<<<<<<
@@ -52220,11 +52199,11 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__150);
   __pyx_codeobj__151 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__150, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_reportTime, 138, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__151)) __PYX_ERR(0, 138, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":453
+  /* "src/core.pyx":453
  * 	bam.close()
  * class gtVCF():
  * 	def __init__(self,FH=None,iid=None,mask=None):             # <<<<<<<<<<<<<<
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  * 		cdef double a=0.0
  */
   __pyx_tuple__152 = PyTuple_Pack(34, __pyx_n_s_self, __pyx_n_s_FH, __pyx_n_s_iid, __pyx_n_s_mask, __pyx_n_s_depth, __pyx_n_s_a_2, __pyx_n_s_b, __pyx_n_s_ratio, __pyx_n_s_IND, __pyx_n_s_DP_IND, __pyx_n_s_GT_IND, __pyx_n_s_AD_IND, __pyx_n_s_s, __pyx_n_s_snps, __pyx_n_s_hets, __pyx_n_s_SNP, __pyx_n_s_HET, __pyx_n_s_CHROMS, __pyx_n_s_lines, __pyx_n_s_f, __pyx_n_s_l_2, __pyx_n_s_r, __pyx_n_s_x, __pyx_n_s_c, __pyx_n_s_FORMAT, __pyx_n_s_sample_info, __pyx_n_s_killer, __pyx_n_s_temp_info, __pyx_n_s_gt, __pyx_n_s_allelic_depth, __pyx_n_s_LociMask, __pyx_n_s_chrom, __pyx_n_s_snpsub, __pyx_n_s_hetsub); if (unlikely(!__pyx_tuple__152)) __PYX_ERR(0, 453, __pyx_L1_error)
@@ -52235,7 +52214,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__154);
   __Pyx_GIVEREF(__pyx_tuple__154);
 
-  /* "gtcnv/core.pyx":547
+  /* "src/core.pyx":547
  * 		self.SNP=SNP
  * 		self.HET=HET
  * 	def preprocessVCF(self):             # <<<<<<<<<<<<<<
@@ -52247,7 +52226,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__155);
   __pyx_codeobj__156 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__155, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_preprocessVCF, 547, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__156)) __PYX_ERR(0, 547, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":559
+  /* "src/core.pyx":559
  * 		snp_cov['GENOME']=(np.median(genome),len(genome))
  * 		return snp_cov
  * 	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):             # <<<<<<<<<<<<<<
@@ -52259,7 +52238,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__157);
   __pyx_codeobj__158 = (PyObject*)__Pyx_PyCode_New(4, 0, 19, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__157, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_extract_SNP_features, 559, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__158)) __PYX_ERR(0, 559, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":588
+  /* "src/core.pyx":588
  * 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))
  * 		return SNP_feats,HET_feats
  * def preprocess(iid,bamfh,vcffh,ofh,gen,seed):             # <<<<<<<<<<<<<<
@@ -52271,7 +52250,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__159);
   __pyx_codeobj__160 = (PyObject*)__Pyx_PyCode_New(6, 0, 9, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__159, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_preprocess, 588, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__160)) __PYX_ERR(0, 588, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":598
+  /* "src/core.pyx":598
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)
  * class Prepro(object):
  * 	def __init__(self,pre):             # <<<<<<<<<<<<<<
@@ -52283,7 +52262,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__161);
   __pyx_codeobj__162 = (PyObject*)__Pyx_PyCode_New(2, 0, 10, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__161, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_init, 598, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__162)) __PYX_ERR(0, 598, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":619
+  /* "src/core.pyx":619
  * 		self.read_len=read_length
  * 		self.snp_cov=snp_cov
  * def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):             # <<<<<<<<<<<<<<
@@ -52295,7 +52274,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__163);
   __pyx_codeobj__164 = (PyObject*)__Pyx_PyCode_New(9, 0, 49, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__163, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_extract_feats, 619, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__164)) __PYX_ERR(0, 619, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":687
+  /* "src/core.pyx":687
  * 		for x in results.sort(): out.append(tuple(x))
  * 	return out
  * def likFilter(x,lik,f):             # <<<<<<<<<<<<<<
@@ -52307,7 +52286,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__165);
   __pyx_codeobj__166 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__165, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_likFilter, 687, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__166)) __PYX_ERR(0, 687, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":727
+  /* "src/core.pyx":727
  * 		elif sz>5000 and lik<10: passflag=0
  * 	return passflag
  * def genotype(feats,sex,gen,out):             # <<<<<<<<<<<<<<
@@ -52319,12 +52298,12 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__167);
   __pyx_codeobj__168 = (PyObject*)__Pyx_PyCode_New(4, 0, 35, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__167, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_dantakli_gtCNV_dist_versio, __pyx_n_s_genotype, 727, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__168)) __PYX_ERR(0, 727, __pyx_L1_error)
 
-  /* "gtcnv/core.pyx":1187
+  /* "src/core.pyx":1187
  * 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
  * 	return genes
  * def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):             # <<<<<<<<<<<<<<
- * 	cdef unsigned short CNV_ID
- * 	cdef unsigned short SZ
+ * 	cdef unsigned int CNV_ID
+ * 	cdef unsigned int SZ
  */
   __pyx_tuple__169 = PyTuple_Pack(67, __pyx_n_s_raw, __pyx_n_s_genos, __pyx_n_s_gen, __pyx_n_s_REF, __pyx_n_s_NON, __pyx_n_s_GQ, __pyx_n_s_OFH, __pyx_n_s_sex, __pyx_n_s_hemi, __pyx_n_s_filt, __pyx_n_s_CNV_ID, __pyx_n_s_SZ, __pyx_n_s_genes, __pyx_n_s_cyto, __pyx_n_s_mei, __pyx_n_s_flags, __pyx_n_s_thouGen, __pyx_n_s_FILT, __pyx_n_s_AF, __pyx_n_s_GT, __pyx_n_s_refcnt, __pyx_n_s_males, __pyx_n_s_IID, __pyx_n_s_cnv, __pyx_n_s_meiRO, __pyx_n_s_x, __pyx_n_s_k, __pyx_n_s_filty, __pyx_n_s_lik, __pyx_n_s_v, __pyx_n_s_iid, __pyx_n_s_VCF, __pyx_n_s_c, __pyx_n_s_s, __pyx_n_s_e, __pyx_n_s_cl, __pyx_n_s_TYPE, __pyx_n_s_THOUGEN_ID, __pyx_n_s_THOUGEN_OVR, __pyx_n_s_SEGD, __pyx_n_s_ABPTS, __pyx_n_s_UNMAP, __pyx_n_s_CENTMER, __pyx_n_s_STR, __pyx_n_s_meiName, __pyx_n_s_REPEATMASKER, __pyx_n_s_GENE, __pyx_n_s_CYTOB, __pyx_n_s_MEDREF, __pyx_n_s_QUAL, __pyx_n_s_ALLELE, __pyx_n_s_GTS, __pyx_n_s_PASS, __pyx_n_s_fail, __pyx_n_s_cnvref, __pyx_n_s_DESX, __pyx_n_s_gtPass, __pyx_n_s_INFO, __pyx_n_s_out, __pyx_n_s_date, __pyx_n_s_VCFHEAD, __pyx_n_s_f, __pyx_n_s_l_2, __pyx_n_s_chrom, __pyx_n_s_size, __pyx_n_s_outdir, __pyx_n_s_outfh); if (unlikely(!__pyx_tuple__169)) __PYX_ERR(0, 1187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__169);
@@ -52447,14 +52426,14 @@ PyMODINIT_FUNC PyInit_core(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_gtcnv__core) {
+  if (__pyx_module_is_main_src__core) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "gtcnv.core")) {
-      if (unlikely(PyDict_SetItemString(modules, "gtcnv.core", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "src.core")) {
+      if (unlikely(PyDict_SetItemString(modules, "src.core", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -52466,18 +52445,18 @@ PyMODINIT_FUNC PyInit_core(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
-  __pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls.tp_print = 0;
-  __pyx_ptype_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls = &__pyx_type_5gtcnv_4core___pyx_scope_struct____pyx_f_5gtcnv_4core_filter_calls;
-  if (PyType_Ready(&__pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
-  __pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr.tp_print = 0;
-  __pyx_ptype_5gtcnv_4core___pyx_scope_struct_1_genexpr = &__pyx_type_5gtcnv_4core___pyx_scope_struct_1_genexpr;
-  if (PyType_Ready(&__pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr) < 0) __PYX_ERR(0, 193, __pyx_L1_error)
-  __pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr.tp_print = 0;
-  __pyx_ptype_5gtcnv_4core___pyx_scope_struct_2_genexpr = &__pyx_type_5gtcnv_4core___pyx_scope_struct_2_genexpr;
-  if (PyType_Ready(&__pyx_type_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
-  __pyx_type_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess.tp_print = 0;
-  __pyx_ptype_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess = &__pyx_type_5gtcnv_4core___pyx_scope_struct_3___pyx_f_5gtcnv_4core_gtCNV_preprocess;
+  if (PyType_Ready(&__pyx_type_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_type_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls.tp_print = 0;
+  __pyx_ptype_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls = &__pyx_type_3src_4core___pyx_scope_struct____pyx_f_3src_4core_filter_calls;
+  if (PyType_Ready(&__pyx_type_3src_4core___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_type_3src_4core___pyx_scope_struct_1_genexpr.tp_print = 0;
+  __pyx_ptype_3src_4core___pyx_scope_struct_1_genexpr = &__pyx_type_3src_4core___pyx_scope_struct_1_genexpr;
+  if (PyType_Ready(&__pyx_type_3src_4core___pyx_scope_struct_2_genexpr) < 0) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_type_3src_4core___pyx_scope_struct_2_genexpr.tp_print = 0;
+  __pyx_ptype_3src_4core___pyx_scope_struct_2_genexpr = &__pyx_type_3src_4core___pyx_scope_struct_2_genexpr;
+  if (PyType_Ready(&__pyx_type_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_type_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess.tp_print = 0;
+  __pyx_ptype_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess = &__pyx_type_3src_4core___pyx_scope_struct_3___pyx_f_3src_4core_gtCNV_preprocess;
   /*--- Type import code ---*/
   __pyx_ptype_7cpython_4type_type = __Pyx_ImportType(__Pyx_BUILTIN_MODULE_NAME, "type", 
   #if CYTHON_COMPILING_IN_PYPY
@@ -52498,7 +52477,7 @@ PyMODINIT_FUNC PyInit_core(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "gtcnv/core.pyx":5
+  /* "src/core.pyx":5
  * #cython: wraparound=False
  * #cython: cdivision=True
  * import os,sys,pysam,datetime             # <<<<<<<<<<<<<<
@@ -52522,7 +52501,7 @@ PyMODINIT_FUNC PyInit_core(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_datetime, __pyx_t_1) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":6
+  /* "src/core.pyx":6
  * #cython: cdivision=True
  * import os,sys,pysam,datetime
  * from math import ceil             # <<<<<<<<<<<<<<
@@ -52543,7 +52522,7 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":7
+  /* "src/core.pyx":7
  * import os,sys,pysam,datetime
  * from math import ceil
  * from glob import glob             # <<<<<<<<<<<<<<
@@ -52564,7 +52543,7 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":8
+  /* "src/core.pyx":8
  * from math import ceil
  * from glob import glob
  * import pybedtools as pbed             # <<<<<<<<<<<<<<
@@ -52576,7 +52555,7 @@ PyMODINIT_FUNC PyInit_core(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pbed, __pyx_t_1) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":9
+  /* "src/core.pyx":9
  * from glob import glob
  * import pybedtools as pbed
  * from time import time             # <<<<<<<<<<<<<<
@@ -52597,7 +52576,7 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":10
+  /* "src/core.pyx":10
  * import pybedtools as pbed
  * from time import time
  * from datetime import timedelta             # <<<<<<<<<<<<<<
@@ -52618,7 +52597,7 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":11
+  /* "src/core.pyx":11
  * from time import time
  * from datetime import timedelta
  * import pandas as pd             # <<<<<<<<<<<<<<
@@ -52630,7 +52609,7 @@ PyMODINIT_FUNC PyInit_core(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pd, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":12
+  /* "src/core.pyx":12
  * from datetime import timedelta
  * import pandas as pd
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -52642,7 +52621,7 @@ PyMODINIT_FUNC PyInit_core(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":14
+  /* "src/core.pyx":14
  * import numpy as np
  * cimport numpy as np
  * try:from configparser import ConfigParser             # <<<<<<<<<<<<<<
@@ -52680,7 +52659,7 @@ PyMODINIT_FUNC PyInit_core(void)
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "gtcnv/core.pyx":15
+    /* "src/core.pyx":15
  * cimport numpy as np
  * try:from configparser import ConfigParser
  * except ImportError:from ConfigParser import ConfigParser             # <<<<<<<<<<<<<<
@@ -52689,7 +52668,7 @@ PyMODINIT_FUNC PyInit_core(void)
  */
     __pyx_t_6 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ImportError);
     if (__pyx_t_6) {
-      __Pyx_AddTraceback("gtcnv.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("src.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
       if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_7) < 0) __PYX_ERR(0, 15, __pyx_L4_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
@@ -52715,7 +52694,7 @@ PyMODINIT_FUNC PyInit_core(void)
     goto __pyx_L4_except_error;
     __pyx_L4_except_error:;
 
-    /* "gtcnv/core.pyx":14
+    /* "src/core.pyx":14
  * import numpy as np
  * cimport numpy as np
  * try:from configparser import ConfigParser             # <<<<<<<<<<<<<<
@@ -52737,7 +52716,7 @@ PyMODINIT_FUNC PyInit_core(void)
     __pyx_L9_try_end:;
   }
 
-  /* "gtcnv/core.pyx":16
+  /* "src/core.pyx":16
  * try:from configparser import ConfigParser
  * except ImportError:from ConfigParser import ConfigParser
  * try: import cPickle as pickle             # <<<<<<<<<<<<<<
@@ -52769,7 +52748,7 @@ PyMODINIT_FUNC PyInit_core(void)
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "gtcnv/core.pyx":17
+    /* "src/core.pyx":17
  * except ImportError:from ConfigParser import ConfigParser
  * try: import cPickle as pickle
  * except ImportError: import pickle             # <<<<<<<<<<<<<<
@@ -52778,7 +52757,7 @@ PyMODINIT_FUNC PyInit_core(void)
  */
     __pyx_t_6 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ImportError);
     if (__pyx_t_6) {
-      __Pyx_AddTraceback("gtcnv.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("src.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
       if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 17, __pyx_L14_except_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_GOTREF(__pyx_t_1);
@@ -52795,7 +52774,7 @@ PyMODINIT_FUNC PyInit_core(void)
     goto __pyx_L14_except_error;
     __pyx_L14_except_error:;
 
-    /* "gtcnv/core.pyx":16
+    /* "src/core.pyx":16
  * try:from configparser import ConfigParser
  * except ImportError:from ConfigParser import ConfigParser
  * try: import cPickle as pickle             # <<<<<<<<<<<<<<
@@ -52817,7 +52796,7 @@ PyMODINIT_FUNC PyInit_core(void)
     __pyx_L19_try_end:;
   }
 
-  /* "gtcnv/core.pyx":18
+  /* "src/core.pyx":18
  * try: import cPickle as pickle
  * except ImportError: import pickle
  * np.import_array()             # <<<<<<<<<<<<<<
@@ -52826,131 +52805,131 @@ PyMODINIT_FUNC PyInit_core(void)
  */
   import_array();
 
-  /* "gtcnv/core.pyx":19
+  /* "src/core.pyx":19
  * except ImportError: import pickle
  * np.import_array()
  * def errFH(fh):             # <<<<<<<<<<<<<<
  * 	sys.stderr.write('ERROR {} NOT FOUND\n'.format(fh))
  * 	sys.exit(1)
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_1errFH, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_1errFH, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_errFH, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":28
+  /* "src/core.pyx":28
  * 	if 'DEL' in cl or 'DUP' in cl: c=1
  * 	return c
  * def Bed(fh):             # <<<<<<<<<<<<<<
  * 	cdef unsigned int s
  * 	cdef unsigned int e
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_3Bed, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_3Bed, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_Bed, __pyx_t_2) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":75
+  /* "src/core.pyx":75
  * 		scnv.append((c,s,e,cl))
  * 	return scnv
  * def get_path():             # <<<<<<<<<<<<<<
  * 	try:
  * 		root = __file__
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_5get_path, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_5get_path, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_path, __pyx_t_2) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":83
+  /* "src/core.pyx":83
  * 		sys.stderr.write('ERROR {} NOT FOUND\n'.format(__file__))
  * 		sys.exit(1)
  * def check_in(fh):             # <<<<<<<<<<<<<<
  * 	cdef bint skip
  * 	bams={}
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_7check_in, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_7check_in, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_check_in, __pyx_t_2) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":120
+  /* "src/core.pyx":120
  * 	chroms.append('chrY')
  * 	return chroms
  * def check_cnv(cnv,gen):             # <<<<<<<<<<<<<<
  * 	cdef unsigned int s
  * 	sz={}
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_9check_cnv, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_9check_cnv, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_check_cnv, __pyx_t_2) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":138
+  /* "src/core.pyx":138
  * 			else: ok.append((c,s,e,cl))
  * 	return raw,ok
  * def reportTime(init_time,s):             # <<<<<<<<<<<<<<
  * 	f=[]
  * 	s = ' '+s+' <time elapsed: {}>'.format(timedelta(seconds=int(time())-init_time))
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_11reportTime, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_11reportTime, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_reportTime, __pyx_t_2) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":452
+  /* "src/core.pyx":452
  * 	ofh.close()
  * 	bam.close()
  * class gtVCF():             # <<<<<<<<<<<<<<
  * 	def __init__(self,FH=None,iid=None,mask=None):
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  */
-  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_gtVCF, __pyx_n_s_gtVCF, (PyObject *) NULL, __pyx_n_s_gtcnv_core, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_gtVCF, __pyx_n_s_gtVCF, (PyObject *) NULL, __pyx_n_s_src_core, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "gtcnv/core.pyx":453
+  /* "src/core.pyx":453
  * 	bam.close()
  * class gtVCF():
  * 	def __init__(self,FH=None,iid=None,mask=None):             # <<<<<<<<<<<<<<
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  * 		cdef double a=0.0
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_5gtcnv_4core_5gtVCF_1__init__, 0, __pyx_n_s_gtVCF___init, NULL, __pyx_n_s_gtcnv_core, __pyx_d, ((PyObject *)__pyx_codeobj__153)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_4core_5gtVCF_1__init__, 0, __pyx_n_s_gtVCF___init, NULL, __pyx_n_s_src_core, __pyx_d, ((PyObject *)__pyx_codeobj__153)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_tuple__154);
   if (PyObject_SetItem(__pyx_t_2, __pyx_n_s_init, __pyx_t_1) < 0) __PYX_ERR(0, 453, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":547
+  /* "src/core.pyx":547
  * 		self.SNP=SNP
  * 		self.HET=HET
  * 	def preprocessVCF(self):             # <<<<<<<<<<<<<<
  * 		snp_cov={}
  * 		CHROMS = get_chroma()
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_5gtcnv_4core_5gtVCF_3preprocessVCF, 0, __pyx_n_s_gtVCF_preprocessVCF, NULL, __pyx_n_s_gtcnv_core, __pyx_d, ((PyObject *)__pyx_codeobj__156)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 547, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_4core_5gtVCF_3preprocessVCF, 0, __pyx_n_s_gtVCF_preprocessVCF, NULL, __pyx_n_s_src_core, __pyx_d, ((PyObject *)__pyx_codeobj__156)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 547, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyObject_SetItem(__pyx_t_2, __pyx_n_s_preprocessVCF, __pyx_t_1) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":559
+  /* "src/core.pyx":559
  * 		snp_cov['GENOME']=(np.median(genome),len(genome))
  * 		return snp_cov
  * 	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):             # <<<<<<<<<<<<<<
  * 		cdef int s=0
  * 		cdef int e=0
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_5gtcnv_4core_5gtVCF_5extract_SNP_features, 0, __pyx_n_s_gtVCF_extract_SNP_features, NULL, __pyx_n_s_gtcnv_core, __pyx_d, ((PyObject *)__pyx_codeobj__158)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_4core_5gtVCF_5extract_SNP_features, 0, __pyx_n_s_gtVCF_extract_SNP_features, NULL, __pyx_n_s_src_core, __pyx_d, ((PyObject *)__pyx_codeobj__158)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyObject_SetItem(__pyx_t_2, __pyx_n_s_extract_SNP_features, __pyx_t_1) < 0) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "gtcnv/core.pyx":452
+  /* "src/core.pyx":452
  * 	ofh.close()
  * 	bam.close()
  * class gtVCF():             # <<<<<<<<<<<<<<
  * 	def __init__(self,FH=None,iid=None,mask=None):
- * 		cdef unsigned short depth=0
+ * 		cdef unsigned int depth=0
  */
   __pyx_t_1 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_gtVCF, __pyx_empty_tuple, __pyx_t_2, NULL, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -52958,19 +52937,19 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":588
+  /* "src/core.pyx":588
  * 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))
  * 		return SNP_feats,HET_feats
  * def preprocess(iid,bamfh,vcffh,ofh,gen,seed):             # <<<<<<<<<<<<<<
  * 	outdir = os.getcwd()+'/gtCNV_preprocessing/'
  * 	bed = randomChr(seed,gen)
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_13preprocess, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_13preprocess, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 588, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_preprocess, __pyx_t_2) < 0) __PYX_ERR(0, 588, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":597
+  /* "src/core.pyx":597
  * 	outfh.close()
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)
  * class Prepro(object):             # <<<<<<<<<<<<<<
@@ -52984,22 +52963,22 @@ PyMODINIT_FUNC PyInit_core(void)
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_builtin_object);
   __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 597, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_Prepro, __pyx_n_s_Prepro, (PyObject *) NULL, __pyx_n_s_gtcnv_core, (PyObject *) NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 597, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_Prepro, __pyx_n_s_Prepro, (PyObject *) NULL, __pyx_n_s_src_core, (PyObject *) NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 597, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
 
-  /* "gtcnv/core.pyx":598
+  /* "src/core.pyx":598
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)
  * class Prepro(object):
  * 	def __init__(self,pre):             # <<<<<<<<<<<<<<
  * 		chr_cov={}
  * 		insert_size={}
  */
-  __pyx_t_9 = __Pyx_CyFunction_NewEx(&__pyx_mdef_5gtcnv_4core_6Prepro_1__init__, 0, __pyx_n_s_Prepro___init, NULL, __pyx_n_s_gtcnv_core, __pyx_d, ((PyObject *)__pyx_codeobj__162)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 598, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_4core_6Prepro_1__init__, 0, __pyx_n_s_Prepro___init, NULL, __pyx_n_s_src_core, __pyx_d, ((PyObject *)__pyx_codeobj__162)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 598, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   if (PyObject_SetItem(__pyx_t_7, __pyx_n_s_init, __pyx_t_9) < 0) __PYX_ERR(0, 598, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "gtcnv/core.pyx":597
+  /* "src/core.pyx":597
  * 	outfh.close()
  * 	gtCNV_preprocess(iid,bamfh,vcffh,bed,ofh,gen)
  * class Prepro(object):             # <<<<<<<<<<<<<<
@@ -53014,55 +52993,55 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":619
+  /* "src/core.pyx":619
  * 		self.read_len=read_length
  * 		self.snp_cov=snp_cov
  * def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):             # <<<<<<<<<<<<<<
  * 	master_cnv = filter_calls(cnv,gen)
  * 	gc_dict = gc_norm(pcrfree)
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_15extract_feats, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 619, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_15extract_feats, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_extract_feats, __pyx_t_2) < 0) __PYX_ERR(0, 619, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":687
+  /* "src/core.pyx":687
  * 		for x in results.sort(): out.append(tuple(x))
  * 	return out
  * def likFilter(x,lik,f):             # <<<<<<<<<<<<<<
  * 	'''
  * 	de novo filter recommendations
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_17likFilter, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 687, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_17likFilter, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_likFilter, __pyx_t_2) < 0) __PYX_ERR(0, 687, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":727
+  /* "src/core.pyx":727
  * 		elif sz>5000 and lik<10: passflag=0
  * 	return passflag
  * def genotype(feats,sex,gen,out):             # <<<<<<<<<<<<<<
  * 	REF={}
  * 	NON={}
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_19genotype, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 727, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_19genotype, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 727, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_genotype, __pyx_t_2) < 0) __PYX_ERR(0, 727, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":1187
+  /* "src/core.pyx":1187
  * 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
  * 	return genes
  * def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):             # <<<<<<<<<<<<<<
- * 	cdef unsigned short CNV_ID
- * 	cdef unsigned short SZ
+ * 	cdef unsigned int CNV_ID
+ * 	cdef unsigned int SZ
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5gtcnv_4core_21annotate, NULL, __pyx_n_s_gtcnv_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1187, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3src_4core_21annotate, NULL, __pyx_n_s_src_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_annotate, __pyx_t_2) < 0) __PYX_ERR(0, 1187, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gtcnv/core.pyx":1
+  /* "src/core.pyx":1
  * #!python             # <<<<<<<<<<<<<<
  * #cython: boundscheck=False
  * #cython: wraparound=False
@@ -53091,11 +53070,11 @@ PyMODINIT_FUNC PyInit_core(void)
   __Pyx_XDECREF(__pyx_t_9);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init gtcnv.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init src.core", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init gtcnv.core");
+    PyErr_SetString(PyExc_ImportError, "init src.core");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -56193,33 +56172,6 @@ bad:
 #endif
 
 /* CIntToPy */
-                      static CYTHON_INLINE PyObject* __Pyx_PyInt_From_short(short value) {
-    const short neg_one = (short) -1, const_zero = (short) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(short) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(short) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(short) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-        }
-    } else {
-        if (sizeof(short) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(short) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(short),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
                       static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
     const int neg_one = (int) -1, const_zero = (int) 0;
     const int is_unsigned = neg_one > const_zero;
@@ -56914,228 +56866,6 @@ raise_neg_overflow:
     return (long) -1;
 }
 
-/* PrintOne */
-                      #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
-static int __Pyx_PrintOne(PyObject* f, PyObject *o) {
-    if (!f) {
-        if (!(f = __Pyx_GetStdout()))
-            return -1;
-    }
-    Py_INCREF(f);
-    if (PyFile_SoftSpace(f, 0)) {
-        if (PyFile_WriteString(" ", f) < 0)
-            goto error;
-    }
-    if (PyFile_WriteObject(o, f, Py_PRINT_RAW) < 0)
-        goto error;
-    if (PyFile_WriteString("\n", f) < 0)
-        goto error;
-    Py_DECREF(f);
-    return 0;
-error:
-    Py_DECREF(f);
-    return -1;
-    /* the line below is just to avoid C compiler
-     * warnings about unused functions */
-    return __Pyx_Print(f, NULL, 0);
-}
-#else
-static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {
-    int res;
-    PyObject* arg_tuple = PyTuple_Pack(1, o);
-    if (unlikely(!arg_tuple))
-        return -1;
-    res = __Pyx_Print(stream, arg_tuple, 1);
-    Py_DECREF(arg_tuple);
-    return res;
-}
-#endif
-
-/* CIntFromPy */
-                      static CYTHON_INLINE short __Pyx_PyInt_As_short(PyObject *x) {
-    const short neg_one = (short) -1, const_zero = (short) 0;
-    const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(short) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(short, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (short) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (short) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(short, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(short) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) >= 2 * PyLong_SHIFT) {
-                            return (short) (((((short)digits[1]) << PyLong_SHIFT) | (short)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(short) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) >= 3 * PyLong_SHIFT) {
-                            return (short) (((((((short)digits[2]) << PyLong_SHIFT) | (short)digits[1]) << PyLong_SHIFT) | (short)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(short) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) >= 4 * PyLong_SHIFT) {
-                            return (short) (((((((((short)digits[3]) << PyLong_SHIFT) | (short)digits[2]) << PyLong_SHIFT) | (short)digits[1]) << PyLong_SHIFT) | (short)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (short) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(short) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(short, unsigned long, PyLong_AsUnsignedLong(x))
-            } else if (sizeof(short) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(short, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (short) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(short, sdigit, (sdigit) (-(sdigit)digits[0]))
-                case  1: __PYX_VERIFY_RETURN_INT(short,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(short) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) - 1 > 2 * PyLong_SHIFT) {
-                            return (short) (((short)-1)*(((((short)digits[1]) << PyLong_SHIFT) | (short)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(short) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) - 1 > 2 * PyLong_SHIFT) {
-                            return (short) ((((((short)digits[1]) << PyLong_SHIFT) | (short)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(short) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) - 1 > 3 * PyLong_SHIFT) {
-                            return (short) (((short)-1)*(((((((short)digits[2]) << PyLong_SHIFT) | (short)digits[1]) << PyLong_SHIFT) | (short)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(short) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) - 1 > 3 * PyLong_SHIFT) {
-                            return (short) ((((((((short)digits[2]) << PyLong_SHIFT) | (short)digits[1]) << PyLong_SHIFT) | (short)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(short) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) - 1 > 4 * PyLong_SHIFT) {
-                            return (short) (((short)-1)*(((((((((short)digits[3]) << PyLong_SHIFT) | (short)digits[2]) << PyLong_SHIFT) | (short)digits[1]) << PyLong_SHIFT) | (short)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(short) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(short, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(short) - 1 > 4 * PyLong_SHIFT) {
-                            return (short) ((((((((((short)digits[3]) << PyLong_SHIFT) | (short)digits[2]) << PyLong_SHIFT) | (short)digits[1]) << PyLong_SHIFT) | (short)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(short) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(short, long, PyLong_AsLong(x))
-            } else if (sizeof(short) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(short, PY_LONG_LONG, PyLong_AsLongLong(x))
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            short val;
-            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (short) -1;
-        }
-    } else {
-        short val;
-        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
-        if (!tmp) return (short) -1;
-        val = __Pyx_PyInt_As_short(tmp);
-        Py_DECREF(tmp);
-        return val;
-    }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to short");
-    return (short) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to short");
-    return (short) -1;
-}
-
 /* CIntFromPy */
                       static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
     const int neg_one = (int) -1, const_zero = (int) 0;
@@ -57321,190 +57051,42 @@ raise_neg_overflow:
     return (int) -1;
 }
 
-/* CIntFromPy */
-                      static CYTHON_INLINE unsigned short __Pyx_PyInt_As_unsigned_short(PyObject *x) {
-    const unsigned short neg_one = (unsigned short) -1, const_zero = (unsigned short) 0;
-    const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(unsigned short) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(unsigned short, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (unsigned short) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (unsigned short) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(unsigned short, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(unsigned short) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) >= 2 * PyLong_SHIFT) {
-                            return (unsigned short) (((((unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(unsigned short) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) >= 3 * PyLong_SHIFT) {
-                            return (unsigned short) (((((((unsigned short)digits[2]) << PyLong_SHIFT) | (unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(unsigned short) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) >= 4 * PyLong_SHIFT) {
-                            return (unsigned short) (((((((((unsigned short)digits[3]) << PyLong_SHIFT) | (unsigned short)digits[2]) << PyLong_SHIFT) | (unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (unsigned short) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(unsigned short) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned short, unsigned long, PyLong_AsUnsignedLong(x))
-            } else if (sizeof(unsigned short) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned short, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (unsigned short) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(unsigned short, sdigit, (sdigit) (-(sdigit)digits[0]))
-                case  1: __PYX_VERIFY_RETURN_INT(unsigned short,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(unsigned short) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) - 1 > 2 * PyLong_SHIFT) {
-                            return (unsigned short) (((unsigned short)-1)*(((((unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(unsigned short) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) - 1 > 2 * PyLong_SHIFT) {
-                            return (unsigned short) ((((((unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(unsigned short) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) - 1 > 3 * PyLong_SHIFT) {
-                            return (unsigned short) (((unsigned short)-1)*(((((((unsigned short)digits[2]) << PyLong_SHIFT) | (unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(unsigned short) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) - 1 > 3 * PyLong_SHIFT) {
-                            return (unsigned short) ((((((((unsigned short)digits[2]) << PyLong_SHIFT) | (unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(unsigned short) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) - 1 > 4 * PyLong_SHIFT) {
-                            return (unsigned short) (((unsigned short)-1)*(((((((((unsigned short)digits[3]) << PyLong_SHIFT) | (unsigned short)digits[2]) << PyLong_SHIFT) | (unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(unsigned short) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(unsigned short, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(unsigned short) - 1 > 4 * PyLong_SHIFT) {
-                            return (unsigned short) ((((((((((unsigned short)digits[3]) << PyLong_SHIFT) | (unsigned short)digits[2]) << PyLong_SHIFT) | (unsigned short)digits[1]) << PyLong_SHIFT) | (unsigned short)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(unsigned short) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned short, long, PyLong_AsLong(x))
-            } else if (sizeof(unsigned short) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(unsigned short, PY_LONG_LONG, PyLong_AsLongLong(x))
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            unsigned short val;
-            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (unsigned short) -1;
-        }
-    } else {
-        unsigned short val;
-        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
-        if (!tmp) return (unsigned short) -1;
-        val = __Pyx_PyInt_As_unsigned_short(tmp);
-        Py_DECREF(tmp);
-        return val;
+/* PrintOne */
+                      #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
+static int __Pyx_PrintOne(PyObject* f, PyObject *o) {
+    if (!f) {
+        if (!(f = __Pyx_GetStdout()))
+            return -1;
     }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to unsigned short");
-    return (unsigned short) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to unsigned short");
-    return (unsigned short) -1;
+    Py_INCREF(f);
+    if (PyFile_SoftSpace(f, 0)) {
+        if (PyFile_WriteString(" ", f) < 0)
+            goto error;
+    }
+    if (PyFile_WriteObject(o, f, Py_PRINT_RAW) < 0)
+        goto error;
+    if (PyFile_WriteString("\n", f) < 0)
+        goto error;
+    Py_DECREF(f);
+    return 0;
+error:
+    Py_DECREF(f);
+    return -1;
+    /* the line below is just to avoid C compiler
+     * warnings about unused functions */
+    return __Pyx_Print(f, NULL, 0);
 }
+#else
+static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {
+    int res;
+    PyObject* arg_tuple = PyTuple_Pack(1, o);
+    if (unlikely(!arg_tuple))
+        return -1;
+    res = __Pyx_Print(stream, arg_tuple, 1);
+    Py_DECREF(arg_tuple);
+    return res;
+}
+#endif
 
 /* SwapException */
                       #if CYTHON_COMPILING_IN_CPYTHON

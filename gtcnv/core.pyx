@@ -451,14 +451,14 @@ cdef gtCNV_preprocess (iid,bamfh,vcffh,bed,out,gen):
 	bam.close()
 class gtVCF():
 	def __init__(self,FH=None,iid=None,mask=None):
-		cdef unsigned short depth=0
+		cdef unsigned int depth=0
 		cdef double a=0.0
 		cdef double b=0.0
 		cdef double ratio=0.0
-		cdef short IND=-9
-		cdef short DP_IND=-9
-		cdef short GT_IND=-9
-		cdef short AD_IND=-9
+		cdef int IND=-9
+		cdef int DP_IND=-9
+		cdef int GT_IND=-9
+		cdef int AD_IND=-9
 		cdef int s=0
 		snps=[]
 		hets=[]
@@ -1085,14 +1085,14 @@ cdef thouGenOverlap(genos,gen):
 		else: thouGen[(x[0],x[1],x[2],x[3])]=(x[len(x)-2],format(float(x[len(x)-1])/(int(x[2])-int(x[1])+1.0),'.2f'))
 	return thouGen
 cdef geneOverlap(cnv,gen):
-	cdef unsigned short exonTotal
-	cdef unsigned short exonNum
-	cdef unsigned short intronTotal
-	cdef unsigned short intronNum
-	cdef unsigned short exoncnt
-	cdef unsigned short exontot
-	cdef unsigned short introncnt
-	cdef unsigned short introntot	
+	cdef unsigned int exonTotal
+	cdef unsigned int exonNum
+	cdef unsigned int intronTotal
+	cdef unsigned int intronNum
+	cdef unsigned int exoncnt
+	cdef unsigned int exontot
+	cdef unsigned int introncnt
+	cdef unsigned int introntot	
 	GENEFH=get_path()+'/resources/annotation_files/{}_genes.bed.gz'.format(gen)
 	genes={}
 	geneTEMP={}
@@ -1185,8 +1185,8 @@ cdef geneOverlap(cnv,gen):
 		if len(genlist)>=1 : genes[x]='|'.join(genlist)
 	return genes
 def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
-	cdef unsigned short CNV_ID
-	cdef unsigned short SZ
+	cdef unsigned int CNV_ID
+	cdef unsigned int SZ
 	genes={}
 	cyto={}
 	mei={}
@@ -1277,7 +1277,7 @@ def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
 		if flags.get((c,s,e,'segDup'))!=None: SEGD=format(flags[(c,s,e,'segDup')],'.2f')
 		if flags.get((c,s,e,'STR'))!=None: STR=format(flags[(c,s,e,'STR')],'.2f')
 		if flags.get((c,s,e,'unmapable'))!=None: UNMAP=format(flags[(c,s,e,'unmapable')],'.2f')
-		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = format(thouGen[(c,s,e,cl)],'.2f')
+		if thouGen.get((c,s,e,cl))!=None: THOUGEN_ID,THOUGEN_OVR = thouGen[(c,s,e,cl)]
 		if meiRO.get((c,s,e))!=None: REPEATMASKER=format(meiRO[(c,s,e)],'.2f')
 		if genes.get((c,s,e))!=None: GENE=genes[(c,s,e)]
 		if REF.get((c,s,e,cl))!=None: MEDREF=REF[(c,s,e,cl)]
