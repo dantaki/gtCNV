@@ -116,6 +116,6 @@ def main():
 	for iid in feats_files:
 		with open(feats_files[iid]) as f:
 			for l in f: feats.append(tuple(l.rstrip('\n').split('\t')))
-	genos,REF,NON,GQ,HEMI,FILT = genotype(feats,gender_dict,gen,ofh.replace('.vcf','.txt'))
+	genos,REF,NON,GQ,HEMI,FILT = genotype(raw,feats,gender_dict,gen,ofh.replace('.vcf','.txt'))
 	annotate(raw,genos,gen,REF,NON,GQ,ofh,gender_dict,HEMI,FILT)
 	reportTime(init_time,'GENOTYPING COMPLETE')	

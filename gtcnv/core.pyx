@@ -724,12 +724,13 @@ def likFilter(x,lik,f):
 		if sz<=5000: passflag=0
 		elif sz>5000 and lik<10: passflag=0
 	return passflag
-def genotype(feats,sex,gen,out):
+def genotype(raw,prefeats,sex,gen,out):
 	REF={}
 	NON={}
 	GQ={}
 	HEMI={}
 	FILT={}
+	feats = [x for x in prefeats if (x[0],x[1],x[2],x[4]) in raw] 
 	males = [k for k in sex if sex[k] == 'M']
 	sex_chrom = ['chrX','chrY']
 	dels = [ k for k in feats if 'DEL' in k[3]]
@@ -791,6 +792,8 @@ def genotype(feats,sex,gen,out):
 		autosome_dup_df.columns=head
 		for x in autosome_dup_svm(autosome_dup_df).values:
 			ofh.write('\t'.join(map(str,x))+'\n')
+			k = (x[0],x[1],x[2],x[4],x[5])
+			kk = (x[0],x[1],x[2],x[4])
 			x[6] = format(float(x[6])*2,'.2f')
 			GQ[k]= ','.join((format(float(x[14]),'.2f'),format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
 			if int(x[13]) == 2:
@@ -816,6 +819,8 @@ def genotype(feats,sex,gen,out):
 		sexchr_del_df.columns=head
 		for x in sexchr_del_svm(sexchr_del_df).values:
 			ofh.write('\t'.join(map(str,x))+'\n')
+			k = (x[0],x[1],x[2],x[4],x[5])
+			kk = (x[0],x[1],x[2],x[4])
 			x[6] = format(float(x[6]),'.2f')
 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
 			HEMI[kk]=1
@@ -837,6 +842,8 @@ def genotype(feats,sex,gen,out):
 		sexchr_dup_df.columns=head
 		for x in sexchr_dup_svm(sexchr_dup_df).values:
 			ofh.write('\t'.join(map(str,x))+'\n')
+			k = (x[0],x[1],x[2],x[4],x[5])
+			kk = (x[0],x[1],x[2],x[4])
 			x[6] = format(float(x[6])*2,'.2f')
 			GQ[k]= ','.join((format(float(x[15]),'.2f'),format(float(x[16]),'.2f')))
 			HEMI[kk]=1
@@ -1207,8 +1214,10 @@ def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
 	genes=geneOverlap(cnv,gen)
 	for x in genos:
 		k = (x[0],x[1],x[2],x[4])
-		filty=0
+		filty='FAIl'
 		if filt.get((x[0],x[1],x[2],x[4],x[5]))!=None: filty=filt[(x[0],x[1],x[2],x[4],x[5])]
+		if filty==0: filty='FAIL'
+		if filty==1: filty='PASS'
 		if GQ.get((x[0],x[1],x[2],x[4],x[5]))!=None:
 			lik=format(float(x[len(x)-2]),'.2f')
 			if '1' not in x[13]:
@@ -1290,7 +1299,7 @@ def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
 		if float(UNMAP) >= 0.5: fail.append('UNMAPABLE')
 		if cnvref == len(IID): fail.append('ALLREF')
 		if FILT.get((c,s,e,cl))!= None: 
-			gtPass = len([x for x in FILT[(c,s,e,cl)] if x==1])
+			gtPass = len([x for x in FILT[(c,s,e,cl)] if x=='PASS'])
 			if gtPass/len(FILT[(c,s,e,cl)]) < 0.9: fail.append('GENOTYPE-FAIL')
 		else: fail.append('FAIL')
 		if len(fail) > 0: PASS = ','.join(fail)
@@ -1324,7 +1333,7 @@ def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
 			'##INFO=<ID=UNMAPABLE,Number=1,Type=Float,Description="Overlap with regions unmapable using 100bp reads with respect to the hg19 assembly, in the range (0,1)">',
 			'##INFO=<ID=MEDREFGL,Number=1,Type=Float,Description="Median Phred-scaled genotype likelihood for individuals genotyped homozygous reference">',
 			'##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">',
-			'##FORMAT=<ID=FT,Number=1,Type=Integer,Description="Sample filter, 1 indicates PASS">',
+			'##FORMAT=<ID=FT,Number=1,Type=String,Description="Sample filter">',
 			'##FORMAT=<ID=PE,Number=1,Type=Float,Description="Ratio of Discordant Paired-Ends to Concordant Paired-Ends">',
 			'##FOTMAT=<ID=SR,Number=1,Type=Float,Description="Ratio of Split reads to Concordant Paired-Ends">',
 			'##FORMAT=<ID=CN,Number=1,Type=Float,Description="Copy Number">',
@@ -1334,7 +1343,16 @@ def annotate(raw,genos,gen,REF,NON,GQ,OFH,sex,hemi,filt):
 			'##FORMAT=<ID=HT,Number=1,Type=Float,Description="Number of Heterozygous SNPs">',
 			'##FORMAT=<ID=SQ,Number=1,Type=Float,Description="Phred-scaled genotype likelihood">',
 			'##FORMAT=<ID=GL,Number=2|3,Type=Float,Description="Phred-scaled genotype likelihood; homozygous alt, heterogygous alt, homozygous ref">',
-			'##ALT=<ID=DEL,Description="Deletion, if 80% reciprocal overlap with RepeatMasker element, the class, name, and family are given separated by colons">'
+			'##FILTER=<ID=ABPARTS,Description="Variant overlaps to antibody parts >50%">',
+			'##FILTER=<ID=CENTROMERE,Description="Variant overlaps to centromere >50%">',
+			'##FILTER=<ID=SEGDUP,Description="Variant overlaps to segmental duplications >50%">',
+			'##FILTER=<ID=STR,Description="Variant overlaps to short tandem repeats >50%">',
+			'##FILTER=<ID=UNMAPABLE,Description="Variant overlaps to unmapable regions >50%">',
+			'##FILTER=<ID=ALLREF,Description="All samples genotyped as homozygous reference">',
+			'##FILTER=<ID=GENOTYPE-FAIL,Description="Less than 90% of the samples did not pass genotype likelihood filters">',
+			'##FILTER=<ID=FAIL,Description="Variant was unable to be genotyped">',
+			'##FILTER=<ID=PASS,Description="More than 90% of the samples passed genotyping">',
+			'##ALT=<ID=DEL,Description="Deletion, if 80% reciprocal overlap with RepeatMasker element, the class, name, and family are given separated by colons">',
 			'##ALT=<ID=DUP,Description="Duplication, if 80% reciprocal overlap with RepeatMasker element, the class, name, and family are given separated by colons">',
 		]
 	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:
