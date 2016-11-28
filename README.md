@@ -76,7 +76,8 @@ HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
 * Whole genome alignments from the [1000 Genomes Project](http://www.1000genomes.org/) were used for training. Validated genotypes were obtained from the phase 3 integrated structural variation call set ([DOI:10.1038/nature15394](http://dx.doi.org/10.1038%2Fnature15394); PMID:    26432246).
 * Features for genotyping include coverage, discordant paired-ends, split-reads, and heterozygous allelic depth ratio.
    * BAM files must have supplementary alignment tags (SA).
-   * SNV VCF must contain Allelic Depth. gtCNV can accomodate [GATK Haplotype Caller](https://software.broadinstitute.org/gatk/gatkdocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php) and [FreeBayes](https://github.com/ekg/freebayes) VCFs.`
+   * SNV VCF must contain Allelic Depth. gtCNV can accomodate [GATK Haplotype Caller](https://software.broadinstitute.org/gatk/gatkdocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php) and [FreeBayes](https://github.com/ekg/freebayes) VCFs.
+      * SNV VCF must be compressed and indexed with [bgzip and tabix](http://www.htslib.org/doc/tabix.html)
 * gtCNV operates with a bi-allelic model with a copy number range of 0-4
 * Output is in VCF format.
    * Median Phred-adjusted non-reference likelihoods are reported in the QUAL column
