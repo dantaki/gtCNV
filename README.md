@@ -58,8 +58,8 @@ Tab-delimited file containing sample information. Gender can also be encoded as 
 
 ID | BAM PATH |  VCF PATH | Gender [M/F]
 --- | --- | --- | ---
-NA12878 | /bam/NA12878_BWAMEM.bam | /vcf/NA12878_GATK_HC.vcf | F 
-HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf | M
+NA12878 | /bam/NA12878_BWAMEM.bam | /vcf/NA12878_GATK_HC.vcf.gz | F 
+HG00096 | /bam/HG00096_BWAMEM.bam | /vcf/HG00096_GATK_HC.vcf.gz | M
 #### CNVs to genotype < -r >
 * BED format
   * Tab-delimited: first four columns 
