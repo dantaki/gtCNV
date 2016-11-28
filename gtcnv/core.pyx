@@ -3,6 +3,7 @@
 #cython: wraparound=False
 #cython: cdivision=True
 import os,sys,pysam,datetime
+from collections import OrderedDict as OD
 from math import ceil
 from glob import glob
 import pybedtools as pbed
@@ -19,7 +20,13 @@ np.import_array()
 def errFH(fh):
 	sys.stderr.write('ERROR {} NOT FOUND\n'.format(fh))
 	sys.exit(1)
-cdef warnFH(fh): sys.stderr.write('WARNING {} NOT FOUND\n'.format(fh))
+cdef mask_genome(gen):
+	CHR={}
+	with open(get_path()+'/resources/{}.chrom.sizes'.format(gen)) as f:
+		for l in f:
+			(chrom,size) = l.rstrip('\n').split('\t')
+			CHR[chrom]=[tuple(x) for x in pbed.BedTool(chrom+' 1 '+size,from_string=True).subtract(get_path()+'/resources/{}_unmapped.bed.gz'.format(gen),sorted=True)]
+	return CHR
 cdef checkCall(cl):
 	cdef bint c
 	c=0
@@ -94,23 +101,21 @@ def check_in(fh):
 				print 'WARNING: {} not formatted correctly! Please refer to the documentation at www.github.com/dantaki/gtCNV\n'.format(l)
 			else:
 				(iid,bamfh,vcffh,sx) = r
-				skip=0
-				if not os.path.isfile(bamfh):
-					skip=1
-					warnFH(bamfh)
-				if not os.path.isfile(vcffh):
-					skip=1
-					warnFH(vcffh)
+				if not os.path.isfile(bamfh): errFH(bamfh)
+				if not os.path.isfile(vcffh): errFH(vcffh)
 				if sx == '1': sx = 'M'
 				if sx == '2': sx = 'F'
 				if sx not in genders:
-					print 'WARNING: {} not an accepted gender. Accepted genders: 1|M 2|F>\n'
-					skip=1
-				if skip==True: continue
+					sys.stderr.write('WARNING: {} not an accepted gender. Accepted genders: 1|M 2|F>\n')
+					sys.exit(1)
 				bams[iid]=bamfh
 				vcfs[iid]=vcffh
 				gender[iid]=sx
 	return bams,vcfs,gender
+cdef checkChrom(c):
+	if 'chr' not in c: c='chr'+str(c)
+	c = c.replace('chr23','chrX').replace('chr24','chrY')
+	return c
 cdef get_chroma():
 	chroms=[]
 	for x in range(1,23): chroms.append('chr'+str(x))
@@ -404,7 +409,7 @@ cdef gtCNV_preprocess (iid,bamfh,vcffh,bed,out,gen):
 	genome_mad=[]
 	genome_size=0
 	chroms=get_chroma()
-	snp_cov = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').preprocessVCF()
+	snp_cov = gtVCF(vcffh,iid).preprocessVCF(gen,chrFlag)
 	for chromo in chroms:
 		filt_bed = bed.filter(lambda x: x.chrom==chromo)
 		chr_bed=[tuple(x) for x in filt_bed]
@@ -449,29 +454,57 @@ cdef gtCNV_preprocess (iid,bamfh,vcffh,bed,out,gen):
 			     ))+'\n')
 	ofh.close()
 	bam.close()
+def vcfrow(VCF,x):
+	cdef double ratio = -9
+	cdef int depth = -9
+	cdef int DP_IND=-9
+	cdef int GT_IND=-9
+	cdef int AD_IND=-9
+	cdef unsigned int s=0
+	killer=False
+	CHROMS=get_chroma()
+	try: x[VCF.IND]
+	except IndexError:
+		sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format('\t'.join(x)))
+		return 0
+	if len(x) < VCF.IND: return 0
+	c = checkChrom(x[0])
+	s = int(x[1])
+	FORMAT = x[8].split(':')
+	for y in xrange(len(FORMAT)):
+		if FORMAT[y] == 'DP': DP_IND=y
+		if FORMAT[y] == 'GT': GT_IND=y
+		if FORMAT[y] == VCF.formatTag: AD_IND=y
+	if DP_IND == -9 or GT_IND == -9: return 0
+	sample_info = x[VCF.IND].split(':')
+	for y in xrange(9,len(x)):
+		temp_info = x[y].split(':')
+		if '.' in temp_info[GT_IND]:killer=True
+	if killer == True: return 0
+	if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': return 0
+	depth=int(sample_info[DP_IND])
+	sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
+	gt = [int(x) for x in sample_info[GT_IND].split('/')]
+	if len(gt) != 2: return 0
+	if gt[0] != gt[1]:
+		if AD_IND == -9: return 0
+		allelic_depth = [float(x) for x in sample_info[AD_IND].split(',')]
+		a = allelic_depth[0]
+		b = allelic_depth[1]
+		if a == 0.0 or b == 0.0: return 0
+		ratio = b/a
+		if b > a: ratio=a/b
+	if depth==-9: return 0
+	return (depth,ratio)
 class gtVCF():
-	def __init__(self,FH=None,iid=None,mask=None):
-		cdef unsigned int depth=0
-		cdef double a=0.0
-		cdef double b=0.0
-		cdef double ratio=0.0
+	def __init__(self,FH=None,iid=None):
 		cdef int IND=-9
 		cdef int DP_IND=-9
 		cdef int GT_IND=-9
 		cdef int AD_IND=-9
-		cdef int s=0
-		snps=[]
-		hets=[]
-		SNP={}
-		HET={}
-		CHROMS=get_chroma()
 		if not os.path.isfile(FH): errFH(FH)
-		lines=[]
-		with open(FH,'r') as f:
-			for l in f:
-				if not l.startswith('#'): break
-				else:
-					lines.append(l.rstrip('\n'))
+		tbx = pysam.TabixFile(FH)
+		lines = list(tbx.header)
 		self.iid=iid
 		self.fh=FH
 		self.isHC = False
@@ -484,83 +517,57 @@ class gtVCF():
 		self.formatTag=None
 		if self.isFB == True: self.formatTag = 'DPR'
 		if self.isHC == True: self.formatTag = 'AD'
-		with open(FH) as f:
-			for l in f:
-				if l.startswith('##'): continue
-				elif l.startswith('#CHROM'):
-					r=l.rstrip('\n').split('\t')
-					for x in xrange(len(r)):
-						if r[x] in iid: IND=x
-					if IND == -9:
-						sys.stderr.write('ERROR {} NOT FOUND IN VCF HEADER: {}\n'.format(iid,l.rstrip('\n')))
-						sys.exit(1)
-				else:
-					r=l.rstrip('\n').split('\t')
-					try: r[IND]
-					except IndexError:
-						sys.stderr.write('ERROR {} MALFORMED. skipping ...\n'.format(l.rstrip('\n')))
-						continue
-					if len(r) < IND: continue
-					c = r[0]
-					s = int(r[1])
-					if 'chr' not in c: c='chr'+str(c)
-					c = c.replace('chr23','chrX').replace('chr24','chrY')
-					if c not in CHROMS: continue
-					FORMAT = r[8].split(':')
-					DP_IND=GT_IND=AD_IND=-9
-					for x in xrange(len(FORMAT)):
-						if FORMAT[x] == 'DP': DP_IND=x
-						if FORMAT[x] == 'GT': GT_IND=x
-						if FORMAT[x] == self.formatTag: AD_IND=x
-					if DP_IND == -9 or GT_IND == -9: continue
-					sample_info = r[IND].split(':')
-					killer=False
-					for x in xrange(9,len(r)):
-						temp_info = r[x].split(':')
-						if temp_info[GT_IND] == './.' or temp_info[GT_IND] == '.' or temp_info[GT_IND] == '.|.':killer=True
-					if killer == True: continue
-					if sample_info[DP_IND] == '.' or sample_info[AD_IND] == '.': continue
-					depth=int(sample_info[DP_IND])
-					sample_info[GT_IND]=sample_info[GT_IND].replace('|','/')
-					gt = [int(x) for x in sample_info[GT_IND].split('/')]
-					snps.append((c,s,s,depth))
-					if len(gt) != 2: continue
-					if gt[0] != gt[1]:
-						if AD_IND == -9: continue
-						allelic_depth = [float(x) for x in sample_info[AD_IND].split(',')]
-						a = allelic_depth[0]
-						b = allelic_depth[1]
-						if a == 0.0 or b == 0.0: continue
-						ratio = b/a
-						if b > a: ratio=a/b
-						hets.append((c,s,s,ratio))
-		LociMask=pbed.BedTool(mask).sort()
-		snps = [tuple(x) for x in pbed.BedTool(snps).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
-		hets = [tuple(x) for x in pbed.BedTool(hets).sort().intersect(LociMask,wa=True,v=True,sorted=True).sort()]
-		for chrom in CHROMS:
-			snpsub = [(int(x[1]),int(x[3])) for x in snps if x[0]==chrom]
-			hetsub = [(int(x[1]),float(x[3])) for x in hets if x[0]==chrom]
-			SNP[chrom]=snpsub
-			HET[chrom]=hetsub
-		self.SNP=SNP
-		self.HET=HET
-	def preprocessVCF(self):
+		head = [x for x in lines if x.startswith('#CHROM')][0].split('\t')
+		for x in xrange(len(head)):
+			if head[x] in iid : IND=x
+		if IND == -9:
+			sys.stderr.write('ERROR {} NOT FOUND IN VCF HEADER: {}\n'.format(iid,head[0]))
+			sys.exit(1)
+		self.IND=IND
+		chroms = tbx.contigs
+		CHR=OD()
+		for x in chroms:
+			if checkChrom(x) in get_chroma(): CHR[checkChrom(x)]=x
+		self.CHR=CHR
+		tbx.close()
+	def preprocessVCF(self,gen,chrFlag):
+		cdef double MED=0
+		cdef unsigned int TOT=0
 		snp_cov={}
-		CHROMS = get_chroma()
 		genome=[]
-		for chrom in CHROMS:
-			if self.SNP.get(chrom) == None: snp_cov[chrom]=(0,0)
-			else:
-				if len(self.SNP[chrom])==0: snp_cov[chrom]=(0,0)
-				else: snp_cov[chrom]=(np.median([x[1] for x in self.SNP[chrom]]),len(self.SNP[chrom]))
-				genome+=[x[1] for x in self.SNP[chrom]]
-		snp_cov['GENOME']=(np.median(genome),len(genome))
+		tbx = pysam.TabixFile(self.fh)
+		masked = mask_genome(gen)
+		for chrom in self.CHR:
+			MED=0
+			TOT=0
+			depth=[]
+			for (c,s,e) in masked[chrom]:
+				if chrFlag == False: c = c.replace("chr","")
+				for y in tbx.fetch(region='{}:{}-{}'.format(c,int(s)-1,int(e)-1)):
+					dats = vcfrow(self,y.split('\t'))
+					if dats == 0: continue
+					depth.append(dats[0])
+			if len(depth)>0:
+				MED=np.nanmedian(depth)
+				TOT=len(depth)
+			snp_cov[chrom]=(MED,TOT)
+			genome+=depth
+		tbx.close()
+		MED=0
+		TOT=0
+		if len(genome)>0:
+			MED=np.nanmedian(genome)
+			TOT=len(genome)
+		snp_cov['GENOME']=(MED,TOT)
 		return snp_cov	
-	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov):
+	def extract_SNP_features(self,sorted_cnv,master_cnv,snp_cov,chrFlag):
 		cdef int s=0
 		cdef int e=0
+		cdef int depth=0
+		cdef double ratio=0
 		SNP_feats={}
 		HET_feats={}
+		tbx = pysam.TabixFile(self.fh)
 		for call in sorted_cnv:
 			if master_cnv.get(call)==None: continue
 			(cnv_span,flank_span,windows) = master_cnv[call]
@@ -570,20 +577,18 @@ class gtVCF():
 				c = x[0]
 				norm_cov = snp_cov[(self.iid,c)]
 				s,e = map(int,(x[1],x[2]))
-				if self.SNP.get(c) == None: continue
-				SNPsub = self.SNP[c]
-				for x in SNPsub:
-					if x[0] >= s and x[0] <= e: snp_cov_locus.append(x[1])
-					elif x[0] > e: break	
-				if self.HET.get(c) == None: continue
-				HETsub = self.HET[c]
-				for x in HETsub:
-					if x[0] >= s and x[0] <= e: het_ratio_locus.append(x[1])
-					elif x[0] > e: break
+				if chrFlag == False: c = c.replace("chr","")
+				for y in tbx.fetch(region='{}:{}-{}'.format(c,int(s)-1,int(e)-1)):
+					dats = vcfrow(self,y.split('\t'))
+					if dats == 0: continue
+					depth,ratio = dats
+					snp_cov_locus.append(depth)
+					if ratio != -9: het_ratio_locus.append(ratio)
 			if len(snp_cov_locus)==0: SNP_feats[call]=(float('nan'),0)
 			else: SNP_feats[call]=(np.nanmedian(snp_cov_locus)/norm_cov,len(snp_cov_locus))
 			if len(het_ratio_locus)==0: HET_feats[call]=(float('nan'),0)
 			else: HET_feats[call]=(np.nanmedian(het_ratio_locus),len(het_ratio_locus))
+		tbx.close()
 		return SNP_feats,HET_feats
 def preprocess(iid,bamfh,vcffh,ofh,gen,seed):
 	outdir = os.getcwd()+'/gtCNV_preprocessing/'
@@ -631,7 +636,7 @@ def extract_feats(iid,bamfh,vcffh,cnv,prefh,gender,out,gen,pcrfree):
 	ofh = open(outdir+out,'w')
 	out_head = '\t'.join(('chr','start','end','type','size','id','coverage','coverage_GCcorrected','discordant_ratio','split_ratio','SNP_coverage','HET_ratio','SNPs','HET_SNPs'))
 	ofh.write(out_head+'\n')
-	SNPs, HETs = gtVCF(vcffh,iid,get_path()+'/resources/'+gen+'_unmapped.bed.gz').extract_SNP_features(cnv,master_cnv,snp_cov)
+	SNPs, HETs = gtVCF(vcffh,iid).extract_SNP_features(cnv,master_cnv,snp_cov,chrFlag)
 	for call in cnv:
 		(c,s,e,cl) = call
 		if SNPs.get(call)==None or HETs.get(call)==None or cnv_gc.get(call)==None or master_cnv.get(call)==None: continue
@@ -724,13 +729,13 @@ def likFilter(x,lik,f):
 		if sz<=5000: passflag=0
 		elif sz>5000 and lik<10: passflag=0
 	return passflag
-def genotype(raw,prefeats,sex,gen,out):
+def genotype(raw,feats,sex,gen,out):
 	REF={}
 	NON={}
 	GQ={}
 	HEMI={}
 	FILT={}
-	feats = [x for x in prefeats if (x[0],x[1],x[2],x[4]) in raw] 
+	#feats = [x for x in prefeats if (x[0],x[1],x[2],x[4]) in raw] 
 	males = [k for k in sex if sex[k] == 'M']
 	sex_chrom = ['chrX','chrY']
 	dels = [ k for k in feats if 'DEL' in k[3]]

@@ -1,4 +1,4 @@
-__version__='2.3'
+__version__='2.4'
 import sys,os,argparse
 from .core import check_in,Bed,check_cnv,errFH,reportTime,preprocess,extract_feats,genotype,annotate
 from argparse import RawTextHelpFormatter
