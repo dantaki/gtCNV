@@ -944,9 +944,9 @@ cdef dup_sexchr_tab(df,lik,clfname):
 	df= df[['chr','start','end','size','type','id','covr','dpe','sr','SNP_coverage','SNPs','HET_ratio','HET_SNPs','copy_number','likVAR','likVAR','likREF','NONREF','PHRED_REF','PHRED_NONREF','classif',]]
 	return df
 cdef merge3d (df):
-	return np.vstack(np.asarray( (df['covr'],df['dpe'],df['sr']), order = 'C', dtype='float' )).T
+	return df[['covr','dpe','sr']].as_matrix()
 cdef prepHET(df):
-	X = np.vstack(np.asarray((df['covr'],df['HET_ratio']),order='C',dtype='float')).T
+	X = df[['covr','HET_ratio']].as_matrix()
 	return df,X
 cdef prepPE(df):
 	X = merge3d(df)
